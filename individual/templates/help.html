@@ -8,15 +8,23 @@
 All responses are in JSON
 
 REQUEST: /
-RESPONSE: A greeting from this API to the user
+RESPONSE: A greeting from this API to the user.
 
 REQUEST: /help
-RESPONSE: This message
+RESPONSE: Current message.
 
-REQUEST: /color/{color}
+REQUEST: /colors[?red={1}&amp;green={1}&amp;blue={1}&amp;
+                gold={1}&amp;white={1}&amp;black={1}&amp;orange={1}]
 RESPONSE:
-    A list of all countries' flags containing the specified color string.
-    Each color is represented as a dictionary with key {color}.
+    A list of country names whose flags contain all the requested colors.
+    If specific color(s) are provided as GET parameters, e.g.,
+        /colors?red=1&amp;green=1&amp;blue=1&amp;gold=1&amp;white=1&amp;black=1&amp;orange
+    will return ['Belize', 'Venezuela'].
+    
+    If no color parameters are provided, i.e.,
+        /colors
+    will return a dictionary where each color maps to a list of countries
+    whose flags contain that color, i.e., {color: [list of country names], ...}.
     </pre>
 </body>
 </html>
