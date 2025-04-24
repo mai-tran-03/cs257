@@ -1,7 +1,7 @@
 REQUEST: /countries/name_contains/{search_text}
 
 RESPONSE: A JSON list of dictionaries, each representing a country sorted 
-by closeness to the search_text. The search test must be at least 2 
+by closeness to the search_text. The search text must be at least 2 
 characters and is case-insensitive. 
 Each country dictionary will have the following fields:
     name            -- Name of the country concerned
@@ -17,13 +17,13 @@ Each country dictionary will have the following fields:
     white           -- ''''white''''
     black           -- ''''black''''
     orange          -- ''''orange/brown''''
-    mainhue         -- Predominant color on the flag (tie-breaks from the 
+    main-hue         -- Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
     circles         -- Number of circles on the flag
     crosses         -- Number of (upright) crosses
     saltires        -- Number of diagonal crosses
     quarters        -- Number of quartered sections
-    sunstars        -- Number of sun/star symbols
+    sun-stars        -- Number of sun/star symbols
     crescent        -- 1 if a crescent moon symbol present, 0 otherwise
     triangle        -- 1 if any triangles present, 0 otherwise
     inanimate-image -- 1 if an inanimate image present, otherwise 0
@@ -34,17 +34,17 @@ EXAMPLE:
     /countries/name_contains/pan
 
     [
-    {"name": "Panama", "bars": "0", "stripes": "0", "colours": "3", "red": "1", 
+    {"name": "Panama", "bars": "0", "stripes": "0", "colors": "3", "red": "1", 
     "green": "0", "blue": "1", "gold": "0", "white": "1", "black": "0", 
-    "orange": "0", "mainhue": "red", "circles": "0", "crosses": "0", 
-    "saltires": "0", "quarters": "4", "sunstars": "2", "crescent": "0", 
-    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"},
+    "orange": "0", "main-hue": "red", "circles": "0", "crosses": "0", 
+    "saltires": "0", "quarters": "4", "sun-stars": "2", "crescent": "0", 
+    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"},
     
-    {"name": "Japan", "bars": "0", "stripes": "0", "colours": "2", "red": "1", 
+    {"name": "Japan", "bars": "0", "stripes": "0", "colors": "2", "red": "1", 
     "green": "0", "blue": "0", "gold": "0", "white": "1", "black": "0", 
-    "orange": "0", "mainhue": "white", "circles": "1", "crosses": "0", 
-    "saltires": "0", "quarters": "0", "sunstars": "1", "crescent": "0", 
-    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"}
+    "orange": "0", "main-hue": "white", "circles": "1", "crosses": "0", 
+    "saltires": "0", "quarters": "0", "sun-stars": "1", "crescent": "0", 
+    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"}
     ]
 
 
@@ -86,13 +86,13 @@ case insensitve. The following attributes returned are:
     white           -- ''''white''''
     black           -- ''''black''''
     orange          -- ''''orange/brown''''
-    mainhue         -- Predominant color on the flag (tie-breaks from the 
+    main-hue         -- Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
     circles         -- Number of circles on the flag
     crosses         -- Number of (upright) crosses
     saltires        -- Number of diagonal crosses
     quarters        -- Number of quartered sections
-    sunstars        -- Number of sun/star symbols
+    sun-stars        -- Number of sun/star symbols
     crescent        -- 1 if a crescent moon symbol present, 0 otherwise
     triangle        -- 1 if any triangles present, 0 otherwise
     inanimate-image -- 1 if an inanimate image present, otherwise 0
@@ -102,8 +102,8 @@ case insensitve. The following attributes returned are:
 EXAMPLE:
     /country/chile
 
-    {"name": "Chile", "bars": "0", "stripes": "2", "colours": "3", "red": "1", 
+    {"name": "Chile", "bars": "0", "stripes": "2", "colors": "3", "red": "1", 
     "green": "0", "blue": "1", "gold": "0", "white": "1", "black": "0", 
-    "orange": "0", "mainhue": "red", "circles": "0", "crosses": "0", 
-    "saltires": "0", "quarters": "1", "sunstars": "1", "crescent": "0", 
-    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"}
+    "orange": "0", "main-hue": "red", "circles": "0", "crosses": "0", 
+    "saltires": "0", "quarters": "1", "sun-stars": "1", "crescent": "0", 
+    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"}
