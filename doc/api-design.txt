@@ -1,7 +1,8 @@
 REQUEST: /countries/name_contains/{search_text}
 
 RESPONSE: A JSON list of dictionaries, each representing a country sorted 
-by closeness to the search_text, at least 2 characters and case-insensitively. 
+by closeness to the search_text. The search test must be at least 2 
+characters and is case-insensitive. 
 Each country dictionary will have the following fields:
     name            -- Name of the country concerned
     location        -- Data of country location
@@ -30,29 +31,48 @@ Each country dictionary will have the following fields:
     text            -- 1 if any letters or writing present, 0 otherwise
 
 EXAMPLE:
-    /countries/name_contains/pa
-    -- Kezia work
+    /countries/name_contains/pan
+
+    [
+    {"name": "Panama", "bars": "0", "stripes": "0", "colours": "3", "red": "1", 
+    "green": "0", "blue": "1", "gold": "0", "white": "1", "black": "0", 
+    "orange": "0", "mainhue": "red", "circles": "0", "crosses": "0", 
+    "saltires": "0", "quarters": "4", "sunstars": "2", "crescent": "0", 
+    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"},
+    
+    {"name": "Japan", "bars": "0", "stripes": "0", "colours": "2", "red": "1", 
+    "green": "0", "blue": "0", "gold": "0", "white": "1", "black": "0", 
+    "orange": "0", "mainhue": "white", "circles": "1", "crosses": "0", 
+    "saltires": "0", "quarters": "0", "sunstars": "1", "crescent": "0", 
+    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"}
+    ]
+
 
 
 REQUEST: /countries
     GET parameters:
         attribute (Optional, default: '') -- return all countries with the 
-        specify attribute, the user can query as many attributes as needed.
+        specified attribute(s), the user can query as many attributes as 
+        needed. 
 
 RESPONSE: A JSON list of dictionaries, each representing a country.
     Each dictionary will have the following fields:
 
         name -- name of the country
         location -- data of country location
-        all attributes inputted with the count
+        all attributes inputted with their counts
 
 EXAMPLE:
     /countries?attribute=saltires&attribute=blue
 
+    [{"name": "South-Africa", "blue": "1", "saltires": "1"}]
+
+
 
 REQUEST: /country/{name}
 
-RESPONSE: A JSON dictionary with the following fields:
+RESPONSE: A JSON dictionary with all the attributes of the country. The name is
+case insensitve. The following attributes returned are: 
     name            -- Name of the country concerned
     location        -- Data of country location
     image           -- Picture of country flag
@@ -80,4 +100,10 @@ RESPONSE: A JSON dictionary with the following fields:
     text            -- 1 if any letters or writing present, 0 otherwise
 
 EXAMPLE:
-    /country/Chile
+    /country/chile
+
+    {"name": "Chile", "bars": "0", "stripes": "2", "colours": "3", "red": "1", 
+    "green": "0", "blue": "1", "gold": "0", "white": "1", "black": "0", 
+    "orange": "0", "mainhue": "red", "circles": "0", "crosses": "0", 
+    "saltires": "0", "quarters": "1", "sunstars": "1", "crescent": "0", 
+    "triangle": "0", "inanimateImage": "0", "animateImage": "0", "text": "0"}
