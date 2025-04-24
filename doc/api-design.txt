@@ -1,8 +1,8 @@
 REQUEST: /countries/name_contains/{search_text}
 
 RESPONSE: A JSON list of dictionaries, each representing a country sorted 
-by closeness to the search_text, case-insensitively. Each country 
-dictionary will have the following fields:
+by closeness to the search_text, at least 2 characters and case-insensitively. 
+Each country dictionary will have the following fields:
     name            -- Name of the country concerned
     location        -- Data of country location
     image           -- Picture of country flag
