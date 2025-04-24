@@ -1,0 +1,91 @@
+REQUEST: /countries/name_contains/{search_text}
+    search_text is case-insensitive.
+
+RESPONSE: A JSON list of dictionaries, each of which represent a country
+    sorted by closeness to the search_text. Each country dictionary will
+    have the following fields:
+
+    name -- Name of the country concerned
+    location -- Data of country location
+    image -- Picture of country flag
+    bars -- Number of vertical bars in the flag
+    stripes -- Number of horizontal stripes in the flag
+    colours -- Number of different colours in the flag
+    red -- 0 if red absent, 1 if red present in the flag
+    green -- same for green
+    blue -- same for blue
+    gold -- same for gold (also yellow)
+    white -- same for white
+    black -- same for black
+    orange -- same for orange (also brown)
+    mainhue -- predominant colour in the flag (tie-breaks decided by taking
+               the topmost hue, if that fails then the most central hue,
+               and if that fails the leftmost hue)
+    circles -- Number of circles in the flag
+    crosses -- Number of (upright) crosses
+    saltires -- Number of diagonal crosses
+    quarters -- Number of quartered sections
+    sunstars -- Number of sun or star symbols
+    crescent -- 1 if a crescent moon symbol present, else 0
+    triangle -- 1 if any triangles present, 0 otherwise
+    icon -- 1 if an inanimate image present (e.g., a boat), otherwise 0
+    animate -- 1 if an animate image (e.g., an eagle, a tree, a human hand)
+               present, 0 otherwise
+    text -- 1 if any letters or writing on the flag (e.g., a motto or
+               slogan), 0 otherwise
+
+EXAMPLE:
+    /countries/name_contains/pa
+    -- Kezia work
+
+
+REQUEST: /countries
+    GET parameters
+        attribute (Optional, default: '') -- return all countries with 
+        the specify attribute, the user can query many attributes.
+
+RESPONSE: A JSON list of dictionaries, each representing a country.
+    Each dictionary will have the following fields:
+
+        name -- name of the country
+        location -- data of country location
+        all attributes inputted with the count
+
+EXAMPLE:
+    /countries?attribute=saltires&attribute=blue
+
+
+REQUEST: /country/{name}
+
+RESPONSE: A JSON dictionary with the following fields:
+    name -- Name of the country concerned
+    location -- Data of country location
+    image -- Picture of country flag
+    bars -- Number of vertical bars in the flag
+    stripes -- Number of horizontal stripes in the flag
+    colours -- Number of different colours in the flag
+    red -- 0 if red absent, 1 if red present in the flag
+    green -- same for green
+    blue -- same for blue
+    gold -- same for gold (also yellow)
+    white -- same for white
+    black -- same for black
+    orange -- same for orange (also brown)
+    mainhue -- predominant colour in the flag (tie-breaks decided by taking
+               the topmost hue, if that fails then the most central hue,
+               and if that fails the leftmost hue)
+    circles -- Number of circles in the flag
+    crosses -- Number of (upright) crosses
+    saltires -- Number of diagonal crosses
+    quarters -- Number of quartered sections
+    sunstars -- Number of sun or star symbols
+    crescent -- 1 if a crescent moon symbol present, else 0
+    triangle -- 1 if any triangles present, 0 otherwise
+    icon -- 1 if an inanimate image present (e.g., a boat), otherwise 0
+    animate -- 1 if an animate image (e.g., an eagle, a tree, a human hand)
+               present, 0 otherwise
+    text -- 1 if any letters or writing on the flag (e.g., a motto or
+               slogan), 0 otherwise
+
+EXAMPLE:
+    /country/Chile
