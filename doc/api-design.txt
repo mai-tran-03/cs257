@@ -1,38 +1,33 @@
 REQUEST: /countries/name_contains/{search_text}
-    search_text is case-insensitive.
 
-RESPONSE: A JSON list of dictionaries, each of which represent a country
-    sorted by closeness to the search_text. Each country dictionary will
-    have the following fields:
-
-    name -- Name of the country concerned
-    location -- Data of country location
-    image -- Picture of country flag
-    bars -- Number of vertical bars in the flag
-    stripes -- Number of horizontal stripes in the flag
-    colours -- Number of different colours in the flag
-    red -- 0 if red absent, 1 if red present in the flag
-    green -- same for green
-    blue -- same for blue
-    gold -- same for gold (also yellow)
-    white -- same for white
-    black -- same for black
-    orange -- same for orange (also brown)
-    mainhue -- predominant colour in the flag (tie-breaks decided by taking
-               the topmost hue, if that fails then the most central hue,
-               and if that fails the leftmost hue)
-    circles -- Number of circles in the flag
-    crosses -- Number of (upright) crosses
-    saltires -- Number of diagonal crosses
-    quarters -- Number of quartered sections
-    sunstars -- Number of sun or star symbols
-    crescent -- 1 if a crescent moon symbol present, else 0
-    triangle -- 1 if any triangles present, 0 otherwise
-    icon -- 1 if an inanimate image present (e.g., a boat), otherwise 0
-    animate -- 1 if an animate image (e.g., an eagle, a tree, a human hand)
-               present, 0 otherwise
-    text -- 1 if any letters or writing on the flag (e.g., a motto or
-               slogan), 0 otherwise
+RESPONSE: A JSON list of dictionaries, each representing a country sorted 
+by closeness to the search_text, case-insensitively. Each country 
+dictionary will have the following fields:
+    name            -- Name of the country concerned
+    location        -- Data of country location
+    image           -- Picture of country flag
+    bars            -- Number of vertical bars on the flag
+    stripes         -- Number of horizontal stripes on the flag
+    colors          -- Number of different colors on the flag
+    red             -- 1 if red present on the flag, 0 otherwise
+    green           -- ''''green''''
+    blue            -- ''''blue''''
+    gold            -- ''''gold/yellow''''
+    white           -- ''''white''''
+    black           -- ''''black''''
+    orange          -- ''''orange/brown''''
+    mainhue         -- Predominant color on the flag (tie-breaks from the 
+                        topmost, to most central, and then to leftmost hue)
+    circles         -- Number of circles on the flag
+    crosses         -- Number of (upright) crosses
+    saltires        -- Number of diagonal crosses
+    quarters        -- Number of quartered sections
+    sunstars        -- Number of sun/star symbols
+    crescent        -- 1 if a crescent moon symbol present, 0 otherwise
+    triangle        -- 1 if any triangles present, 0 otherwise
+    inanimate-image -- 1 if an inanimate image present, otherwise 0
+    animate-image   -- 1 if an animate image present, 0 otherwise
+    text            -- 1 if any letters or writing present, 0 otherwise
 
 EXAMPLE:
     /countries/name_contains/pa
@@ -40,9 +35,9 @@ EXAMPLE:
 
 
 REQUEST: /countries
-    GET parameters
-        attribute (Optional, default: '') -- return all countries with 
-        the specify attribute, the user can query many attributes.
+    GET parameters:
+        attribute (Optional, default: '') -- return all countries with the 
+        specify attribute, the user can query as many attributes as needed.
 
 RESPONSE: A JSON list of dictionaries, each representing a country.
     Each dictionary will have the following fields:
@@ -58,34 +53,31 @@ EXAMPLE:
 REQUEST: /country/{name}
 
 RESPONSE: A JSON dictionary with the following fields:
-    name -- Name of the country concerned
-    location -- Data of country location
-    image -- Picture of country flag
-    bars -- Number of vertical bars in the flag
-    stripes -- Number of horizontal stripes in the flag
-    colours -- Number of different colours in the flag
-    red -- 0 if red absent, 1 if red present in the flag
-    green -- same for green
-    blue -- same for blue
-    gold -- same for gold (also yellow)
-    white -- same for white
-    black -- same for black
-    orange -- same for orange (also brown)
-    mainhue -- predominant colour in the flag (tie-breaks decided by taking
-               the topmost hue, if that fails then the most central hue,
-               and if that fails the leftmost hue)
-    circles -- Number of circles in the flag
-    crosses -- Number of (upright) crosses
-    saltires -- Number of diagonal crosses
-    quarters -- Number of quartered sections
-    sunstars -- Number of sun or star symbols
-    crescent -- 1 if a crescent moon symbol present, else 0
-    triangle -- 1 if any triangles present, 0 otherwise
-    icon -- 1 if an inanimate image present (e.g., a boat), otherwise 0
-    animate -- 1 if an animate image (e.g., an eagle, a tree, a human hand)
-               present, 0 otherwise
-    text -- 1 if any letters or writing on the flag (e.g., a motto or
-               slogan), 0 otherwise
+    name            -- Name of the country concerned
+    location        -- Data of country location
+    image           -- Picture of country flag
+    bars            -- Number of vertical bars on the flag
+    stripes         -- Number of horizontal stripes on the flag
+    colors          -- Number of different colors on the flag
+    red             -- 1 if red present on the flag, 0 otherwise
+    green           -- ''''green''''
+    blue            -- ''''blue''''
+    gold            -- ''''gold/yellow''''
+    white           -- ''''white''''
+    black           -- ''''black''''
+    orange          -- ''''orange/brown''''
+    mainhue         -- Predominant color on the flag (tie-breaks from the 
+                        topmost, to most central, and then to leftmost hue)
+    circles         -- Number of circles on the flag
+    crosses         -- Number of (upright) crosses
+    saltires        -- Number of diagonal crosses
+    quarters        -- Number of quartered sections
+    sunstars        -- Number of sun/star symbols
+    crescent        -- 1 if a crescent moon symbol present, 0 otherwise
+    triangle        -- 1 if any triangles present, 0 otherwise
+    inanimate-image -- 1 if an inanimate image present, otherwise 0
+    animate-image   -- 1 if an animate image present, 0 otherwise
+    text            -- 1 if any letters or writing present, 0 otherwise
 
 EXAMPLE:
     /country/Chile
