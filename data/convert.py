@@ -28,6 +28,9 @@ def main(input_file_name):
                     if header == "population" or header == "area":
                         row[i] = re.sub(",", "", row[i])
 
+                    if header == "other-names":
+                        row[i] = re.sub(",", ";", row[i])
+
                     country_flag[header] = row[i] if row[i] else 'NULL'
 
                 # get the languages string and split it into a list
