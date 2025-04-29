@@ -22,7 +22,7 @@ CREATE TABLE countries_flags (
     triangle boolean,
     inanimate_image boolean,
     animate_image boolean,
-    crescent_emblem boolean,
+    crest_emblem boolean,
 );
 
 CREATE TABLE continents (
