@@ -37,7 +37,7 @@ def main(input_file_name):
                 langs = row[headers.index("languages")].split(", ")
 
                 for l in langs:
-                    languages_countries.append((country_flag["country_code"], l))
+                    languages_countries.append((l, country_flag["country_code"]))
                 
                 countries_flags.append(country_flag)
 
