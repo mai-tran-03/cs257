@@ -1,3 +1,19 @@
+'''
+Mai Tran and Kezia Sharnoff
+CS257
+Database Design and Population Assignment
+
+Used to convert the csv file alldata into two new csv files: 
+- a linker file for each country and their languages, titled 
+    'languages_countries.csv'
+- file with the rest of the information: 'countries_flags.csv'
+
+Our database also uses the tables continents and languages to store the 
+continents id and the langauge ISO codes, those are already in seperate
+csv files that are already formatted to be put into the tables, therefore
+we do not need to read or edit them in convert.py. 
+'''
+
 import sys
 import re
 import csv
@@ -28,6 +44,8 @@ def main(input_file_name):
                     if header == "population" or header == "area":
                         row[i] = re.sub(",", "", row[i])
 
+                    # possible commas within the other-names string would make 
+                    # sql unhappy, therefore we change to a ; here
                     if header == "other-names":
                         row[i] = re.sub(",", ";", row[i])
 
@@ -46,7 +64,7 @@ def main(input_file_name):
         writer = csv.writer(f)
         # country is a dictionary with all its attributes
         for country in countries_flags:
-            # this will always work because dictionaries are ordered in Python
+            # this will work because dictionaries are ordered in Python
             row = list(country.values())
             writer.writerow(row)
 
@@ -57,7 +75,7 @@ def main(input_file_name):
     
 
 if len(sys.argv) != 2:
-    print(f'Usage: {sys.argv[0]} original_csv_file', file=sys.stderr)
+    print(f'Usage: {sys.argv[0]} original_csv_file', file = sys.stderr)
     exit()
 
 main(sys.argv[1])
