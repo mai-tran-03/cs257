@@ -2,6 +2,8 @@ CREATE TABLE countries_flags (
     tld text,
     country_name text,
     other_names text,
+    area integer,
+    population integer,
     bars integer,
     stripes integer,
     red boolean,
@@ -22,20 +24,20 @@ CREATE TABLE countries_flags (
     triangle boolean,
     inanimate_image boolean,
     animate_image boolean,
-    crest_emblem boolean,
+    crest_emblem boolean
 );
 
 CREATE TABLE continents (
     continent_id integer,
-    continent_name text,
+    continent_name text
 );
 
 CREATE TABLE languages (
     language_id text,
-    language_name text,
+    language_name text
 );
 
 CREATE TABLE languages_countries (
     language_id text,
-    tld text,
+    tld text
 );

@@ -3,11 +3,11 @@ import re
 import csv
 
 def main(input_file_name):
-    # countries_flags is a list of lists where each list is a country with
-    # a list of all its attributes
+    # countries_flags is a list of lists where each list 
+    # is a country with a list of all its attributes
     countries_flags = []
-    # languages_countries is a list of tuples with country code and all of its
-    # language codes
+    # languages_countries is a list of tuples with country code 
+    # and all of its language codes
     languages_countries = []
 
     with open(input_file_name) as f:
@@ -19,13 +19,12 @@ def main(input_file_name):
             if row[headers.index("country_code")] not in countries_flags:
                 country_flag = []
                 for i, header in enumerate(headers):
-                    
-                    # don't add languages column to countries_flags:
-                    if header == "languages":
+                    # don't add languages and continent_id columns to countries_flags:
+                    if header == "languages" or header == "continent_id":
                         continue
 
-                    # if the integers have any commas then get rid of them so
-                    # that it will remain and int, with regex!!
+                    # if the integer strings have any commas then get rid 
+                    # of them so that it will remain an int, with regex!!
                     if header == "population" or header == "area":
                         row[i] = re.sub(",", "", row[i])
 
@@ -36,15 +35,15 @@ def main(input_file_name):
 
                 for l in langs:
                     languages_countries.append((country_flag[0], l))
+                
                 countries_flags.append(country_flag)
 
 
     with open('countries_flags.csv', 'w') as f:
         writer = csv.writer(f)
-        # country is a dictionary with all
+        # country is a dictionary with all its attributes
         for country in countries_flags:
-            row = country
-            writer.writerow(row)
+            writer.writerow(country)
 
     with open('languages_countries.csv', 'w') as f:
         writer = csv.writer(f)
