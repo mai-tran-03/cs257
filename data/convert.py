@@ -17,7 +17,7 @@ def main(input_file_name):
         for row in reader:
             # if missing the tld, do not continue!
             if row[headers.index("country_code")] not in countries_flags:
-                country_flag = []
+                country_flag = {}
                 for i, header in enumerate(headers):
                     # don't add languages and continent_id columns to countries_flags:
                     if header == "languages" or header == "continent_id":
@@ -28,13 +28,13 @@ def main(input_file_name):
                     if header == "population" or header == "area":
                         row[i] = re.sub(",", "", row[i])
 
-                    country_flag.append(row[i]) if row[i] else 'NULL'
+                    country_flag[header] = row[i] if row[i] else 'NULL'
 
                 # get the languages string and split it into a list
                 langs = row[headers.index("languages")].split(", ")
 
                 for l in langs:
-                    languages_countries.append((country_flag[0], l))
+                    languages_countries.append((country_flag["country_code"], l))
                 
                 countries_flags.append(country_flag)
 
@@ -43,7 +43,9 @@ def main(input_file_name):
         writer = csv.writer(f)
         # country is a dictionary with all its attributes
         for country in countries_flags:
-            writer.writerow(country)
+            # this will always work because dictionaries are ordered in Python
+            row = list(country.values())
+            writer.writerow(row)
 
     with open('languages_countries.csv', 'w') as f:
         writer = csv.writer(f)
