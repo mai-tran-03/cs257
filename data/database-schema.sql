@@ -4,8 +4,10 @@ CREATE TABLE countries_flags (
     other_names text,
     area integer,
     population integer,
+    continent_id integer,
     bars integer,
     stripes integer,
+    bends integer,
     red boolean,
     green boolean,
     blue boolean,
@@ -24,6 +26,7 @@ CREATE TABLE countries_flags (
     triangle boolean,
     inanimate_image boolean,
     animate_image boolean,
+    text boolean,
     crest_emblem boolean
 );
 

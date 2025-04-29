@@ -19,8 +19,8 @@ def main(input_file_name):
             if row[headers.index("country_code")] not in countries_flags:
                 country_flag = {}
                 for i, header in enumerate(headers):
-                    # don't add languages and continent_id columns to countries_flags:
-                    if header == "languages" or header == "continent_id":
+                    # don't add languages column to countries_flags:
+                    if header == "languages":
                         continue
 
                     # if the integer strings have any commas then get rid 
