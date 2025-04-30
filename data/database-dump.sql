@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: continents; Type: TABLE; Schema: public; Owner: kezia
+-- Name: continents; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.continents (
@@ -30,10 +30,8 @@ CREATE TABLE public.continents (
 );
 
 
-ALTER TABLE public.continents OWNER TO kezia;
-
 --
--- Name: countries_flags; Type: TABLE; Schema: public; Owner: kezia
+-- Name: countries_flags; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.countries_flags (
@@ -69,10 +67,8 @@ CREATE TABLE public.countries_flags (
 );
 
 
-ALTER TABLE public.countries_flags OWNER TO kezia;
-
 --
--- Name: languages; Type: TABLE; Schema: public; Owner: kezia
+-- Name: languages; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.languages (
@@ -81,10 +77,8 @@ CREATE TABLE public.languages (
 );
 
 
-ALTER TABLE public.languages OWNER TO kezia;
-
 --
--- Name: languages_countries; Type: TABLE; Schema: public; Owner: kezia
+-- Name: languages_countries; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.languages_countries (
@@ -93,10 +87,8 @@ CREATE TABLE public.languages_countries (
 );
 
 
-ALTER TABLE public.languages_countries OWNER TO kezia;
-
 --
--- Data for Name: continents; Type: TABLE DATA; Schema: public; Owner: kezia
+-- Data for Name: continents; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.continents (continent_id, continent_name) FROM stdin;
@@ -110,7 +102,7 @@ COPY public.continents (continent_id, continent_name) FROM stdin;
 
 
 --
--- Data for Name: countries_flags; Type: TABLE DATA; Schema: public; Owner: kezia
+-- Data for Name: countries_flags; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.countries_flags (tld, country_name, other_names, area, population, continent_id, bars, stripes, bends, red, green, blue, gold_yellow, white, black_grey, orange_brown, pink_purple, main_hue, circles, crosses, saltires, quarters, sun_stars, crescent_moon, triangle, inanimate_image, animate_image, text, crest_emblem) FROM stdin;
@@ -338,7 +330,7 @@ zw	Zimbabwe	Republic of Zimbabwe	390757	17150352	1	0	7	0	t	t	f	t	t	t	f	f	green	0
 
 
 --
--- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: kezia
+-- Data for Name: languages; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.languages (language_id, language_name) FROM stdin;
@@ -815,7 +807,7 @@ zza	Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
 
 
 --
--- Data for Name: languages_countries; Type: TABLE DATA; Schema: public; Owner: kezia
+-- Data for Name: languages_countries; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.languages_countries (language_id, tld) FROM stdin;
