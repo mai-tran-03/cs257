@@ -1,221 +1,221 @@
-country_code,name,other_names,area,population,continent_id,languages,bars,stripes,bends,colors,red,green,blue,gold_yellow,white,black_grey,orange_brown,pink_purple,main_hue,circles,crosses,saltires,quarters,sun_stars,crescent_moon,triangle,inanimate_image,animate_image,text,crest_emblem,border,trapezoid
-af,Afghanistan,Islamic Republic of Afghanistan,652230,40121552,2,"fas, pus",3,0,0,4,1,1,0,0,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
-al,Albania,Republic of Albania,28748,3107100,3,"sqi, ell",0,0,0,2,1,0,0,0,0,1,0,0,red,0,0,0,0,0,0,0,0,1,0,1,0,0
-dz,Algeria,People's Democratic Republic of Algeria,2381740,47022473,1,"ara, fra",2,0,0,3,1,1,0,0,1,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
-as,American Samoa,,224,43895,5,"smo, eng",0,0,0,4,1,0,1,1,1,0,0,0,blue,0,0,0,0,0,0,1,1,1,0,0,0,0
-ad,Andorra,Principality of Andorra,468,85370,3,"cat, spa",3,0,0,3,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,1,1,1,1,0,0
-ao,Angola,Republic of Angola,1246700,37202061,1,"por, umb",0,2,0,3,1,0,0,1,0,1,0,0,red,0,0,0,0,1,0,0,1,0,0,1,0,0
-ai,Anguilla,,91,19416,4,eng,0,0,0,4,1,0,1,0,1,0,1,0,blue,1,2,2,1,0,0,0,0,1,0,1,0,0
-ag,Antigua and Barbuda,,443,102634,4,"eng, cpe",0,1,0,5,1,0,1,1,1,1,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,0
-ar,Argentina,Argentine Republic,2780400,46994384,6,"spa, ita",0,3,0,3,0,0,1,1,1,0,0,0,blue,1,0,0,0,1,0,0,0,1,0,0,0,0
-am,Armenia,Republic of Armenia,29743,2976765,3,hye,0,3,0,3,1,0,1,0,0,0,1,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-aw,Aruba,,180,125063,6,"pap, spa",0,2,0,4,1,0,1,1,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
-au,Australia,Commonwealth of Australia,7741220,26768598,5,"eng, zho",0,0,0,3,1,0,1,0,1,0,0,0,blue,0,2,2,1,6,0,0,0,0,0,0,0,0
-at,Austria,Republic of Austria,83871,8967982,3,"deu, tur",0,3,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-az,Azerbaijan,Republic of Azerbaijan,86600,10650239,2,"aze, rus",0,3,0,4,1,1,1,0,1,0,0,0,blue,0,0,0,0,1,1,0,0,0,0,0,0,0
-bs,Bahamas,Commonwealth of the Bahamas,13880,410862,4,"eng, hat",0,3,0,3,0,0,1,1,0,1,0,0,blue,0,0,0,0,0,0,1,0,0,0,0,0,0
-bh,Bahrain,Kingdom of Bahrain,760,1566888,2,"ara, eng",0,0,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
-bd,Bangladesh,People's Republic of Bangladesh,148460,168697184,2,ben,0,0,0,2,1,1,0,0,0,0,0,0,green,1,0,0,0,0,0,0,0,0,0,0,0,0
-bb,Barbados,,430,304139,4,"eng, cpe",3,0,0,3,0,0,1,1,0,1,0,0,blue,0,0,0,0,0,0,0,1,0,0,1,0,0
-by,Belarus,Republic of Belarus,207600,9501451,3,"rus, bel",0,2,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
-be,Belgium,Kingdom of Belgium,30528,11977634,3,"nld, fra",3,0,0,3,1,0,0,1,0,1,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-bz,Belize,,22966,415789,4,"eng, spa",0,2,0,7,1,1,1,1,1,1,1,0,blue,1,0,0,0,0,0,0,1,1,1,1,0,0
-bj,Benin,Republic of Benin,112622,14697052,1,"fra, yom",1,2,0,3,1,1,0,1,0,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-bm,Bermuda,,54,72800,4,"eng, por",0,0,0,7,1,1,1,1,1,1,1,0,red,0,2,2,1,0,0,0,1,1,0,1,0,0
-bt,Bhutan,Kingdom of Bhutan,38394,884546,2,dzo,0,0,0,4,0,0,0,1,1,1,1,0,gold,4,0,0,0,0,0,0,1,1,0,1,0,0
-bo,Bolivia,Plurinational State of Bolivia,1098581,12311974,1,"spa, que",0,3,0,7,1,1,1,1,1,1,1,0,red,1,0,0,0,10,0,0,1,1,1,1,0,0
-ba,Bosnia and Herzegovina,,51197,3798671,3,"bos, srp",1,0,0,3,0,0,1,1,1,0,0,0,blue,0,0,0,0,8,0,1,0,0,0,0,0,0
-bw,Botswana,Republic of Botswana,581730,2450668,1,tsn,0,1,0,3,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-br,Brazil,Federative Republic of Brazil,8515770,220051512,6,"por, deu",0,0,0,4,0,1,1,1,1,0,0,0,green,1,0,0,0,27,0,0,0,0,1,0,0,0
-vg,British Virgin Islands,,151,40102,4,"eng, cpe",0,0,0,7,1,1,1,1,1,1,1,0,blue,0,2,2,1,0,0,0,1,1,1,1,0,0
-bn,Brunei,Brunei Darussalam,5765,491900,2,"msa, eng",0,0,2,4,1,0,0,1,1,1,0,0,gold,1,0,0,0,0,0,0,1,1,1,1,0,0
-bg,Bulgaria,Republic of Bulgaria,110879,6782659,3,"bul, tur",0,3,0,3,1,1,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-bf,Burkina Faso,,274200,23042199,1,"mos, ful",0,2,0,3,1,1,0,1,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-bi,Burundi,Burundian Republic,27830,13590102,1,"run, fra",0,0,0,3,1,1,0,0,1,0,0,0,red,1,0,1,0,3,0,0,0,0,0,0,0,0
-cv,Cabo Verde,Republic of Cabo Verde; Cape Verde,4033,611014,1,"por, cpp",0,3,0,4,1,0,1,1,1,0,0,0,blue,1,0,0,0,10,0,0,0,0,0,0,0,0
-kh,Cambodia,Kingdom of Cambodia,181035,17063669,2,khm,0,3,0,3,1,0,1,0,1,0,0,0,blue,0,0,0,0,0,0,0,1,0,0,1,0,0
-cm,Cameroon,Republic of Cameroon,475440,30966105,1,"eng, fra",3,0,0,3,1,1,0,1,0,0,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
-ca,Canada,,9984670,38794813,4,"eng, fra",3,0,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
-ky,Cayman Islands,,264,66653,4,"eng, spa",0,0,0,6,1,1,1,1,1,0,1,0,blue,0,2,2,1,3,0,0,1,1,1,1,0,0
-cf,Central Africa,Central African Republic,622984,5650957,1,"fra, sag",1,4,0,5,1,1,1,1,1,0,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
-td,Chad,Republic of Chad,1284,19093595,1,"fra, ara",3,0,0,3,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-cl,Chile,Republic of Chile,756102,18664652,6,"spa, eng",0,2,0,3,1,0,1,0,1,0,0,0,red,0,0,0,1,1,0,0,0,0,0,0,0,0
-cn,China,People's Republic of China,9596960,1416043270,2,zho,0,0,0,2,1,0,0,1,0,0,0,0,red,0,0,0,0,5,0,0,0,0,0,0,0,0
-co,Colombia,Republic of Colombia,1138910,49588357,6,spa,0,3,0,3,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-km,Comoros,Union of the Comoros,2235,900141,1,"ara, fra",0,4,0,5,1,1,1,1,1,0,0,0,green,0,0,0,0,4,1,1,0,0,0,0,0,0
-cg,Congo,Republic of the Congo,342000,6097665,1,"fra, lin",0,0,1,3,1,1,0,1,0,0,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
-ck,Cook Islands,,236,7761,5,"eng, mri",0,0,0,3,1,0,1,0,1,0,0,0,blue,1,2,2,1,15,0,0,0,0,0,0,0,0
-cr,Costa Rica,Republic of Costa Rica,51100,5265575,4,"spa, eng",0,5,0,7,1,1,1,1,1,1,1,0,blue,1,0,0,0,8,0,0,1,0,1,1,0,0
-ci,Cote d'Ivoire,Côte d'Ivoire; Ivory Coast,322463,29981758,1,fra,3,0,0,3,0,1,0,0,1,0,1,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-hr,Croatia,Republic of Croatia,56594,4150116,3,"hrv, srp",0,3,0,5,1,0,1,1,1,1,0,0,red,0,0,0,0,2,1,0,1,1,0,1,0,0
-cu,Cuba,Republic of Cuba,110860,10966038,4,spa,0,5,0,3,1,0,1,0,1,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
-cy,Cyprus,Cyprus Republic,9251,1320525,3,"ell, tur",0,0,0,3,0,1,0,1,1,0,0,0,white,0,0,0,0,0,0,0,1,0,0,0,0,0
-cz,Czechia,Czech Republic,78867,10837890,3,"ces, slk",0,2,0,3,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,1,0,0,0,0,0,0
-cd,Democratic Republic of the Congo,Congo-Kinshasa; DRC,2344858,115403027,1,"fra, lin",0,0,1,3,1,0,1,1,0,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
-dk,Denmark,Kingdom of Denmark,43094,5973136,3,"dan, fao",0,0,0,2,1,0,0,0,1,0,0,0,red,0,1,0,0,0,0,0,0,0,0,0,0,0
-dj,Djibouti,Republic of Djibouti,23200,994974,1,"fra, ara",0,2,0,4,1,1,1,0,1,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
-dm,Dominica,Commonwealth of Dominica,751,74661,4,"eng, cpf",0,0,0,6,1,1,1,1,1,1,0,0,green,1,3,0,0,10,0,0,0,1,0,0,0,0
-do,Dominican Republic,República Dominicana,48670,10815857,4,spa,0,0,0,5,1,1,1,1,1,0,0,0,blue,0,1,0,0,0,0,0,0,0,1,1,0,0
-ec,Ecuador,Republic of Ecuador,283561,18309984,6,"spa, que",0,3,0,7,1,1,1,1,1,1,1,0,gold,1,0,0,0,1,0,0,1,1,1,1,0,0
-eg,Egypt,Arab Republic of Egypt,1001450,111247248,1,"ara, eng",0,3,0,4,1,0,0,1,1,1,0,0,red,0,0,0,0,0,0,0,1,1,1,1,0,0
-sv,El Salvador,Republic of El Salvador,21041,6628702,6,spa,0,3,0,7,1,1,1,1,1,1,1,0,blue,1,0,0,0,0,0,1,1,0,1,1,0,0
-gq,Equatorial Guinea,Republic of Equatorial Guinea,28051,1795834,1,spa,0,3,0,7,1,1,1,1,1,1,1,0,green,0,0,0,0,6,0,1,1,1,1,1,0,0
-er,Eritrea,State of Eritrea,117600,6343956,1,"tir, ara",0,0,0,4,1,1,1,1,0,0,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,0
-ee,Estonia,Republic of Estonia,45228,1193791,3,"est, rus",0,3,0,3,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-sz,Eswatini,Kingdom of Eswatini,17364,1138089,1,"eng, ssw",0,5,0,5,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
-et,Ethiopia,Federal Democratic Republic of Ethiopia,1104300,118550298,1,"orm, amh",0,3,0,4,1,1,1,1,0,0,0,0,green,1,0,0,0,1,0,0,1,0,0,0,0,0
-fk,Falkland Islands,,12173,3662,6,"eng, spa",0,0,0,7,1,1,1,1,1,1,1,0,blue,0,2,2,1,5,0,0,1,1,1,1,0,0
-fo,Faroe Islands,,1393,52933,3,"fao, dan",0,0,0,3,1,0,1,0,1,0,0,0,white,0,2,0,0,0,0,0,0,0,0,0,0,0
-fj,Fiji,Republic of Fiji,18274,951611,5,"eng, fij",0,0,0,6,1,1,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
-fi,Finland,Republic of Finland,338145,5626414,3,"fin, swe",0,0,0,2,0,0,1,0,1,0,0,0,white,0,1,0,0,0,0,0,0,0,0,0,0,0
-fr,France,French Republic,643801,68374591,3,fra,3,0,0,3,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-pf,French Polynesia,,4167,303540,5,"fra, tah",0,3,0,5,1,0,1,1,1,0,1,0,red,1,0,0,0,5,0,0,1,0,0,1,0,0
-ga,Gabon,Gabonese Republic,267667,2455105,1,"fra, fan",0,3,0,3,0,1,1,1,0,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-gm,Gambia,Republic of the Gambia; The Gambia,11300,2523327,1,"eng, wol",0,3,0,4,1,1,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-ge,Georgia,,69700,4900961,2,kat,0,0,0,2,1,0,0,0,1,0,0,0,red,0,5,0,0,0,0,0,0,0,0,0,0,0
-de,Germany,Federal Republic of Germany,357022,84119100,3,"deu, dan",0,3,0,3,1,0,0,1,0,1,0,0,black,0,0,0,0,0,0,0,0,0,0,0,0,0
-gh,Ghana,Republic of Ghana,238553,34589092,1,"ewe, fat",0,3,0,4,1,1,0,1,0,1,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-gi,Gibraltar,,7,29683,3,"eng, spa",0,2,0,4,1,0,0,1,1,1,0,0,white,0,0,0,0,0,0,0,1,0,0,1,0,0
-gr,Greece,Hellenic Republic,131957,10461091,3,ell,0,9,0,2,0,0,1,0,1,0,0,0,blue,0,1,0,1,0,0,0,0,0,0,0,0,0
-gl,Greenland,Kalaallit Nunaat,2166086,57751,4,"kal, dan",0,2,0,2,1,0,0,0,1,0,0,0,white,1,0,0,0,0,0,0,0,0,0,0,0,0
-gd,Grenada,,344,114621,4,"eng, cpf",0,0,0,3,1,1,0,1,0,0,0,0,gold,1,0,0,0,7,0,0,1,0,0,0,1,0
-gu,Guam,,544,169532,5,"eng, fil",0,0,0,6,1,1,1,1,1,0,1,0,blue,0,0,0,0,0,0,0,1,1,1,1,1,0
-gt,Guatemala,Republic of Guatemala,108889,18255216,6,"spa, myn",3,0,0,7,1,1,1,1,1,1,1,0,blue,0,0,0,0,0,0,0,1,1,1,1,0,0
-gg,Guernsey,,78,67787,3,"eng, fra",0,0,0,3,1,0,0,1,1,0,0,0,red,0,2,0,0,0,0,0,0,0,0,0,0,0
-gn,Guinea,Republic of Guinea,245857,13986179,1,"fra, sus",3,0,0,3,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-gw,Guinea Bissau,Republic of Guinea-Bissau,36125,2132325,1,"cpp, por",1,2,0,4,1,1,0,1,0,1,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
-gy,Guyana,Co-operative Republic of Guyana,214969,794099,6,"eng, cpe",0,0,0,5,1,1,0,1,1,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
-ht,Haiti,Republic of Haiti,27750,11753943,4,"fra, hat",0,2,0,6,1,1,1,1,1,1,0,0,blue,0,0,0,0,0,0,0,1,1,1,1,0,0
-hn,Honduras,Republic of Honduras,112090,9529188,6,spa,0,3,0,2,0,0,1,0,1,0,0,0,blue,0,0,0,0,5,0,0,0,0,0,0,0,0
-hk,Hong Kong,,1108,7297821,2,"zho, eng",0,0,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,5,0,0,1,0,0,0,0,0
-hu,Hungary,,93028,9855745,3,"hun, eng",0,3,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-is,Iceland,Republic of Iceland,103000,364036,3,"isl, pol",0,0,0,3,1,0,1,0,1,0,0,0,blue,0,2,0,0,0,0,0,0,0,0,0,0,0
-in,India,Republic of India,3287263,1409128296,2,"hin, ben",0,3,0,4,0,1,1,0,1,0,1,0,orange,1,0,0,0,0,0,0,1,0,0,0,0,0
-id,Indonesia,Republic of Indonesia,1904569,281562465,2,"ind, eng",0,2,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-ir,Iran,Islamic Republic of Iran,1648195,88386937,2,"fas, tur",0,3,0,3,1,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,1,0,1,1,0,0
-iq,Iraq,Republic of Iraq,438317,42083436,2,"ara, kur",0,3,0,4,1,1,0,0,1,1,0,0,red,0,0,0,0,0,0,0,0,0,1,0,0,0
-ie,Ireland,,70273,5233461,3,"eng, gle",3,0,0,3,0,1,0,0,1,0,1,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-im,Isle of Man,,572,92269,3,"eng, glv",0,0,0,3,1,0,0,1,1,0,0,0,red,0,0,0,0,3,0,0,0,1,0,1,0,0
-il,Israel,State of Israel,21937,9402617,2,"heb, ara",0,2,0,2,0,0,1,0,1,0,0,0,white,0,0,0,0,1,0,0,0,0,0,0,0,0
-it,Italy,Italian Republic,301340,60964931,3,"ita, deu",3,0,0,3,1,1,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-jm,Jamaica,,10991,2823713,4,eng,0,0,0,3,0,1,0,1,0,1,0,0,green,0,0,1,0,0,0,1,0,0,0,0,0,0
-jp,Japan,,377915,123201945,2,jpn,0,0,0,2,1,0,0,0,1,0,0,0,white,1,0,0,0,1,0,0,0,0,0,0,0,0
-je,Jersey,,116,103387,3,"eng, por",0,0,0,3,1,0,0,1,1,0,0,0,red,0,0,1,0,0,0,0,1,1,0,1,0,0
-jo,Jordan,Hashemite Kingdom of Jordan,89342,11174024,2,"ara, eng",0,3,0,4,1,1,0,0,1,1,0,0,black,0,0,0,0,1,0,1,0,0,0,0,0,0
-kz,Kazakhstan,Republic of Kazakhstan,2724900,20260006,2,"kaz, rus",0,0,0,2,0,0,1,1,0,0,0,0,blue,1,0,0,0,1,0,0,1,1,0,0,0,0
-ke,Kenya,Republic of Kenya,580367,58246378,1,"eng, swa",0,3,0,4,1,1,0,0,1,1,0,0,red,1,0,0,0,0,0,0,1,0,0,0,0,0
-ki,Kiribati,Republic of Kiribati,811,116545,5,"gil, eng",0,6,0,4,1,0,1,1,1,0,0,0,red,0,0,0,0,1,0,0,1,1,0,0,0,0
-xk,Kosovo,Republic of Kosovo,10887,1977093,3,"sqi, bos",0,0,0,3,0,0,1,1,1,0,0,0,blue,0,0,0,0,6,0,0,1,0,0,0,0,0
-kw,Kuwait,State of Kuwait,17818,3138355,2,"ara, eng",0,3,0,4,1,1,0,0,1,1,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-kg,Kyrgyzstan,Kyrgyz Republic,199951,6172101,2,"kir, uzb",0,0,0,2,1,0,0,1,0,0,0,0,red,1,0,0,0,1,0,0,1,0,0,0,0,0
-la,Laos,Lao People's Democratic Republic,236800,7953556,2,"lao, fra",0,3,0,3,1,0,1,0,1,0,0,0,red,1,0,0,0,0,0,0,0,0,0,0,0,0
-lv,Latvia,Republic of Latvia,64589,1801246,3,"lav, rus",0,3,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-lb,Lebanon,Lebanese Republic,"10,400","5,364,482",2,"ara, eng",0,3,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,1,0,0,0,0
-ls,Lesotho,Kingdom of Lesotho,"30,355","2,227,548",1,"sot, eng",3,0,0,4,0,1,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,1,0,0,0,0,0
-lr,Liberia,Republic of Liberia,"111,369","5,437,249",1,"eng, kpe",0,11,0,3,1,0,1,0,1,0,0,0,red,0,0,0,1,1,0,0,0,0,0,0,0,0
-ly,Libya,State of Libya,"1,759,540","7,361,263",1,"ara, ita",0,3,0,4,1,1,0,0,1,1,0,0,black,0,0,0,0,1,1,0,0,0,0,0,0,0
-li,Liechtenstein,Principality of Liechtenstein,160,"40,272",3,"deu, ita",0,2,0,4,1,0,1,1,0,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
-lt,Lithuania,Republic of Lithuania,"65,300","2,628,186",3,"lit, rus",0,3,0,3,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-lu,Luxembourg,Grand Duchy of Luxembourg,"2,586","671,254",3,"ltz, por",0,3,0,3,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-mo,Macau,Macao,28,"644,426",2,zho,0,0,0,3,0,1,0,1,1,0,0,0,green,1,0,0,0,5,0,0,1,0,0,1,0,0
-mk,Macedonia,North Macedonia,"25,713","2,135,622",3,"mkd, sqi",0,0,0,2,1,0,0,1,0,0,0,0,red,1,0,0,0,1,0,0,0,0,0,0,0,0
-mg,Madagascar,Republic of Madagascar,"587,041","29,452,714",1,"mlg, fra",1,2,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-mw,Malawi,Republic of Malawi,"118,484","21,763,309",1,"eng, nya",0,3,0,3,1,1,0,0,0,1,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-my,Malaysia,,"329,847","34,564,810",2,"msa, eng",0,14,0,4,1,0,1,1,1,0,0,0,red,0,0,0,1,1,1,0,0,0,0,0,0,0
-mv,Maldives,,298,"388,858",2,"div, eng",0,0,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,1,0,0,0,0,0,1,0
-ml,Mali,Republic of Mali,"1,240,192","21,990,607",1,"bam, fra",3,0,0,3,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
-mt,Malta,Republic of Malta,316,"469,730",3,"mlt, eng",2,0,0,3,1,0,0,0,1,1,0,0,red,1,1,0,0,0,0,0,1,1,1,1,0,0
-mh,Marshall Islands,Republic of the Marshall Islands,181,"82,011",5,mah,0,0,2,3,0,0,1,0,1,0,1,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
-mr,Mauritania,Islamic Republic of Mauritania,"1,030,700","4,328,040",1,"ara, ful",0,2,0,3,1,1,0,1,0,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
-mu,Mauritius,Republic of Mauritius,"2,040","1,310,504",1,"cpf, fra",0,4,0,4,1,1,1,1,0,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-mx,Mexico,United Mexican States,"1,964,375","130,739,927",4,"spa, sai",3,0,0,8,1,1,1,1,1,1,1,1,green,0,0,0,0,0,0,0,1,1,0,1,0,0
-fm,Micronesia,Federated States of Micronesia,702,"99,603",5,"eng, chk",0,0,0,2,0,0,1,0,1,0,0,0,blue,0,0,0,0,4,0,0,0,0,0,0,0,0
-md,Moldova,Republic of Moldova,"33,851","3,599,528",3,"rom, rus",3,0,0,6,1,1,1,1,0,1,1,0,gold,0,1,0,0,1,1,0,1,1,0,1,0,0
-mc,Monaco,Principality of Monaco,2,"31,813",3,"fra, eng",0,2,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-mn,Mongolia,,"1,564,116","3,281,676",2,"mon, rus",3,0,0,3,1,0,1,1,0,0,0,0,red,2,0,0,0,0,1,1,1,0,0,1,0,0
-me,Montenegro,,"13,812","599,849",3,"srp, cnr",0,0,0,4,1,1,1,1,0,0,0,0,red,1,3,0,0,0,0,0,1,1,0,1,1,0
-ms,Montserrat,,102,"5,468",4,eng,0,0,0,7,1,1,1,1,1,1,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
-ma,Morocco,Kingdom of Morocco,"716,550","37,387,585",1,"ara, zgh",0,0,0,2,1,1,0,0,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-mz,Mozambique,Republic of Mozambique,"799,380","33,350,954",1,"bnt, eng",0,3,0,5,1,1,0,1,1,1,0,0,green,0,0,0,0,1,0,1,1,0,0,0,0,1
-mm,Myanmar,Republic of the Union of Myanmar; Burma,"676,578","57,527,139",2,mya,0,3,0,4,1,1,0,1,1,0,0,0,yellow,0,0,0,0,1,0,0,0,0,0,0,0,0
-na,Namibia,Republic of Namibia,"824,292","2,803,660",1,"kua, khi",0,0,1,5,1,1,1,1,1,0,0,0,blue,1,0,0,0,1,0,1,0,0,0,0,0,0
-nr,Nauru,Republic of Nauru,21,"9,892",5,"nau, eng",0,1,0,3,0,0,1,1,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
-np,Nepal,Federal Democratic Republic of Nepal,"147,181","31,122,387",2,"nep, mai",0,0,0,3,1,0,1,0,1,0,0,0,red,0,0,0,0,2,1,1,0,0,0,0,0,0
-nl,Netherlands,Kingdom of the Netherlands,"41,543","17,772,378",3,"nld, fry",0,3,0,3,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-nz,New Zealand,,"268,838","5,161,211",5,"eng, mri",0,0,0,3,1,0,1,0,1,0,0,0,blue,0,2,2,1,4,0,0,0,0,0,0,0,0
-ni,Nicaragua,Republic of Nicaragua,"130,370","6,676,948",6,"spa, sai",0,3,0,7,1,1,1,1,1,0,1,1,blue,1,0,0,0,1,0,1,1,0,1,1,0,0
-ne,Niger,Republic of the Niger,"1,267,000","26,342,784",1,"hau, son",0,3,0,3,0,1,0,0,1,0,1,0,orange,1,0,0,0,0,0,0,0,0,0,0,0,0
-ng,Nigeria,Federal Republic of Nigeria,"923,768","236,747,130",1,"cpe, hau",3,0,0,2,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-nf,Norfolk Island,,36,"2,188",5,"eng, cpe",3,0,0,2,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,0,1,0,0,0,0
-kp,North Korea,Democratic People's Republic of Korea,"120,538","26,298,666",2,kor,0,3,0,3,1,0,1,0,1,0,0,0,red,1,0,0,0,1,0,0,0,0,0,0,0,0
-no,Norway,Kingdom of Norway,"323,802","5,509,733",3,"nno, nob",0,0,0,3,1,0,1,0,1,0,0,0,red,0,2,0,0,0,0,0,0,0,0,0,0,0
-om,Oman,Sultanate of Oman,"309,500","3,901,992",2,"ara, eng",1,3,0,3,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,1,1,0,0
-pk,Pakistan,Islamic Republic of Pakistan,"796,095","252,363,571",2,"pan, pus",1,0,0,2,0,1,0,0,1,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
-pw,Palau,Republic of Palau,459,"21,864",5,"pau, eng",0,0,0,2,0,0,1,1,0,0,0,0,blue,1,0,0,0,0,0,0,0,0,0,0,0,0
-ps,Palestine,State of Palestine,6220,5385012,2,"ara, heb",0,3,0,4,1,1,0,0,1,1,0,0,black,0,0,0,0,0,0,1,0,0,0,0,0,1
-pa,Panama,Republic of Panama,"75,420","4,470,241",6,"spa, sai",0,0,0,3,1,0,1,0,1,0,0,0,red,0,0,0,4,2,0,0,0,0,0,0,0,0
-pg,Papua New Guinea,Independent State of Papua New Guinea,"462,840","10,046,233",5,"cpe, eng",0,0,0,4,1,0,0,1,1,1,0,0,black,0,0,0,0,5,0,1,0,1,0,0,0,0
-py,Parguay,Republic of Paraguay,"406,752","7,522,549",6,"spa, grn",0,3,0,6,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
-pe,Peru,Republic of Peru,"1,285,216","32,600,249",6,"spa, que",3,0,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-ph,Philippines,Republic of the Philippines,"300,000","118,277,063",2,"tgl, ceb",0,2,0,4,1,0,1,1,1,0,0,0,blue,1,0,0,0,4,0,1,0,0,0,0,0,1
-pl,Poland,Republic of Poland,"312,685","38,746,310",3,"pol, sla",0,2,0,2,1,0,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-pt,Portugal,Portuguese Republic,"92,090","10,207,177",3,"por, mwl",2,0,0,6,1,1,1,1,1,1,0,0,red,1,0,0,0,0,0,0,1,0,0,1,0,0
-pr,Puerto Rico,,"9,104","3,019,450",4,"spa, eng",0,5,0,3,1,0,1,0,1,0,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,1
-qa,Qatar,State of Qatar,"11,586","2,552,088",2,"ara, eng",0,0,0,2,0,0,0,0,1,0,1,0,brown,0,0,0,0,0,0,1,0,0,0,0,0,0
-ro,Romania,,"238,391","18,148,155",3,"ron, hun",3,0,0,3,1,0,1,1,0,0,0,0,yellow,0,0,0,0,0,0,0,0,0,0,0,0,0
-ru,Russia,Russian Federation,"17,098,242","140,820,810",2,"rus, tat",0,3,0,3,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
-rw,Rwanda,Republic of Rwanda,"26,338","13,623,302",1,"kin, fra",3,0,0,3,0,1,1,1,0,0,0,0,blue,1,0,0,0,1,0,0,0,0,0,0,0,0
-ws,Samoa,,"2,831","208,853",5,"smo, eng",0,0,0,3,1,0,1,0,1,0,0,0,red,0,0,0,1,5,0,0,0,0,0,0,0,0
-sm,San Marino,Republic of San Marino,61,"35,095",3,ita,0,2,0,5,0,1,1,1,1,1,0,0,white,0,1,0,0,0,0,0,1,0,1,1,0,0
-st,Sao Tome and Principe,Democratic Republic of São Tomé and Príncipe,964,"223,561",1,"por, cpp",0,3,0,4,1,1,0,1,0,1,0,0,green,0,0,0,0,2,0,1,0,0,0,0,0,1
-sa,Saudi Arabia,Kingdom of Saudi Arabia,"2,149,690","36,544,431",2,ara,0,0,0,2,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,1,0,1,0,0,0
-sn,Senegal,Republic of Senegal,"196,722","18,847,519",1,"fra, wol",3,0,0,3,1,1,0,1,0,0,0,0,green,0,0,0,0,1,0,0,0,0,0,0,0,0
-rs,Serbia,Republic of Serbia,"77,474","6,652,212",3,"srp, hun",0,3,0,5,1,0,1,1,1,1,0,0,red,0,2,0,0,0,0,0,1,1,1,1,0,0
-sc,Seychelles,Republic of Seychelles,455,"98,187",1,"cpf, eng",0,0,5,5,1,1,1,1,1,0,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
-sl,Sierra Leone,Republic of Sierra Leone,"71,740","9,121,049",1,"eng, cpe",0,3,0,3,0,1,1,0,1,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-sg,Singapore,Republic of Singapore,719,"6,028,459",2,"eng, zho",0,2,0,2,1,0,0,0,1,0,0,0,white,0,0,0,0,5,1,0,0,0,0,0,0,0
-sk,Slovakia,Slovak Republic,"49,035","5,563,649",3,"slk, hun",0,3,0,3,1,0,1,0,1,0,0,0,red,0,1,0,0,0,0,0,1,0,0,1,0,0
-si,Slovenia,Republic of Slovenia,"20,273","2,097,893",3,"slv, hrv",0,3,0,4,1,0,1,1,1,0,0,0,white,0,0,0,0,3,0,0,1,0,0,0,0,0
-sb,Soloman Islands,,"28,896","726,799",5,"cpe, eng",0,0,1,4,0,1,1,1,1,0,0,0,green,0,0,0,0,5,0,1,0,0,0,0,0,0
-so,Somalia,Federal Republic of Somalia,"637,657","13,017,273",1,"som, ara",0,0,0,2,0,0,1,0,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
-za,South Africa,Republic of South Africa,"1,219,090","60,442,647",1,"zul, xho",0,2,0,6,1,1,1,1,1,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,1
-kr,South Korea,Republic of Korea,"99,720","52,081,799",2,"kor, eng",0,0,0,4,1,0,1,0,1,1,0,0,white,1,0,0,0,0,0,0,0,0,0,0,0,0
-ss,South Sudan,Republic of South Sudan,"644,329","12,703,714",1,"eng, ara",0,3,0,6,1,1,1,1,1,1,0,0,black,0,0,0,0,1,0,1,0,0,0,0,0,1
-es,Spain,Kingdom of Spain,"505,370","47,280,433",3,"spa, cat",0,3,0,7,1,1,1,1,1,1,0,1,red,1,3,0,0,0,0,0,1,1,1,1,0,0
-lk,Sri Lanka,Democratic Socialist Republic of Sri Lanka,"65,610","21,982,608",2,"sin, tam",2,0,0,4,0,1,0,1,0,0,1,1,gold,0,0,0,0,0,0,0,1,1,0,0,1,0
-sh,St Helena,Saint Helena; Ascension; Tristan da Cunha,394,"7,943",1,eng,0,0,0,5,1,0,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
-kn,St Kitts and Nevis,Saint Kitts and Nevis;Federation of Saint Kitts and Nevis,261,"55,133",4,eng,0,0,1,5,1,1,0,1,1,1,0,0,green,0,0,0,0,2,0,1,0,0,0,0,0,0
-lc,St Lucia,Saint Lucia,616,"168,038",4,"eng, cpf",0,0,0,4,0,0,1,1,1,1,0,0,blue,0,0,0,0,0,0,1,0,0,0,0,0,0
-vc,St Vincent and the Grenadines,Saint Vincent and the Grenadines,389,"100,647",4,"eng, cpe",3,0,0,3,0,1,1,1,0,0,0,0,green,0,0,0,0,0,0,0,1,0,0,0,0,0
-sd,Sudan,Republic of the Sudan,"1,861,484","50,467,278",1,"ara, eng",0,3,0,4,1,1,0,0,1,1,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,1
-sr,Suriname,Republic of Suriname,"163,820","646,758",6,"nld, eng",0,5,0,4,1,1,0,1,1,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-se,Sweden,Kingdom of Sweden,"450,295","10,589,835",3,swe,0,0,0,2,0,0,1,1,0,0,0,0,blue,0,1,0,0,0,0,0,0,0,0,0,0,0
-ch,Switzerland,Swiss Confederation,"41,277","8,860,574",3,"deu, fra",0,0,0,2,1,0,0,0,1,0,0,0,red,0,1,0,0,0,0,0,0,0,0,0,0,0
-sy,Syria,Syrian Arab Republic,"187,437","23,865,423",2,"ara, kur",0,3,0,4,1,1,0,0,1,1,0,0,green,0,0,0,0,3,0,0,0,0,0,0,0,0
-tw,Taiwan,Republic of China,"35,980","23,595,274",2,zho,0,0,0,3,1,0,1,0,1,0,0,0,red,1,0,0,1,1,0,0,0,0,0,0,0,0
-tj,Tajikistan,Republic of Tajikistan,"144,100","10,394,063",2,"tgk, uzb",0,3,0,4,1,1,0,1,1,0,0,0,red,1,0,0,0,7,0,0,1,0,0,0,0,0
-tz,Tanzania,United Republic of Tanzania,"947,300","67,462,121",1,"swa, eng",0,0,1,4,0,1,1,1,0,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
-th,Thailand,Kingdom of Thailand,"513,120","69,920,998",2,tha,0,5,0,3,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-tl,Timor Leste,Democratic Republic of Timor-Leste,"14,874","1,506,909",2,"tet, map",0,0,0,4,1,0,0,1,1,1,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,0
-tg,Togo,Togolese Republic,"56,785","8,917,994",1,"fra, ewe",0,5,0,4,1,1,0,1,1,0,0,0,green,0,0,0,1,1,0,0,0,0,0,0,0,0
-to,Tonga,Kingdom of Tonga,747,"104,889",5,ton,0,0,0,2,1,0,0,0,1,0,0,0,red,0,1,0,1,0,0,0,0,0,0,0,0,0
-tt,Trinidad and Tobago,Republic of Trinidad and Tobago,"5,128","1,408,966",4,"eng, cpe",0,0,1,3,1,0,0,0,1,1,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
-tn,Tunisia,Tunisian Republic,"163,610","12,048,847",1,"ara, fra",0,0,0,2,1,0,0,0,1,0,0,0,red,1,0,0,0,1,1,0,0,0,0,0,0,0
-tr,Turkey,Republic of Turkey,"783,562","84,119,531",2,"tur, kur",0,0,0,2,1,0,0,0,1,0,0,0,red,0,0,0,0,1,1,0,0,0,0,0,0,0
-tm,Turkmenistan,,"488,100","5,744,151",2,"tuk, rus",1,0,0,4,1,1,0,1,1,0,0,0,green,0,0,0,0,5,1,1,1,0,0,0,0,0
-tc,Turks and Caicos Islands,,948,"60,439",4,eng,0,0,0,7,1,1,1,1,1,0,1,1,blue,0,2,2,1,0,0,0,1,1,0,1,0,0
-tv,Tuvalu,,26,"11,733",5,"tvl, eng",0,0,0,4,1,0,1,1,1,0,0,0,blue,0,2,2,1,9,0,0,0,0,0,0,0,0
-ug,Uganda,Republic of Uganda,"241,038","49,283,041",1,"eng, lug",0,6,0,4,1,0,0,1,1,1,0,0,gold,1,0,0,0,0,0,0,0,1,0,0,0,0
-ua,Ukraine,,"603,550","35,661,826",3,"ukr, rus",0,2,0,2,0,0,1,1,0,0,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-uk,United Kingdom,United Kingdom of Great Britain and Northern Ireland,"243,610","68,459,055",3,eng,0,0,0,3,1,0,1,0,1,0,0,0,red,0,2,2,0,0,0,0,0,0,0,0,0,0
-ae,United Arab Emirates,United Arab Emirates;UAE,"83,600","10,032,213",2,"ara, eng",1,3,0,4,1,1,0,0,1,1,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
-us,United States,United States of America;USA,"9,833,517","341,963,408",4,"eng, spa",0,13,0,3,1,0,1,0,1,0,0,0,white,0,0,0,1,50,0,0,0,0,0,0,0,0
-uy,Uruguay,Eastern Republic of Uruguay,"176,215","3,425,330",6,spa,0,9,0,4,0,0,1,1,1,0,1,0,white,0,0,0,1,1,0,0,0,1,0,0,0,0
-vi,US Virgin Islands,,"1,910","104,377",4,"eng, spa",0,0,0,5,1,1,1,1,1,0,0,0,white,0,0,0,0,0,0,0,1,1,1,1,0,0
-uz,Uzbekistan,Republic of Uzbekistan,"447,400","36,520,593",2,"uzb, rus",0,3,0,4,1,1,1,0,1,0,0,0,white,0,0,0,0,12,1,0,0,0,0,0,0,0
-vu,Vanuatu,Republic of Vanuatu,"12,189","318,007",5,"map, cpe",0,2,0,4,1,1,0,1,0,1,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,1
-ve,Venezuela,Bolivarian Republic of Venezuela,"912,050","31,250,306",6,"spa, sai",0,3,0,4,1,0,1,1,1,0,0,0,yellow,0,0,0,0,8,0,0,0,0,0,0,0,0
-vn,Vietnam,Việt Nam;Socialist Republic of Vietnam,"331,210","105,758,975",2,"vie, eng",0,0,0,2,1,0,0,1,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
-ye,Yemen,Republic of Yemen,"527,968","32,140,443",2,ara,0,3,0,3,1,0,0,0,1,1,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
-zm,Zambia,Republic of Zambia,"752,618","20,799,116",1,"bem, nya",3,0,0,4,1,1,0,0,0,1,1,0,green,0,0,0,0,0,0,0,0,1,0,0,0,0
-zw,Zimbabwe,Republic of Zimbabwe,"390,757","17,150,352",1,"sna, nde",0,7,0,5,1,1,0,1,1,1,0,0,green,0,0,0,0,1,0,1,1,1,0,0,0,1
+country_code,name,other_names,area,population,continent_id,languages,bars,stripes,bends,red,green,blue,gold_yellow,white,black_grey,orange_brown,pink_purple,main_hue,circles,crosses,saltires,quarters,sun_stars,crescent_moon,triangle,inanimate_image,animate_image,text,crest_emblem,border,trapezoid
+af,Afghanistan,Islamic Republic of Afghanistan,652230,40121552,2,"fas, pus",3,0,0,1,1,0,0,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
+al,Albania,Republic of Albania,28748,3107100,3,"sqi, ell",0,0,0,1,0,0,0,0,1,0,0,red,0,0,0,0,0,0,0,0,1,0,1,0,0
+dz,Algeria,People's Democratic Republic of Algeria,2381740,47022473,1,"ara, fra",2,0,0,1,1,0,0,1,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
+as,American Samoa,,224,43895,5,"smo, eng",0,0,0,1,0,1,1,1,0,0,0,blue,0,0,0,0,0,0,1,1,1,0,0,0,0
+ad,Andorra,Principality of Andorra,468,85370,3,"cat, spa",3,0,0,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,1,1,1,1,0,0
+ao,Angola,Republic of Angola,1246700,37202061,1,"por, umb",0,2,0,1,0,0,1,0,1,0,0,red,0,0,0,0,1,0,0,1,0,0,1,0,0
+ai,Anguilla,,91,19416,4,eng,0,0,0,1,0,1,0,1,0,1,0,blue,1,2,2,1,0,0,0,0,1,0,1,0,0
+ag,Antigua and Barbuda,,443,102634,4,"eng, cpe",0,1,0,1,0,1,1,1,1,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,0
+ar,Argentina,Argentine Republic,2780400,46994384,6,"spa, ita",0,3,0,0,0,1,1,1,0,0,0,blue,1,0,0,0,1,0,0,0,1,0,0,0,0
+am,Armenia,Republic of Armenia,29743,2976765,3,hye,0,3,0,1,0,1,0,0,0,1,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+aw,Aruba,,180,125063,6,"pap, spa",0,2,0,1,0,1,1,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
+au,Australia,Commonwealth of Australia,7741220,26768598,5,"eng, zho",0,0,0,1,0,1,0,1,0,0,0,blue,0,2,2,1,6,0,0,0,0,0,0,0,0
+at,Austria,Republic of Austria,83871,8967982,3,"deu, tur",0,3,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+az,Azerbaijan,Republic of Azerbaijan,86600,10650239,2,"aze, rus",0,3,0,1,1,1,0,1,0,0,0,blue,0,0,0,0,1,1,0,0,0,0,0,0,0
+bs,Bahamas,Commonwealth of the Bahamas,13880,410862,4,"eng, hat",0,3,0,0,0,1,1,0,1,0,0,blue,0,0,0,0,0,0,1,0,0,0,0,0,0
+bh,Bahrain,Kingdom of Bahrain,760,1566888,2,"ara, eng",0,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
+bd,Bangladesh,People's Republic of Bangladesh,148460,168697184,2,ben,0,0,0,1,1,0,0,0,0,0,0,green,1,0,0,0,0,0,0,0,0,0,0,0,0
+bb,Barbados,,430,304139,4,"eng, cpe",3,0,0,0,0,1,1,0,1,0,0,blue,0,0,0,0,0,0,0,1,0,0,1,0,0
+by,Belarus,Republic of Belarus,207600,9501451,3,"rus, bel",0,2,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+be,Belgium,Kingdom of Belgium,30528,11977634,3,"nld, fra",3,0,0,1,0,0,1,0,1,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+bz,Belize,,22966,415789,4,"eng, spa",0,2,0,1,1,1,1,1,1,1,0,blue,1,0,0,0,0,0,0,1,1,1,1,0,0
+bj,Benin,Republic of Benin,112622,14697052,1,"fra, yom",1,2,0,1,1,0,1,0,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+bm,Bermuda,,54,72800,4,"eng, por",0,0,0,1,1,1,1,1,1,1,0,red,0,2,2,1,0,0,0,1,1,0,1,0,0
+bt,Bhutan,Kingdom of Bhutan,38394,884546,2,dzo,0,0,0,0,0,0,1,1,1,1,0,gold,4,0,0,0,0,0,0,1,1,0,1,0,0
+bo,Bolivia,Plurinational State of Bolivia,1098581,12311974,1,"spa, que",0,3,0,1,1,1,1,1,1,1,0,red,1,0,0,0,10,0,0,1,1,1,1,0,0
+ba,Bosnia and Herzegovina,,51197,3798671,3,"bos, srp",1,0,0,0,0,1,1,1,0,0,0,blue,0,0,0,0,8,0,1,0,0,0,0,0,0
+bw,Botswana,Republic of Botswana,581730,2450668,1,tsn,0,1,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
+br,Brazil,Federative Republic of Brazil,8515770,220051512,6,"por, deu",0,0,0,0,1,1,1,1,0,0,0,green,1,0,0,0,27,0,0,0,0,1,0,0,0
+vg,British Virgin Islands,,151,40102,4,"eng, cpe",0,0,0,1,1,1,1,1,1,1,0,blue,0,2,2,1,0,0,0,1,1,1,1,0,0
+bn,Brunei,Brunei Darussalam,5765,491900,2,"msa, eng",0,0,2,1,0,0,1,1,1,0,0,gold,1,0,0,0,0,0,0,1,1,1,1,0,0
+bg,Bulgaria,Republic of Bulgaria,110879,6782659,3,"bul, tur",0,3,0,1,1,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+bf,Burkina Faso,,274200,23042199,1,"mos, ful",0,2,0,1,1,0,1,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+bi,Burundi,Burundian Republic,27830,13590102,1,"run, fra",0,0,0,1,1,0,0,1,0,0,0,red,1,0,1,0,3,0,0,0,0,0,0,0,0
+cv,Cabo Verde,Republic of Cabo Verde; Cape Verde,4033,611014,1,"por, cpp",0,3,0,1,0,1,1,1,0,0,0,blue,1,0,0,0,10,0,0,0,0,0,0,0,0
+kh,Cambodia,Kingdom of Cambodia,181035,17063669,2,khm,0,3,0,1,0,1,0,1,0,0,0,blue,0,0,0,0,0,0,0,1,0,0,1,0,0
+cm,Cameroon,Republic of Cameroon,475440,30966105,1,"eng, fra",3,0,0,1,1,0,1,0,0,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
+ca,Canada,,9984670,38794813,4,"eng, fra",3,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+ky,Cayman Islands,,264,66653,4,"eng, spa",0,0,0,1,1,1,1,1,0,1,0,blue,0,2,2,1,3,0,0,1,1,1,1,0,0
+cf,Central Africa,Central African Republic,622984,5650957,1,"fra, sag",1,4,0,1,1,1,1,1,0,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
+td,Chad,Republic of Chad,1284,19093595,1,"fra, ara",3,0,0,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+cl,Chile,Republic of Chile,756102,18664652,6,"spa, eng",0,2,0,1,0,1,0,1,0,0,0,red,0,0,0,1,1,0,0,0,0,0,0,0,0
+cn,China,People's Republic of China,9596960,1416043270,2,zho,0,0,0,1,0,0,1,0,0,0,0,red,0,0,0,0,5,0,0,0,0,0,0,0,0
+co,Colombia,Republic of Colombia,1138910,49588357,6,spa,0,3,0,1,0,1,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+km,Comoros,Union of the Comoros,2235,900141,1,"ara, fra",0,4,0,1,1,1,1,1,0,0,0,green,0,0,0,0,4,1,1,0,0,0,0,0,0
+cg,Congo,Republic of the Congo,342000,6097665,1,"fra, lin",0,0,1,1,1,0,1,0,0,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
+ck,Cook Islands,,236,7761,5,"eng, mri",0,0,0,1,0,1,0,1,0,0,0,blue,1,2,2,1,15,0,0,0,0,0,0,0,0
+cr,Costa Rica,Republic of Costa Rica,51100,5265575,4,"spa, eng",0,5,0,1,1,1,1,1,1,1,0,blue,1,0,0,0,8,0,0,1,0,1,1,0,0
+ci,Cote d'Ivoire,Côte d'Ivoire; Ivory Coast,322463,29981758,1,fra,3,0,0,0,1,0,0,1,0,1,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+hr,Croatia,Republic of Croatia,56594,4150116,3,"hrv, srp",0,3,0,1,0,1,1,1,1,0,0,red,0,0,0,0,2,1,0,1,1,0,1,0,0
+cu,Cuba,Republic of Cuba,110860,10966038,4,spa,0,5,0,1,0,1,0,1,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
+cy,Cyprus,Cyprus Republic,9251,1320525,3,"ell, tur",0,0,0,0,1,0,1,1,0,0,0,white,0,0,0,0,0,0,0,1,0,0,0,0,0
+cz,Czechia,Czech Republic,78867,10837890,3,"ces, slk",0,2,0,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,1,0,0,0,0,0,0
+cd,Democratic Republic of the Congo,Congo-Kinshasa; DRC,2344858,115403027,1,"fra, lin",0,0,1,1,0,1,1,0,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
+dk,Denmark,Kingdom of Denmark,43094,5973136,3,"dan, fao",0,0,0,1,0,0,0,1,0,0,0,red,0,1,0,0,0,0,0,0,0,0,0,0,0
+dj,Djibouti,Republic of Djibouti,23200,994974,1,"fra, ara",0,2,0,1,1,1,0,1,0,0,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
+dm,Dominica,Commonwealth of Dominica,751,74661,4,"eng, cpf",0,0,0,1,1,1,1,1,1,0,0,green,1,3,0,0,10,0,0,0,1,0,0,0,0
+do,Dominican Republic,República Dominicana,48670,10815857,4,spa,0,0,0,1,1,1,1,1,0,0,0,blue,0,1,0,0,0,0,0,0,0,1,1,0,0
+ec,Ecuador,Republic of Ecuador,283561,18309984,6,"spa, que",0,3,0,1,1,1,1,1,1,1,0,gold,1,0,0,0,1,0,0,1,1,1,1,0,0
+eg,Egypt,Arab Republic of Egypt,1001450,111247248,1,"ara, eng",0,3,0,1,0,0,1,1,1,0,0,red,0,0,0,0,0,0,0,1,1,1,1,0,0
+sv,El Salvador,Republic of El Salvador,21041,6628702,6,spa,0,3,0,1,1,1,1,1,1,1,0,blue,1,0,0,0,0,0,1,1,0,1,1,0,0
+gq,Equatorial Guinea,Republic of Equatorial Guinea,28051,1795834,1,spa,0,3,0,1,1,1,1,1,1,1,0,green,0,0,0,0,6,0,1,1,1,1,1,0,0
+er,Eritrea,State of Eritrea,117600,6343956,1,"tir, ara",0,0,0,1,1,1,1,0,0,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,0
+ee,Estonia,Republic of Estonia,45228,1193791,3,"est, rus",0,3,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
+sz,Eswatini,Kingdom of Eswatini,17364,1138089,1,"eng, ssw",0,5,0,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+et,Ethiopia,Federal Democratic Republic of Ethiopia,1104300,118550298,1,"orm, amh",0,3,0,1,1,1,1,0,0,0,0,green,1,0,0,0,1,0,0,1,0,0,0,0,0
+fk,Falkland Islands,,12173,3662,6,"eng, spa",0,0,0,1,1,1,1,1,1,1,0,blue,0,2,2,1,5,0,0,1,1,1,1,0,0
+fo,Faroe Islands,,1393,52933,3,"fao, dan",0,0,0,1,0,1,0,1,0,0,0,white,0,2,0,0,0,0,0,0,0,0,0,0,0
+fj,Fiji,Republic of Fiji,18274,951611,5,"eng, fij",0,0,0,1,1,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
+fi,Finland,Republic of Finland,338145,5626414,3,"fin, swe",0,0,0,0,0,1,0,1,0,0,0,white,0,1,0,0,0,0,0,0,0,0,0,0,0
+fr,France,French Republic,643801,68374591,3,fra,3,0,0,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+pf,French Polynesia,,4167,303540,5,"fra, tah",0,3,0,1,0,1,1,1,0,1,0,red,1,0,0,0,5,0,0,1,0,0,1,0,0
+ga,Gabon,Gabonese Republic,267667,2455105,1,"fra, fan",0,3,0,0,1,1,1,0,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+gm,Gambia,Republic of the Gambia; The Gambia,11300,2523327,1,"eng, wol",0,3,0,1,1,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+ge,Georgia,,69700,4900961,2,kat,0,0,0,1,0,0,0,1,0,0,0,red,0,5,0,0,0,0,0,0,0,0,0,0,0
+de,Germany,Federal Republic of Germany,357022,84119100,3,"deu, dan",0,3,0,1,0,0,1,0,1,0,0,black,0,0,0,0,0,0,0,0,0,0,0,0,0
+gh,Ghana,Republic of Ghana,238553,34589092,1,"ewe, fat",0,3,0,1,1,0,1,0,1,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+gi,Gibraltar,,7,29683,3,"eng, spa",0,2,0,1,0,0,1,1,1,0,0,white,0,0,0,0,0,0,0,1,0,0,1,0,0
+gr,Greece,Hellenic Republic,131957,10461091,3,ell,0,9,0,0,0,1,0,1,0,0,0,blue,0,1,0,1,0,0,0,0,0,0,0,0,0
+gl,Greenland,Kalaallit Nunaat,2166086,57751,4,"kal, dan",0,2,0,1,0,0,0,1,0,0,0,white,1,0,0,0,0,0,0,0,0,0,0,0,0
+gd,Grenada,,344,114621,4,"eng, cpf",0,0,0,1,1,0,1,0,0,0,0,gold,1,0,0,0,7,0,0,1,0,0,0,1,0
+gu,Guam,,544,169532,5,"eng, fil",0,0,0,1,1,1,1,1,0,1,0,blue,0,0,0,0,0,0,0,1,1,1,1,1,0
+gt,Guatemala,Republic of Guatemala,108889,18255216,6,"spa, myn",3,0,0,1,1,1,1,1,1,1,0,blue,0,0,0,0,0,0,0,1,1,1,1,0,0
+gg,Guernsey,,78,67787,3,"eng, fra",0,0,0,1,0,0,1,1,0,0,0,red,0,2,0,0,0,0,0,0,0,0,0,0,0
+gn,Guinea,Republic of Guinea,245857,13986179,1,"fra, sus",3,0,0,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+gw,Guinea Bissau,Republic of Guinea-Bissau,36125,2132325,1,"cpp, por",1,2,0,1,1,0,1,0,1,0,0,gold,0,0,0,0,1,0,0,0,0,0,0,0,0
+gy,Guyana,Co-operative Republic of Guyana,214969,794099,6,"eng, cpe",0,0,0,1,1,0,1,1,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
+ht,Haiti,Republic of Haiti,27750,11753943,4,"fra, hat",0,2,0,1,1,1,1,1,1,0,0,blue,0,0,0,0,0,0,0,1,1,1,1,0,0
+hn,Honduras,Republic of Honduras,112090,9529188,6,spa,0,3,0,0,0,1,0,1,0,0,0,blue,0,0,0,0,5,0,0,0,0,0,0,0,0
+hk,Hong Kong,,1108,7297821,2,"zho, eng",0,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,5,0,0,1,0,0,0,0,0
+hu,Hungary,,93028,9855745,3,"hun, eng",0,3,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+is,Iceland,Republic of Iceland,103000,364036,3,"isl, pol",0,0,0,1,0,1,0,1,0,0,0,blue,0,2,0,0,0,0,0,0,0,0,0,0,0
+in,India,Republic of India,3287263,1409128296,2,"hin, ben",0,3,0,0,1,1,0,1,0,1,0,orange,1,0,0,0,0,0,0,1,0,0,0,0,0
+id,Indonesia,Republic of Indonesia,1904569,281562465,2,"ind, eng",0,2,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+ir,Iran,Islamic Republic of Iran,1648195,88386937,2,"fas, tur",0,3,0,1,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,1,0,1,1,0,0
+iq,Iraq,Republic of Iraq,438317,42083436,2,"ara, kur",0,3,0,1,1,0,0,1,1,0,0,red,0,0,0,0,0,0,0,0,0,1,0,0,0
+ie,Ireland,,70273,5233461,3,"eng, gle",3,0,0,0,1,0,0,1,0,1,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+im,Isle of Man,,572,92269,3,"eng, glv",0,0,0,1,0,0,1,1,0,0,0,red,0,0,0,0,3,0,0,0,1,0,1,0,0
+il,Israel,State of Israel,21937,9402617,2,"heb, ara",0,2,0,0,0,1,0,1,0,0,0,white,0,0,0,0,1,0,0,0,0,0,0,0,0
+it,Italy,Italian Republic,301340,60964931,3,"ita, deu",3,0,0,1,1,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+jm,Jamaica,,10991,2823713,4,eng,0,0,0,0,1,0,1,0,1,0,0,green,0,0,1,0,0,0,1,0,0,0,0,0,0
+jp,Japan,,377915,123201945,2,jpn,0,0,0,1,0,0,0,1,0,0,0,white,1,0,0,0,1,0,0,0,0,0,0,0,0
+je,Jersey,,116,103387,3,"eng, por",0,0,0,1,0,0,1,1,0,0,0,red,0,0,1,0,0,0,0,1,1,0,1,0,0
+jo,Jordan,Hashemite Kingdom of Jordan,89342,11174024,2,"ara, eng",0,3,0,1,1,0,0,1,1,0,0,black,0,0,0,0,1,0,1,0,0,0,0,0,0
+kz,Kazakhstan,Republic of Kazakhstan,2724900,20260006,2,"kaz, rus",0,0,0,0,0,1,1,0,0,0,0,blue,1,0,0,0,1,0,0,1,1,0,0,0,0
+ke,Kenya,Republic of Kenya,580367,58246378,1,"eng, swa",0,3,0,1,1,0,0,1,1,0,0,red,1,0,0,0,0,0,0,1,0,0,0,0,0
+ki,Kiribati,Republic of Kiribati,811,116545,5,"gil, eng",0,6,0,1,0,1,1,1,0,0,0,red,0,0,0,0,1,0,0,1,1,0,0,0,0
+xk,Kosovo,Republic of Kosovo,10887,1977093,3,"sqi, bos",0,0,0,0,0,1,1,1,0,0,0,blue,0,0,0,0,6,0,0,1,0,0,0,0,0
+kw,Kuwait,State of Kuwait,17818,3138355,2,"ara, eng",0,3,0,1,1,0,0,1,1,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+kg,Kyrgyzstan,Kyrgyz Republic,199951,6172101,2,"kir, uzb",0,0,0,1,0,0,1,0,0,0,0,red,1,0,0,0,1,0,0,1,0,0,0,0,0
+la,Laos,Lao People's Democratic Republic,236800,7953556,2,"lao, fra",0,3,0,1,0,1,0,1,0,0,0,red,1,0,0,0,0,0,0,0,0,0,0,0,0
+lv,Latvia,Republic of Latvia,64589,1801246,3,"lav, rus",0,3,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+lb,Lebanon,Lebanese Republic,"10,400","5,364,482",2,"ara, eng",0,3,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,1,0,0,0,0
+ls,Lesotho,Kingdom of Lesotho,"30,355","2,227,548",1,"sot, eng",3,0,0,0,1,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,1,0,0,0,0,0
+lr,Liberia,Republic of Liberia,"111,369","5,437,249",1,"eng, kpe",0,11,0,1,0,1,0,1,0,0,0,red,0,0,0,1,1,0,0,0,0,0,0,0,0
+ly,Libya,State of Libya,"1,759,540","7,361,263",1,"ara, ita",0,3,0,1,1,0,0,1,1,0,0,black,0,0,0,0,1,1,0,0,0,0,0,0,0
+li,Liechtenstein,Principality of Liechtenstein,160,"40,272",3,"deu, ita",0,2,0,1,0,1,1,0,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+lt,Lithuania,Republic of Lithuania,"65,300","2,628,186",3,"lit, rus",0,3,0,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+lu,Luxembourg,Grand Duchy of Luxembourg,"2,586","671,254",3,"ltz, por",0,3,0,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+mo,Macau,Macao,28,"644,426",2,zho,0,0,0,0,1,0,1,1,0,0,0,green,1,0,0,0,5,0,0,1,0,0,1,0,0
+mk,Macedonia,North Macedonia,"25,713","2,135,622",3,"mkd, sqi",0,0,0,1,0,0,1,0,0,0,0,red,1,0,0,0,1,0,0,0,0,0,0,0,0
+mg,Madagascar,Republic of Madagascar,"587,041","29,452,714",1,"mlg, fra",1,2,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+mw,Malawi,Republic of Malawi,"118,484","21,763,309",1,"eng, nya",0,3,0,1,1,0,0,0,1,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+my,Malaysia,,"329,847","34,564,810",2,"msa, eng",0,14,0,1,0,1,1,1,0,0,0,red,0,0,0,1,1,1,0,0,0,0,0,0,0
+mv,Maldives,,298,"388,858",2,"div, eng",0,0,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,1,0,0,0,0,0,1,0
+ml,Mali,Republic of Mali,"1,240,192","21,990,607",1,"bam, fra",3,0,0,1,1,0,1,0,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,0,0,0
+mt,Malta,Republic of Malta,316,"469,730",3,"mlt, eng",2,0,0,1,0,0,0,1,1,0,0,red,1,1,0,0,0,0,0,1,1,1,1,0,0
+mh,Marshall Islands,Republic of the Marshall Islands,181,"82,011",5,mah,0,0,2,0,0,1,0,1,0,1,0,blue,0,0,0,0,1,0,1,0,0,0,0,0,0
+mr,Mauritania,Islamic Republic of Mauritania,"1,030,700","4,328,040",1,"ara, ful",0,2,0,1,1,0,1,0,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
+mu,Mauritius,Republic of Mauritius,"2,040","1,310,504",1,"cpf, fra",0,4,0,1,1,1,1,0,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+mx,Mexico,United Mexican States,"1,964,375","130,739,927",4,"spa, sai",3,0,0,1,1,1,1,1,1,1,1,green,0,0,0,0,0,0,0,1,1,0,1,0,0
+fm,Micronesia,Federated States of Micronesia,702,"99,603",5,"eng, chk",0,0,0,0,0,1,0,1,0,0,0,blue,0,0,0,0,4,0,0,0,0,0,0,0,0
+md,Moldova,Republic of Moldova,"33,851","3,599,528",3,"rom, rus",3,0,0,1,1,1,1,0,1,1,0,gold,0,1,0,0,1,1,0,1,1,0,1,0,0
+mc,Monaco,Principality of Monaco,2,"31,813",3,"fra, eng",0,2,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+mn,Mongolia,,"1,564,116","3,281,676",2,"mon, rus",3,0,0,1,0,1,1,0,0,0,0,red,2,0,0,0,0,1,1,1,0,0,1,0,0
+me,Montenegro,,"13,812","599,849",3,"srp, cnr",0,0,0,1,1,1,1,0,0,0,0,red,1,3,0,0,0,0,0,1,1,0,1,1,0
+ms,Montserrat,,102,"5,468",4,eng,0,0,0,1,1,1,1,1,1,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
+ma,Morocco,Kingdom of Morocco,"716,550","37,387,585",1,"ara, zgh",0,0,0,1,1,0,0,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+mz,Mozambique,Republic of Mozambique,"799,380","33,350,954",1,"bnt, eng",0,3,0,1,1,0,1,1,1,0,0,green,0,0,0,0,1,0,1,1,0,0,0,0,1
+mm,Myanmar,Republic of the Union of Myanmar; Burma,"676,578","57,527,139",2,mya,0,3,0,1,1,0,1,1,0,0,0,yellow,0,0,0,0,1,0,0,0,0,0,0,0,0
+na,Namibia,Republic of Namibia,"824,292","2,803,660",1,"kua, khi",0,0,1,1,1,1,1,1,0,0,0,blue,1,0,0,0,1,0,1,0,0,0,0,0,0
+nr,Nauru,Republic of Nauru,21,"9,892",5,"nau, eng",0,1,0,0,0,1,1,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
+np,Nepal,Federal Democratic Republic of Nepal,"147,181","31,122,387",2,"nep, mai",0,0,0,1,0,1,0,1,0,0,0,red,0,0,0,0,2,1,1,0,0,0,0,0,0
+nl,Netherlands,Kingdom of the Netherlands,"41,543","17,772,378",3,"nld, fry",0,3,0,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+nz,New Zealand,,"268,838","5,161,211",5,"eng, mri",0,0,0,1,0,1,0,1,0,0,0,blue,0,2,2,1,4,0,0,0,0,0,0,0,0
+ni,Nicaragua,Republic of Nicaragua,"130,370","6,676,948",6,"spa, sai",0,3,0,1,1,1,1,1,0,1,1,blue,1,0,0,0,1,0,1,1,0,1,1,0,0
+ne,Niger,Republic of the Niger,"1,267,000","26,342,784",1,"hau, son",0,3,0,0,1,0,0,1,0,1,0,orange,1,0,0,0,0,0,0,0,0,0,0,0,0
+ng,Nigeria,Federal Republic of Nigeria,"923,768","236,747,130",1,"cpe, hau",3,0,0,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+nf,Norfolk Island,,36,"2,188",5,"eng, cpe",3,0,0,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,0,1,0,0,0,0
+kp,North Korea,Democratic People's Republic of Korea,"120,538","26,298,666",2,kor,0,3,0,1,0,1,0,1,0,0,0,red,1,0,0,0,1,0,0,0,0,0,0,0,0
+no,Norway,Kingdom of Norway,"323,802","5,509,733",3,"nno, nob",0,0,0,1,0,1,0,1,0,0,0,red,0,2,0,0,0,0,0,0,0,0,0,0,0
+om,Oman,Sultanate of Oman,"309,500","3,901,992",2,"ara, eng",1,3,0,1,1,0,0,1,0,0,0,red,0,0,0,0,0,0,0,1,0,1,1,0,0
+pk,Pakistan,Islamic Republic of Pakistan,"796,095","252,363,571",2,"pan, pus",1,0,0,0,1,0,0,1,0,0,0,green,0,0,0,0,1,1,0,0,0,0,0,0,0
+pw,Palau,Republic of Palau,459,"21,864",5,"pau, eng",0,0,0,0,0,1,1,0,0,0,0,blue,1,0,0,0,0,0,0,0,0,0,0,0,0
+ps,Palestine,State of Palestine,6220,5385012,2,"ara, heb",0,3,0,1,1,0,0,1,1,0,0,black,0,0,0,0,0,0,1,0,0,0,0,0,1
+pa,Panama,Republic of Panama,"75,420","4,470,241",6,"spa, sai",0,0,0,1,0,1,0,1,0,0,0,red,0,0,0,4,2,0,0,0,0,0,0,0,0
+pg,Papua New Guinea,Independent State of Papua New Guinea,"462,840","10,046,233",5,"cpe, eng",0,0,0,1,0,0,1,1,1,0,0,black,0,0,0,0,5,0,1,0,1,0,0,0,0
+py,Parguay,Republic of Paraguay,"406,752","7,522,549",6,"spa, grn",0,3,0,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
+pe,Peru,Republic of Peru,"1,285,216","32,600,249",6,"spa, que",3,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+ph,Philippines,Republic of the Philippines,"300,000","118,277,063",2,"tgl, ceb",0,2,0,1,0,1,1,1,0,0,0,blue,1,0,0,0,4,0,1,0,0,0,0,0,1
+pl,Poland,Republic of Poland,"312,685","38,746,310",3,"pol, sla",0,2,0,1,0,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+pt,Portugal,Portuguese Republic,"92,090","10,207,177",3,"por, mwl",2,0,0,1,1,1,1,1,1,0,0,red,1,0,0,0,0,0,0,1,0,0,1,0,0
+pr,Puerto Rico,,"9,104","3,019,450",4,"spa, eng",0,5,0,1,0,1,0,1,0,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,1
+qa,Qatar,State of Qatar,"11,586","2,552,088",2,"ara, eng",0,0,0,0,0,0,0,1,0,1,0,brown,0,0,0,0,0,0,1,0,0,0,0,0,0
+ro,Romania,,"238,391","18,148,155",3,"ron, hun",3,0,0,1,0,1,1,0,0,0,0,yellow,0,0,0,0,0,0,0,0,0,0,0,0,0
+ru,Russia,Russian Federation,"17,098,242","140,820,810",2,"rus, tat",0,3,0,1,0,1,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
+rw,Rwanda,Republic of Rwanda,"26,338","13,623,302",1,"kin, fra",3,0,0,0,1,1,1,0,0,0,0,blue,1,0,0,0,1,0,0,0,0,0,0,0,0
+ws,Samoa,,"2,831","208,853",5,"smo, eng",0,0,0,1,0,1,0,1,0,0,0,red,0,0,0,1,5,0,0,0,0,0,0,0,0
+sm,San Marino,Republic of San Marino,61,"35,095",3,ita,0,2,0,0,1,1,1,1,1,0,0,white,0,1,0,0,0,0,0,1,0,1,1,0,0
+st,Sao Tome and Principe,Democratic Republic of São Tomé and Príncipe,964,"223,561",1,"por, cpp",0,3,0,1,1,0,1,0,1,0,0,green,0,0,0,0,2,0,1,0,0,0,0,0,1
+sa,Saudi Arabia,Kingdom of Saudi Arabia,"2,149,690","36,544,431",2,ara,0,0,0,0,1,0,0,1,0,0,0,green,0,0,0,0,0,0,0,1,0,1,0,0,0
+sn,Senegal,Republic of Senegal,"196,722","18,847,519",1,"fra, wol",3,0,0,1,1,0,1,0,0,0,0,green,0,0,0,0,1,0,0,0,0,0,0,0,0
+rs,Serbia,Republic of Serbia,"77,474","6,652,212",3,"srp, hun",0,3,0,1,0,1,1,1,1,0,0,red,0,2,0,0,0,0,0,1,1,1,1,0,0
+sc,Seychelles,Republic of Seychelles,455,"98,187",1,"cpf, eng",0,0,5,1,1,1,1,1,0,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
+sl,Sierra Leone,Republic of Sierra Leone,"71,740","9,121,049",1,"eng, cpe",0,3,0,0,1,1,0,1,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+sg,Singapore,Republic of Singapore,719,"6,028,459",2,"eng, zho",0,2,0,1,0,0,0,1,0,0,0,white,0,0,0,0,5,1,0,0,0,0,0,0,0
+sk,Slovakia,Slovak Republic,"49,035","5,563,649",3,"slk, hun",0,3,0,1,0,1,0,1,0,0,0,red,0,1,0,0,0,0,0,1,0,0,1,0,0
+si,Slovenia,Republic of Slovenia,"20,273","2,097,893",3,"slv, hrv",0,3,0,1,0,1,1,1,0,0,0,white,0,0,0,0,3,0,0,1,0,0,0,0,0
+sb,Soloman Islands,,"28,896","726,799",5,"cpe, eng",0,0,1,0,1,1,1,1,0,0,0,green,0,0,0,0,5,0,1,0,0,0,0,0,0
+so,Somalia,Federal Republic of Somalia,"637,657","13,017,273",1,"som, ara",0,0,0,0,0,1,0,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
+za,South Africa,Republic of South Africa,"1,219,090","60,442,647",1,"zul, xho",0,2,0,1,1,1,1,1,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,1
+kr,South Korea,Republic of Korea,"99,720","52,081,799",2,"kor, eng",0,0,0,1,0,1,0,1,1,0,0,white,1,0,0,0,0,0,0,0,0,0,0,0,0
+ss,South Sudan,Republic of South Sudan,"644,329","12,703,714",1,"eng, ara",0,3,0,1,1,1,1,1,1,0,0,black,0,0,0,0,1,0,1,0,0,0,0,0,1
+es,Spain,Kingdom of Spain,"505,370","47,280,433",3,"spa, cat",0,3,0,1,1,1,1,1,1,0,1,red,1,3,0,0,0,0,0,1,1,1,1,0,0
+lk,Sri Lanka,Democratic Socialist Republic of Sri Lanka,"65,610","21,982,608",2,"sin, tam",2,0,0,0,1,0,1,0,0,1,1,gold,0,0,0,0,0,0,0,1,1,0,0,1,0
+sh,St Helena,Saint Helena; Ascension; Tristan da Cunha,394,"7,943",1,eng,0,0,0,1,0,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
+kn,St Kitts and Nevis,Saint Kitts and Nevis;Federation of Saint Kitts and Nevis,261,"55,133",4,eng,0,0,1,1,1,0,1,1,1,0,0,green,0,0,0,0,2,0,1,0,0,0,0,0,0
+lc,St Lucia,Saint Lucia,616,"168,038",4,"eng, cpf",0,0,0,0,0,1,1,1,1,0,0,blue,0,0,0,0,0,0,1,0,0,0,0,0,0
+vc,St Vincent and the Grenadines,Saint Vincent and the Grenadines,389,"100,647",4,"eng, cpe",3,0,0,0,1,1,1,0,0,0,0,green,0,0,0,0,0,0,0,1,0,0,0,0,0
+sd,Sudan,Republic of the Sudan,"1,861,484","50,467,278",1,"ara, eng",0,3,0,1,1,0,0,1,1,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,1
+sr,Suriname,Republic of Suriname,"163,820","646,758",6,"nld, eng",0,5,0,1,1,0,1,1,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+se,Sweden,Kingdom of Sweden,"450,295","10,589,835",3,swe,0,0,0,0,0,1,1,0,0,0,0,blue,0,1,0,0,0,0,0,0,0,0,0,0,0
+ch,Switzerland,Swiss Confederation,"41,277","8,860,574",3,"deu, fra",0,0,0,1,0,0,0,1,0,0,0,red,0,1,0,0,0,0,0,0,0,0,0,0,0
+sy,Syria,Syrian Arab Republic,"187,437","23,865,423",2,"ara, kur",0,3,0,1,1,0,0,1,1,0,0,green,0,0,0,0,3,0,0,0,0,0,0,0,0
+tw,Taiwan,Republic of China,"35,980","23,595,274",2,zho,0,0,0,1,0,1,0,1,0,0,0,red,1,0,0,1,1,0,0,0,0,0,0,0,0
+tj,Tajikistan,Republic of Tajikistan,"144,100","10,394,063",2,"tgk, uzb",0,3,0,1,1,0,1,1,0,0,0,red,1,0,0,0,7,0,0,1,0,0,0,0,0
+tz,Tanzania,United Republic of Tanzania,"947,300","67,462,121",1,"swa, eng",0,0,1,0,1,1,1,0,1,0,0,green,0,0,0,0,0,0,1,0,0,0,0,0,0
+th,Thailand,Kingdom of Thailand,"513,120","69,920,998",2,tha,0,5,0,1,0,1,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+tl,Timor Leste,Democratic Republic of Timor-Leste,"14,874","1,506,909",2,"tet, map",0,0,0,1,0,0,1,1,1,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,0
+tg,Togo,Togolese Republic,"56,785","8,917,994",1,"fra, ewe",0,5,0,1,1,0,1,1,0,0,0,green,0,0,0,1,1,0,0,0,0,0,0,0,0
+to,Tonga,Kingdom of Tonga,747,"104,889",5,ton,0,0,0,1,0,0,0,1,0,0,0,red,0,1,0,1,0,0,0,0,0,0,0,0,0
+tt,Trinidad and Tobago,Republic of Trinidad and Tobago,"5,128","1,408,966",4,"eng, cpe",0,0,1,1,0,0,0,1,1,0,0,red,0,0,0,0,0,0,1,0,0,0,0,0,0
+tn,Tunisia,Tunisian Republic,"163,610","12,048,847",1,"ara, fra",0,0,0,1,0,0,0,1,0,0,0,red,1,0,0,0,1,1,0,0,0,0,0,0,0
+tr,Turkey,Republic of Turkey,"783,562","84,119,531",2,"tur, kur",0,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,1,1,0,0,0,0,0,0,0
+tm,Turkmenistan,,"488,100","5,744,151",2,"tuk, rus",1,0,0,1,1,0,1,1,0,0,0,green,0,0,0,0,5,1,1,1,0,0,0,0,0
+tc,Turks and Caicos Islands,,948,"60,439",4,eng,0,0,0,1,1,1,1,1,0,1,1,blue,0,2,2,1,0,0,0,1,1,0,1,0,0
+tv,Tuvalu,,26,"11,733",5,"tvl, eng",0,0,0,1,0,1,1,1,0,0,0,blue,0,2,2,1,9,0,0,0,0,0,0,0,0
+ug,Uganda,Republic of Uganda,"241,038","49,283,041",1,"eng, lug",0,6,0,1,0,0,1,1,1,0,0,gold,1,0,0,0,0,0,0,0,1,0,0,0,0
+ua,Ukraine,,"603,550","35,661,826",3,"ukr, rus",0,2,0,0,0,1,1,0,0,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
+uk,United Kingdom,United Kingdom of Great Britain and Northern Ireland,"243,610","68,459,055",3,eng,0,0,0,1,0,1,0,1,0,0,0,red,0,2,2,0,0,0,0,0,0,0,0,0,0
+ae,United Arab Emirates,United Arab Emirates;UAE,"83,600","10,032,213",2,"ara, eng",1,3,0,1,1,0,0,1,1,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
+us,United States,United States of America;USA,"9,833,517","341,963,408",4,"eng, spa",0,13,0,1,0,1,0,1,0,0,0,white,0,0,0,1,50,0,0,0,0,0,0,0,0
+uy,Uruguay,Eastern Republic of Uruguay,"176,215","3,425,330",6,spa,0,9,0,0,0,1,1,1,0,1,0,white,0,0,0,1,1,0,0,0,1,0,0,0,0
+vi,US Virgin Islands,,"1,910","104,377",4,"eng, spa",0,0,0,1,1,1,1,1,0,0,0,white,0,0,0,0,0,0,0,1,1,1,1,0,0
+uz,Uzbekistan,Republic of Uzbekistan,"447,400","36,520,593",2,"uzb, rus",0,3,0,1,1,1,0,1,0,0,0,white,0,0,0,0,12,1,0,0,0,0,0,0,0
+vu,Vanuatu,Republic of Vanuatu,"12,189","318,007",5,"map, cpe",0,2,0,1,1,0,1,0,1,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,1
+ve,Venezuela,Bolivarian Republic of Venezuela,"912,050","31,250,306",6,"spa, sai",0,3,0,1,0,1,1,1,0,0,0,yellow,0,0,0,0,8,0,0,0,0,0,0,0,0
+vn,Vietnam,Việt Nam;Socialist Republic of Vietnam,"331,210","105,758,975",2,"vie, eng",0,0,0,1,0,0,1,0,0,0,0,red,0,0,0,0,1,0,0,0,0,0,0,0,0
+ye,Yemen,Republic of Yemen,"527,968","32,140,443",2,ara,0,3,0,1,0,0,0,1,1,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+zm,Zambia,Republic of Zambia,"752,618","20,799,116",1,"bem, nya",3,0,0,1,1,0,0,0,1,1,0,green,0,0,0,0,0,0,0,0,1,0,0,0,0
+zw,Zimbabwe,Republic of Zimbabwe,"390,757","17,150,352",1,"sna, nde",0,7,0,1,1,0,1,1,1,0,0,green,0,0,0,0,1,0,1,1,1,0,0,0,1
