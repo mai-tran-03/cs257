@@ -29,7 +29,7 @@ def main(input_file_name):
     with open(input_file_name) as f:
         reader = csv.reader(f)
         headers = next(reader) # skip first row
-        
+
         for row in reader:
             # if missing the tld, do not continue!
             if row[headers.index("country_code")] not in countries_flags:
@@ -41,22 +41,22 @@ def main(input_file_name):
 
                     # if the integer strings have any commas then get rid 
                     # of them so that it will remain an int, with regex!!
-                    if header == "population" or header == "area":
+                    if header in ["population", "area"]:
                         row[i] = re.sub(",", "", row[i])
 
                     # possible commas within the other-names string would make 
                     # sql unhappy, therefore we change to a ; here
-                    if header == "other-names":
+                    if header == "other_names":
                         row[i] = re.sub(",", ";", row[i])
 
-                    country_flag[header] = row[i] if row[i] else 'NULL'
+                    country_flag[header] = row[i] or 'NULL'
 
                 # get the languages string and split it into a list
                 langs = row[headers.index("languages")].split(", ")
 
                 for l in langs:
                     languages_countries.append((l, country_flag["country_code"]))
-                
+
                 countries_flags.append(country_flag)
 
 

@@ -27,7 +27,9 @@ CREATE TABLE countries_flags (
     inanimate_image boolean,
     animate_image boolean,
     text boolean,
-    crest_emblem boolean
+    crest_emblem boolean,
+    border boolean,
+    trapezoid boolean
 );
 
 CREATE TABLE continents (
