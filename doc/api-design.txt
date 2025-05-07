@@ -7,55 +7,18 @@ Each country dictionary will have the following fields:
     country_code    -- ISO 3166, standardized international code to represent countries
     name            -- Name of the country concerned
     other_names     -- Other names of the country concerned, e.g., official or local
-    area            -- Total area of the country, including land and water, in sq km
-    population      -- Total population of the country established in 2024
-    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=N.America, 5=Oceania, 6=S.America
-    bars            -- Number of vertical bars on the flag
-    stripes         -- Number of horizontal stripes on the flag
-    bends           -- Number of diagonal stripes on the flag, 
-    red             -- 1 if red present on the flag, 0 otherwise
-    green           -- ''''green''''
-    blue            -- ''''blue''''
-    gold_yellow     -- ''''gold/yellow''''
-    white           -- ''''white''''
-    black_grey      -- ''''black/grey''''
-    orange_brown    -- ''''orange/brown''''
-    pink_purple     -- ''''pink/purple''''
     main_hue        -- Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
-    circles         -- Number of circles on the flag
-    crosses         -- Number of (upright) crosses
-    saltires        -- Number of diagonal crosses
-    quarters        -- Number of quartered sections
-    sun_stars       -- Number of sun/star symbols
-    crescent_moon   -- 1 if any crescent moon symbol present, 0 otherwise
-    triangle        -- 1 if any triangle present, 0 otherwise
-    inanimate_image -- 1 if any inanimate image present, 0 otherwise
-    animate_image   -- 1 if any animate image present, 0 otherwise
-    text            -- 1 if any letter or writing present, 0 otherwise
-    crest_emblem    -- 1 if any emblem or crest present, 0 otherwise
-    border          -- 1 if any rectangular border present, 0 otherwise
-    trapezoid       -- 1 if any trapezoid present, 0 otherwise
 
 EXAMPLE:
     /countries/name_contains/pan
 
     [
-    {"country_code": "pa", "name": "Panama", "other_names": "Republic of Panama", 
-    "area": 75420, "population": 4470241, "continent_id": 6, "bars": 0, "stripes": 0, 
-    "bends": 0, "red": 1, "green": 0, "blue": 1, "gold_yellow": 0, "white": 1, 
-    "black_grey": 0, "orange_brown": 0, "pink_purple": 0, "main_hue": "red", "circles": 0, 
-    "crosses": 0, "saltires": 0, "quarters": 4, "sun_stars": 2, "crescent_moon": 0, 
-    "triangle": 0, "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, 
-    "border": 0, "trapezoid": 0},
+    {"name": "Panama", "other_names": "Republic of Panama", 
+     "main_hue": "red", "circles": 0,},
     
-    {"country_code": "jp", "name": "Japan", "other_names": "NULL", "area": 377915, 
-    "population": 123201945, "continent_id": 2, "bars": 0, "stripes": 0,  "bends": 0, 
-    "red": 1, "green": 0, "blue": 0, "gold_yellow": 0, "white": 1, "black_grey": 0, 
-    "orange_brown": 0, "pink_purple": 0, "main_hue": "white", "circles": 1, "crosses": 0, 
-    "saltires": 0, "quarters": 0, "sun_stars": 1, "crescent_moon": 0, "triangle": 0, 
-    "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, "border": 0,
-    "trapezoid": 0}
+    {"name": "Japan", "other_names": "NULL", 
+     "main_hue": "white",}
     ]
 
 
