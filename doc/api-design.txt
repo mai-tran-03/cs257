@@ -4,48 +4,59 @@ RESPONSE: A JSON list of dictionaries, each representing a country sorted
 by closeness to the search_text. The search text must be at least 2 
 characters and is case-insensitive. 
 Each country dictionary will have the following fields:
+    country_code    -- ISO 3166, standardized international code to represent countries
     name            -- Name of the country concerned
-    location        -- (latitude, longtitude) coordinates of country
-    image           -- Picture of country flag
+    other_names     -- Other names of the country concerned, e.g., official or local
+    area            -- Total area of the country, including land and water, in sq km
+    population      -- Total population of the country established in 2024
+    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=N.America, 5=Oceania, 6=S.America
     bars            -- Number of vertical bars on the flag
     stripes         -- Number of horizontal stripes on the flag
+    bends           -- Number of diagonal stripes on the flag, 
     colors          -- Number of different colors on the flag
     red             -- 1 if red present on the flag, 0 otherwise
     green           -- ''''green''''
     blue            -- ''''blue''''
-    gold-yellow     -- ''''gold/yellow''''
+    gold_yellow     -- ''''gold/yellow''''
     white           -- ''''white''''
-    black           -- ''''black''''
-    orange-brown    -- ''''orange/brown''''
-    pink-purple     -- ''''pink/purple''''
-    main-hue        -- Predominant color on the flag (tie-breaks from the 
+    black_grey      -- ''''black/grey''''
+    orange_brown    -- ''''orange/brown''''
+    pink_purple     -- ''''pink/purple''''
+    main_hue        -- Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
     circles         -- Number of circles on the flag
     crosses         -- Number of (upright) crosses
     saltires        -- Number of diagonal crosses
     quarters        -- Number of quartered sections
-    sun-stars        -- Number of sun/star symbols
-    crescent-moon        -- 1 if a crescent moon symbol present, 0 otherwise
-    triangle        -- 1 if any triangles present, 0 otherwise
-    inanimate-image -- 1 if an inanimate image present, otherwise 0
-    animate-image   -- 1 if an animate image present, 0 otherwise
-    text            -- 1 if any letters or writing present, 0 otherwise
+    sun_stars       -- Number of sun/star symbols
+    crescent_moon   -- 1 if any crescent moon symbol present, 0 otherwise
+    triangle        -- 1 if any triangle present, 0 otherwise
+    inanimate_image -- 1 if any inanimate image present, 0 otherwise
+    animate_image   -- 1 if any animate image present, 0 otherwise
+    text            -- 1 if any letter or writing present, 0 otherwise
+    crest_emblem    -- 1 if any emblem or crest present, 0 otherwise
+    border          -- 1 if any rectangular border present, 0 otherwise
+    trapezoid       -- 1 if any trapezoid present, 0 otherwise
 
 EXAMPLE:
     /countries/name_contains/pan
 
     [
-    {"name": "Panama", "bars": "0", "stripes": "0", "colors": "3", "red": "1", 
-    "green": "0", "blue": "1", "gold-yellow": "0", "white": "1", "black": "0", 
-    "orange-brown": "0", "pink-purple": "0", "main-hue": "red", "circles": "0", "crosses": "0", 
-    "saltires": "0", "quarters": "4", "sun-stars": "2", "crescent-moon": "0", 
-    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"},
+    {"country_code": "pa", "name": "Panama", "other_names": "Republic of Panama", 
+    "area": 75420, "population": 4470241, "continent_id": 6, "bars": 0, "stripes": 0, 
+    "bends": 0, "red": 1, "green": 0, "blue": 1, "gold_yellow": 0, "white": 1, 
+    "black_grey": 0, "orange_brown": 0, "pink_purple": 0, "main_hue": "red", "circles": 0, 
+    "crosses": 0, "saltires": 0, "quarters": 4, "sun_stars": 2, "crescent_moon": 0, 
+    "triangle": 0, "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, 
+    "border": 0, "trapezoid": 0},
     
-    {"name": "Japan", "bars": "0", "stripes": "0", "colors": "2", "red": "1", 
-    "green": "0", "blue": "0", "gold-yellow": "0", "white": "1", "black": "0", 
-    "orange-brown": "0", "pink-purple": "0", "main-hue": "white", "circles": "1", "crosses": "0", 
-    "saltires": "0", "quarters": "0", "sun-stars": "1", "crescent-moon": "0", 
-    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"}
+    {"country_code": "jp", "name": "Japan", "other_names": "NULL", "area": 377915, 
+    "population": 123201945, "continent_id": 2, "bars": 0, "stripes": 0,  "bends": 0, 
+    "red": 1, "green": 0, "blue": 0, "gold_yellow": 0, "white": 1, "black_grey": 0, 
+    "orange_brown": 0, "pink_purple": 0, "main_hue": "white", "circles": 1, "crosses": 0, 
+    "saltires": 0, "quarters": 0, "sun_stars": 1, "crescent_moon": 0, "triangle": 0, 
+    "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, "border": 0,
+    "trapezoid": 0}
     ]
 
 
@@ -66,7 +77,7 @@ RESPONSE: A JSON list of dictionaries, each representing a country.
 EXAMPLE:
     /countries?attribute=saltires&attribute=blue
 
-    [{"name": "South-Africa", "blue": "1", "saltires": "1"}]
+    [{"name": "South Africa", "blue": 1, "saltires": 1}]
 
 
 
@@ -74,38 +85,47 @@ REQUEST: /country/{name}
 
 RESPONSE: A JSON dictionary with all the attributes of the country. The name is
 case insensitve. The following attributes returned are: 
+    country_code    -- ISO 3166, standardized international code to represent countries
     name            -- Name of the country concerned
-    location        -- (latitude, longtitude) coordinates of country
-    image           -- Picture of country flag
+    other_names     -- Other names of the country concerned, e.g., official or local
+    area            -- Total area of the country, including land and water, in sq km
+    population      -- Total population of the country established in 2024
+    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=N.America, 5=Oceania, 6=S.America
     bars            -- Number of vertical bars on the flag
     stripes         -- Number of horizontal stripes on the flag
+    bends           -- Number of diagonal stripes on the flag, 
     colors          -- Number of different colors on the flag
     red             -- 1 if red present on the flag, 0 otherwise
     green           -- ''''green''''
     blue            -- ''''blue''''
-    gold-yellow     -- ''''gold/yellow''''
+    gold_yellow     -- ''''gold/yellow''''
     white           -- ''''white''''
-    black           -- ''''black''''
-    orange-brown    -- ''''orange/brown''''
-    pink-purple     -- ''''pink/purple''''
-    main-hue        -- Predominant color on the flag (tie-breaks from the 
+    black_grey      -- ''''black/grey''''
+    orange_brown    -- ''''orange/brown''''
+    pink_purple     -- ''''pink/purple''''
+    main_hue        -- Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
     circles         -- Number of circles on the flag
     crosses         -- Number of (upright) crosses
     saltires        -- Number of diagonal crosses
     quarters        -- Number of quartered sections
-    sun-stars       -- Number of sun/star symbols
-    crescent-moon        -- 1 if a crescent-moon moon symbol present, 0 otherwise
+    sun_stars       -- Number of sun/star symbols
+    crescent_moon   -- 1 if any crescent moon symbol present, 0 otherwise
     triangle        -- 1 if any triangle present, 0 otherwise
-    inanimate-image -- 1 if an inanimate image present, otherwise 0
-    animate-image   -- 1 if an animate image present, 0 otherwise
-    text            -- 1 if any letters or writing present, 0 otherwise
+    inanimate_image -- 1 if any inanimate image present, 0 otherwise
+    animate_image   -- 1 if any animate image present, 0 otherwise
+    text            -- 1 if any letter or writing present, 0 otherwise
+    crest_emblem    -- 1 if any emblem or crest present, 0 otherwise
+    border          -- 1 if any rectangular border present, 0 otherwise
+    trapezoid       -- 1 if any trapezoid present, 0 otherwise
 
 EXAMPLE:
     /country/chile
 
-    {"name": "Chile", "bars": "0", "stripes": "2", "colors": "3", "red": "1", 
-    "green": "0", "blue": "1", "gold-yellow": "0", "white": "1", "black": "0", 
-    "orange-brown": "0", "pink-purple": "0", "main-hue": "red", "circles": "0", "crosses": "0", 
-    "saltires": "0", "quarters": "1", "sun-stars": "1", "crescent-moon": "0", 
-    "triangle": "0", "inanimate-image": "0", "animate-image": "0", "text": "0"}
+    {"country_code": "cl", "name": "Chile", "other_names": "Republic of Chile", 
+    "area": 756102, "population": 18664652, "continent_id": 6, "bars": 0, "stripes": 2, 
+    "bends": 0, "red": 1, "green": 0, "blue": 1, "gold_yellow": 0, "white": 1, 
+    "black_grey": 0, "orange_brown": 0, "pink_purple": 0, "main_hue": "red", "circles": 0, 
+    "crosses": 0, "saltires": 0, "quarters": 1, "sun_stars": 1, "crescent_moon": 0, "triangle": 0, 
+    "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, "border": 0,
+    "trapezoid": 0}
