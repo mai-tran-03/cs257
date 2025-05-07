@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Flags API reference</title>
+</head>
+<body>
+    <pre>Country Flags API: endpoint reference
+All responses are in JSON
+
+REQUEST: /
+RESPONSE: A greeting from this API to the user.
+
+REQUEST: /help
+RESPONSE: Current message.
+
+REQUEST: /colors[?red={1}&amp;green={1}&amp;blue={1}&amp;
+                gold={1}&amp;white={1}&amp;black={1}&amp;orange={1}]
+RESPONSE:
+    A list of country names whose flags contain all the requested colors.
+    If specific color(s) are provided as GET parameters, e.g.,
+        /colors?red=1&amp;green=1&amp;blue=1&amp;gold=1&amp;white=1&amp;black=1&amp;orange
+    will return ['Belize', 'Venezuela'].
+    
+    If no color parameters are provided, i.e.,
+        /colors
+    will return a dictionary where each color maps to a list of countries
+    whose flags contain that color, i.e., {color: [list of country names], ...}.
+    </pre>
+</body>
+</html>
