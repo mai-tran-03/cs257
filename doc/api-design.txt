@@ -13,7 +13,6 @@ Each country dictionary will have the following fields:
     bars            -- Number of vertical bars on the flag
     stripes         -- Number of horizontal stripes on the flag
     bends           -- Number of diagonal stripes on the flag, 
-    colors          -- Number of different colors on the flag
     red             -- 1 if red present on the flag, 0 otherwise
     green           -- ''''green''''
     blue            -- ''''blue''''
@@ -94,7 +93,6 @@ case insensitve. The following attributes returned are:
     bars            -- Number of vertical bars on the flag
     stripes         -- Number of horizontal stripes on the flag
     bends           -- Number of diagonal stripes on the flag, 
-    colors          -- Number of different colors on the flag
     red             -- 1 if red present on the flag, 0 otherwise
     green           -- ''''green''''
     blue            -- ''''blue''''
