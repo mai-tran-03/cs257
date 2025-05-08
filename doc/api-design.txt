@@ -4,7 +4,6 @@ RESPONSE: A JSON list of dictionaries, each representing a country sorted
 by closeness to the search_text. The search text must be at least 2 
 characters and is case-insensitive. 
 Each country dictionary will have the following fields:
-    country_code    -- ISO 3166, standardized international code to represent countries
     name            -- Name of the country concerned
     other_names     -- Other names of the country concerned, e.g., official or local
     main_hue        -- Predominant color on the flag (tie-breaks from the 
@@ -14,12 +13,19 @@ EXAMPLE:
     /countries/name_contains/pan
 
     [
-    {"name": "Panama", "other_names": "Republic of Panama", 
-     "main_hue": "red", "circles": 0,},
-    
-    {"name": "Japan", "other_names": "NULL", 
-     "main_hue": "white",}
+      {
+        "country_name": "Japan",
+        "main_hue": "white",
+        "other_names": "NULL"
+      },
+      {
+        "country_name": "Panama",
+        "main_hue": "red",
+        "other_names": "Republic of Panama"
+      }
     ]
+    
+
 
 
 
@@ -31,15 +37,36 @@ REQUEST: /countries
 
 RESPONSE: A JSON list of dictionaries, each representing a country.
     Each dictionary will have the following fields:
-
         name -- name of the country
-        location -- data of country location
-        all attributes inputted with their counts
+        all attributes inputted with their counts (if integer)
 
 EXAMPLE:
-    /countries?saltires=1&blue=1
+    /countries?saltires=1&blue=1&circles=1
 
-    [{"name": "South Africa", "blue": 1, "saltires": 1}]
+    [
+      {
+        "blue": true,
+        "circles": 1,
+        "country_name": "Cook Islands",
+        "saltires": 2
+      },
+      {
+        "blue": true,
+        "circles": 1,
+        "country_name": "Anguilla",
+        "saltires": 2
+      }
+    ]
+
+    /countries?continent=south_america&pink_purple=1
+
+    [
+      {
+        "country_name": "Nicaragua",
+        "pink_purple": true
+      }
+    ]
+
 
 
 
@@ -83,10 +110,36 @@ case insensitve. The following attributes returned are:
 EXAMPLE:
     /country/chile
 
-    {"country_code": "cl", "name": "Chile", "other_names": "Republic of Chile", 
-    "area": 756102, "population": 18664652, "continent_id": 6, "bars": 0, "stripes": 2, 
-    "bends": 0, "red": 1, "green": 0, "blue": 1, "gold_yellow": 0, "white": 1, 
-    "black_grey": 0, "orange_brown": 0, "pink_purple": 0, "main_hue": "red", "circles": 0, 
-    "crosses": 0, "saltires": 0, "quarters": 1, "sun_stars": 1, "crescent_moon": 0, "triangle": 0, 
-    "inanimate_image": 0, "animate_image": 0, "text": 0, "crest_emblem": 0, "border": 0,
-    "trapezoid": 0}
+    {
+      "animate_image": false,
+      "area": 756102,
+      "bars": 0,
+      "bends": 0,
+      "black_grey": false,
+      "blue": true,
+      "border": false,
+      "circles": 0,
+      "continent_id": 6,
+      "country_name": "Chile",
+      "crescent_moon": false,
+      "crest_emblem": false,
+      "crosses": 0,
+      "gold_yellow": false,
+      "green": false,
+      "inanimate_image": false,
+      "main_hue": "red",
+      "orange_brown": false,
+      "other_names": "Republic of Chile",
+      "pink_purple": false,
+      "population": 18664652,
+      "quarters": 1,
+      "red": true,
+      "saltires": 0,
+      "stripes": 2,
+      "sun_stars": 1,
+      "text": false,
+      "tld": "cl",
+      "trapezoid": false,
+      "triangle": false,
+      "white": true
+    }

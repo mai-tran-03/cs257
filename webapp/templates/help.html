@@ -7,24 +7,166 @@
     <pre>Country Flags API: endpoint reference
 All responses are in JSON
 
+
+
 REQUEST: /
 RESPONSE: A greeting from this API to the user.
+
+
+
 
 REQUEST: /help
 RESPONSE: Current message.
 
-REQUEST: /colors[?red={1}&amp;green={1}&amp;blue={1}&amp;
-                gold={1}&amp;white={1}&amp;black={1}&amp;orange={1}]
-RESPONSE:
-    A list of country names whose flags contain all the requested colors.
-    If specific color(s) are provided as GET parameters, e.g.,
-        /colors?red=1&amp;green=1&amp;blue=1&amp;gold=1&amp;white=1&amp;black=1&amp;orange
-    will return ['Belize', 'Venezuela'].
+
+
+
+REQUEST: /countries/name_contains/{search_text}
+
+RESPONSE: A JSON list of dictionaries, each representing a country sorted 
+by closeness to the search_text. The search text must be at least 2 
+characters and is case-insensitive. 
+Each country dictionary will have the following fields:
+    name            -- Name of the country concerned
+    other_names     -- Other names of the country concerned, e.g., official or local
+    main_hue        -- Predominant color on the flag (tie-breaks from the 
+                        topmost, to most central, and then to leftmost hue)
+
+EXAMPLE:
+    /countries/name_contains/pan
+
+    [
+      {
+        "country_name": "Japan",
+        "main_hue": "white",
+        "other_names": "NULL"
+      },
+      {
+        "country_name": "Panama",
+        "main_hue": "red",
+        "other_names": "Republic of Panama"
+      }
+    ]
     
-    If no color parameters are provided, i.e.,
-        /colors
-    will return a dictionary where each color maps to a list of countries
-    whose flags contain that color, i.e., {color: [list of country names], ...}.
+
+
+
+
+REQUEST: /countries
+    GET parameters:
+        attribute (Optional, default: '') -- return all countries with the 
+        specified attribute(s), the user can query as many attributes as 
+        needed. 
+
+RESPONSE: A JSON list of dictionaries, each representing a country.
+    Each dictionary will have the following fields:
+        name -- name of the country
+        all attributes inputted with their counts (if integer)
+
+EXAMPLE:
+    /countries?saltires=1&blue=1&circles=1
+
+    [
+      {
+        "blue": true,
+        "circles": 1,
+        "country_name": "Cook Islands",
+        "saltires": 2
+      },
+      {
+        "blue": true,
+        "circles": 1,
+        "country_name": "Anguilla",
+        "saltires": 2
+      }
+    ]
+
+    /countries?continent=south_america&pink_purple=1
+
+    [
+      {
+        "country_name": "Nicaragua",
+        "pink_purple": true
+      }
+    ]
+
+
+
+
+REQUEST: /country/{name}
+
+RESPONSE: A JSON dictionary with all the attributes of the country. The name is
+case insensitve. The following attributes returned are: 
+    country_code    -- ISO 3166, standardized international code to represent countries
+    name            -- Name of the country concerned
+    other_names     -- Other names of the country concerned, e.g., official or local
+    area            -- Total area of the country, including land and water, in sq km
+    population      -- Total population of the country established in 2024
+    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=North America, 5=Oceania, 6=South America
+    bars            -- Number of vertical bars on the flag
+    stripes         -- Number of horizontal stripes on the flag
+    bends           -- Number of diagonal stripes on the flag, 
+    red             -- 1 if red present on the flag, 0 otherwise
+    green           -- ''''green''''
+    blue            -- ''''blue''''
+    gold_yellow     -- ''''gold/yellow''''
+    white           -- ''''white''''
+    black_grey      -- ''''black/grey''''
+    orange_brown    -- ''''orange/brown''''
+    pink_purple     -- ''''pink/purple''''
+    main_hue        -- Predominant color on the flag (tie-breaks from the 
+                        topmost, to most central, and then to leftmost hue)
+    circles         -- Number of circles on the flag
+    crosses         -- Number of (upright) crosses
+    saltires        -- Number of diagonal crosses
+    quarters        -- Number of quartered sections
+    sun_stars       -- Number of sun/star symbols
+    crescent_moon   -- 1 if any crescent moon symbol present, 0 otherwise
+    triangle        -- 1 if any triangle present, 0 otherwise
+    inanimate_image -- 1 if any inanimate image present, 0 otherwise
+    animate_image   -- 1 if any animate image present, 0 otherwise
+    text            -- 1 if any letter or writing present, 0 otherwise
+    crest_emblem    -- 1 if any emblem or crest present, 0 otherwise
+    border          -- 1 if any rectangular border present, 0 otherwise
+    trapezoid       -- 1 if any trapezoid present, 0 otherwise
+
+EXAMPLE:
+    /country/chile
+
+    {
+      "animate_image": false,
+      "area": 756102,
+      "bars": 0,
+      "bends": 0,
+      "black_grey": false,
+      "blue": true,
+      "border": false,
+      "circles": 0,
+      "continent_id": 6,
+      "country_name": "Chile",
+      "crescent_moon": false,
+      "crest_emblem": false,
+      "crosses": 0,
+      "gold_yellow": false,
+      "green": false,
+      "inanimate_image": false,
+      "main_hue": "red",
+      "orange_brown": false,
+      "other_names": "Republic of Chile",
+      "pink_purple": false,
+      "population": 18664652,
+      "quarters": 1,
+      "red": true,
+      "saltires": 0,
+      "stripes": 2,
+      "sun_stars": 1,
+      "text": false,
+      "tld": "cl",
+      "trapezoid": false,
+      "triangle": false,
+      "white": true
+    }
+
     </pre>
 </body>
 </html>
