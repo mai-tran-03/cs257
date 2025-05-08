@@ -1,5 +1,5 @@
 '''
-    app.py
+    api.py
 '''
 
 import argparse
@@ -44,10 +44,10 @@ def getCountriesContainName(search_text):
         query = '''SELECT country_name, other_names, main_hue
                     FROM countries_flags
                     WHERE country_name ILIKE CONCAT('%%', %s, '%%')
-                    OR other_names ILIKE CONCAT('%%', %s, '%%')'''
+                    OR other_names ILIKE CONCAT('%%', %s, '%%');'''
         connection = get_connection()
         cursor = connection.cursor()
-        cursor.execute(query, (search_text,))
+        cursor.execute(query, (search_text, search_text,))
         for row in cursor:
             countries.append({'country_name':row[0], 'other_names':row[1], 'main_hue':row[2]})
 
@@ -60,50 +60,52 @@ def getCountriesContainName(search_text):
 
 @app.route('/countries')
 def getContriesWithAttribute():
-    ''' long comment here '''
+    ''' Returns a list of all countries in the database that have all the
+        attributes inputted (case-insensitively). Each country is represented 
+        by a dictionary with all the inputted attributes. '''
     search_attributes = []
     for attribute in attribute_names:
         if flask.request.args.get(attribute) == '1':
-            attributes.append(attribute)
+            search_attributes.append(attribute)
 
     search_continent = ''
     if flask.request.args.get('continent') != None:
         search_continent = re.sub("_", " ", flask.request.args.get('continent'))
 
-    if not attributes and not search_continent:
-        return
+    if not search_attributes and not search_continent:
+        return []
 
     countries = []
 
     try:
-        querySELECT = 'SELECT country_flags.country_name'
+        querySELECT = 'SELECT DISTINCT countries_flags.country_name'
         for attribute in search_attributes:
-            querySELECT = f"{querySELECT} countries_flags. {attribute}"
+            querySELECT = f"{querySELECT}, countries_flags.{attribute} "
 
-        queryFROM = 'FROM countries_flags, continents'
+        queryFROM = ' FROM countries_flags, continents '
         queryWHERE = 'WHERE'
 
         # no attributes, only continent
         if search_continent:
-            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE {search_continent} \nAND countries_flags.continent_id = continents.continent_id \nAND"
+            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE \'{search_continent}\' AND countries_flags.continent_id = continents.continent_id AND"
         
         if search_attributes:
             for attribute in search_attributes:
-                queryWHERE = f"{queryWHEREs} {attribute}::boolean = true \nAND"
+                queryWHERE = f"{queryWHERE} {attribute}::boolean = true AND"
 
-        # remove the last _\nAND:
-        queryWHERE = queryWHERE[:-5]
+        # remove the last _AND
+        queryWHERE = queryWHERE[:-4]
 
         query = querySELECT + queryFROM + queryWHERE + ';'
-
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query)
 
         for row in cursor:
             country = {}
+            country['country_name'] = row[0]
             for index, attribute in enumerate(search_attributes):
-                country[attribute] = row[index]
+                country[attribute] = row[index+1]
             countries.append(country)
 
     except Exception as e:
@@ -111,7 +113,6 @@ def getContriesWithAttribute():
 
     connection.close()
     return countries
-
 
 
 @app.route('/country/<name>')
@@ -150,8 +151,8 @@ def get_help():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        prog='app.py',
-        usage='python3 app.py host port',
+        prog='api.py',
+        usage='python3 api.py host port',
         description='...',
     )
     parser.add_argument('host', help='the host on which this app is running')
