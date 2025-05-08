@@ -7,13 +7,15 @@ import config
 import flask
 import psycopg2
 import sys
+import re
 
 app = flask.Flask(__name__)
-headers = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
+attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
         'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
         'animate_image,text', 'crest_emblem', 'border', 'trapezoid']
+continent_names = ['Africa', 'Asia', 'Europe', 'North_America', 'Oceania', 'South_America']
 
 def get_connection():
     ''' Returns a database connection object with which you can create cursors,
@@ -55,6 +57,55 @@ def getCountriesContainName(search_text):
     connection.close()
     return countries
 
+
+@app.route('/countries')
+def getContriesWithAttribute():
+    ''' long comment here '''
+    attributes = []
+    for attribute in attribute_names:
+        if flask.request.args.get(attribute) == '1':
+            attributes.append(attribute)
+
+    searchContinent = ''
+    for continent in continent_names:
+        if flask.request.args.get("continent") != None:
+            searchContinent = re.sub("_", " ", flask.request.args.get('continent'))
+
+    if not attributes and not searchContinent:
+        return
+
+    countries = []
+
+    try:
+        querySELECT = 'SELECT country_flags.country_name'
+        for attribute in attributes:
+            querySELECT = querySELECT + ", countries_flags." + attribute
+
+
+        queryFROM = 'FROM countries_flags, continents'
+
+        queryWHERE = 'WHERE'
+
+        # no attributes, only continent
+        if searchContinent:
+            queryWHERE += ' continents.continent_name ILIKE ' + searchContinent
+            queryWHERE +='\nAND countries_flags.continent_id = continents.continent_id \nAND'
+        
+        if attributes:
+            for attribute in attributes:
+                queryWHERE = queryWHERE + 
+                # working here!!
+
+
+
+
+        query = querySELECT + queryFROM + queryWHERE + ';'
+
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+
+
 @app.route('/country/<name>')
 def getCountry(name):
     ''' Returns a country in the database whose name exactly matches
@@ -64,7 +115,7 @@ def getCountry(name):
     
     try:
         query = '''SELECT tld, country_name, other_names, area, population, 
-                    continent_id, bars, stripes, bends, red,green, blue, gold_yellow,
+                    continent_id, bars, stripes, bends, red, green, blue, gold_yellow,
                     white, black_grey, orange_brown, pink_purple, main_hue, circles, 
                     crosses, saltires, quarters, sun_stars, crescent_moon, triangle, 
                     inanimate_image, animate_image,text, crest_emblem, border, trapezoid
@@ -75,7 +126,7 @@ def getCountry(name):
         cursor = connection.cursor()
         cursor.execute(query, (name,))
         for row in cursor:
-            for index, header in enumerate(headers):
+            for index, header in enumerate(attribute_names):
                 country[header] = row[index]
 
     except Exception as e:

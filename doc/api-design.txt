@@ -37,7 +37,7 @@ RESPONSE: A JSON list of dictionaries, each representing a country.
         all attributes inputted with their counts
 
 EXAMPLE:
-    /countries?attribute=saltires&attribute=blue
+    /countries?saltires=1&blue=1
 
     [{"name": "South Africa", "blue": 1, "saltires": 1}]
 
