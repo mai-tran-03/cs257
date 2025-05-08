@@ -14,7 +14,7 @@ attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', '
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
         'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
-        'animate_image,text', 'crest_emblem', 'border', 'trapezoid']
+        'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid']
 continent_names = ['Africa', 'Asia', 'Europe', 'North_America', 'Oceania', 'South_America']
 
 def get_connection():
@@ -67,9 +67,8 @@ def getContriesWithAttribute():
             attributes.append(attribute)
 
     searchContinent = ''
-    for continent in continent_names:
-        if flask.request.args.get("continent") != None:
-            searchContinent = re.sub("_", " ", flask.request.args.get('continent'))
+    if flask.request.args.get('continent') != None:
+        searchContinent = re.sub("_", " ", flask.request.args.get('continent'))
 
     if not attributes and not searchContinent:
         return
@@ -78,8 +77,8 @@ def getContriesWithAttribute():
 
     try:
         querySELECT = 'SELECT country_flags.country_name'
-        for attribute in attributes:
-            querySELECT = querySELECT + ", countries_flags." + attribute
+        for attribute in attribute_names:
+            querySELECT = f"{querySELECT} countries_flags. {attribute}"
 
 
         queryFROM = 'FROM countries_flags, continents'
@@ -88,8 +87,7 @@ def getContriesWithAttribute():
 
         # no attributes, only continent
         if searchContinent:
-            queryWHERE += ' continents.continent_name ILIKE ' + searchContinent
-            queryWHERE +='\nAND countries_flags.continent_id = continents.continent_id \nAND'
+            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE {searchContinent} \nAND countries_flags.continent_id = continents.continent_id \nAND"
         
         if attributes:
             for attribute in attributes:
@@ -126,8 +124,8 @@ def getCountry(name):
         cursor = connection.cursor()
         cursor.execute(query, (name,))
         for row in cursor:
-            for index, header in enumerate(attribute_names):
-                country[header] = row[index]
+            for index, attribute in enumerate(attribute_names):
+                country[attribute] = row[index]
 
     except Exception as e:
         print(e, file=sys.stderr)

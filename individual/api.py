@@ -112,7 +112,7 @@ def get_help():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='api.py - application programming interface exercise',
-        usage='python3 cli.py localhost 9999',
+        usage='python3 api.py localhost 9999',
         description='Show a list of all countries\' flags containing the specified color string, using API endpoint.',
     )
     parser.add_argument('host', help='the host on which this app is running')

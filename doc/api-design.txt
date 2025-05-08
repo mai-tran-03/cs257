@@ -52,7 +52,7 @@ case insensitve. The following attributes returned are:
     other_names     -- Other names of the country concerned, e.g., official or local
     area            -- Total area of the country, including land and water, in sq km
     population      -- Total population of the country established in 2024
-    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=N.America, 5=Oceania, 6=S.America
+    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=North America, 5=Oceania, 6=South America
     bars            -- Number of vertical bars on the flag
     stripes         -- Number of horizontal stripes on the flag
     bends           -- Number of diagonal stripes on the flag, 
