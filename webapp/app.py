@@ -61,46 +61,56 @@ def getCountriesContainName(search_text):
 @app.route('/countries')
 def getContriesWithAttribute():
     ''' long comment here '''
-    attributes = []
+    search_attributes = []
     for attribute in attribute_names:
         if flask.request.args.get(attribute) == '1':
             attributes.append(attribute)
 
-    searchContinent = ''
+    search_continent = ''
     if flask.request.args.get('continent') != None:
-        searchContinent = re.sub("_", " ", flask.request.args.get('continent'))
+        search_continent = re.sub("_", " ", flask.request.args.get('continent'))
 
-    if not attributes and not searchContinent:
+    if not attributes and not search_continent:
         return
 
     countries = []
 
     try:
         querySELECT = 'SELECT country_flags.country_name'
-        for attribute in attribute_names:
+        for attribute in search_attributes:
             querySELECT = f"{querySELECT} countries_flags. {attribute}"
 
-
         queryFROM = 'FROM countries_flags, continents'
-
         queryWHERE = 'WHERE'
 
         # no attributes, only continent
-        if searchContinent:
-            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE {searchContinent} \nAND countries_flags.continent_id = continents.continent_id \nAND"
+        if search_continent:
+            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE {search_continent} \nAND countries_flags.continent_id = continents.continent_id \nAND"
         
-        if attributes:
-            for attribute in attributes:
-                queryWHERE = queryWHERE + 
-                # working here!!
+        if search_attributes:
+            for attribute in search_attributes:
+                queryWHERE = f"{queryWHEREs} {attribute}::boolean = true \nAND"
 
-
-
+        # remove the last _\nAND:
+        queryWHERE = queryWHERE[:-5]
 
         query = querySELECT + queryFROM + queryWHERE + ';'
 
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+
+        for row in cursor:
+            country = {}
+            for index, attribute in enumerate(search_attributes):
+                country[attribute] = row[index]
+            countries.append(country)
+
     except Exception as e:
         print(e, file=sys.stderr)
+
+    connection.close()
+    return countries
 
 
 
