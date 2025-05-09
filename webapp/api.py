@@ -1,5 +1,15 @@
 '''
+    Mai Tran and Kezia Sharnoff
     api.py
+    May 2025
+
+    NAME: api.py - API to fetch information from the postgres databases 
+    SYNOPSIS: python3 api.py localhost [port]
+    DESCRIPTION: Hosts a webpage where data about countries and their flags can be
+    queired and shown. Countries' flags that have attributes can be displayed. 
+    Country names can be searched for. Specific countries can have all their data
+    displayed. 
+
 '''
 
 import argparse
@@ -10,17 +20,17 @@ import sys
 import re
 
 app = flask.Flask(__name__)
+
 attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
         'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
         'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid']
-continent_names = ['Africa', 'Asia', 'Europe', 'North_America', 'Oceania', 'South_America']
 
 def get_connection():
     ''' Returns a database connection object with which you can create cursors,
-        issue SQL queries, etc. This function prints an error message and kills the whole
-        program. '''
+        issue SQL queries, etc. If it fails, it prints an error message and kills
+        the whole program. '''
     try:
         return psycopg2.connect(database=config.database,
                                 user=config.user,
@@ -31,7 +41,7 @@ def get_connection():
 
 @app.route('/')
 def homepage():
-    return 'Welcome to countries and flags API homepage.'
+    return 'Welcome to countries and flags API homepage!'
 
 @app.route('/countries/name_contains/<search_text>')
 def getCountriesContainName(search_text):
@@ -63,6 +73,7 @@ def getContriesWithAttribute():
     ''' Returns a list of all countries in the database that have all the
         attributes inputted (case-insensitively). Each country is represented 
         by a dictionary with all the inputted attributes. '''
+
     search_attributes = []
     for attribute in attribute_names:
         if flask.request.args.get(attribute) == '1':
@@ -72,6 +83,7 @@ def getContriesWithAttribute():
     if flask.request.args.get('continent') != None:
         search_continent = re.sub("_", " ", flask.request.args.get('continent'))
 
+    # After this point, assume that there is something to search and show
     if not search_attributes and not search_continent:
         return []
 
@@ -85,10 +97,11 @@ def getContriesWithAttribute():
         queryFROM = ' FROM countries_flags, continents '
         queryWHERE = 'WHERE'
 
-        # no attributes, only continent
+        # add continent to the WHERE constraint
         if search_continent:
             queryWHERE = f"{queryWHERE} continents.continent_name ILIKE \'{search_continent}\' AND countries_flags.continent_id = continents.continent_id AND"
         
+        # add all of the flag attributes to the WHERE constraint
         if search_attributes:
             for attribute in search_attributes:
                 queryWHERE = f"{queryWHERE} {attribute}::boolean = true AND"
@@ -119,7 +132,8 @@ def getContriesWithAttribute():
 def getCountry(name):
     ''' Returns a country in the database whose name exactly matches
         (case-insensitively) the specified search string. The country is
-        represented by a dictionary with all the attributes. '''
+        represented by a dictionary with all its attributes. '''
+
     country = {}
     
     try:
@@ -153,8 +167,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='api.py',
         usage='python3 api.py host port',
-        description='...',
+        description='''Hosts a webpage where data about countries and their flags can be
+                    queired and shown. Countries' flags that have attributes can be 
+                    displayed. Country names can be searched for. Specific countries can 
+                    have all their data displayed.'''
     )
+
     parser.add_argument('host', help='the host on which this app is running')
     parser.add_argument('port', type=int, help='the port on which this app is listening')
     args = parser.parse_args()

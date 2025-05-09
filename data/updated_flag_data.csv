@@ -8,7 +8,7 @@ ao,Angola,Republic of Angola,1246700,37202061,1,"por, umb",0,2,0,1,0,0,1,0,1,0,0
 ai,Anguilla,,91,19416,4,eng,0,0,0,1,0,1,0,1,0,1,0,blue,1,2,2,1,0,0,0,0,1,0,1,0,0
 ag,Antigua and Barbuda,,443,102634,4,"eng, cpe",0,1,0,1,0,1,1,1,1,0,0,red,0,0,0,0,1,0,1,0,0,0,0,0,0
 ar,Argentina,Argentine Republic,2780400,46994384,6,"spa, ita",0,3,0,0,0,1,1,1,0,0,0,blue,1,0,0,0,1,0,0,0,1,0,0,0,0
-am,Armenia,Republic of Armenia,29743,2976765,3,hye,0,3,0,1,0,1,0,0,0,1,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
+am,Armenia,Republic of Armenia,29743,2976765,2,hye,0,3,0,1,0,1,0,0,0,1,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
 aw,Aruba,,180,125063,6,"pap, spa",0,2,0,1,0,1,1,1,0,0,0,blue,0,0,0,0,1,0,0,0,0,0,0,0,0
 au,Australia,Commonwealth of Australia,7741220,26768598,5,"eng, zho",0,0,0,1,0,1,0,1,0,0,0,blue,0,2,2,1,6,0,0,0,0,0,0,0,0
 at,Austria,Republic of Austria,83871,8967982,3,"deu, tur",0,3,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -23,7 +23,7 @@ bz,Belize,,22966,415789,4,"eng, spa",0,2,0,1,1,1,1,1,1,1,0,blue,1,0,0,0,0,0,0,1,
 bj,Benin,Republic of Benin,112622,14697052,1,"fra, yom",1,2,0,1,1,0,1,0,0,0,0,green,0,0,0,0,0,0,0,0,0,0,0,0,0
 bm,Bermuda,,54,72800,4,"eng, por",0,0,0,1,1,1,1,1,1,1,0,red,0,2,2,1,0,0,0,1,1,0,1,0,0
 bt,Bhutan,Kingdom of Bhutan,38394,884546,2,dzo,0,0,0,0,0,0,1,1,1,1,0,gold,4,0,0,0,0,0,0,1,1,0,1,0,0
-bo,Bolivia,Plurinational State of Bolivia,1098581,12311974,1,"spa, que",0,3,0,1,1,1,1,1,1,1,0,red,1,0,0,0,10,0,0,1,1,1,1,0,0
+bo,Bolivia,Plurinational State of Bolivia,1098581,12311974,6,"spa, que",0,3,0,1,1,1,1,1,1,1,0,red,1,0,0,0,10,0,0,1,1,1,1,0,0
 ba,Bosnia and Herzegovina,,51197,3798671,3,"bos, srp",1,0,0,0,0,1,1,1,0,0,0,blue,0,0,0,0,8,0,1,0,0,0,0,0,0
 bw,Botswana,Republic of Botswana,581730,2450668,1,tsn,0,1,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
 br,Brazil,Federative Republic of Brazil,8515770,220051512,6,"por, deu",0,0,0,0,1,1,1,1,0,0,0,green,1,0,0,0,27,0,0,0,0,1,0,0,0

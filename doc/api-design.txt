@@ -57,7 +57,7 @@ EXAMPLE:
         "saltires": 2
       }
     ]
-
+EXAMPLE:
     /countries?continent=south_america&pink_purple=1
 
     [

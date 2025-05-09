@@ -2,12 +2,13 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.17 (Homebrew)
--- Dumped by pg_dump version 14.17 (Homebrew)
+-- Dumped from database version 17.5 (Homebrew)
+-- Dumped by pg_dump version 17.5 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -115,41 +116,41 @@ COPY public.countries_flags (tld, country_name, other_names, area, population, c
 af	Afghanistan	Islamic Republic of Afghanistan	652230	40121552	2	3	0	0	t	t	f	f	t	t	f	f	red	1	0	0	0	1	f	f	t	f	t	t	f	f
 al	Albania	Republic of Albania	28748	3107100	3	0	0	0	t	f	f	f	f	t	f	f	red	0	0	0	0	0	f	f	f	t	f	t	f	f
 dz	Algeria	People's Democratic Republic of Algeria	2381740	47022473	1	2	0	0	t	t	f	f	t	f	f	f	green	0	0	0	0	1	t	f	f	f	f	f	f	f
-as	American Samoa	NULL	224	43895	5	0	0	0	t	f	t	t	t	f	f	f	blue	0	0	0	0	0	f	t	t	t	f	f	f	f
+as	American Samoa	\N	224	43895	5	0	0	0	t	f	t	t	t	f	f	f	blue	0	0	0	0	0	f	t	t	t	f	f	f	f
 ad	Andorra	Principality of Andorra	468	85370	3	3	0	0	t	f	t	t	f	f	f	f	gold	0	0	0	0	0	f	f	t	t	t	t	f	f
 ao	Angola	Republic of Angola	1246700	37202061	1	0	2	0	t	f	f	t	f	t	f	f	red	0	0	0	0	1	f	f	t	f	f	t	f	f
-ai	Anguilla	NULL	91	19416	4	0	0	0	t	f	t	f	t	f	t	f	blue	1	2	2	1	0	f	f	f	t	f	t	f	f
-ag	Antigua and Barbuda	NULL	443	102634	4	0	1	0	t	f	t	t	t	t	f	f	red	0	0	0	0	1	f	t	f	f	f	f	f	f
+ai	Anguilla	\N	91	19416	4	0	0	0	t	f	t	f	t	f	t	f	blue	1	2	2	1	0	f	f	f	t	f	t	f	f
+ag	Antigua and Barbuda	\N	443	102634	4	0	1	0	t	f	t	t	t	t	f	f	red	0	0	0	0	1	f	t	f	f	f	f	f	f
 ar	Argentina	Argentine Republic	2780400	46994384	6	0	3	0	f	f	t	t	t	f	f	f	blue	1	0	0	0	1	f	f	f	t	f	f	f	f
-am	Armenia	Republic of Armenia	29743	2976765	3	0	3	0	t	f	t	f	f	f	t	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
-aw	Aruba	NULL	180	125063	6	0	2	0	t	f	t	t	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
+am	Armenia	Republic of Armenia	29743	2976765	2	0	3	0	t	f	t	f	f	f	t	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
+aw	Aruba	\N	180	125063	6	0	2	0	t	f	t	t	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
 au	Australia	Commonwealth of Australia	7741220	26768598	5	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	2	1	6	f	f	f	f	f	f	f	f
 at	Austria	Republic of Austria	83871	8967982	3	0	3	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 az	Azerbaijan	Republic of Azerbaijan	86600	10650239	2	0	3	0	t	t	t	f	t	f	f	f	blue	0	0	0	0	1	t	f	f	f	f	f	f	f
 bs	Bahamas	Commonwealth of the Bahamas	13880	410862	4	0	3	0	f	f	t	t	f	t	f	f	blue	0	0	0	0	0	f	t	f	f	f	f	f	f
 bh	Bahrain	Kingdom of Bahrain	760	1566888	2	0	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	t	f	f	f	f	f	f
 bd	Bangladesh	People's Republic of Bangladesh	148460	168697184	2	0	0	0	t	t	f	f	f	f	f	f	green	1	0	0	0	0	f	f	f	f	f	f	f	f
-bb	Barbados	NULL	430	304139	4	3	0	0	f	f	t	t	f	t	f	f	blue	0	0	0	0	0	f	f	t	f	f	t	f	f
+bb	Barbados	\N	430	304139	4	3	0	0	f	f	t	t	f	t	f	f	blue	0	0	0	0	0	f	f	t	f	f	t	f	f
 by	Belarus	Republic of Belarus	207600	9501451	3	0	2	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
 be	Belgium	Kingdom of Belgium	30528	11977634	3	3	0	0	t	f	f	t	f	t	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
-bz	Belize	NULL	22966	415789	4	0	2	0	t	t	t	t	t	t	t	f	blue	1	0	0	0	0	f	f	t	t	t	t	f	f
+bz	Belize	\N	22966	415789	4	0	2	0	t	t	t	t	t	t	t	f	blue	1	0	0	0	0	f	f	t	t	t	t	f	f
 bj	Benin	Republic of Benin	112622	14697052	1	1	2	0	t	t	f	t	f	f	f	f	green	0	0	0	0	0	f	f	f	f	f	f	f	f
-bm	Bermuda	NULL	54	72800	4	0	0	0	t	t	t	t	t	t	t	f	red	0	2	2	1	0	f	f	t	t	f	t	f	f
+bm	Bermuda	\N	54	72800	4	0	0	0	t	t	t	t	t	t	t	f	red	0	2	2	1	0	f	f	t	t	f	t	f	f
 bt	Bhutan	Kingdom of Bhutan	38394	884546	2	0	0	0	f	f	f	t	t	t	t	f	gold	4	0	0	0	0	f	f	t	t	f	t	f	f
-bo	Bolivia	Plurinational State of Bolivia	1098581	12311974	1	0	3	0	t	t	t	t	t	t	t	f	red	1	0	0	0	10	f	f	t	t	t	t	f	f
-ba	Bosnia and Herzegovina	NULL	51197	3798671	3	1	0	0	f	f	t	t	t	f	f	f	blue	0	0	0	0	8	f	t	f	f	f	f	f	f
+bo	Bolivia	Plurinational State of Bolivia	1098581	12311974	6	0	3	0	t	t	t	t	t	t	t	f	red	1	0	0	0	10	f	f	t	t	t	t	f	f
+ba	Bosnia and Herzegovina	\N	51197	3798671	3	1	0	0	f	f	t	t	t	f	f	f	blue	0	0	0	0	8	f	t	f	f	f	f	f	f
 bw	Botswana	Republic of Botswana	581730	2450668	1	0	1	0	f	f	t	f	t	t	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
 br	Brazil	Federative Republic of Brazil	8515770	220051512	6	0	0	0	f	t	t	t	t	f	f	f	green	1	0	0	0	27	f	f	f	f	t	f	f	f
-vg	British Virgin Islands	NULL	151	40102	4	0	0	0	t	t	t	t	t	t	t	f	blue	0	2	2	1	0	f	f	t	t	t	t	f	f
+vg	British Virgin Islands	\N	151	40102	4	0	0	0	t	t	t	t	t	t	t	f	blue	0	2	2	1	0	f	f	t	t	t	t	f	f
 bn	Brunei	Brunei Darussalam	5765	491900	2	0	0	2	t	f	f	t	t	t	f	f	gold	1	0	0	0	0	f	f	t	t	t	t	f	f
 bg	Bulgaria	Republic of Bulgaria	110879	6782659	3	0	3	0	t	t	f	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
-bf	Burkina Faso	NULL	274200	23042199	1	0	2	0	t	t	f	t	f	f	f	f	red	0	0	0	0	1	f	f	f	f	f	f	f	f
+bf	Burkina Faso	\N	274200	23042199	1	0	2	0	t	t	f	t	f	f	f	f	red	0	0	0	0	1	f	f	f	f	f	f	f	f
 bi	Burundi	Burundian Republic	27830	13590102	1	0	0	0	t	t	f	f	t	f	f	f	red	1	0	1	0	3	f	f	f	f	f	f	f	f
 cv	Cabo Verde	Republic of Cabo Verde; Cape Verde	4033	611014	1	0	3	0	t	f	t	t	t	f	f	f	blue	1	0	0	0	10	f	f	f	f	f	f	f	f
 kh	Cambodia	Kingdom of Cambodia	181035	17063669	2	0	3	0	t	f	t	f	t	f	f	f	blue	0	0	0	0	0	f	f	t	f	f	t	f	f
 cm	Cameroon	Republic of Cameroon	475440	30966105	1	3	0	0	t	t	f	t	f	f	f	f	gold	0	0	0	0	1	f	f	f	f	f	f	f	f
-ca	Canada	NULL	9984670	38794813	4	3	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
-ky	Cayman Islands	NULL	264	66653	4	0	0	0	t	t	t	t	t	f	t	f	blue	0	2	2	1	3	f	f	t	t	t	t	f	f
+ca	Canada	\N	9984670	38794813	4	3	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
+ky	Cayman Islands	\N	264	66653	4	0	0	0	t	t	t	t	t	f	t	f	blue	0	2	2	1	3	f	f	t	t	t	t	f	f
 cf	Central Africa	Central African Republic	622984	5650957	1	1	4	0	t	t	t	t	t	f	f	f	gold	0	0	0	0	1	f	f	f	f	f	f	f	f
 td	Chad	Republic of Chad	1284	19093595	1	3	0	0	t	f	t	t	f	f	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
 cl	Chile	Republic of Chile	756102	18664652	6	0	2	0	t	f	t	f	t	f	f	f	red	0	0	0	1	1	f	f	f	f	f	f	f	f
@@ -157,7 +158,7 @@ cn	China	People's Republic of China	9596960	1416043270	2	0	0	0	t	f	f	t	f	f	f	f	r
 co	Colombia	Republic of Colombia	1138910	49588357	6	0	3	0	t	f	t	t	f	f	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
 km	Comoros	Union of the Comoros	2235	900141	1	0	4	0	t	t	t	t	t	f	f	f	green	0	0	0	0	4	t	t	f	f	f	f	f	f
 cg	Congo	Republic of the Congo	342000	6097665	1	0	0	1	t	t	f	t	f	f	f	f	green	0	0	0	0	0	f	t	f	f	f	f	f	f
-ck	Cook Islands	NULL	236	7761	5	0	0	0	t	f	t	f	t	f	f	f	blue	1	2	2	1	15	f	f	f	f	f	f	f	f
+ck	Cook Islands	\N	236	7761	5	0	0	0	t	f	t	f	t	f	f	f	blue	1	2	2	1	15	f	f	f	f	f	f	f	f
 cr	Costa Rica	Republic of Costa Rica	51100	5265575	4	0	5	0	t	t	t	t	t	t	t	f	blue	1	0	0	0	8	f	f	t	f	t	t	f	f
 ci	Cote d'Ivoire	Côte d'Ivoire; Ivory Coast	322463	29981758	1	3	0	0	f	t	f	f	t	f	t	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
 hr	Croatia	Republic of Croatia	56594	4150116	3	0	3	0	t	f	t	t	t	t	f	f	red	0	0	0	0	2	t	f	t	t	f	t	f	f
@@ -177,43 +178,43 @@ er	Eritrea	State of Eritrea	117600	6343956	1	0	0	0	t	t	t	t	f	f	f	f	red	1	0	0	0	0
 ee	Estonia	Republic of Estonia	45228	1193791	3	0	3	0	f	f	t	f	t	t	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
 sz	Eswatini	Kingdom of Eswatini	17364	1138089	1	0	5	0	t	f	t	t	t	t	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
 et	Ethiopia	Federal Democratic Republic of Ethiopia	1104300	118550298	1	0	3	0	t	t	t	t	f	f	f	f	green	1	0	0	0	1	f	f	t	f	f	f	f	f
-fk	Falkland Islands	NULL	12173	3662	6	0	0	0	t	t	t	t	t	t	t	f	blue	0	2	2	1	5	f	f	t	t	t	t	f	f
-fo	Faroe Islands	NULL	1393	52933	3	0	0	0	t	f	t	f	t	f	f	f	white	0	2	0	0	0	f	f	f	f	f	f	f	f
+fk	Falkland Islands	\N	12173	3662	6	0	0	0	t	t	t	t	t	t	t	f	blue	0	2	2	1	5	f	f	t	t	t	t	f	f
+fo	Faroe Islands	\N	1393	52933	3	0	0	0	t	f	t	f	t	f	f	f	white	0	2	0	0	0	f	f	f	f	f	f	f	f
 fj	Fiji	Republic of Fiji	18274	951611	5	0	0	0	t	t	t	t	t	f	t	f	blue	0	3	2	1	0	f	f	t	t	f	t	f	f
 fi	Finland	Republic of Finland	338145	5626414	3	0	0	0	f	f	t	f	t	f	f	f	white	0	1	0	0	0	f	f	f	f	f	f	f	f
 fr	France	French Republic	643801	68374591	3	3	0	0	t	f	t	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
-pf	French Polynesia	NULL	4167	303540	5	0	3	0	t	f	t	t	t	f	t	f	red	1	0	0	0	5	f	f	t	f	f	t	f	f
+pf	French Polynesia	\N	4167	303540	5	0	3	0	t	f	t	t	t	f	t	f	red	1	0	0	0	5	f	f	t	f	f	t	f	f
 ga	Gabon	Gabonese Republic	267667	2455105	1	0	3	0	f	t	t	t	f	f	f	f	green	0	0	0	0	0	f	f	f	f	f	f	f	f
 gm	Gambia	Republic of the Gambia; The Gambia	11300	2523327	1	0	3	0	t	t	t	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
-ge	Georgia	NULL	69700	4900961	2	0	0	0	t	f	f	f	t	f	f	f	red	0	5	0	0	0	f	f	f	f	f	f	f	f
+ge	Georgia	\N	69700	4900961	2	0	0	0	t	f	f	f	t	f	f	f	red	0	5	0	0	0	f	f	f	f	f	f	f	f
 de	Germany	Federal Republic of Germany	357022	84119100	3	0	3	0	t	f	f	t	f	t	f	f	black	0	0	0	0	0	f	f	f	f	f	f	f	f
 gh	Ghana	Republic of Ghana	238553	34589092	1	0	3	0	t	t	f	t	f	t	f	f	red	0	0	0	0	1	f	f	f	f	f	f	f	f
-gi	Gibraltar	NULL	7	29683	3	0	2	0	t	f	f	t	t	t	f	f	white	0	0	0	0	0	f	f	t	f	f	t	f	f
+gi	Gibraltar	\N	7	29683	3	0	2	0	t	f	f	t	t	t	f	f	white	0	0	0	0	0	f	f	t	f	f	t	f	f
 gr	Greece	Hellenic Republic	131957	10461091	3	0	9	0	f	f	t	f	t	f	f	f	blue	0	1	0	1	0	f	f	f	f	f	f	f	f
 gl	Greenland	Kalaallit Nunaat	2166086	57751	4	0	2	0	t	f	f	f	t	f	f	f	white	1	0	0	0	0	f	f	f	f	f	f	f	f
-gd	Grenada	NULL	344	114621	4	0	0	0	t	t	f	t	f	f	f	f	gold	1	0	0	0	7	f	f	t	f	f	f	t	f
-gu	Guam	NULL	544	169532	5	0	0	0	t	t	t	t	t	f	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	t	f
+gd	Grenada	\N	344	114621	4	0	0	0	t	t	f	t	f	f	f	f	gold	1	0	0	0	7	f	f	t	f	f	f	t	f
+gu	Guam	\N	544	169532	5	0	0	0	t	t	t	t	t	f	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	t	f
 gt	Guatemala	Republic of Guatemala	108889	18255216	6	3	0	0	t	t	t	t	t	t	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	f	f
-gg	Guernsey	NULL	78	67787	3	0	0	0	t	f	f	t	t	f	f	f	red	0	2	0	0	0	f	f	f	f	f	f	f	f
+gg	Guernsey	\N	78	67787	3	0	0	0	t	f	f	t	t	f	f	f	red	0	2	0	0	0	f	f	f	f	f	f	f	f
 gn	Guinea	Republic of Guinea	245857	13986179	1	3	0	0	t	t	f	t	f	f	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
 gw	Guinea Bissau	Republic of Guinea-Bissau	36125	2132325	1	1	2	0	t	t	f	t	f	t	f	f	gold	0	0	0	0	1	f	f	f	f	f	f	f	f
 gy	Guyana	Co-operative Republic of Guyana	214969	794099	6	0	0	0	t	t	f	t	t	t	f	f	green	0	0	0	0	0	f	t	f	f	f	f	f	f
 ht	Haiti	Republic of Haiti	27750	11753943	4	0	2	0	t	t	t	t	t	t	f	f	blue	0	0	0	0	0	f	f	t	t	t	t	f	f
 hn	Honduras	Republic of Honduras	112090	9529188	6	0	3	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	5	f	f	f	f	f	f	f	f
-hk	Hong Kong	NULL	1108	7297821	2	0	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	5	f	f	t	f	f	f	f	f
-hu	Hungary	NULL	93028	9855745	3	0	3	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
+hk	Hong Kong	\N	1108	7297821	2	0	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	5	f	f	t	f	f	f	f	f
+hu	Hungary	\N	93028	9855745	3	0	3	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 is	Iceland	Republic of Iceland	103000	364036	3	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	0	0	0	f	f	f	f	f	f	f	f
 in	India	Republic of India	3287263	1409128296	2	0	3	0	f	t	t	f	t	f	t	f	orange	1	0	0	0	0	f	f	t	f	f	f	f	f
 id	Indonesia	Republic of Indonesia	1904569	281562465	2	0	2	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 ir	Iran	Islamic Republic of Iran	1648195	88386937	2	0	3	0	t	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	t	f	t	t	f	f
 iq	Iraq	Republic of Iraq	438317	42083436	2	0	3	0	t	t	f	f	t	t	f	f	red	0	0	0	0	0	f	f	f	f	t	f	f	f
-ie	Ireland	NULL	70273	5233461	3	3	0	0	f	t	f	f	t	f	t	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
-im	Isle of Man	NULL	572	92269	3	0	0	0	t	f	f	t	t	f	f	f	red	0	0	0	0	3	f	f	f	t	f	t	f	f
+ie	Ireland	\N	70273	5233461	3	3	0	0	f	t	f	f	t	f	t	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
+im	Isle of Man	\N	572	92269	3	0	0	0	t	f	f	t	t	f	f	f	red	0	0	0	0	3	f	f	f	t	f	t	f	f
 il	Israel	State of Israel	21937	9402617	2	0	2	0	f	f	t	f	t	f	f	f	white	0	0	0	0	1	f	f	f	f	f	f	f	f
 it	Italy	Italian Republic	301340	60964931	3	3	0	0	t	t	f	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
-jm	Jamaica	NULL	10991	2823713	4	0	0	0	f	t	f	t	f	t	f	f	green	0	0	1	0	0	f	t	f	f	f	f	f	f
-jp	Japan	NULL	377915	123201945	2	0	0	0	t	f	f	f	t	f	f	f	white	1	0	0	0	1	f	f	f	f	f	f	f	f
-je	Jersey	NULL	116	103387	3	0	0	0	t	f	f	t	t	f	f	f	red	0	0	1	0	0	f	f	t	t	f	t	f	f
+jm	Jamaica	\N	10991	2823713	4	0	0	0	f	t	f	t	f	t	f	f	green	0	0	1	0	0	f	t	f	f	f	f	f	f
+jp	Japan	\N	377915	123201945	2	0	0	0	t	f	f	f	t	f	f	f	white	1	0	0	0	1	f	f	f	f	f	f	f	f
+je	Jersey	\N	116	103387	3	0	0	0	t	f	f	t	t	f	f	f	red	0	0	1	0	0	f	f	t	t	f	t	f	f
 jo	Jordan	Hashemite Kingdom of Jordan	89342	11174024	2	0	3	0	t	t	f	f	t	t	f	f	black	0	0	0	0	1	f	t	f	f	f	f	f	f
 kz	Kazakhstan	Republic of Kazakhstan	2724900	20260006	2	0	0	0	f	f	t	t	f	f	f	f	blue	1	0	0	0	1	f	f	t	t	f	f	f	f
 ke	Kenya	Republic of Kenya	580367	58246378	1	0	3	0	t	t	f	f	t	t	f	f	red	1	0	0	0	0	f	f	t	f	f	f	f	f
@@ -234,8 +235,8 @@ mo	Macau	Macao	28	644426	2	0	0	0	f	t	f	t	t	f	f	f	green	1	0	0	0	5	f	f	t	f	f	t	f	f
 mk	Macedonia	North Macedonia	25713	2135622	3	0	0	0	t	f	f	t	f	f	f	f	red	1	0	0	0	1	f	f	f	f	f	f	f	f
 mg	Madagascar	Republic of Madagascar	587041	29452714	1	1	2	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 mw	Malawi	Republic of Malawi	118484	21763309	1	0	3	0	t	t	f	f	f	t	f	f	red	0	0	0	0	1	f	f	f	f	f	f	f	f
-my	Malaysia	NULL	329847	34564810	2	0	14	0	t	f	t	t	t	f	f	f	red	0	0	0	1	1	t	f	f	f	f	f	f	f
-mv	Maldives	NULL	298	388858	2	0	0	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	t	f	f	f	f	f	t	f
+my	Malaysia	\N	329847	34564810	2	0	14	0	t	f	t	t	t	f	f	f	red	0	0	0	1	1	t	f	f	f	f	f	f	f
+mv	Maldives	\N	298	388858	2	0	0	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	t	f	f	f	f	f	t	f
 ml	Mali	Republic of Mali	1240192	21990607	1	3	0	0	t	t	f	t	f	f	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
 mt	Malta	Republic of Malta	316	469730	3	2	0	0	t	f	f	f	t	t	f	f	red	1	1	0	0	0	f	f	t	t	t	t	f	f
 mh	Marshall Islands	Republic of the Marshall Islands	181	82011	5	0	0	2	f	f	t	f	t	f	t	f	blue	0	0	0	0	1	f	t	f	f	f	f	f	f
@@ -245,9 +246,9 @@ mx	Mexico	United Mexican States	1964375	130739927	4	3	0	0	t	t	t	t	t	t	t	t	green	
 fm	Micronesia	Federated States of Micronesia	702	99603	5	0	0	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	4	f	f	f	f	f	f	f	f
 md	Moldova	Republic of Moldova	33851	3599528	3	3	0	0	t	t	t	t	f	t	t	f	gold	0	1	0	0	1	t	f	t	t	f	t	f	f
 mc	Monaco	Principality of Monaco	2	31813	3	0	2	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
-mn	Mongolia	NULL	1564116	3281676	2	3	0	0	t	f	t	t	f	f	f	f	red	2	0	0	0	0	t	t	t	f	f	t	f	f
-me	Montenegro	NULL	13812	599849	3	0	0	0	t	t	t	t	f	f	f	f	red	1	3	0	0	0	f	f	t	t	f	t	t	f
-ms	Montserrat	NULL	102	5468	4	0	0	0	t	t	t	t	t	t	t	f	blue	0	3	2	1	0	f	f	t	t	f	t	f	f
+mn	Mongolia	\N	1564116	3281676	2	3	0	0	t	f	t	t	f	f	f	f	red	2	0	0	0	0	t	t	t	f	f	t	f	f
+me	Montenegro	\N	13812	599849	3	0	0	0	t	t	t	t	f	f	f	f	red	1	3	0	0	0	f	f	t	t	f	t	t	f
+ms	Montserrat	\N	102	5468	4	0	0	0	t	t	t	t	t	t	t	f	blue	0	3	2	1	0	f	f	t	t	f	t	f	f
 ma	Morocco	Kingdom of Morocco	716550	37387585	1	0	0	0	t	t	f	f	f	f	f	f	red	0	0	0	0	1	f	f	f	f	f	f	f	f
 mz	Mozambique	Republic of Mozambique	799380	33350954	1	0	3	0	t	t	f	t	t	t	f	f	green	0	0	0	0	1	f	t	t	f	f	f	f	t
 mm	Myanmar	Republic of the Union of Myanmar; Burma	676578	57527139	2	0	3	0	t	t	f	t	t	f	f	f	yellow	0	0	0	0	1	f	f	f	f	f	f	f	f
@@ -255,11 +256,11 @@ na	Namibia	Republic of Namibia	824292	2803660	1	0	0	1	t	t	t	t	t	f	f	f	blue	1	0	0
 nr	Nauru	Republic of Nauru	21	9892	5	0	1	0	f	f	t	t	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
 np	Nepal	Federal Democratic Republic of Nepal	147181	31122387	2	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	0	2	t	t	f	f	f	f	f	f
 nl	Netherlands	Kingdom of the Netherlands	41543	17772378	3	0	3	0	t	f	t	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
-nz	New Zealand	NULL	268838	5161211	5	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	2	1	4	f	f	f	f	f	f	f	f
+nz	New Zealand	\N	268838	5161211	5	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	2	1	4	f	f	f	f	f	f	f	f
 ni	Nicaragua	Republic of Nicaragua	130370	6676948	6	0	3	0	t	t	t	t	t	f	t	t	blue	1	0	0	0	1	f	t	t	f	t	t	f	f
 ne	Niger	Republic of the Niger	1267000	26342784	1	0	3	0	f	t	f	f	t	f	t	f	orange	1	0	0	0	0	f	f	f	f	f	f	f	f
 ng	Nigeria	Federal Republic of Nigeria	923768	236747130	1	3	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	f	f	f	f	f	f
-nf	Norfolk Island	NULL	36	2188	5	3	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	f	t	f	f	f	f
+nf	Norfolk Island	\N	36	2188	5	3	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	f	t	f	f	f	f
 kp	North Korea	Democratic People's Republic of Korea	120538	26298666	2	0	3	0	t	f	t	f	t	f	f	f	red	1	0	0	0	1	f	f	f	f	f	f	f	f
 no	Norway	Kingdom of Norway	323802	5509733	3	0	0	0	t	f	t	f	t	f	f	f	red	0	2	0	0	0	f	f	f	f	f	f	f	f
 om	Oman	Sultanate of Oman	309500	3901992	2	1	3	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	t	f	t	t	f	f
@@ -273,12 +274,12 @@ pe	Peru	Republic of Peru	1285216	32600249	6	3	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	
 ph	Philippines	Republic of the Philippines	300000	118277063	2	0	2	0	t	f	t	t	t	f	f	f	blue	1	0	0	0	4	f	t	f	f	f	f	f	t
 pl	Poland	Republic of Poland	312685	38746310	3	0	2	0	t	f	f	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
 pt	Portugal	Portuguese Republic	92090	10207177	3	2	0	0	t	t	t	t	t	t	f	f	red	1	0	0	0	0	f	f	t	f	f	t	f	f
-pr	Puerto Rico	NULL	9104	3019450	4	0	5	0	t	f	t	f	t	f	f	f	red	0	0	0	0	1	f	t	f	f	f	f	f	t
+pr	Puerto Rico	\N	9104	3019450	4	0	5	0	t	f	t	f	t	f	f	f	red	0	0	0	0	1	f	t	f	f	f	f	f	t
 qa	Qatar	State of Qatar	11586	2552088	2	0	0	0	f	f	f	f	t	f	t	f	brown	0	0	0	0	0	f	t	f	f	f	f	f	f
-ro	Romania	NULL	238391	18148155	3	3	0	0	t	f	t	t	f	f	f	f	yellow	0	0	0	0	0	f	f	f	f	f	f	f	f
+ro	Romania	\N	238391	18148155	3	3	0	0	t	f	t	t	f	f	f	f	yellow	0	0	0	0	0	f	f	f	f	f	f	f	f
 ru	Russia	Russian Federation	17098242	140820810	2	0	3	0	t	f	t	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
 rw	Rwanda	Republic of Rwanda	26338	13623302	1	3	0	0	f	t	t	t	f	f	f	f	blue	1	0	0	0	1	f	f	f	f	f	f	f	f
-ws	Samoa	NULL	2831	208853	5	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	1	5	f	f	f	f	f	f	f	f
+ws	Samoa	\N	2831	208853	5	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	1	5	f	f	f	f	f	f	f	f
 sm	San Marino	Republic of San Marino	61	35095	3	0	2	0	f	t	t	t	t	t	f	f	white	0	1	0	0	0	f	f	t	f	t	t	f	f
 st	Sao Tome and Principe	Democratic Republic of São Tomé and Príncipe	964	223561	1	0	3	0	t	t	f	t	f	t	f	f	green	0	0	0	0	2	f	t	f	f	f	f	f	t
 sa	Saudi Arabia	Kingdom of Saudi Arabia	2149690	36544431	2	0	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	t	f	t	f	f	f
@@ -289,7 +290,7 @@ sl	Sierra Leone	Republic of Sierra Leone	71740	9121049	1	0	3	0	f	t	t	f	t	f	f	f	g
 sg	Singapore	Republic of Singapore	719	6028459	2	0	2	0	t	f	f	f	t	f	f	f	white	0	0	0	0	5	t	f	f	f	f	f	f	f
 sk	Slovakia	Slovak Republic	49035	5563649	3	0	3	0	t	f	t	f	t	f	f	f	red	0	1	0	0	0	f	f	t	f	f	t	f	f
 si	Slovenia	Republic of Slovenia	20273	2097893	3	0	3	0	t	f	t	t	t	f	f	f	white	0	0	0	0	3	f	f	t	f	f	f	f	f
-sb	Soloman Islands	NULL	28896	726799	5	0	0	1	f	t	t	t	t	f	f	f	green	0	0	0	0	5	f	t	f	f	f	f	f	f
+sb	Soloman Islands	\N	28896	726799	5	0	0	1	f	t	t	t	t	f	f	f	green	0	0	0	0	5	f	t	f	f	f	f	f	f
 so	Somalia	Federal Republic of Somalia	637657	13017273	1	0	0	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
 za	South Africa	Republic of South Africa	1219090	60442647	1	0	2	0	t	t	t	t	t	t	f	f	green	0	0	0	0	0	f	t	f	f	f	f	f	t
 kr	South Korea	Republic of Korea	99720	52081799	2	0	0	0	t	f	t	f	t	t	f	f	white	1	0	0	0	0	f	f	f	f	f	f	f	f
@@ -315,16 +316,16 @@ to	Tonga	Kingdom of Tonga	747	104889	5	0	0	0	t	f	f	f	t	f	f	f	red	0	1	0	1	0	f	f	f
 tt	Trinidad and Tobago	Republic of Trinidad and Tobago	5128	1408966	4	0	0	1	t	f	f	f	t	t	f	f	red	0	0	0	0	0	f	t	f	f	f	f	f	f
 tn	Tunisia	Tunisian Republic	163610	12048847	1	0	0	0	t	f	f	f	t	f	f	f	red	1	0	0	0	1	t	f	f	f	f	f	f	f
 tr	Turkey	Republic of Turkey	783562	84119531	2	0	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	1	t	f	f	f	f	f	f	f
-tm	Turkmenistan	NULL	488100	5744151	2	1	0	0	t	t	f	t	t	f	f	f	green	0	0	0	0	5	t	t	t	f	f	f	f	f
-tc	Turks and Caicos Islands	NULL	948	60439	4	0	0	0	t	t	t	t	t	f	t	t	blue	0	2	2	1	0	f	f	t	t	f	t	f	f
-tv	Tuvalu	NULL	26	11733	5	0	0	0	t	f	t	t	t	f	f	f	blue	0	2	2	1	9	f	f	f	f	f	f	f	f
+tm	Turkmenistan	\N	488100	5744151	2	1	0	0	t	t	f	t	t	f	f	f	green	0	0	0	0	5	t	t	t	f	f	f	f	f
+tc	Turks and Caicos Islands	\N	948	60439	4	0	0	0	t	t	t	t	t	f	t	t	blue	0	2	2	1	0	f	f	t	t	f	t	f	f
+tv	Tuvalu	\N	26	11733	5	0	0	0	t	f	t	t	t	f	f	f	blue	0	2	2	1	9	f	f	f	f	f	f	f	f
 ug	Uganda	Republic of Uganda	241038	49283041	1	0	6	0	t	f	f	t	t	t	f	f	gold	1	0	0	0	0	f	f	f	t	f	f	f	f
-ua	Ukraine	NULL	603550	35661826	3	0	2	0	f	f	t	t	f	f	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
+ua	Ukraine	\N	603550	35661826	3	0	2	0	f	f	t	t	f	f	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
 uk	United Kingdom	United Kingdom of Great Britain and Northern Ireland	243610	68459055	3	0	0	0	t	f	t	f	t	f	f	f	red	0	2	2	0	0	f	f	f	f	f	f	f	f
 ae	United Arab Emirates	United Arab Emirates;UAE	83600	10032213	2	1	3	0	t	t	f	f	t	t	f	f	green	0	0	0	0	0	f	f	f	f	f	f	f	f
 us	United States	United States of America;USA	9833517	341963408	4	0	13	0	t	f	t	f	t	f	f	f	white	0	0	0	1	50	f	f	f	f	f	f	f	f
 uy	Uruguay	Eastern Republic of Uruguay	176215	3425330	6	0	9	0	f	f	t	t	t	f	t	f	white	0	0	0	1	1	f	f	f	t	f	f	f	f
-vi	US Virgin Islands	NULL	1910	104377	4	0	0	0	t	t	t	t	t	f	f	f	white	0	0	0	0	0	f	f	t	t	t	t	f	f
+vi	US Virgin Islands	\N	1910	104377	4	0	0	0	t	t	t	t	t	f	f	f	white	0	0	0	0	0	f	f	t	t	t	t	f	f
 uz	Uzbekistan	Republic of Uzbekistan	447400	36520593	2	0	3	0	t	t	t	f	t	f	f	f	white	0	0	0	0	12	t	f	f	f	f	f	f	f
 vu	Vanuatu	Republic of Vanuatu	12189	318007	5	0	2	0	t	t	f	t	f	t	f	f	red	1	0	0	0	0	f	t	t	f	f	f	f	t
 ve	Venezuela	Bolivarian Republic of Venezuela	912050	31250306	6	0	3	0	t	f	t	t	t	f	f	f	yellow	0	0	0	0	8	f	f	f	f	f	f	f	f
@@ -1188,7 +1189,7 @@ ton	to
 eng	tt
 cpe	tt
 ara	tn
-fra 	tn
+fra	tn
 tur	tr
 kur	tr
 tuk	tm
