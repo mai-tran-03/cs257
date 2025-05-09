@@ -25,6 +25,17 @@ EXAMPLE:
       }
     ]
     
+EXAMPLE:
+    /countries?continent=south_america&pink_purple=1
+
+    [
+      {
+        "country_name": "Nicaragua",
+        "pink_purple": true
+      }
+    ]
+
+    
 
 
 
@@ -55,15 +66,6 @@ EXAMPLE:
         "circles": 1,
         "country_name": "Anguilla",
         "saltires": 2
-      }
-    ]
-EXAMPLE:
-    /countries?continent=south_america&pink_purple=1
-
-    [
-      {
-        "country_name": "Nicaragua",
-        "pink_purple": true
       }
     ]
 

@@ -74,6 +74,9 @@ def getContriesWithAttribute():
         attributes inputted (case-insensitively). Each country is represented 
         by a dictionary with all the inputted attributes. '''
 
+    # search attributes will be a list of strings of all the flag attributes
+    # marked to be searched for. this is useful so then we know it is SQL
+    # injection safe! 
     search_attributes = []
     for attribute in attribute_names:
         if flask.request.args.get(attribute) == '1':
@@ -88,6 +91,8 @@ def getContriesWithAttribute():
         return []
 
     countries = []
+    # query parameters will be the continent searched if it exists
+    query_parameters = []
 
     try:
         querySELECT = 'SELECT DISTINCT countries_flags.country_name'
@@ -99,7 +104,9 @@ def getContriesWithAttribute():
 
         # add continent to the WHERE constraint
         if search_continent:
-            queryWHERE = f"{queryWHERE} continents.continent_name ILIKE \'{search_continent}\' AND countries_flags.continent_id = continents.continent_id AND"
+            queryWHERE += ''' continents.continent_name ILIKE %s 
+                AND countries_flags.continent_id = continents.continent_id AND'''
+            query_parameters.append(search_continent)
         
         # add all of the flag attributes to the WHERE constraint
         if search_attributes:
@@ -112,7 +119,7 @@ def getContriesWithAttribute():
         query = querySELECT + queryFROM + queryWHERE + ';'
         connection = get_connection()
         cursor = connection.cursor()
-        cursor.execute(query)
+        cursor.execute(query, query_parameters)
 
         for row in cursor:
             country = {}
@@ -141,7 +148,7 @@ def getCountry(name):
                     continent_id, bars, stripes, bends, red, green, blue, gold_yellow,
                     white, black_grey, orange_brown, pink_purple, main_hue, circles, 
                     crosses, saltires, quarters, sun_stars, crescent_moon, triangle, 
-                    inanimate_image, animate_image,text, crest_emblem, border, trapezoid
+                    inanimate_image, animate_image, text, crest_emblem, border, trapezoid
                 FROM countries_flags
                 WHERE country_name ILIKE %s;
                 '''
@@ -151,7 +158,7 @@ def getCountry(name):
         for row in cursor:
             for index, attribute in enumerate(attribute_names):
                 country[attribute] = row[index]
-
+        
     except Exception as e:
         print(e, file=sys.stderr)
 
