@@ -6,7 +6,7 @@
     NAME: api.py - API to fetch information from the postgres databases 
     SYNOPSIS: python3 api.py localhost [port]
     DESCRIPTION: Hosts a webpage where data about countries and their flags can be
-    queired and shown. Countries' flags that have attributes can be displayed. 
+    queried and shown. Countries' flags that have attributes can be displayed. 
     Country names can be searched for. Specific countries can have all their data
     displayed. 
 
@@ -121,9 +121,9 @@ def getContriesWithAttribute():
         cursor = connection.cursor()
         cursor.execute(query, query_parameters)
 
+
         for row in cursor:
-            country = {}
-            country['country_name'] = row[0]
+            country = {'country_name': row[0]}
             for index, attribute in enumerate(search_attributes):
                 country[attribute] = row[index+1]
             countries.append(country)
