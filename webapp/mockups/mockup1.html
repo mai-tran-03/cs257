@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="mockup1.css">
 </head>
+
 <body>
-    
-    <button class="home">Home</button>
-    <button class="search">Country search</button>
+    <ul class="horizontal-navbar">
+        <!-- <button class="home">Home</button>
+        <button class="search">Country search</button> -->
+        <li><a href="home-icon.png">Home</a></li>
+        <li><input type="text" id="search"" placeholder="Search country names..." title="Type in a country name"></li>
+        <li><a href="search-icon.png">Search</a></li>
+    </ul>
     <br>
-    <div class="form">
-        <form >
+    <fieldset>
+        <legend>Explore the attributes of any country's flag:</legend>
+        <form>
             <input type="checkbox" id="red">
             <label for="red">red</label>
+            <input type="checkbox" id="green">
+            <label for="green">green</label>
+            <input type="checkbox" id="blue">
+            <label for="blue">blue</label>
+            <input type="checkbox" id="gold_yellow">
+            <label for="gold_yellow">gold/yellow</label>
+            <input type="checkbox" id="white">
+            <label for="white">white</label>
+            <input type="checkbox" id="black_grey">
+            <label for="black_grey">black/grey</label>
+            <input type="checkbox" id="orange_brown">
+            <label for="orange_brown">orange/brown</label>
+            <input type="checkbox" id="pink_purple">
+            <label for="pink_purple">pink/purple</label>
         </form>
-    </div>
+    </fieldset>
+    <br>
     <div class="map">
         <img src="worldmap.png">
     </div>
@@ -29,4 +51,5 @@
     </ul> -->
 
 </body>
+
 </html>
