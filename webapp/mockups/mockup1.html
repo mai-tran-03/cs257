@@ -3,17 +3,28 @@
 
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="mockup1.css">
+    <link rel="stylesheet" href="mockup.css">
+    <script src="mockup.js"></script>
 </head>
 
 <body>
-    <ul class="horizontal-navbar">
-        <!-- <button class="home">Home</button>
-        <button class="search">Country search</button> -->
-        <li><a href="home-icon.png">Home</a></li>
-        <li><input type="text" id="search"" placeholder="Search country names..." title="Type in a country name"></li>
-        <li><a href="search-icon.png">Search</a></li>
-    </ul>
+    <div> 
+        <img src="home-icon.png" id="home" class="container" ></img>
+        <div class="container">
+            <input type="text" id="search_bar" placeholder="Search country names..." title="Type in a country name">
+
+            <ul id="search_countries" style="visibility: hidden; position: absolute;">
+              <li><a href="#">Japan</a></li>
+              <li><a href="#">Panama</a></li>
+              <li><a href="#">Botswana</a></li>
+              <li><a href="#">France</a></li>
+              <li><a href="#">Canada</a></li>
+              <li><a href="#">Barbados</a></li>
+              <li><a href="#">Brazil</a></li>
+              <li><a href="#">Chile</a></li>
+            </ul>
+        </div>
+    </div>
     <br>
     <fieldset>
         <legend>Explore the attributes of any country's flag:</legend>
@@ -34,21 +45,38 @@
             <label for="orange_brown">orange/brown</label>
             <input type="checkbox" id="pink_purple">
             <label for="pink_purple">pink/purple</label>
+            <input type="checkbox" id="main_hue">
+            <label for="main_hue">main hue</label>
+            <input type="checkbox" id="circles">
+            <label for="circles">circles</label>
+            <input type="checkbox" id="crosses">
+            <label for="crosses">crosses</label>
+            <input type="checkbox" id="saltires">
+            <label for="saltires">saltires</label>
+            <input type="checkbox" id="quarters">
+            <label for="quarters">quarters</label>
+            <input type="checkbox" id="crescent_moon">
+            <label for="crescent_moon">crescent moon</label>
+            <input type="checkbox" id="triangle">
+            <label for="triangle">triangle</label>
+            <input type="checkbox" id="inanimate_image">
+            <label for="inanimate_image">inanimate image</label>
+            <input type="checkbox" id="animate_image">
+            <label for="animate_image">animate image</label>
+            <input type="checkbox" id="text">
+            <label for="text">text</label>
+            <input type="checkbox" id="crest_emblem">
+            <label for="crest_emblem">crest/emblem</label>
+            <input type="checkbox" id="border">
+            <label for="border">border</label>
+            <input type="checkbox" id="trapezoid">
+            <label for="trapezoid">trapezoid</label>
+
+            <input type="submit" value="Submit">
         </form>
     </fieldset>
     <br>
-    <div class="map">
-        <img src="worldmap.png">
-    </div>
-
-    <!-- <h2>Search/Filter</h2>
-    https://www.w3schools.com/howto/howto_js_filter_lists.asp
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-
-    <ul id="myUL">
-        <li><a href="#">Panama</a></li>
-        <li><a href="#">Spain</a></li>
-    </ul> -->
+    <img src="worldmap.png" id="map">
 
 </body>
 
