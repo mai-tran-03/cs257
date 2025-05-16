@@ -8,75 +8,54 @@
 </head>
 
 <body>
-    <div> 
-        <img src="home-icon.png" id="home" class="container" ></img>
-        <div class="container">
-            <input type="text" id="search_bar" placeholder="Search country names..." title="Type in a country name">
+    <div id="navbar" class="row">
+        <img src="home-icon.png" id="home" class="column"></img>
+        <div class="column right_align">
+            <input type="text" id="search_bar" placeholder="Search country names...">
 
-            <ul id="search_countries" style="visibility: hidden; position: absolute;">
-              <li><a href="#">Japan</a></li>
-              <li><a href="#">Panama</a></li>
-              <li><a href="#">Botswana</a></li>
-              <li><a href="#">France</a></li>
-              <li><a href="#">Canada</a></li>
-              <li><a href="#">Barbados</a></li>
-              <li><a href="#">Brazil</a></li>
-              <li><a href="#">Chile</a></li>
+            <ul id="search_countries">
+                <li><a href="#">Japan</a></li>
+                <li><a href="#">Panama</a></li>
+                <li><a href="#">Botswana</a></li>
+                <li><a href="#">France</a></li>
+                <li><a href="#">Canada</a></li>
+                <li><a href="#">Barbados</a></li>
+                <li><a href="#">Brazil</a></li>
+                <li><a href="#">Chile</a></li>
             </ul>
         </div>
     </div>
     <br>
     <fieldset>
         <legend>Explore the attributes of any country's flag:</legend>
-        <form>
-            <input type="checkbox" id="red">
-            <label for="red">red</label>
-            <input type="checkbox" id="green">
-            <label for="green">green</label>
-            <input type="checkbox" id="blue">
-            <label for="blue">blue</label>
-            <input type="checkbox" id="gold_yellow">
-            <label for="gold_yellow">gold/yellow</label>
-            <input type="checkbox" id="white">
-            <label for="white">white</label>
-            <input type="checkbox" id="black_grey">
-            <label for="black_grey">black/grey</label>
-            <input type="checkbox" id="orange_brown">
-            <label for="orange_brown">orange/brown</label>
-            <input type="checkbox" id="pink_purple">
-            <label for="pink_purple">pink/purple</label>
-            <input type="checkbox" id="main_hue">
-            <label for="main_hue">main hue</label>
-            <input type="checkbox" id="circles">
-            <label for="circles">circles</label>
-            <input type="checkbox" id="crosses">
-            <label for="crosses">crosses</label>
-            <input type="checkbox" id="saltires">
-            <label for="saltires">saltires</label>
-            <input type="checkbox" id="quarters">
-            <label for="quarters">quarters</label>
-            <input type="checkbox" id="crescent_moon">
-            <label for="crescent_moon">crescent moon</label>
-            <input type="checkbox" id="triangle">
-            <label for="triangle">triangle</label>
-            <input type="checkbox" id="inanimate_image">
-            <label for="inanimate_image">inanimate image</label>
-            <input type="checkbox" id="animate_image">
-            <label for="animate_image">animate image</label>
-            <input type="checkbox" id="text">
-            <label for="text">text</label>
-            <input type="checkbox" id="crest_emblem">
-            <label for="crest_emblem">crest/emblem</label>
-            <input type="checkbox" id="border">
-            <label for="border">border</label>
-            <input type="checkbox" id="trapezoid">
-            <label for="trapezoid">trapezoid</label>
+        <form class="form_grid">
+            <label><input type="checkbox" id="red">red</label>
+            <label><input type="checkbox" id="green">green</label>
+            <label><input type="checkbox" id="blue">blue</label>
+            <label><input type="checkbox" id="gold_yellow">gold/yellow</label>
+            <label><input type="checkbox" id="white">white</label>
+            <label><input type="checkbox" id="black_grey">black/grey</label>
+            <label><input type="checkbox" id="orange_brown">orange/brown</label>
+            <label><input type="checkbox" id="pink_purple">pink/purple</label>
+            <label><input type="checkbox" id="main_hue">main hue</label>
+            <label><input type="checkbox" id="circles">circles</label>
+            <label><input type="checkbox" id="crosses">crosses</label>
+            <label><input type="checkbox" id="saltires">saltires</label>
+            <label><input type="checkbox" id="quarters">quarters</label>
+            <label><input type="checkbox" id="crescent_moon">crescent moon</label>
+            <label><input type="checkbox" id="triangle">triangle</label>
+            <label><input type="checkbox" id="inanimate_image">inanimate image</label>
+            <label><input type="checkbox" id="animate_image">animate image</label>
+            <label><input type="checkbox" id="text">text</label>
+            <label><input type="checkbox" id="crest_emblem">crest/emblem</label>
+            <label><input type="checkbox" id="border">border</label>
+            <label><input type="checkbox" id="trapezoid">trapezoid</label>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Explore">
         </form>
     </fieldset>
     <br>
-    <img src="worldmap.png" id="map">
+    <img id="map" class="center" src="worldmap.png">
 
 </body>
 

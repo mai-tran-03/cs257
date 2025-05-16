@@ -1,4 +1,3 @@
-
 // Set up the event listeners for the search bar after loading
 window.addEventListener("load", function() {
     let searchElement = document.getElementById("search_bar");
@@ -6,7 +5,6 @@ window.addEventListener("load", function() {
 
     searchElement.addEventListener("focusin", showSearchList);
     searchElement.addEventListener("focusout", hideSearchList);
-
 });
 
 function showSearchList() {

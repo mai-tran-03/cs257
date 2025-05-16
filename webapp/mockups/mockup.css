@@ -6,18 +6,25 @@ body {
 
 #search_countries {
     list-style-type: none;
+    visibility: hidden;
+    position: absolute;
+    margin-top: 0;
 }
 
 #search_countries li a {
     margin: 0;
     border: 1px solid black;
-    background-color: #f1f1f1;
+    border-top: 0px;
+    background-color: #605c5c;
     padding: 10px;
     display: block;
-    color: black;
+    color: white;
     text-decoration: none;
     width: 200px;
+}
 
+#search_countries li a:hover {
+    background-color: #a6a0a0;
 }
 
 #search_bar {
@@ -30,18 +37,57 @@ body {
     padding: 12px 20px 12px 40px;
 }
 
-.container {
-    display: inline-block;
-}
-
 #home {
-    width: 30px;
+    width: 45px;
 }
 
 #country_flag {
-    width: 20%;
+    width: 30%;
+    object-fit: contain;
 }
 
 #map {
     width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+.header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+}
+
+.column {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.right_align {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 170px);
+    column-gap: 15px;
+}
+
+.form_grid label {
+    margin-bottom: 4px;
 }
