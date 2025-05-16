@@ -9,7 +9,7 @@
 
 <body>
     <div id="navbar" class="row">
-        <img src="home-icon.png" id="home" class="column"></img>
+        <img src="../icons/home-icon.png" id="home" class="column">
         <div class="column right_align">
             <input type="text" id="search_bar" placeholder="Search country names...">
 
@@ -28,7 +28,7 @@
     <br>
     <fieldset>
         <legend>Explore the attributes of any country's flag:</legend>
-        <form class="form_grid">
+        <div class="grid">
             <label><input type="checkbox" id="red">red</label>
             <label><input type="checkbox" id="green">green</label>
             <label><input type="checkbox" id="blue">blue</label>
@@ -50,9 +50,8 @@
             <label><input type="checkbox" id="crest_emblem">crest/emblem</label>
             <label><input type="checkbox" id="border">border</label>
             <label><input type="checkbox" id="trapezoid">trapezoid</label>
-
-            <input type="submit" value="Explore">
-        </form>
+        </div>
+        <button type="button">Submit</button>
     </fieldset>
     <br>
     <img id="map" class="center" src="worldmap.png">

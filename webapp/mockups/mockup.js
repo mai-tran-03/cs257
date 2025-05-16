@@ -1,21 +1,8 @@
 // Set up the event listeners for the search bar after loading
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     let searchElement = document.getElementById("search_bar");
-    searchElement.addEventListener("keyup", filterResults); 
-
-    searchElement.addEventListener("focusin", showSearchList);
-    searchElement.addEventListener("focusout", hideSearchList);
+    searchElement.addEventListener("keyup", filterResults);
 });
-
-function showSearchList() {
-    let ul = document.getElementById("search_countries");
-    ul.style.visibility = "visible";
-}
-
-function hideSearchList() {
-    let ul = document.getElementById("search_countries");
-    ul.style.visibility = "hidden";
-}
 
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
 function filterResults() {
