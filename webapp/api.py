@@ -19,7 +19,7 @@ import psycopg2
 import sys
 import re
 
-app = flask.Flask(__name__)
+api = flask.Blueprint('api', __name__)
 
 attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
@@ -39,11 +39,8 @@ def get_connection():
         print(e, file=sys.stderr)
         exit()
 
-@app.route('/')
-def homepage():
-    return 'Welcome to countries and flags API homepage!'
 
-@app.route('/countries/name_contains/<search_text>')
+@api.route('/countries/name_contains/<search_text>')
 def getCountriesContainName(search_text):
     ''' Returns a list of all countries in the database whose names contain
         (case-insensitively) the specified search string. Each country is
@@ -68,7 +65,7 @@ def getCountriesContainName(search_text):
     return countries
 
 
-@app.route('/countries')
+@api.route('/countries')
 def getContriesWithAttribute():
     ''' Returns a list of all countries in the database that have all the
         attributes inputted (case-insensitively). Each country is represented 
@@ -86,10 +83,6 @@ def getContriesWithAttribute():
     if flask.request.args.get('continent') != None:
         search_continent = re.sub("_", " ", flask.request.args.get('continent'))
 
-    # After this point, assume that there is something to search and show
-    if not search_attributes and not search_continent:
-        return []
-
     countries = []
     # query parameters will be the continent searched if it exists
     query_parameters = []
@@ -100,7 +93,10 @@ def getContriesWithAttribute():
             querySELECT = f"{querySELECT}, countries_flags.{attribute} "
 
         queryFROM = ' FROM countries_flags, continents '
-        queryWHERE = 'WHERE'
+        if search_attributes or search_continent:
+            queryWHERE = 'WHERE'
+        else:
+            queryWHERE = ' AND'
 
         # add continent to the WHERE constraint
         if search_continent:
@@ -135,7 +131,7 @@ def getContriesWithAttribute():
     return countries
 
 
-@app.route('/country/<name>')
+@api.route('/country/<name>')
 def getCountry(name):
     ''' Returns a country in the database whose name exactly matches
         (case-insensitively) the specified search string. The country is
@@ -166,21 +162,6 @@ def getCountry(name):
     return country
 
 
-@app.route('/help')
+@api.route('/help')
 def get_help():
     return flask.render_template('help.html')
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        prog='api.py',
-        usage='python3 api.py host port',
-        description='''Hosts a webpage where data about countries and their flags can be
-                    queired and shown. Countries' flags that have attributes can be 
-                    displayed. Country names can be searched for. Specific countries can 
-                    have all their data displayed.'''
-    )
-
-    parser.add_argument('host', help='the host on which this app is running')
-    parser.add_argument('port', type=int, help='the port on which this app is listening')
-    args = parser.parse_args()
-    app.run(host=args.host, port=args.port, debug=True)
