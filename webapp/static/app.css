@@ -1,0 +1,138 @@
+body {
+    font-size: 18px;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+}
+
+#home {
+    width: 45px;
+}
+
+#search_bar {
+    background-image: url('../static/search-icon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 200px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+}
+
+#search_bar:hover {
+    background-color: #F1F1F1;
+}
+
+/* when search bar is clicked, searched countries are shown */
+#search_bar:focus+#search_countries {
+    visibility: visible;
+}
+
+#search_countries {
+    list-style-type: none;
+    visibility: hidden;
+    position: absolute;
+    margin-top: 0;
+}
+
+#search_countries li a {
+    margin: 0;
+    border: 1px solid black;
+    border-top: 0px;
+    background-color: #605c5c;
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: 200px;
+}
+
+#search_countries li a:visited {
+    color: gray;
+}
+
+#search_countries li a:hover {
+    background-color: #a6a0a0;
+}
+
+#country_flag {
+    width: 30%;
+    object-fit: contain;
+}
+
+#map {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+.header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+}
+
+.right_align {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 170px);
+    column-gap: 15px;
+}
+
+.grid label {
+    margin-bottom: 4px;
+}
+
+fieldset {
+    background-color: #eeeeee;
+}
+
+legend {
+    background-color: gray;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 10px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    padding: 5px 10px;
+}
+
+button:active {
+    background-color: gray;
+    color: white;
+    border-radius: 2px;
+}
+
+#get_data {
+    background-color: red;
+    color: white;
+    border: 2px black solid;
+    font-size: xx-large;
+    text-align: center;
+}

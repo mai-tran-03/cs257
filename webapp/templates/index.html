@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="mockup.css">
-    <script src="mockup.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </head>
 
 <body>
+    <button id="get_data" class="center">GET DATA!</button>
+    <p style="text-align: center;">click on search bar to see data</p>
     <div id="navbar" class="row">
         <img src="../static/home-icon.png" id="home" class="column">
         <div class="column right_align">
             <input type="text" id="search_bar" placeholder="Search country names...">
 
-            <ul id="search_countries">
-                <li><a href="#">Japan</a></li>
-                <li><a href="#">Panama</a></li>
-                <li><a href="#">Botswana</a></li>
-                <li><a href="#">France</a></li>
-                <li><a href="#">Canada</a></li>
-                <li><a href="#">Barbados</a></li>
-                <li><a href="#">Brazil</a></li>
-                <li><a href="#">Chile</a></li>
-            </ul>
+            <ul id="search_countries"></ul>
         </div>
     </div>
     <br>
@@ -51,7 +43,7 @@
             <label><input type="checkbox" id="border">border</label>
             <label><input type="checkbox" id="trapezoid">trapezoid</label>
         </div>
-        <button type="button">Submit</button>
+        <button>Submit</button>
     </fieldset>
     <br>
     <img id="map" class="center" src="../static/worldmap.png">
