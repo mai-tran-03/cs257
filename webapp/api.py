@@ -21,6 +21,7 @@ import re
 
 api = flask.Blueprint('api', __name__)
 
+
 attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
@@ -112,7 +113,7 @@ def getContriesWithAttribute():
         # remove the last _AND
         queryWHERE = queryWHERE[:-4]
 
-        query = querySELECT + queryFROM + queryWHERE + ';'
+        query = querySELECT + queryFROM + queryWHERE +';'
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query, query_parameters)
@@ -140,13 +141,22 @@ def getCountry(name):
     country = {}
     
     try:
-        query = '''SELECT tld, country_name, other_names, area, population, 
-                    continent_id, bars, stripes, bends, red, green, blue, gold_yellow,
-                    white, black_grey, orange_brown, pink_purple, main_hue, circles, 
-                    crosses, saltires, quarters, sun_stars, crescent_moon, triangle, 
-                    inanimate_image, animate_image, text, crest_emblem, border, trapezoid
-                FROM countries_flags
-                WHERE country_name ILIKE %s;
+        query = '''SELECT countries_flags.tld, countries_flags.country_name, 
+                    countries_flags.other_names, countries_flags.area, countries_flags.population, 
+                    continents.continent_name, countries_flags.bars, countries_flags.stripes, 
+                    countries_flags.bends, countries_flags.red, countries_flags.green, 
+                    countries_flags.blue, countries_flags.gold_yellow,
+                    countries_flags.white, countries_flags.black_grey, countries_flags.orange_brown,
+                    countries_flags.pink_purple, countries_flags.main_hue, 
+                    countries_flags.circles, countries_flags.crosses, countries_flags.saltires, 
+                    countries_flags.quarters, countries_flags.sun_stars, 
+                    countries_flags.crescent_moon, countries_flags.triangle, 
+                    countries_flags.inanimate_image, countries_flags.animate_image, 
+                    countries_flags.text, countries_flags.crest_emblem, countries_flags.border, 
+                    countries_flags.trapezoid
+                FROM countries_flags, continents
+                WHERE country_name ILIKE %s AND
+                countries_flags.continent_id = continents.continent_id;
                 '''
         connection = get_connection()
         cursor = connection.cursor()

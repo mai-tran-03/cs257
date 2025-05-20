@@ -20,7 +20,15 @@ app.register_blueprint(api.api, url_prefix='/api')
 
 @app.route('/')
 def home():
-    return flask.render_template('index.html')
+    return flask.render_template('home.html')
+
+# @app.route('/country')
+# def country():
+#     return flask.render_template('country.html')
+
+@app.route('/country/<name>')
+def getCountryTwo(name):
+    return flask.render_template('country.html')
 
 
 if __name__ == '__main__':
