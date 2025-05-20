@@ -15,6 +15,35 @@ function getAPIBaseURL() {
         + '/api';
     return baseURL;
 }
+
+// On clicking get data button, fecth all the countries from the database
+// and populate the drop down, seen after the search bar is clicked. 
+function onGetData() {
+    console.log('get data was clicked!');
+    let url = getAPIBaseURL() + '/countries';
+
+    fetch(url, { method: 'get' })
+        .then((response) => response.json())
+        .then(function (result) {
+            let ul = document.getElementById("search_countries");
+            for (let i = 0; i < result.length; i++) {
+
+                let li = document.createElement('li');
+                let a = document.createElement('a');
+                a.href = "#";
+                a.innerText = result[i].country_name;
+
+                li.append(a);
+                ul.append(li);
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
 function filterResults() {
     let input = document.getElementById("search_bar");
@@ -30,26 +59,4 @@ function filterResults() {
             li[i].style.display = "none";
         }
     }
-}
-
-function onGetData() {
-    console.log('clicked-----');
-    let url = getAPIBaseURL() + '/countries';
-
-    fetch(url, { method: 'get' })
-        .then((response) => response.json())
-        .then(function (result) {
-            let ul = document.getElementById("search_countries");
-            for (let i = 0; i < result.length; i++) {
-                let li = document.createElement('li');
-                let a = document.createElement('a');
-                a.href = "#";
-                a.innerText = result[i].country_name;
-                li.append(a);
-                ul.append(li);
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
 }

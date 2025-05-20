@@ -1,4 +1,14 @@
 '''
+    Mai Tran and Kezia Sharnoff
+    app.py
+    May 2025
+
+    NAME: app.py Flask pages to host the webapp 
+    SYNOPSIS: python3 app.py localhost [port]
+    DESCRIPTION: Hosts a webpage where data about countries and their flags can be
+    queried and shown. Countries' flags that have attributes can be displayed. 
+    Country names can be searched for. Specific countries can have all their data
+    displayed. 
 '''
 import flask
 import argparse
