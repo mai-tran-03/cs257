@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
@@ -7,7 +8,7 @@
 </head>
 
 <body>
-    <div id="navbar" class="row">
+    <div class="row">
         <img src="../static/home-icon.png" id="home" class="column">
         <div class="column right_align">
             <input type="text" id="search_bar" placeholder="Search country names...">
@@ -44,6 +45,17 @@
         <button>Submit</button>
     </fieldset>
     <br>
+    <div class="country_info">
+        <h1 class="header" id="country_name"> </h1>
+
+        <div class="row">
+            <img id="country_flag" class="column">
+
+            <ul class="column" id="attributes">
+                <li>..</li>
+            </ul>
+        </div>
+    </div>
     <img id="map" class="center" src="../static/worldmap.png">
 
 </body>

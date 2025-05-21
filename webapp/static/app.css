@@ -23,18 +23,18 @@ body {
 }
 
 /* when search bar is clicked, searched countries are shown */
-#search_bar:focus+#search_countries {
+/* #search_bar:focus+#search_countries {
     visibility: visible;
-}
+} */
 
 #search_countries {
     list-style-type: none;
-    visibility: hidden;
+    /* visibility: hidden; */
     position: absolute;
     margin-top: 0;
 }
 
-#search_countries li a {
+/* #search_countries li a {
     margin: 0;
     border: 1px solid black;
     border-top: 0px;
@@ -52,7 +52,7 @@ body {
 
 #search_countries li a:hover {
     background-color: #a6a0a0;
-}
+} */
 
 #country_flag {
     width: 30%;

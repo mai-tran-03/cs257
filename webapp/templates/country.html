@@ -8,18 +8,16 @@
 </head>
 
 <body>
-    <div id="navbar" class="row">
+    <div class="row">
         <img src="../static/home-icon.png" id="home" class="column"></img>
         <div class="column right_align">
             <input type="text" id="search_bar" placeholder="Search country names...">
-
-            <ul id="search_countries">
-            </ul>
+            <ul id="search_countries"></ul>
         </div>
     </div>
 
 
-    <h1 class="header" id="country_name"> </h1>
+    <h1 class="header" id="country_name">{{ name }}</h1>
 
     <div class="row">
         <img id="country_flag" class="column">

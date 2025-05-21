@@ -118,7 +118,6 @@ def getContriesWithAttribute():
         cursor = connection.cursor()
         cursor.execute(query, query_parameters)
 
-
         for row in cursor:
             country = {'country_name': row[0]}
             for index, attribute in enumerate(search_attributes):
