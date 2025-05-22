@@ -1,5 +1,6 @@
 CREATE TABLE countries_flags (
     tld text,
+    iso3 text,
     country_name text,
     other_names text,
     area integer,

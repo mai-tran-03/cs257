@@ -17,6 +17,8 @@ we do not need to read or edit them in convert.py.
 import sys
 import re
 import csv
+import country_converter as coco
+
 
 def main(input_file_name):
     # countries_flags is a list of lists where each list 
@@ -50,6 +52,13 @@ def main(input_file_name):
                         row[i] = re.sub(",", ";", row[i])
 
                     country_flag[header] = row[i] or 'NULL'
+
+                    if header == "country_code":
+                        tld_list = [row[i]]
+                        iso3_codes = coco.convert(names=tld_list, to='ISO3')
+                        country_flag["iso3"] = iso3_codes
+                        # print(iso3_codes)
+
 
                 # get the languages string and split it into a list
                 langs = row[headers.index("languages")].split(", ")

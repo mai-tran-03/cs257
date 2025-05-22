@@ -89,7 +89,7 @@ def getContriesWithAttribute():
     query_parameters = []
 
     try:
-        querySELECT = 'SELECT DISTINCT countries_flags.country_name'
+        querySELECT = 'SELECT DISTINCT countries_flags.country_name, countries_flags.iso3'
         for attribute in search_attributes:
             querySELECT = f"{querySELECT}, countries_flags.{attribute} "
 
@@ -140,7 +140,7 @@ def getCountry(name):
     country = {}
     
     try:
-        query = '''SELECT countries_flags.tld, countries_flags.country_name, 
+        query = '''SELECT countries_flags.tld, countries_flags.country_name, countries_flags.iso3, 
                     countries_flags.other_names, countries_flags.area, countries_flags.population, 
                     continents.continent_name, countries_flags.bars, countries_flags.stripes, 
                     countries_flags.bends, countries_flags.red, countries_flags.green, 
