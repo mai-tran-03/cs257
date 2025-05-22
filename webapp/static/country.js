@@ -98,10 +98,19 @@ const countryStatsHeaders = ["Other names: ", "Area (sq km): ", "Population: ", 
 const colors = ["red", "green", "blue", "gold_yellow", "white", "black_grey", "orange_brown", "pink_purple"];
 const colorHeaders = ["Red", "Green", "Blue", "Gold/yellow", "White", "Black/grey", "Orange/brown", "Pink/purple"];
 const symbols = ["bars", "stripes", "bends", "circles", "crosses", "saltires", "quarters", "sun_stars", "crescent_moon", "triangle", "inanimate_image", "animate_image", "text", "crest_emblem", "border", "trapezoid"]
-const symbolHeaders = ["bars", "stripes", "bends", "circles", "crosses", "saltires", "quarters", "sun_stars", "crescent_moon", "triangle", "inanimate_image", "animate_image", "text", "crest_emblem", "border", "trapezoid"]
+const symbolHeadersSingular = ["Bar: 1", "Stripe: 1", "Bend: 1", "Circle: 1", "Cross: 1", "Saltire: 1", "Quarter: 1", "Sun/star: 1", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
+const symbolHeadersPlural = ["Bars: ", "Stripes: ", "Bends: ", "Circles: ", "Crosses: ", "Saltires: ", "Quarters: ", "Sun/stars: ", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
+
 
 // Input: the JSON object of the country gotten from the database 
 function writeCountryInfo(country) {
+    if (country.country_name === undefined) {
+        document.getElementById("country_flag").style.visibility = "hidden";
+        document.getElementById('map_container').style.visibility = "hidden";
+        document.getElementById("attributes").innerText = "NOT A VALID COUNTRY!";
+        return;
+    }
+
     // console.log(country);
     document.getElementById("country_name").innerText = country.country_name;
     // console.log("flag_images/" + country.tld + ".png");
@@ -137,13 +146,17 @@ function writeCountryInfo(country) {
     for (let i = 0; i < symbols.length; i++) {
         if (country[symbols[i]] != 0) {
             let li = document.createElement('li');
-            li.innerText = symbolHeaders[i] + " " + country[symbols[i]];
+            if ((typeof country[symbols[i]] == "boolean") || (country[symbols[i]] == 1)) {
+                li.innerText = symbolHeadersSingular[i];
+            } else {
+                li.innerText = symbolHeadersPlural[i] + country[symbols[i]];
+            }
             symbolsList.append(li);
         }
     }
 
     let symbolListItem = document.createElement('li');
-    symbolListItem.innerText = "Colors:";
+    symbolListItem.innerText = "Symbols:";
     symbolListItem.append(symbolsList);
     attributesList.append(symbolListItem);
 }
