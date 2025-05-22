@@ -24,10 +24,10 @@ def home():
     return flask.render_template('home.html')
 
 
-# @app.route('/country/<name>')
+@app.route('/country/<name>')
 def displayCountry(name):
     print("got here app routing country name==============")
-    return flask.render_template('country.html', name=name.capitalize())
+    return flask.render_template('country.html', name=name)
 
 
 if __name__ == '__main__':
