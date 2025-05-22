@@ -5,6 +5,10 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
     <script src="{{ url_for('static', filename='country.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+
+    <script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
 </head>
 
 <body>
@@ -22,31 +26,10 @@
     <div class="row">
         <img id="country_flag" class="column">
 
-        <ul class="column" id="attributes">
-            <!-- <li> Other names: Republic of Chile </li>
-            <li> Continent: South America </li>
-            <li> Area: 756,102 sq km </li>
-            <li> Population: 18,664,652 </li>
-
-            <li> Colors:
-                <ul>
-                    <li> Blue </li>
-                    <li> White </li>
-                    <li> Red </li>
-                </ul>
-            </li>
-
-            <li> Symbols:
-                <ul>
-                    <li> Quarters: 1 </li>
-                    <li> Stars: 1 </li>
-                    <li> Stripes: 2 </li>
-                </ul>
-            </li> -->
-        </ul>
+        <ul class="column" id="attributes"></ul>
     </div>
 
-    <img id="map" class="center" src="../static/chileWorldMap.png">
+    <div class="map" id="map_container" class="center"> </div>
 
     <br>
 </body>

@@ -22,7 +22,7 @@ import re
 api = flask.Blueprint('api', __name__)
 
 
-attribute_names = ['tld', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
+attribute_names = ['tld', 'iso3', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
         'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
@@ -119,9 +119,9 @@ def getContriesWithAttribute():
         cursor.execute(query, query_parameters)
 
         for row in cursor:
-            country = {'country_name': row[0]}
+            country = {'country_name': row[0], 'iso3': row[1]}
             for index, attribute in enumerate(search_attributes):
-                country[attribute] = row[index+1]
+                country[attribute] = row[index+2]
             countries.append(country)
 
     except Exception as e:
@@ -140,7 +140,7 @@ def getCountry(name):
     country = {}
     
     try:
-        query = '''SELECT countries_flags.tld, countries_flags.country_name, countries_flags.iso3, 
+        query = '''SELECT countries_flags.tld, countries_flags.iso3, countries_flags.country_name, 
                     countries_flags.other_names, countries_flags.area, countries_flags.population, 
                     continents.continent_name, countries_flags.bars, countries_flags.stripes, 
                     countries_flags.bends, countries_flags.red, countries_flags.green, 

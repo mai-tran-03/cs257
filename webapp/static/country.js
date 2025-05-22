@@ -42,6 +42,7 @@ function populateDropBar() {
     fetch(url, { method: 'get' })
         .then((response) => response.json())
         .then(function (result) {
+            console.log(result);
             result.sort(function (a, b) {
                 return a.country_name.localeCompare(b.country_name);
             });
@@ -84,6 +85,7 @@ function getCountryFromAPI(name) {
         .then((response) => response.json())
         .then(function (result) {
             writeCountryInfo(result);
+            initializeMap(result);
         })
         .catch(function (error) {
             console.log(error);
@@ -100,15 +102,15 @@ const symbolHeaders = ["bars", "stripes", "bends", "circles", "crosses", "saltir
 
 // Input: the JSON object of the country gotten from the database 
 function writeCountryInfo(country) {
-    console.log(country);
+    // console.log(country);
     document.getElementById("country_name").innerText = country.country_name;
-    console.log("flag_images/" + country.tld + ".png");
+    // console.log("flag_images/" + country.tld + ".png");
     document.getElementById("country_flag").src = "../static/flag_images/" + country.tld + ".png";
 
     let attributesList = document.getElementById("attributes");
 
     for (let i = 0; i < countryStats.length; i++) {
-        console.log(countryStats[i]);
+        // console.log(countryStats[i]);
         if (country[countryStats[i]] !== null) {
             let li = document.createElement('li');
             li.innerText = countryStatsHeaders[i] + country[countryStats[i]];
@@ -144,5 +146,44 @@ function writeCountryInfo(country) {
     symbolListItem.innerText = "Colors:";
     symbolListItem.append(symbolsList);
     attributesList.append(symbolListItem);
+}
 
+
+
+/*
+ * map-sample-world.js
+ * Jeff Ondich
+ * 11 November 2020
+ *
+ * Simple sample using the Datamaps library to show how to incorporate
+ * a US map in your project.
+ *
+ * Datamaps is Copyright (c) 2012 Mark DiMarco
+ * https://github.com/markmarkoh/datamaps
+ */
+
+function initializeMap(country) {
+    let iso = country.iso3;
+    // console.log(country.iso3);
+    // console.log(country);
+
+    // let countryData = { country.iso3 : {fillColor: '#aa2222'} };
+    let countryData = {GBR: {fillColor: '#2222aa'}};
+    // console.log(countryData);
+
+    var map = new Datamap({ element: document.getElementById('map_container'),
+                            scope: 'world', 
+                            projection: 'equirectangular', 
+                            done: onMapDone, // once the map is loaded, call this function
+                            data: countryData, // here's some data that will be used by the popup template
+                            fills: { defaultFill: '#999999' },
+                            geographyConfig: {
+                                popupOnHover: false, // You can disable the hover popup
+                                highlightOnHover: false, // You can disable the color change on hover
+                            }
+                          });
+}
+
+function onMapDone() {
+    return;
 }

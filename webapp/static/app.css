@@ -59,11 +59,22 @@ body {
     object-fit: contain;
 }
 
-#map {
+/* stuff for maps*/
+.map {
     width: 90%;
     margin: auto;
     padding: 10px;
 }
+#map-container {
+    background: orange;
+}
+.hoverpopup {
+    background: #eeeeee;
+    border: 1px black solid;
+    padding: 3px;
+}
+/* end stuff for maps */
+
 
 .header {
     background-color: #F1F1F1;
