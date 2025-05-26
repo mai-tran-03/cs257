@@ -42,7 +42,7 @@ def get_connection():
 
 
 @api.route('/countries/name_contains/<search_text>')
-def getCountriesContainName(search_text):
+def get_countries_contain_name(search_text):
     ''' Returns a list of all countries in the database whose names contain
         (case-insensitively) the specified search string. Each country is
         represented by a dictionary with keys "country_name," "other_names," 
@@ -67,7 +67,7 @@ def getCountriesContainName(search_text):
 
 
 @api.route('/countries')
-def getContriesWithAttribute():
+def get_contries_with_attribute():
     ''' Returns a list of all countries in the database that have all the
         attributes inputted (case-insensitively). Each country is represented 
         by a dictionary with all the inputted attributes. '''
@@ -132,7 +132,7 @@ def getContriesWithAttribute():
 
 
 @api.route('/country/<name>')
-def getCountry(name):
+def get_country(name):
     ''' Returns a country in the database whose name exactly matches
         (case-insensitively) the specified search string. The country is
         represented by a dictionary with all its attributes. '''
@@ -162,6 +162,9 @@ def getCountry(name):
         cursor.execute(query, (name,))
         for row in cursor:
             for index, attribute in enumerate(attribute_names):
+                if index == 6: 
+                    country['continent_name'] = row[index]
+                    continue
                 country[attribute] = row[index]
         
     except Exception as e:

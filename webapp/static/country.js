@@ -1,24 +1,39 @@
+// TO DO:
+// re-format the info from list to a beautiful table
+// add comments to these functions
+// fix the dropdown
+// move oceania projection a little right so we can see fiji
+
+
+
+
 // Set up the event listeners for the search bar after loading
 window.addEventListener("load", function () {
     console.log('loading......')
     let searchElement = document.getElementById("search_bar");
     searchElement.addEventListener("input", filterResults);
 
+    searchElement.addEventListener("mouseover", function () {
+        document.getElementById("search_countries").style.visibility = "visible";
+    });
+
+    document.getElementById("home").href = getBaseURL();
+
     populateDropBar();
     getCountryFromAPI(getNameFromUrl());
 });
 
-
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
 function filterResults() {
     let input = document.getElementById("search_bar");
-    let filter = input.value.toUpperCase();
+    let searchText = input.value.toUpperCase();
     let ul = document.getElementById("search_countries");
     let li = ul.getElementsByTagName("li");
+
     for (let i = 0; i < li.length; i++) {
         let a = li[i].querySelector("a");
         let textValue = a.textContent || a.innerText;
-        if (textValue.toUpperCase().indexOf(filter) > -1) {
+        if (textValue.toUpperCase().indexOf(searchText) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
@@ -49,12 +64,21 @@ function populateDropBar() {
 
             let ul = document.getElementById("search_countries");
 
+            let baseURL = getBaseURL();
+
+            let liNone = document.createElement('li');
+            let aNone = document.createElement('a');
+            aNone.href = baseURL; 
+            aNone.textContent = "None";
+            liNone.append(aNone);
+            ul.append(liNone);
+
             for (let i = 0; i < result.length; i++) {
                 const country = result[i];
                 let li = document.createElement('li');
                 let a = document.createElement('a');
 
-                a.href = getBaseURL() + "/country/" + country.country_name;
+                a.href = baseURL + "/country/" + country.country_name;
                 a.textContent = country.country_name;
 
                 li.append(a);
@@ -93,7 +117,7 @@ function getCountryFromAPI(name) {
 }
 
 
-const countryStats = ["other_names", "area", "population", "continent_id", "main_hue"];
+const countryStats = ["other_names", "area", "population", "continent_name", "main_hue"];
 const countryStatsHeaders = ["Other names: ", "Area (sq km): ", "Population: ", "Continent: ", "Main hue: "];
 const colors = ["red", "green", "blue", "gold_yellow", "white", "black_grey", "orange_brown", "pink_purple"];
 const colorHeaders = ["Red", "Green", "Blue", "Gold/yellow", "White", "Black/grey", "Orange/brown", "Pink/purple"];
@@ -162,41 +186,105 @@ function writeCountryInfo(country) {
 }
 
 
-
 /*
- * map-sample-world.js
- * Jeff Ondich
- * 11 November 2020
- *
- * Simple sample using the Datamaps library to show how to incorporate
- * a US map in your project.
- *
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps
  */
 
 function initializeMap(country) {
-    let iso = country.iso3;
-    // console.log(country.iso3);
-    // console.log(country);
+    let countryData = {};
+    let continentName = country.continent_name;
+    countryData[country.iso3] = {fillColor: '#f54242'};
 
-    // let countryData = { country.iso3 : {fillColor: '#aa2222'} };
-    let countryData = {GBR: {fillColor: '#2222aa'}};
-    // console.log(countryData);
-
-    var map = new Datamap({ element: document.getElementById('map_container'),
+    let map = new Datamap({ element: document.getElementById('map_container'),
                             scope: 'world', 
                             projection: 'equirectangular', 
-                            done: onMapDone, // once the map is loaded, call this function
-                            data: countryData, // here's some data that will be used by the popup template
+                            setProjection: function(element) {
+                                return continentProjection(element, continentName);
+                            },
+                            done: function() {}, 
+                            data: countryData,
                             fills: { defaultFill: '#999999' },
                             geographyConfig: {
-                                popupOnHover: false, // You can disable the hover popup
-                                highlightOnHover: false, // You can disable the color change on hover
+                                popupOnHover: false, 
+                                highlightOnHover: false, 
+                                hideAntarctica: false,
                             }
                           });
 }
 
-function onMapDone() {
-    return;
+function continentProjection(element, name) {
+    if (name === "Africa") {
+        let projection = d3.geo.equirectangular()
+            .center([23, 2])
+            .rotate([4.4, 0])
+            .scale(500)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else if (name === "Asia") {
+        let projection = d3.geo.equirectangular()
+            .center([90, 35])
+            .rotate([4, 0])
+            .scale(400)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else if (name === "Europe") {
+        let projection = d3.geo.equirectangular()
+            .center([23, 50])
+            .rotate([5, 0])
+            .scale(800)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else if (name === "North America") {
+        let projection = d3.geo.equirectangular()
+            .center([-100, 40])
+            .rotate([5, 0])
+            .scale(450)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else if (name === "Oceania") {
+        let projection = d3.geo.equirectangular()
+            .center([135, -20])
+            .rotate([5, 0])
+            .scale(600)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else if (name === "South America") {
+        let projection = d3.geo.equirectangular()
+            .center([-60, -20])
+            .rotate([5, 0])
+            .scale(515)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    } else {
+        let projection = d3.geo.equirectangular()
+            .center([0, 0])
+            .rotate([0, 0])
+            .scale(225)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        let path = d3.geo.path()
+            .projection(projection);
+
+        return {path: path, projection: projection};
+    }
 }
+
+

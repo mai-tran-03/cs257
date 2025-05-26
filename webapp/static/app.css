@@ -1,19 +1,19 @@
 body {
     font-size: 18px;
-    padding: 8px;
+    margin: 8px;
     font-family: Arial, sans-serif;
 }
 
-#home {
+.home {
     width: 45px;
 }
 
 #search_bar {
-    background-image: url('../static/search-icon.png');
+    background-image: url('../static/triangle.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     background-size: 20px;
-    width: 200px;
+    width: 300px;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
 }
@@ -29,12 +29,13 @@ body {
 
 #search_countries {
     list-style-type: none;
-    /* visibility: hidden; */
+    visibility: hidden; 
     position: absolute;
     margin-top: 0;
+    z-index: 50;
 }
 
-/* #search_countries li a {
+ #search_countries li a {
     margin: 0;
     border: 1px solid black;
     border-top: 0px;
@@ -46,17 +47,14 @@ body {
     width: 200px;
 }
 
-#search_countries li a:visited {
-    color: gray;
-}
-
 #search_countries li a:hover {
     background-color: #a6a0a0;
-} */
+} 
 
 #country_flag {
     width: 30%;
     object-fit: contain;
+    border: 1px, solid, black;
 }
 
 /* stuff for maps*/
@@ -65,8 +63,13 @@ body {
     margin: auto;
     padding: 10px;
 }
-#map-container {
-    background: orange;
+#map_container {
+    position: relative;
+    float: left;
+    height: 0;
+    width: 80%;
+    padding-bottom: 35%;
+    background: lightblue;
 }
 .hoverpopup {
     background: #eeeeee;
@@ -106,13 +109,13 @@ body {
     margin-right: auto;
 }
 
-.grid {
+#attributeBoxes {
     display: grid;
     grid-template-columns: repeat(5, 170px);
     column-gap: 15px;
 }
 
-.grid label {
+#attributeBoxes label {
     margin-bottom: 4px;
 }
 
