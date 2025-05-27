@@ -8,7 +8,7 @@ body {
     width: 45px;
 }
 
-#search_bar {
+#searchBar {
     background-image: url('../static/triangle.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
@@ -18,16 +18,16 @@ body {
     padding: 12px 20px 12px 40px;
 }
 
-#search_bar:hover {
+#searchBar:hover {
     background-color: #F1F1F1;
 }
 
 /* when search bar is clicked, searched countries are shown */
-/* #search_bar:focus+#search_countries {
+/* #searchBar:focus+#search_countries {
     visibility: visible;
 } */
 
-#search_countries {
+#searchCountries {
     list-style-type: none;
     visibility: hidden; 
     position: absolute;
@@ -35,7 +35,7 @@ body {
     z-index: 50;
 }
 
- #search_countries li a {
+ #searchCountries li a {
     margin: 0;
     border: 1px solid black;
     border-top: 0px;
@@ -47,11 +47,11 @@ body {
     width: 200px;
 }
 
-#search_countries li a:hover {
+#searchCountries li a:hover {
     background-color: #a6a0a0;
 } 
 
-#country_flag {
+#countryFlag {
     width: 30%;
     object-fit: contain;
     border: 1px, solid, black;
@@ -63,7 +63,7 @@ body {
     margin: auto;
     padding: 10px;
 }
-#map_container {
+#mapContainer {
     position: relative;
     float: left;
     height: 0;
@@ -98,7 +98,7 @@ body {
     flex-direction: column;
 }
 
-.right_align {
+.rightAlign {
     margin-left: auto;
     margin-right: 0;
 }
@@ -143,7 +143,7 @@ button:active {
     border-radius: 2px;
 }
 
-#get_data {
+#getData {
     background-color: red;
     color: white;
     border: 2px black solid;

@@ -18,11 +18,11 @@ window.addEventListener("load", function () {
     // link home button
     document.getElementById("home").href = getBaseURL();
 
-    let searchElement = document.getElementById("search_bar");
+    let searchElement = document.getElementById("searchBar");
     searchElement.addEventListener("input", filterResults);
 
     searchElement.addEventListener("mouseover", function () {
-        document.getElementById("search_countries").style.visibility = "visible";
+        document.getElementById("searchCountries").style.visibility = "visible";
     });
 
     populateDropBar();
@@ -40,10 +40,10 @@ function searchAttributes(map) {
     console.log(getParams);
     console.log(continent);
 
-    document.getElementById('map_container').remove();
+    document.getElementById('mapContainer').remove();
 
     let newMap = document.createElement("div");
-    newMap.id = "map_container";
+    newMap.id = "mapContainer";
     newMap.className = "center";
     document.getElementById("mapDiv").append(newMap);
 
@@ -102,9 +102,9 @@ function makeGetParamAttributes() {
 
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
 function filterResults() {
-    let input = document.getElementById("search_bar");
+    let input = document.getElementById("searchBar");
     let searchText = input.value.toUpperCase();
-    let ul = document.getElementById("search_countries");
+    let ul = document.getElementById("searchCountries");
     let li = ul.getElementsByTagName("li");
 
     for (let i = 0; i < li.length; i++) {
@@ -138,7 +138,7 @@ function populateDropBar() {
                 return a.country_name.localeCompare(b.country_name);
             });
 
-            let ul = document.getElementById("search_countries");
+            let ul = document.getElementById("searchCountries");
 
             let baseURL = getBaseURL();
 
@@ -191,7 +191,7 @@ function redrawMap(countries, map, continent) {
 
 function drawMap(countriesData, continent) {
 
-    let map = new Datamap({ element: document.getElementById('map_container'),
+    let map = new Datamap({ element: document.getElementById('mapContainer'),
                             scope: 'world', 
                             projection: 'equirectangular',
                             setProjection: function(element) {

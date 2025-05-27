@@ -10,11 +10,11 @@
 // Set up the event listeners for the search bar after loading
 window.addEventListener("load", function () {
     console.log('loading......')
-    let searchElement = document.getElementById("search_bar");
+    let searchElement = document.getElementById("searchBar");
     searchElement.addEventListener("input", filterResults);
 
     searchElement.addEventListener("mouseover", function () {
-        document.getElementById("search_countries").style.visibility = "visible";
+        document.getElementById("searchCountries").style.visibility = "visible";
     });
 
     document.getElementById("home").href = getBaseURL();
@@ -25,9 +25,9 @@ window.addEventListener("load", function () {
 
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
 function filterResults() {
-    let input = document.getElementById("search_bar");
+    let input = document.getElementById("searchBar");
     let searchText = input.value.toUpperCase();
-    let ul = document.getElementById("search_countries");
+    let ul = document.getElementById("searchCountries");
     let li = ul.getElementsByTagName("li");
 
     for (let i = 0; i < li.length; i++) {
@@ -62,7 +62,7 @@ function populateDropBar() {
                 return a.country_name.localeCompare(b.country_name);
             });
 
-            let ul = document.getElementById("search_countries");
+            let ul = document.getElementById("searchCountries");
 
             let baseURL = getBaseURL();
 
@@ -129,16 +129,16 @@ const symbolHeadersPlural = ["Bars: ", "Stripes: ", "Bends: ", "Circles: ", "Cro
 // Input: the JSON object of the country gotten from the database 
 function writeCountryInfo(country) {
     if (country.country_name === undefined) {
-        document.getElementById("country_flag").style.visibility = "hidden";
-        document.getElementById('map_container').style.visibility = "hidden";
+        document.getElementById("countryFlag").style.visibility = "hidden";
+        document.getElementById('mapContainer').style.visibility = "hidden";
         document.getElementById("attributes").innerText = "NOT A VALID COUNTRY!";
         return;
     }
 
     // console.log(country);
-    document.getElementById("country_name").innerText = country.country_name;
+    document.getElementById("countryName").innerText = country.country_name;
     // console.log("flag_images/" + country.tld + ".png");
-    document.getElementById("country_flag").src = "../static/flag_images/" + country.tld + ".png";
+    document.getElementById("countryFlag").src = "../static/flag_images/" + country.tld + ".png";
 
     let attributesList = document.getElementById("attributes");
 
@@ -196,7 +196,7 @@ function initializeMap(country) {
     let continentName = country.continent_name;
     countryData[country.iso3] = {fillColor: '#f54242'};
 
-    let map = new Datamap({ element: document.getElementById('map_container'),
+    let map = new Datamap({ element: document.getElementById('mapContainer'),
                             scope: 'world', 
                             projection: 'equirectangular', 
                             setProjection: function(element) {
