@@ -1,7 +1,5 @@
 /*
 To do
-
-- have hover pop up say good text (yellow/brown not yellow_brown)
 - stretch goal: have way to limit search by continent
 - make everything camel case in js and html 
 - add comments
@@ -211,6 +209,38 @@ function drawMap(countriesData, continent) {
     return map;
 }
 
+const formattedAttributes = {
+    other_names: "Other names: ",
+    area: "Area: ",
+    population: "Population: ", 
+    continent_name: "Continent: ",
+    main_hue: "Main hue:", 
+    red: "Red: ",
+    green: "Green: ", 
+    blue: "Blue: ", 
+    gold_yellow: "Gold/yellow: ",
+    white: "White: ",
+    black_grey: "Black/grey: ",
+    orange_brown: "Orange/brown: ",
+    pink_purple: "Pink/purple: ", 
+    bars: "Bars: ",
+    stripes: "Stripes: ", 
+    circles: "Circles: ", 
+    crosses: "Crosses: ", 
+    saltires: "Saltires: ", 
+    quarters: "Quarters: ",
+    sun_stars: "Sun/stars: ",
+    crescent_moon: "Crescent moon: ",
+    triangle: "Triangle: ",
+    inanimate_image: "Inanimate image: ", 
+    animate_image: "Animate image: ", 
+    text: "Text: ",
+    crest_emblem: "Crest/emblem: ", 
+    border: "Border: ", 
+    trapazoid: "Trapazoid: "
+};
+
+
 function hoverPopup(geography, data) {
     console.log(data);
     let template = '<div class="hoverpopup"><strong>' + geography.properties.name + '</strong><br>\n';
@@ -219,7 +249,7 @@ function hoverPopup(geography, data) {
         if (key === "country_name" || key === "iso3" || key === "fillColor") {
             continue;
         }
-        template += '<strong>' + key + ':</strong> ' + value + '<br>\n';
+        template += '<strong>' + formattedAttributes[key] + '</strong> ' + value + '<br>\n';
     }
     template +='</div>';
 
