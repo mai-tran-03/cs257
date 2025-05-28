@@ -59,26 +59,25 @@ function writeCountryInfo(country) {
     document.getElementById("countryName").innerText = country.country_name;
     document.getElementById("countryFlag").src = "../static/flag_images/" + country.tld + ".png";
 
-
     // general country info 
     let infoTable = document.getElementById("infoTable");
 
     for (let i = 0; i < countryStats.length; i++) {
         if (country[countryStats[i]] !== null) {
-            let tableRow = document.createElement('tr');
-            let statsName = document.createElement('td');
+            let tableRow = document.createElement("tr");
+            let statsName = document.createElement("td");
 
             statsName.append(document.createTextNode(countryStatsHeaders[i]));
             statsName.className = "textRight";
 
-            let statsCount = document.createElement('td');
+            let statsCount = document.createElement("td");
 
             // if it is a number (area, population), format it with commas in
             // the thousands places
             let statsCountText = country[countryStats[i]];
             if (typeof statsCountText == "number") {
                 statsCountText = new Intl.NumberFormat("en", {
-                  useGrouping: "always"
+                    useGrouping: "always"
                 }).format(statsCountText);
             }
 
@@ -96,8 +95,8 @@ function writeCountryInfo(country) {
 
     for (let i = 0; i < colors.length; i++) {
         if (country[colors[i]]) {
-            let tableRow = document.createElement('tr');
-            let colorName = document.createElement('td');
+            let tableRow = document.createElement("tr");
+            let colorName = document.createElement("td");
 
             colorName.append(document.createTextNode(colorHeaders[i]));
             colorName.className = "textCenter";
@@ -107,21 +106,20 @@ function writeCountryInfo(country) {
         }
     }
 
-
     // symbols
     let symbolTable = document.getElementById("symbolTable");
 
     for (let i = 0; i < symbols.length; i++) {
         if (country[symbols[i]] != 0) {
-            let tableRow = document.createElement('tr');
-            let symbolName = document.createElement('td');
-            let symbolCount = document.createElement('td');
+            let tableRow = document.createElement("tr");
+            let symbolName = document.createElement("td");
+            let symbolCount = document.createElement("td");
 
             symbolName.className = "textRight";
             symbolCount.className = "textLeft";
 
 
-            let li = document.createElement('li');
+            let li = document.createElement("li");
             if (typeof country[symbols[i]] == "boolean") {
                 symbolName.append(document.createTextNode(symbolHeadersSingular[i]));
             } else if (country[symbols[i]] == 1) {
@@ -137,7 +135,6 @@ function writeCountryInfo(country) {
             symbolTable.append(tableRow);
         }
     }
-
 }
 
 /*
@@ -151,24 +148,25 @@ function initializeMap(country) {
     let continentName = country.continent_name;
     countryData[country.iso3] = { fillColor: "#f54242" };
 
-    new Datamap({ element: document.getElementById('mapContainer'),
-                    scope: 'world', 
-                    projection: 'equirectangular', 
-                    setProjection: function(element) {
-                        return continentProjection(element, continentName);
-                    },
-                    done: function() {}, 
-                    data: countryData,
-                    fills: { defaultFill: '#999999' },
-                    geographyConfig: {
-                        popupOnHover: false, 
-                        highlightOnHover: false, 
-                        hideAntarctica: false,
-                    }
-                  });
+    new Datamap({
+        element: document.getElementById("mapContainer"),
+        scope: "world",
+        projection: "equirectangular",
+        setProjection: function (element) {
+            return projectContinent(element, continentName);
+        },
+        done: function () { },
+        data: countryData,
+        fills: { defaultFill: "#999999" },
+        geographyConfig: {
+            popupOnHover: false,
+            highlightOnHover: false,
+            hideAntarctica: false,
+        }
+    });
 
-    // write a caption under the map with the continent name
+    // Write a caption under the map with the continent name,
     // this happens after the map is drawn so that if the javascript fails in
-    // drawing the map, this will not happen
+    // drawing the map, this will not happen.
     document.getElementById("mapCaption").innerText = country.continent_name;
 }
