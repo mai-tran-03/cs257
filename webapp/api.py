@@ -89,7 +89,7 @@ def get_contries_with_attribute():
     query_parameters = []
 
     try:
-        querySELECT = 'SELECT DISTINCT countries_flags.country_name, countries_flags.iso3'
+        querySELECT = 'SELECT DISTINCT countries_flags.country_name, countries_flags.iso3, countries_flags.tld'
         for attribute in search_attributes:
             querySELECT = f"{querySELECT}, countries_flags.{attribute} "
 
@@ -119,9 +119,9 @@ def get_contries_with_attribute():
         cursor.execute(query, query_parameters)
 
         for row in cursor:
-            country = {'country_name': row[0], 'iso3': row[1]}
+            country = {'country_name': row[0], 'iso3': row[1], 'tld': row[2]}
             for index, attribute in enumerate(search_attributes):
-                country[attribute] = row[index+2]
+                country[attribute] = row[index+3]
             countries.append(country)
 
     except Exception as e:

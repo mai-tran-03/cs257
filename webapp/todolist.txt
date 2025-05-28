@@ -1,0 +1,15 @@
+
+To do
+- add top of the file comments to all js and html files
+- review the comments
+- make the continent dropdown pretty 
+- standardize between " and ' in js and html
+- rescale continents on home page
+- move oceania projection a little right so we can see fiji
+- reformat country info from list to tables
+
+
+- stretch goal: be able to chose between OR and AND for attribute search
+- stretch goal: fix bug of launching new page when clicking on country 
+	being sourced from data's country name instead of datamap's geography
+	property country name,

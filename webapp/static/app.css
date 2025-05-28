@@ -76,6 +76,9 @@ body {
     border: 1px black solid;
     padding: 3px;
 }
+.hoverpopupFlag {
+    width: 30px;
+}
 /* end stuff for maps */
 
 

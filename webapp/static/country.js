@@ -1,29 +1,39 @@
-// TO DO:
-// re-format the info from list to a beautiful table
-// add comments to these functions
-// fix the dropdown
-// move oceania projection a little right so we can see fiji
-
-
-
-
-// Set up the event listeners for the search bar after loading
+// On window load, set up the home button, search drop down, and the country
+// information. 
 window.addEventListener("load", function () {
-    console.log('loading......')
+
+    // link home button
+    document.getElementById("home").href = getBaseURL();
+    
+    // set up search bar drop down
     let searchElement = document.getElementById("searchBar");
     searchElement.addEventListener("input", filterResults);
 
+    let searchCountriesList = document.getElementById("searchCountries");
+
     searchElement.addEventListener("mouseover", function () {
-        document.getElementById("searchCountries").style.visibility = "visible";
+        searchCountriesList.style.visibility = "visible";
+    });
+    searchElement.addEventListener("mouseleave", function () {
+        searchCountriesList.style.visibility = "hidden";        
     });
 
-    document.getElementById("home").href = getBaseURL();
+    searchCountriesList.addEventListener("mouseover", function () {
+        searchCountriesList.style.visibility = "visible";
+    });
+    searchCountriesList.addEventListener("mouseleave", function () {
+        searchCountriesList.style.visibility = "hidden";        
+    });
 
     populateDropBar();
+
+    // get country name from url and use it to fetch and fill in the page's
+    // information 
     getCountryFromAPI(getNameFromUrl());
 });
 
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
+// Cuts down the dropdown list as strings are searched.
 function filterResults() {
     let input = document.getElementById("searchBar");
     let searchText = input.value.toUpperCase();
@@ -42,7 +52,7 @@ function filterResults() {
 }
 
 
-// Returns the base URL of the API, onto which endpoint components can be appended.
+// Returns the base URL of the API, which endpoint components can be added to
 function getBaseURL() {
     let baseURL = window.location.protocol
         + '//' + window.location.hostname
@@ -50,11 +60,11 @@ function getBaseURL() {
     return baseURL;
 }
 
-
+// Fetch list of all countries to fill in the country search dropdown
 function populateDropBar() {
-    let url = getBaseURL() + '/api/countries';
+    let baseURL = getBaseURL();
 
-    fetch(url, { method: 'get' })
+    fetch(baseURL + '/api/countries', { method: 'get' })
         .then((response) => response.json())
         .then(function (result) {
             console.log(result);
@@ -64,15 +74,8 @@ function populateDropBar() {
 
             let ul = document.getElementById("searchCountries");
 
-            let baseURL = getBaseURL();
-
-            let liNone = document.createElement('li');
-            let aNone = document.createElement('a');
-            aNone.href = baseURL; 
-            aNone.textContent = "None";
-            liNone.append(aNone);
-            ul.append(liNone);
-
+            // for each country, make a new list item <li> and add it to the
+            // dropdown list, set the link <a> with the country name
             for (let i = 0; i < result.length; i++) {
                 const country = result[i];
                 let li = document.createElement('li');
@@ -90,18 +93,18 @@ function populateDropBar() {
         });
 }
 
-
+// Get the country name from the URL of the form:
+// http://[baseURL]/country/<name>
 function getNameFromUrl() {
     let url = window.location.toString();
     let lastBackSlash = url.lastIndexOf("/") + 1;
     if (lastBackSlash == url.length) {
         return "";
     }
-    console.log(url.substring(lastBackSlash));
     return url.substring(lastBackSlash);
 }
 
-
+// Fetch information about a specific country from the API
 function getCountryFromAPI(name) {
     let url = getBaseURL() + '/api/country/' + name;
 
@@ -126,24 +129,25 @@ const symbolHeadersSingular = ["Bar: 1", "Stripe: 1", "Bend: 1", "Circle: 1", "C
 const symbolHeadersPlural = ["Bars: ", "Stripes: ", "Bends: ", "Circles: ", "Crosses: ", "Saltires: ", "Quarters: ", "Sun/stars: ", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
 
 
-// Input: the JSON object of the country gotten from the database 
+// Inputs the the country information from SQL. Draws to the screen the couuntry
+// attributes and flag data.  
 function writeCountryInfo(country) {
+    // if country couldn't be returned from SQL: 
     if (country.country_name === undefined) {
         document.getElementById("countryFlag").style.visibility = "hidden";
         document.getElementById('mapContainer').style.visibility = "hidden";
-        document.getElementById("attributes").innerText = "NOT A VALID COUNTRY!";
+        document.getElementById("attributes").innerText = "No country is known by that name!";
         return;
     }
 
-    // console.log(country);
+    // name and flag
     document.getElementById("countryName").innerText = country.country_name;
-    // console.log("flag_images/" + country.tld + ".png");
     document.getElementById("countryFlag").src = "../static/flag_images/" + country.tld + ".png";
 
+    // country attributes
     let attributesList = document.getElementById("attributes");
 
     for (let i = 0; i < countryStats.length; i++) {
-        // console.log(countryStats[i]);
         if (country[countryStats[i]] !== null) {
             let li = document.createElement('li');
             li.innerText = countryStatsHeaders[i] + country[countryStats[i]];
@@ -151,6 +155,8 @@ function writeCountryInfo(country) {
         }
     }
 
+
+    // colors
     let colorsList = document.createElement("ul");
     for (let i = 0; i < colors.length; i++) {
         if (country[colors[i]]) {
@@ -166,6 +172,7 @@ function writeCountryInfo(country) {
     attributesList.append(colorsListItem);
 
 
+    // symbols
     let symbolsList = document.createElement("ul");
     for (let i = 0; i < symbols.length; i++) {
         if (country[symbols[i]] != 0) {
@@ -191,28 +198,32 @@ function writeCountryInfo(country) {
  * https://github.com/markmarkoh/datamaps
  */
 
+// Draw a map with only the given country input highlighted
 function initializeMap(country) {
     let countryData = {};
     let continentName = country.continent_name;
     countryData[country.iso3] = {fillColor: '#f54242'};
 
-    let map = new Datamap({ element: document.getElementById('mapContainer'),
-                            scope: 'world', 
-                            projection: 'equirectangular', 
-                            setProjection: function(element) {
-                                return continentProjection(element, continentName);
-                            },
-                            done: function() {}, 
-                            data: countryData,
-                            fills: { defaultFill: '#999999' },
-                            geographyConfig: {
-                                popupOnHover: false, 
-                                highlightOnHover: false, 
-                                hideAntarctica: false,
-                            }
-                          });
+    new Datamap({ element: document.getElementById('mapContainer'),
+                    scope: 'world', 
+                    projection: 'equirectangular', 
+                    setProjection: function(element) {
+                        return continentProjection(element, continentName);
+                    },
+                    done: function() {}, 
+                    data: countryData,
+                    fills: { defaultFill: '#999999' },
+                    geographyConfig: {
+                        popupOnHover: false, 
+                        highlightOnHover: false, 
+                        hideAntarctica: false,
+                    }
+                  });
 }
 
+// Given the continent that the country is in, a different projection will be
+// returned in order to zoom in to that continent. If the continent information
+// is undefined or unknown, the world will be shown. 
 function continentProjection(element, name) {
     if (name === "Africa") {
         let projection = d3.geo.equirectangular()
@@ -274,7 +285,7 @@ function continentProjection(element, name) {
             .projection(projection);
 
         return {path: path, projection: projection};
-    } else {
+    } else { // the world
         let projection = d3.geo.equirectangular()
             .center([0, 0])
             .rotate([0, 0])
@@ -286,5 +297,3 @@ function continentProjection(element, name) {
         return {path: path, projection: projection};
     }
 }
-
-
