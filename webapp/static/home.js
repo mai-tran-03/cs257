@@ -204,6 +204,21 @@ function getMapData(countries, continent) {
     return countriesData;
 }
 
+// To go between the names that are different on Datamap vs. 
+// our database. 
+const datamapsCountryNames = [
+    "United States of America", 
+    "Republic of the Congo",
+    "West Bank"
+];
+
+const databaseCountryNames = [
+    "United States",
+    "Congo",
+    "Palestine"
+];
+
+
 /*
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps
@@ -221,7 +236,14 @@ function drawMap(countriesData, continent) {
                     }, 
                     done: function(datamap) {
                         datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography, data) {
-                            window.location.assign(getBaseURL() + "/country/" + geography.properties.name);
+                            let countryName = geography.properties.name;
+                            let countryNameIndex = datamapsCountryNames.indexOf(countryName);
+
+                            if (countryNameIndex > -1) {
+                                countryName = databaseCountryNames[countryNameIndex];
+                            }
+
+                            window.location.assign(getBaseURL() + "/country/" + countryName);
                         });
                     },
                     data: countriesData,
