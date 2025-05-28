@@ -4,6 +4,7 @@ To do
 - review the comments
 - make the continent dropdown pretty 
 - standardize between " and ' in js and html
+	- use " for js
 - rescale continents on home page
 - move oceania projection a little right so we can see fiji
 - reformat country info from list to tables

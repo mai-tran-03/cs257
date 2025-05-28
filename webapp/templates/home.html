@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-    <script src="{{ url_for('static', filename='home.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='home.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 
@@ -24,8 +24,8 @@
     <fieldset>
         <legend>Explore the attributes of any country's flag:</legend>
         <div class="row">
-            <div class = "column"> 
-                <div id = "attributeBoxes">
+            <div class="column"> 
+                <div id="attributeBoxes">
                     <label><input type="checkbox" id="red">red</label>
                     <label><input type="checkbox" id="green">green</label>
                     <label><input type="checkbox" id="blue">blue</label>
@@ -34,7 +34,7 @@
                     <label><input type="checkbox" id="black_grey">black/grey</label>
                     <label><input type="checkbox" id="orange_brown">orange/brown</label>
                     <label><input type="checkbox" id="pink_purple">pink/purple</label>
-                    <!-- <br> -->
+
                     <label><input type="checkbox" id="circles">circles</label>
                     <label><input type="checkbox" id="crosses">crosses</label>
                     <label><input type="checkbox" id="saltires">saltires</label>
@@ -48,12 +48,12 @@
                     <label><input type="checkbox" id="border">border</label>
                     <label><input type="checkbox" id="trapezoid">trapezoid</label>
                 </div>
-                <button id = "submit" >Submit</button>
+                <button id="submit" >Submit</button>
             </div>
-            <div class = "column">
-                <label for = "continents">Choose a continent:</label>
+            <div class="column">
+                <label for="continents">Choose a continent:</label>
 
-                <select name = "continents" id="continents">
+                <select name="continents" id="continents">
                     <option value="All">All</option>
                     <option value="Africa">Africa</option>
                     <option value="Asia">Asia</option>
@@ -68,8 +68,8 @@
     </fieldset>
     <br>
     
-    <div id = "mapDiv">
-        <div id="mapContainer" class = "center"> </div>
+    <div id="mapDiv">
+        <div id="mapContainer" class="center"> </div>
     </div>
 
 </body>

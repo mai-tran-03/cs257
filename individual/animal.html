@@ -1,0 +1,102 @@
+<!-- Prompt ChatGPT: creating a webpage sample of a left-side menu panel of animal names,
+    each when clicked lead to a corresponding image of the animal -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            color: white;
+        }
+
+        .animal-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .animal-list li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            cursor: pointer;
+        }
+
+        .animal-list li:hover {
+            background-color: #444;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .main-content img {
+            max-width: 400px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .main-content h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Animals</h2>
+        <ul class="animal-list">
+            <li onclick="showAnimal('Dog')">Dog</li>
+            <li onclick="showAnimal('Cat')">Cat</li>
+            <li onclick="showAnimal('Elephant')">Elephant</li>
+            <li onclick="showAnimal('Lion')">Lion</li>
+            <li onclick="showAnimal('Panda')">Panda</li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 id="animal-name">Select an Animal</h1>
+        <img id="animal-image" src="" alt="" style="display:none;">
+    </div>
+
+    <script>
+        const animalImages = {
+            Dog: "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=400&q=80",
+            Cat: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg",
+            Elephant: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
+            Lion: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
+            Panda: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG"
+        };
+
+        function showAnimal(name) {
+            const image = document.getElementById("animal-image");
+            const title = document.getElementById("animal-name");
+            image.src = animalImages[name];
+            image.alt = name;
+            title.textContent = name;
+            image.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

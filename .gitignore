@@ -175,3 +175,6 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 config.py
+
+webapp/mockups/countries.css
+webapp/mockups/countries.html

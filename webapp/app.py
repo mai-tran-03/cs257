@@ -33,7 +33,7 @@ if __name__ == '__main__':
         prog='app.py',
         usage='python3 app.py host port',
         description='''Hosts a webpage where data about countries and their flags can be
-                    queired and shown. Countries' flags that have attributes can be 
+                    queried and shown. Countries' flags that have attributes can be 
                     displayed. Country names can be searched for. Specific countries can 
                     have all their data displayed.'''
     )
