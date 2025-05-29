@@ -1,6 +1,7 @@
 import { onloadPage } from "./onloadPage.js";
 import { getBaseURL } from "./getBaseUrl.js";
 import { projectContinent } from "./projectContinent.js";
+import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, sets up the home button, search drop down, the map, 
 // and the event listener for the submit button.
@@ -50,9 +51,10 @@ const symbolHeadersPlural = ["Bars", "Stripes", "Bends", "Circles", "Crosses", "
 function writeCountryInfo(country) {
     // if country couldn't be returned from SQL: 
     if (country.country_name === undefined) {
+        document.getElementById("errorMessage").innerText = "\n\n\nNo data corresponding to that country name!";
         document.getElementById("countryFlag").style.visibility = "hidden";
         document.getElementById("mapContainer").style.visibility = "hidden";
-        document.getElementById("attributes").innerText = "No country is known by that name!";
+        document.getElementById("mapCaption").style.visibility = "hidden";
         return;
     }
 
@@ -90,6 +92,8 @@ function writeCountryInfo(country) {
             infoTable.append(tableRow);
         }
     }
+    // It is hidden by default and only visible once the information is put in 
+    infoTable.style.visibility = "visible";
 
     // colors
     let colorsTable = document.getElementById("colorsTable");
@@ -106,6 +110,9 @@ function writeCountryInfo(country) {
             colorsTable.append(tableRow);
         }
     }
+
+    colorsTable.style.visibility = "visible";
+
 
     // symbols
     let symbolTable = document.getElementById("symbolTable");
@@ -137,6 +144,8 @@ function writeCountryInfo(country) {
             symbolTable.append(tableRow);
         }
     }
+
+    symbolTable.style.visibility = "visible";
 }
 
 /*
@@ -157,7 +166,9 @@ function initializeMap(country) {
         setProjection: function (element) {
             return projectContinent(element, continentName);
         },
-        done: function () { },
+        done: function (datamap) {
+            return clickableCountries(datamap, getBaseURL());
+        },
         data: countryData,
         fills: { defaultFill: "#999999" },
         geographyConfig: {
