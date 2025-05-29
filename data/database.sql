@@ -173,7 +173,7 @@ dm	DMA	Dominica	Commonwealth of Dominica	751	74661	4	0	0	0	t	t	t	t	t	t	f	f	green
 do	DOM	Dominican Republic	República Dominicana	48670	10815857	4	0	0	0	t	t	t	t	t	f	f	f	blue	0	1	0	0	0	f	f	f	f	t	t	f	f
 ec	ECU	Ecuador	Republic of Ecuador	283561	18309984	6	0	3	0	t	t	t	t	t	t	t	f	gold	1	0	0	0	1	f	f	t	t	t	t	f	f
 eg	EGY	Egypt	Arab Republic of Egypt	1001450	111247248	1	0	3	0	t	f	f	t	t	t	f	f	red	0	0	0	0	0	f	f	t	t	t	t	f	f
-sv	SLV	El Salvador	Republic of El Salvador	21041	6628702	6	0	3	0	t	t	t	t	t	t	t	f	blue	1	0	0	0	0	f	t	t	f	t	t	f	f
+sv	SLV	El Salvador	Republic of El Salvador	21041	6628702	4	0	3	0	t	t	t	t	t	t	t	f	blue	1	0	0	0	0	f	t	t	f	t	t	f	f
 gq	GNQ	Equatorial Guinea	Republic of Equatorial Guinea	28051	1795834	1	0	3	0	t	t	t	t	t	t	t	f	green	0	0	0	0	6	f	t	t	t	t	t	f	f
 er	ERI	Eritrea	State of Eritrea	117600	6343956	1	0	0	0	t	t	t	t	f	f	f	f	red	1	0	0	0	0	f	t	t	f	f	f	f	f
 ee	EST	Estonia	Republic of Estonia	45228	1193791	3	0	3	0	f	f	t	f	t	t	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
@@ -195,13 +195,13 @@ gr	GRC	Greece	Hellenic Republic	131957	10461091	3	0	9	0	f	f	t	f	t	f	f	f	blue	0	1
 gl	GRL	Greenland	Kalaallit Nunaat	2166086	57751	4	0	2	0	t	f	f	f	t	f	f	f	white	1	0	0	0	0	f	f	f	f	f	f	f	f
 gd	GRD	Grenada	\N	344	114621	4	0	0	0	t	t	f	t	f	f	f	f	gold	1	0	0	0	7	f	f	t	f	f	f	t	f
 gu	GUM	Guam	\N	544	169532	5	0	0	0	t	t	t	t	t	f	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	t	f
-gt	GTM	Guatemala	Republic of Guatemala	108889	18255216	6	3	0	0	t	t	t	t	t	t	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	f	f
+gt	GTM	Guatemala	Republic of Guatemala	108889	18255216	4	3	0	0	t	t	t	t	t	t	t	f	blue	0	0	0	0	0	f	f	t	t	t	t	f	f
 gg	GGY	Guernsey	\N	78	67787	3	0	0	0	t	f	f	t	t	f	f	f	red	0	2	0	0	0	f	f	f	f	f	f	f	f
 gn	GIN	Guinea	Republic of Guinea	245857	13986179	1	3	0	0	t	t	f	t	f	f	f	f	gold	0	0	0	0	0	f	f	f	f	f	f	f	f
 gw	GNB	Guinea Bissau	Republic of Guinea-Bissau	36125	2132325	1	1	2	0	t	t	f	t	f	t	f	f	gold	0	0	0	0	1	f	f	f	f	f	f	f	f
 gy	GUY	Guyana	Co-operative Republic of Guyana	214969	794099	6	0	0	0	t	t	f	t	t	t	f	f	green	0	0	0	0	0	f	t	f	f	f	f	f	f
 ht	HTI	Haiti	Republic of Haiti	27750	11753943	4	0	2	0	t	t	t	t	t	t	f	f	blue	0	0	0	0	0	f	f	t	t	t	t	f	f
-hn	HND	Honduras	Republic of Honduras	112090	9529188	6	0	3	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	5	f	f	f	f	f	f	f	f
+hn	HND	Honduras	Republic of Honduras	112090	9529188	4	0	3	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	5	f	f	f	f	f	f	f	f
 hk	HKG	Hong Kong	\N	1108	7297821	2	0	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	5	f	f	t	f	f	f	f	f
 hu	HUN	Hungary	\N	93028	9855745	3	0	3	0	t	t	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 is	ISL	Iceland	Republic of Iceland	103000	364036	3	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	0	0	0	f	f	f	f	f	f	f	f
@@ -216,7 +216,7 @@ it	ITA	Italy	Italian Republic	301340	60964931	3	3	0	0	t	t	f	f	t	f	f	f	white	0	0	
 jm	JAM	Jamaica	\N	10991	2823713	4	0	0	0	f	t	f	t	f	t	f	f	green	0	0	1	0	0	f	t	f	f	f	f	f	f
 jp	JPN	Japan	\N	377915	123201945	2	0	0	0	t	f	f	f	t	f	f	f	white	1	0	0	0	1	f	f	f	f	f	f	f	f
 je	JEY	Jersey	\N	116	103387	3	0	0	0	t	f	f	t	t	f	f	f	red	0	0	1	0	0	f	f	t	t	f	t	f	f
-jo	JOR	Jordan	Hashemite Kingdom of Jordan	89342	11174024	2	0	3	0	t	t	f	f	t	t	f	f	black	0	0	0	0	1	f	t	f	f	f	f	f	f
+jo	JOR	Jordan	Hashemite Kingdom of Jordan	89342	11174024	2	0	3	0	t	t	f	f	t	t	f	f	black	0	0	0	0	1	f	t	f	f	f	f	f	t
 kz	KAZ	Kazakhstan	Republic of Kazakhstan	2724900	20260006	2	0	0	0	f	f	t	t	f	f	f	f	blue	1	0	0	0	1	f	f	t	t	f	f	f	f
 ke	KEN	Kenya	Republic of Kenya	580367	58246378	1	0	3	0	t	t	f	f	t	t	f	f	red	1	0	0	0	0	f	f	t	f	f	f	f	f
 ki	KIR	Kiribati	Republic of Kiribati	811	116545	5	0	6	0	t	f	t	t	t	f	f	f	red	0	0	0	0	1	f	f	t	t	f	f	f	f
@@ -255,10 +255,10 @@ mz	MOZ	Mozambique	Republic of Mozambique	799380	33350954	1	0	3	0	t	t	f	t	t	t	f	f
 mm	MMR	Myanmar	Republic of the Union of Myanmar; Burma	676578	57527139	2	0	3	0	t	t	f	t	t	f	f	f	yellow	0	0	0	0	1	f	f	f	f	f	f	f	f
 na	NAM	Namibia	Republic of Namibia	824292	2803660	1	0	0	1	t	t	t	t	t	f	f	f	blue	1	0	0	0	1	f	t	f	f	f	f	f	f
 nr	NRU	Nauru	Republic of Nauru	21	9892	5	0	1	0	f	f	t	t	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
-np	NPL	Nepal	Federal Democratic Republic of Nepal	147181	31122387	2	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	0	2	t	t	f	f	f	f	f	f
+np	NPL	Nepal	Federal Democratic Republic of Nepal	147181	31122387	2	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	0	2	t	t	f	f	f	f	t	f
 nl	NLD	Netherlands	Kingdom of the Netherlands	41543	17772378	3	0	3	0	t	f	t	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 nz	NZL	New Zealand	\N	268838	5161211	5	0	0	0	t	f	t	f	t	f	f	f	blue	0	2	2	1	4	f	f	f	f	f	f	f	f
-ni	NIC	Nicaragua	Republic of Nicaragua	130370	6676948	6	0	3	0	t	t	t	t	t	f	t	t	blue	1	0	0	0	1	f	t	t	f	t	t	f	f
+ni	NIC	Nicaragua	Republic of Nicaragua	130370	6676948	4	0	3	0	t	t	t	t	t	f	t	t	blue	1	0	0	0	1	f	t	t	f	t	t	f	f
 ne	NER	Niger	Republic of the Niger	1267000	26342784	1	0	3	0	f	t	f	f	t	f	t	f	orange	1	0	0	0	0	f	f	f	f	f	f	f	f
 ng	NGA	Nigeria	Federal Republic of Nigeria	923768	236747130	1	3	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	f	f	f	f	f	f
 nf	NFK	Norfolk Island	\N	36	2188	5	3	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	0	f	f	f	t	f	f	f	f
@@ -268,7 +268,7 @@ om	OMN	Oman	Sultanate of Oman	309500	3901992	2	1	3	0	t	t	f	f	t	f	f	f	red	0	0	0	0
 pk	PAK	Pakistan	Islamic Republic of Pakistan	796095	252363571	2	1	0	0	f	t	f	f	t	f	f	f	green	0	0	0	0	1	t	f	f	f	f	f	f	f
 pw	PLW	Palau	Republic of Palau	459	21864	5	0	0	0	f	f	t	t	f	f	f	f	blue	1	0	0	0	0	f	f	f	f	f	f	f	f
 ps	PSE	Palestine	State of Palestine	6220	5385012	2	0	3	0	t	t	f	f	t	t	f	f	black	0	0	0	0	0	f	t	f	f	f	f	f	t
-pa	PAN	Panama	Republic of Panama	75420	4470241	6	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	4	2	f	f	f	f	f	f	f	f
+pa	PAN	Panama	Republic of Panama	75420	4470241	4	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	4	2	f	f	f	f	f	f	f	f
 pg	PNG	Papua New Guinea	Independent State of Papua New Guinea	462840	10046233	5	0	0	0	t	f	f	t	t	t	f	f	black	0	0	0	0	5	f	t	f	t	f	f	f	f
 py	PRY	Parguay	Republic of Paraguay	406752	7522549	6	0	3	0	t	t	t	t	t	t	f	f	red	1	0	0	0	1	f	f	t	f	t	t	f	f
 pe	PER	Peru	Republic of Peru	1285216	32600249	6	3	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
@@ -291,12 +291,12 @@ sl	SLE	Sierra Leone	Republic of Sierra Leone	71740	9121049	1	0	3	0	f	t	t	f	t	f	f
 sg	SGP	Singapore	Republic of Singapore	719	6028459	2	0	2	0	t	f	f	f	t	f	f	f	white	0	0	0	0	5	t	f	f	f	f	f	f	f
 sk	SVK	Slovakia	Slovak Republic	49035	5563649	3	0	3	0	t	f	t	f	t	f	f	f	red	0	1	0	0	0	f	f	t	f	f	t	f	f
 si	SVN	Slovenia	Republic of Slovenia	20273	2097893	3	0	3	0	t	f	t	t	t	f	f	f	white	0	0	0	0	3	f	f	t	f	f	f	f	f
-sb	SLB	Soloman Islands	\N	28896	726799	5	0	0	1	f	t	t	t	t	f	f	f	green	0	0	0	0	5	f	t	f	f	f	f	f	f
+sb	SLB	Solomon Islands	\N	28896	726799	5	0	0	1	f	t	t	t	t	f	f	f	green	0	0	0	0	5	f	t	f	f	f	f	f	f
 so	SOM	Somalia	Federal Republic of Somalia	637657	13017273	1	0	0	0	f	f	t	f	t	f	f	f	blue	0	0	0	0	1	f	f	f	f	f	f	f	f
 za	ZAF	South Africa	Republic of South Africa	1219090	60442647	1	0	2	0	t	t	t	t	t	t	f	f	green	0	0	0	0	0	f	t	f	f	f	f	f	t
 kr	KOR	South Korea	Republic of Korea	99720	52081799	2	0	0	0	t	f	t	f	t	t	f	f	white	1	0	0	0	0	f	f	f	f	f	f	f	f
 ss	SSD	South Sudan	Republic of South Sudan	644329	12703714	1	0	3	0	t	t	t	t	t	t	f	f	black	0	0	0	0	1	f	t	f	f	f	f	f	t
-es	ESP	Spain	Kingdom of Spain	505370	47280433	3	0	3	0	t	t	t	t	t	t	f	t	red	1	3	0	0	0	f	f	t	t	t	t	f	f
+es	ESP	Spain	Kingdom of Spain	505370	47280433	3	0	3	0	t	t	t	t	t	t	f	t	red	63	3	0	0	0	f	f	t	t	t	t	f	f
 lk	LKA	Sri Lanka	Democratic Socialist Republic of Sri Lanka	65610	21982608	2	2	0	0	f	t	f	t	f	f	t	t	gold	0	0	0	0	0	f	f	t	t	f	f	t	f
 sh	SHN	St Helena	Saint Helena; Ascension; Tristan da Cunha	394	7943	1	0	0	0	t	f	t	t	t	f	t	f	blue	0	3	2	1	0	f	f	t	t	f	t	f	f
 kn	KNA	St Kitts and Nevis	Saint Kitts and Nevis;Federation of Saint Kitts and Nevis	261	55133	4	0	0	1	t	t	f	t	t	t	f	f	green	0	0	0	0	2	f	t	f	f	f	f	f	f
