@@ -13,7 +13,7 @@ body {
     background-position: 10px 12px;
     background-repeat: no-repeat;
     background-size: 20px;
-    width: 300px;
+    width: auto;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
 }
@@ -22,16 +22,15 @@ body {
     background-color: #F1F1F1;
 }
 
-
 #searchCountries {
     list-style-type: none;
-    visibility: hidden; 
+    visibility: hidden;
     position: absolute;
     margin-top: 0;
     z-index: 50;
 }
 
- #searchCountries li a {
+#searchCountries li a {
     margin: 0;
     border: 1px solid black;
     border-top: 0px;
@@ -45,20 +44,28 @@ body {
 
 #searchCountries li a:hover {
     background-color: #a6a0a0;
-} 
+}
 
-#countryFlag {
-    width: 30%;
-    object-fit: contain;
-    border: 1px, solid, black;
+#attributeBoxes label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#attributeBoxes input {
+    cursor: pointer;
 }
 
 /* stuff for maps*/
-.map {
-    width: 90%;
+
+#mapDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin: auto;
-    padding: 10px;
+    padding-top: 25px;
 }
+
 #mapContainer {
     position: relative;
     float: left;
@@ -67,33 +74,45 @@ body {
     padding-bottom: 35%;
     background: lightblue;
 }
+
+#mapCaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
 .hoverpopup {
     background: #eeeeee;
-    border: 1px black solid;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 3px;
 }
+
 .hoverpopupFlag {
     width: 30px;
 }
-/* end stuff for maps */
 
+/* end stuff for maps */
 
 .header {
     background-color: #F1F1F1;
     text-align: center;
     padding: 20px;
+    margin: 0px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 4px;
 }
 
 .column {
     float: left;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 10px 20px;
     flex-direction: column;
 }
 
@@ -108,54 +127,46 @@ body {
     margin-right: auto;
 }
 
-#attributeBoxes {
-    display: grid;
-    grid-template-columns: repeat(5, 170px);
-    column-gap: 15px;
+.fillRowWithThreeColumns {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-flow: row;
+    column-gap: 30px;
 }
 
-#attributeBoxes label {
-    margin-bottom: 4px;
-}
-
-fieldset {
-    background-color: #eeeeee;
-}
-
-legend {
-    background-color: gray;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 10px;
+.fillColumnWithThreeRows {
+    display: inline-grid;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    background-color: #d3dee3;
+    border-style: inset;
+    border-width: 4px;
 }
 
 button {
-    background-color: white;
-    color: black;
-    border: 1.5px solid black;
-    padding: 5px 10px;
-}
-
-button:active {
     background-color: gray;
+    border: none;
     color: white;
-    border-radius: 2px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
 }
 
-#getData {
-    background-color: red;
+button:hover {
+    background-color: #04AA6D;
     color: white;
-    border: 2px black solid;
-    font-size: xx-large;
-    text-align: center;
 }
 
 .textLeft {
     text-align: left;
 }
+
 .textRight {
     text-align: right;
 }
+
 .textCenter {
     text-align: center;
 }
@@ -164,11 +175,109 @@ table {
     border-collapse: collapse;
     margin: 10px;
 }
-td, th {
-    border: 1px solid black;
+
+td,
+th {
+    border: 1.5px solid black;
     padding: 5px;
-/*    max-height: 40px;*/ /* not working!! */
+    /* max-height: 40px; */
+    /* not working!! */
 }
-tr:nth-child(1) {
-  background-color: #F1F1F1;
+
+tr:nth-child(even) {
+    background-color: #bcd6ed;
 }
+
+tr:nth-child(odd) {
+    background-color: #F1F1F1;
+}
+
+td.empty {
+    display: none;
+}
+
+td.merged {
+    grid-column: span 2;
+}
+
+/* stuff for flag image */
+/* Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js */
+
+#countryFlag {
+    width: 30%;
+    height: auto;
+    object-fit: contain;
+    padding-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#countryFlag:hover {
+    opacity: 0.7;
+}
+
+.imgZoom {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.zoomContent {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#imgCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.zoomContent,
+#imgCaption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* end stuff for flag image */

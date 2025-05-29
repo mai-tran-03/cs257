@@ -12,7 +12,6 @@
 
 '''
 
-import argparse
 import config
 import flask
 import psycopg2
