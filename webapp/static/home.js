@@ -1,6 +1,7 @@
 import { onloadPage } from "./onloadPage.js";
 import { getBaseURL } from "./getBaseUrl.js";
 import { projectContinent } from "./projectContinent.js";
+import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
@@ -121,21 +122,6 @@ function getMapData(countries) {
     }
     return countriesData;
 }
-
-// To go between the names that are different on Datamap vs. our database. 
-const datamapsCountryNames = [
-    "United States of America",
-    "Republic of the Congo",
-    "West Bank"
-];
-
-const databaseCountryNames = [
-    "United States",
-    "Congo",
-    "Palestine"
-];
-
-
 /*
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps
@@ -153,16 +139,7 @@ function drawMap(countriesData, continent) {
             return projectContinent(element, continent);
         },
         done: function (datamap) {
-            datamap.svg.selectAll(".datamaps-subunit").on("click", function (geography, data) {
-                let countryName = geography.properties.name;
-                let countryNameIndex = datamapsCountryNames.indexOf(countryName);
-
-                if (countryNameIndex > -1) {
-                    countryName = databaseCountryNames[countryNameIndex];
-                }
-
-                window.location.assign(getBaseURL() + "/country/" + countryName);
-            });
+            return clickableCountries(datamap, getBaseURL());
         },
         data: countriesData,
         fills: { defaultFill: "#999999" },

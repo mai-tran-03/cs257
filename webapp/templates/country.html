@@ -5,9 +5,9 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
     <script type="module" src="{{ url_for('static', filename='country.js') }}"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-
     <script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
 </head>
 
@@ -23,16 +23,18 @@
 
     <h1 class="header" id="countryName">{{ name }}</h1>
 
+    <p id="errorMessage" class="textCenter"> </p>
+
     <div class="row">
         <img id="countryFlag" class="column">
 
-        <table class="column" id="infoTable">
+        <table class="column" id="infoTable" style="visibility: hidden;">
             <tr><th><strong>Country Info</strong></th><th></th></tr>
         </table>
-        <table class="column" id="colorsTable">
+        <table class="column" id="colorsTable" style="visibility: hidden;">
             <tr><th><strong>Colors</strong></th></tr>
         </table>
-        <table class="column" id="symbolTable"> 
+        <table class="column" id="symbolTable" style="visibility: hidden;"> 
             <tr><th><strong>Symbols</strong></th><th></th></tr>
         </table>
     </div>
