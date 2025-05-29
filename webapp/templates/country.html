@@ -14,33 +14,56 @@
 <body>
     <div class="row">
         <a id="home"> <img src="../static/home-icon.png" class="home column"></img> </a>
+
         <div class="column rightAlign">
             <input type="text" id="searchBar" placeholder="Select country...">
+
             <ul id="searchCountries"></ul>
         </div>
     </div>
 
+    <div class="fillColumnWithThreeRows">
+        <div>
+            <h1 class="header" id="countryName">{{ name }}</h1>
+        </div>
 
-    <h1 class="header" id="countryName">{{ name }}</h1>
+        <div>
+            <img class="center" id="countryFlag">
+            <div class="imgZoom" id="imgZoom">
+                <span class="close">&times;</span>
+                <img class="zoomContent" id="zoomedFlagImg">
+                <div id="imgCaption"><em>Country: {{ name }}</em></div>
+            </div>
+        </div>
 
-    <div class="row">
-        <img id="countryFlag" class="column">
+        <div class="fillRowWithThreeColumns">
 
-        <table class="column" id="infoTable">
-            <tr><th><strong>Country Info</strong></th><th></th></tr>
-        </table>
-        <table class="column" id="colorsTable">
-            <tr><th><strong>Colors</strong></th></tr>
-        </table>
-        <table class="column" id="symbolTable"> 
-            <tr><th><strong>Symbols</strong></th><th></th></tr>
-        </table>
+            <table id="infoTable">
+                <tr>
+                    <th colspan="2"><strong>Country Info</strong></th>
+                </tr>
+            </table>
+
+            <table id="colorsTable">
+                <tr>
+                    <th><strong>Colors</strong></th>
+                </tr>
+            </table>
+
+            <table id="symbolTable">
+                <tr>
+                    <th colspan="2"><strong>Symbols</strong></th>
+                </tr>
+            </table>
+        </div>
     </div>
 
-    <p id="mapCaption" class="textCenter"> </p>
-    <div id="mapContainer"> </div>
+    <div id="mapDiv">
+        <div id="mapContainer"></div>
 
-    <br>
+        <div id="mapCaption"></div>
+    </div>
+
 </body>
 
 </html>

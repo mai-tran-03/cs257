@@ -7,6 +7,7 @@ import { projectContinent } from "./projectContinent.js";
 onloadPage({
     addon: () => {
         getCountryFromAPI(getNameFromUrl());
+        zoomInImage();
     }
 });
 
@@ -37,12 +38,12 @@ function getCountryFromAPI(name) {
 }
 
 const countryStats = ["other_names", "area", "population", "continent_name", "main_hue"];
-const countryStatsHeaders = ["Other names: ", "Area (sq km): ", "Population: ", "Continent: ", "Main hue: "];
+const countryStatsHeaders = ["Other names", "Area (sq km)", "Population", "Continent", "Main hue"];
 const colors = ["red", "green", "blue", "gold_yellow", "white", "black_grey", "orange_brown", "pink_purple"];
 const colorHeaders = ["Red", "Green", "Blue", "Gold/yellow", "White", "Black/grey", "Orange/brown", "Pink/purple"];
 const symbols = ["bars", "stripes", "bends", "circles", "crosses", "saltires", "quarters", "sun_stars", "crescent_moon", "triangle", "inanimate_image", "animate_image", "text", "crest_emblem", "border", "trapezoid"]
-const symbolHeadersSingular = ["Bar: ", "Stripe: ", "Bend: ", "Circle: ", "Cross: ", "Saltire: ", "Quarter: ", "Sun/star: ", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
-const symbolHeadersPlural = ["Bars: ", "Stripes: ", "Bends: ", "Circles: ", "Crosses: ", "Saltires: ", "Quarters: ", "Sun/stars: ", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
+const symbolHeadersSingular = ["Bar", "Stripe", "Bend", "Circle", "Cross", "Saltire", "Quarter", "Sun/star", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
+const symbolHeadersPlural = ["Bars", "Stripes", "Bends", "Circles", "Crosses", "Saltires", "Quarters", "Sun/stars", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
 
 // Inputs the the country information from SQL. Draws to the screen the couuntry
 // attributes and flag data.  
@@ -118,10 +119,11 @@ function writeCountryInfo(country) {
             symbolName.className = "textRight";
             symbolCount.className = "textLeft";
 
-
-            let li = document.createElement("li");
             if (typeof country[symbols[i]] == "boolean") {
                 symbolName.append(document.createTextNode(symbolHeadersSingular[i]));
+                symbolName.colSpan = 2;
+                symbolName.className = "textCenter";
+                symbolCount.classList.add("empty");
             } else if (country[symbols[i]] == 1) {
                 symbolName.append(document.createTextNode(symbolHeadersSingular[i]));
                 symbolCount.append(document.createTextNode("1"));
@@ -146,7 +148,7 @@ function writeCountryInfo(country) {
 function initializeMap(country) {
     let countryData = {};
     let continentName = country.continent_name;
-    countryData[country.iso3] = { fillColor: "#f54242" };
+    countryData[country.iso3] = { fillColor: "#f7df07" };
 
     new Datamap({
         element: document.getElementById("mapContainer"),
@@ -165,8 +167,30 @@ function initializeMap(country) {
         }
     });
 
-    // Write a caption under the map with the continent name,
+    // Write a caption above the map with the continent name,
     // this happens after the map is drawn so that if the javascript fails in
     // drawing the map, this will not happen.
-    document.getElementById("mapCaption").innerText = country.continent_name;
+    document.getElementById("mapCaption").innerText = "Continent: " + country.continent_name;
 }
+
+// Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js.
+// Trigger a modal (dialog box) to zoom into the flag image with a close button.
+function zoomInImage() {
+    let imgZoom = document.getElementById("imgZoom");
+
+    let flagImg = document.getElementById("countryFlag");
+    let zoomedFlagImg = document.getElementById("zoomedFlagImg");
+    flagImg.onclick = function () {
+        imgZoom.style.display = "block";
+        zoomedFlagImg.src = flagImg.src;
+    }
+
+    let span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
+        imgZoom.style.display = "none";
+    }
+
+    imgZoom.onclick = function () {
+        imgZoom.style.display = "none";
+    }
+} 

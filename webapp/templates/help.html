@@ -13,19 +13,12 @@ All responses are in JSON
 
 
 
-REQUEST: /
-RESPONSE: A greeting from this API to the user.
-
-
-
-
-REQUEST: /help
+REQUEST: /api/help
 RESPONSE: Current message.
 
 
 
-
-REQUEST: /countries/name_contains/{search_text}
+REQUEST: /api/countries/name_contains/{search_text}
 
 RESPONSE: A JSON list of dictionaries, each representing a country sorted 
 by closeness to the search_text. The search text must be at least 2 
@@ -37,7 +30,7 @@ Each country dictionary will have the following fields:
                         topmost, to most central, and then to leftmost hue)
 
 EXAMPLE:
-    /countries/name_contains/pan
+    /api/countries/name_contains/pan
 
     [
       {
@@ -51,12 +44,10 @@ EXAMPLE:
         "other_names": "Republic of Panama"
       }
     ]
-    
 
 
 
-
-REQUEST: /countries
+REQUEST: /api/countries
     GET parameters:
         attribute (Optional, default: '') -- return all countries with the 
         specified attribute(s), the user can query as many attributes as 
@@ -68,7 +59,7 @@ RESPONSE: A JSON list of dictionaries, each representing a country.
         all attributes inputted with their counts (if integer)
 
 EXAMPLE:
-    /countries?saltires=1&blue=1&circles=1
+    /api/countries?saltires=1&blue=1&circles=1
 
     [
       {
@@ -85,7 +76,7 @@ EXAMPLE:
       }
     ]
 EXAMPLE:
-    /countries?continent=south_america&pink_purple=1
+    /api/countries?continent=south_america&pink_purple=1
 
     [
       {
@@ -96,8 +87,7 @@ EXAMPLE:
 
 
 
-
-REQUEST: /country/{name}
+REQUEST: /api/country/{name}
 
 RESPONSE: A JSON dictionary with all the attributes of the country. The name is
 case insensitve. The following attributes returned are: 
@@ -135,7 +125,7 @@ case insensitve. The following attributes returned are:
     trapezoid       -- 1 if any trapezoid present, 0 otherwise
 
 EXAMPLE:
-    /country/chile
+    /api/country/chile
 
     {
       "animate_image": false,

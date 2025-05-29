@@ -21,11 +21,16 @@
         </div>
     </div>
 
-    <fieldset>
-        <legend>Explore the attributes of any country's flag:</legend>
-        <div class="row">
-            <div class="column"> 
-                <div id="attributeBoxes">
+    <div class="fillColumnWithThreeRows">
+        <div class="">
+            <h2 class="header">Explore the attributes of any country's flag:</h2>
+        </div>
+
+        <div class="" id="attributeBoxes">
+            <div class="column">
+                <label for="colors">Color (<em>can select multiple</em>):</label>
+
+                <div class="fillRowWithThreeColumns" id="colors">
                     <label><input type="checkbox" id="red">red</label>
                     <label><input type="checkbox" id="green">green</label>
                     <label><input type="checkbox" id="blue">blue</label>
@@ -34,7 +39,13 @@
                     <label><input type="checkbox" id="black_grey">black/grey</label>
                     <label><input type="checkbox" id="orange_brown">orange/brown</label>
                     <label><input type="checkbox" id="pink_purple">pink/purple</label>
+                </div>
+            </div>
 
+            <div class="column">
+                <label for="symbols">Symbols (<em>can select multiple</em>):</label>
+
+                <div class="fillRowWithThreeColumns" id="symbols">
                     <label><input type="checkbox" id="circles">circles</label>
                     <label><input type="checkbox" id="crosses">crosses</label>
                     <label><input type="checkbox" id="saltires">saltires</label>
@@ -48,28 +59,32 @@
                     <label><input type="checkbox" id="border">border</label>
                     <label><input type="checkbox" id="trapezoid">trapezoid</label>
                 </div>
-                <button id="submit" >Submit</button>
             </div>
-            <div class="column">
-                <label for="continents">Choose a continent:</label>
 
-                <select name="continents" id="continents">
-                    <option value="All">All</option>
-                    <option value="Africa">Africa</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="North America">North America</option>
-                    <option value="Oceania">Oceania</option>
-                    <option value="South America">South America</option>
-                </select>
+            <div class="column">
+                <label for="continents">Continent (<em>can only select one</em>):</label>
+
+                <div class="fillRowWithThreeColumns" id="continents">
+                    <label><input type="radio" name="continents" value="All" checked>All</label>
+                    <label><input type="radio" name="continents" value="Africa">Africa</label>
+                    <label><input type="radio" name="continents" value="Asia">Asia</label>
+                    <label><input type="radio" name="continents" value="Europe">Europe</label>
+                    <label><input type="radio" name="continents" value="North America">North America</label>
+                    <label><input type="radio" name="continents" value="Oceania">Oceania</label>
+                    <label><input type="radio" name="continents" value="South America">South America</label>
+                </div>
             </div>
+
         </div>
 
-    </fieldset>
+        <div class="">
+            <button id="submit">Submit</button>
+        </div>
+    </div>
     <br>
-    
+
     <div id="mapDiv">
-        <div id="mapContainer" class="center"> </div>
+        <div id="mapContainer"> </div>
     </div>
 
 </body>
