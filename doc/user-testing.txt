@@ -1,0 +1,34 @@
+User Testing Observations
+30 May 2025
+
+Things the testers found easy
+- given a list of attributes, click a combination of options to 
+explore the world map of countries with those attributes
+- on the home page, hover around and click on some country on map
+
+Things the testers had trouble with
+- on the home page, most people did not see the search/drop-down 
+menu to see a list of countries
+- some expected something to show up on the map after selecting 
+a continent option
+
+Other positive comments or observations
+- the selector box pops out and grabs testers' attention
+- the hovering feature to see attributes of countries
+
+Other suggestions for improvement
+- make the search/drop-down menu more visible
+    - stretch out the bar so it is more center and stands out 
+    above the selector box, and/or
+    - make the list of countries scrollable, contained in a box
+- display attributes when hovering over countries on map even 
+without selecting and submitting attributes
+- display all countries with selected attributes, either above map 
+or in a span/collapsible box, to see small countries/islands that 
+might not be shown on map
+- go back to the previous page after clicking on some country on  
+map, to still see selected attributes, if any were selected
+- make clickable things and its pointer, the mouse-over, into a 
+cursor, which should be a CSS attribute
+- turn the attributes into their corresponding visual symbols to 
+make things easier for users to know what to click, instead of words

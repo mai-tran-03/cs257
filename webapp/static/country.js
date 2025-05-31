@@ -173,7 +173,8 @@ function initializeMap(country) {
         fills: { defaultFill: "#999999" },
         geographyConfig: {
             popupOnHover: false,
-            highlightOnHover: false,
+            highlightFillColor: "#16b538", // color when you hover on a country
+            highlightBorderColor: "#156326",
             hideAntarctica: false,
         }
     });
