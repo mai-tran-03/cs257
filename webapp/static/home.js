@@ -47,10 +47,12 @@ function makeGetParams() {
         }
     }
 
+    attributes["noAttribute"] = noAttribute;
+
     // To avoid substringing an empty string, if no attributes are added, 
     // then return null.
     if (noAttribute) {
-        attributes["getParams"] = null;
+        attributes["getParams"] = getParams;
         return attributes;
     }
 
@@ -67,6 +69,7 @@ function searchAttributes(map) {
     let attributes = makeGetParams();
     let getParams = attributes["getParams"];
     let continent = attributes["continent"];
+    let noAttribute = attributes["noAttribute"];
 
     // delete the old map (hover popups are broken if this does not happen)
     document.getElementById("mapContainer").remove();
@@ -76,20 +79,13 @@ function searchAttributes(map) {
     newMap.id = "mapContainer";
     document.getElementById("mapDiv").append(newMap);
 
-    // If none of the attributes were clicked, redraw the map blank. If a 
-    // continent was chosen, then the map will display that continent. 
-    if (getParams === null) {
-        drawMap({}, continent);
-        return;
-    }
-
     // Fetch the list of countries that fall under those attributes,
     // redraw the map with them, taking into account what continent to 
     // display. 
     fetch(getParams, { method: "get" })
         .then((response) => response.json())
         .then(function (result) {
-            let newMapData = getMapData(result);
+            let newMapData = getMapData(result, noAttribute);
             drawMap(newMapData, continent);
         })
         .catch(function (error) {
@@ -99,13 +95,14 @@ function searchAttributes(map) {
 
 // Sets the data for the new map by applying each country the attributes
 // and their values and making each selected country be colored. 
-function getMapData(countries) {
+function getMapData(countries, noAttribute) {
     // countries is a list of dictionaries with the selected attributes
     let countriesData = {};
 
     for (let i = 0; i < countries.length; i++) {
         let country = countries[i];
         let countryData = {};
+        let hasAllAttributes = true;
 
         // for every attribute (key) and its amount (value), add it to the
         // map data for that country
@@ -113,9 +110,20 @@ function getMapData(countries) {
             if (key === "iso3") {
                 continue;
             }
+
+            if (value == 0 || value == false) {
+                hasAllAttributes = false;
+                countryData = {};
+                countryData["country_name"] = country["country_name"];
+                countryData["tld"] = country["tld"];
+                break;
+            }
+
             countryData[key] = value;
         }
-        countryData["fillColor"] = "#f54242";
+        if (hasAllAttributes && !noAttribute) {
+            countryData["fillColor"] = "#f54242";
+        }
 
         countriesData[country.iso3] = countryData;
     }

@@ -85,48 +85,61 @@ def get_contries_with_attribute():
 
     countries = []
     # query parameters will be the continent searched if it exists
-    query_parameters = []
+    # query_parameters = []
 
     try:
-        querySELECT = 'SELECT DISTINCT countries_flags.country_name, countries_flags.iso3, countries_flags.tld'
+        querySELECT = '''SELECT DISTINCT countries_flags.country_name, countries_flags.iso3, countries_flags.tld'''
+        if search_continent:
+            querySELECT += ''', continents.continent_name'''
+        
         for attribute in search_attributes:
             querySELECT = f"{querySELECT}, countries_flags.{attribute} "
 
-        queryFROM = ' FROM countries_flags, continents '
-        if search_attributes or search_continent:
-            queryWHERE = 'WHERE'
-        else:
-            queryWHERE = ' AND'
+        queryFROM = ''' FROM countries_flags '''
 
-        # add continent to the WHERE constraint
         if search_continent:
-            queryWHERE += ''' continents.continent_name ILIKE %s 
-                AND countries_flags.continent_id = continents.continent_id AND'''
-            query_parameters.append(search_continent)
+            queryFROM = '''FROM countries_flags, continents 
+                            WHERE countries_flags.continent_id = continents.continent_id'''
+        # else:
+        #     queryFROM = ''' FROM countries_flags '''
         
-        # add all of the flag attributes to the WHERE constraint
-        if search_attributes:
-            for attribute in search_attributes:
-                queryWHERE = f"{queryWHERE} {attribute}::boolean = true AND"
+        # add continent to the WHERE constraint
+        # if search_continent:
+            # query_parameters.append(search_continent)
+        
+        # # add all of the flag attributes to the WHERE constraint
+        # if search_attributes:
+        #     for attribute in search_attributes:
+        #         queryWHERE = f"{queryWHERE} {attribute}::boolean = true AND"
 
-        # remove the last _AND
-        queryWHERE = queryWHERE[:-4]
+        # # remove the last _AND
+        # queryWHERE = queryWHERE[:-4]
 
-        query = querySELECT + queryFROM + queryWHERE +';'
+        query = querySELECT + queryFROM + ';'
         connection = get_connection()
         cursor = connection.cursor()
-        cursor.execute(query, query_parameters)
+        cursor.execute(query)
 
         for row in cursor:
-            country = {'country_name': row[0], 'iso3': row[1], 'tld': row[2]}
+            country = {
+                'country_name': row[0], 
+                'iso3': row[1], 
+                'tld': row[2]
+                }
+            offset = 3
+            if search_continent:
+                offset = 4
+                country['continent_name'] = row[3]
+            
             for index, attribute in enumerate(search_attributes):
-                country[attribute] = row[index+3]
+                country[attribute] = row[index + offset]
             countries.append(country)
 
+        connection.close()
+    
     except Exception as e:
         print(e, file=sys.stderr)
 
-    connection.close()
     return countries
 
 
