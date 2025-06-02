@@ -1,20 +1,19 @@
-import { onloadPage } from "./onloadPage.js";
+import { initalize } from "./onloadPage.js";
 import { getBaseURL } from "./getBaseUrl.js";
 import { projectContinent } from "./projectContinent.js";
 import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
-onloadPage({
-    addon: () => {
-        // blank map 
-        let map = drawMap({}, null);
 
-        document.getElementById("submit").addEventListener("click", function () {
-            searchAttributes(map);
-        });
-    }
-});
+window.addEventListener("load", function() {
+    initalize();
+    let map = drawMap({}, null);
+
+    document.getElementById("submit").addEventListener("click", function () {
+        searchAttributes(map);
+    });
+})
 
 // Makes the URL with the get parameters based on the clicked checkboxes
 // of the flag attributes. Returns an object with the getParams as a URL

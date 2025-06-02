@@ -4,6 +4,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.middleVerticleLines {
+  border-left: 6px solid black;
+  border-right: 6px solid black;
+
+}
+
 .home {
     width: 45px;
 }

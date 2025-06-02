@@ -1,16 +1,15 @@
-import { onloadPage } from "./onloadPage.js";
+import { initalize } from "./onloadPage.js";
 import { getBaseURL } from "./getBaseUrl.js";
 import { projectContinent } from "./projectContinent.js";
 import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, sets up the home button, search drop down, the map, 
 // and the event listener for the submit button.
-onloadPage({
-    addon: () => {
-        getCountryFromAPI(getNameFromUrl());
-        zoomInImage();
-    }
-});
+window.addEventListener("load", function() {
+    initalize();
+    getCountryFromAPI(getNameFromUrl());
+    zoomInImage();
+})
 
 // Get the country name from the URL of the form:
 // http://[baseURL]/country/<name>
@@ -29,17 +28,17 @@ function getCountryFromAPI(name) {
 
     fetch(url, { method: "get" })
         .then((response) => response.json())
-        .then(function (result) {
-            writeCountryInfo(result);
-            initializeMap(result);
+        .then(function (result) { // result is a list of max length two
+            writeCountryInfo(result[0], getSecondLanguage(result));
+            initializeMap(result[0]);
         })
         .catch(function (error) {
             console.log(error);
         });
 }
 
-const countryStats = ["other_names", "area", "population", "continent_name", "main_hue"];
-const countryStatsHeaders = ["Other names", "Area (sq km)", "Population", "Continent", "Main hue"];
+const countryStats = ["other_names", "area", "population", "continent_name", "language", "main_hue"];
+const countryStatsHeaders = ["Other names", "Area (sq km)", "Population", "Continent", "Language(s)", "Main hue"];
 const colors = ["red", "green", "blue", "gold_yellow", "white", "black_grey", "orange_brown", "pink_purple"];
 const colorHeaders = ["Red", "Green", "Blue", "Gold/yellow", "White", "Black/grey", "Orange/brown", "Pink/purple"];
 const symbols = ["bars", "stripes", "bends", "circles", "crosses", "saltires", "quarters", "sun_stars", "crescent_moon", "triangle", "inanimate_image", "animate_image", "text", "crest_emblem", "border", "trapezoid"]
@@ -48,7 +47,9 @@ const symbolHeadersPlural = ["Bars", "Stripes", "Bends", "Circles", "Crosses", "
 
 // Inputs the the country information from SQL. Draws to the screen the couuntry
 // attributes and flag data.  
-function writeCountryInfo(country) {
+function writeCountryInfo(country, secondLanguage) {
+    console.log(country);
+
     // if country couldn't be returned from SQL: 
     if (country.country_name === undefined) {
         document.getElementById("errorMessage").innerText = "\n\n\nNo data corresponding to that country name!";
@@ -78,6 +79,11 @@ function writeCountryInfo(country) {
             // if it is a number (area, population), format it with commas in
             // the thousands places
             let statsCountText = country[countryStats[i]];
+
+            if (secondLanguage !== null && countryStats[i] == "language") {
+                statsCountText += ", " + secondLanguage;
+            }
+
             if (typeof statsCountText == "number") {
                 statsCountText = new Intl.NumberFormat("en", {
                     useGrouping: "always"
@@ -148,6 +154,14 @@ function writeCountryInfo(country) {
     symbolTable.style.visibility = "visible";
 }
 
+function getSecondLanguage(countries) {
+    if (countries.length < 2) {
+        return null;
+    }
+
+    return (countries[1]).language;
+}
+
 /*
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps
@@ -157,7 +171,7 @@ function writeCountryInfo(country) {
 function initializeMap(country) {
     let countryData = {};
     let continentName = country.continent_name;
-    countryData[country.iso3] = { fillColor: "#f7df07" };
+    countryData[country.iso3] = { fillColor: "#f54242" };
 
     new Datamap({
         element: document.getElementById("mapContainer"),
