@@ -27,15 +27,18 @@ KEZIA:
 MAI:
 - make country dropdown list horizontal and not vertical so then the page itself is shorter
 - search drop down wider and easier to see
-- pick out color for dividing line on home html
-- add little icons of what the attributes & colors represent on the home page next to the
-	text so that they can know what a saltire is etc & bar vs. stripe
-	- continent can be left alone! 
-	- in static/attribute_icons
 - list all the countries that were selected in home page 
 	- a beautiful tables with on column as flag, one column as name
 	- three tables using the three columns class where the tables are equally as possible
 		filled in with the flags and countries 
 	- STRETCH: (make the flags and country names as links to the country pages)
-- change cursor when hovering over clickable things (the map)
 - review all comments // read over the variable names
+
+
+DONE:
+- pick out color for dividing line on home html
+- change cursor when hovering over clickable things (the map)
+- add little icons of what the attributes & colors represent on the home page next to the
+	text so that they can know what a saltire is etc & bar vs. stripe
+	- continent can be left alone! 
+	- in static/attribute_icons

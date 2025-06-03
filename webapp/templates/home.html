@@ -15,73 +15,102 @@
 <body>
     <div class="row">
         <a id="home"> <img src="../static/home-icon.png" class="home column"></img> </a>
-        <div class="column rightAlign">
+        <div class="column stretch">
             <input type="text" id="searchBar" placeholder="Select country...">
             <ul id="searchCountries"></ul>
         </div>
     </div>
 
     <div class="fillColumnWithThreeRows">
-        <div class="">
+        <div>
             <h2 class="header">Explore the attributes of any country's flag:</h2>
         </div>
 
-        <div class="" id="attributeBoxes">
-            <div class="column">
-                <label for="colors">Color (<em>can select multiple</em>):</label>
+        <table id="attributeBoxes">
+            <tr>
+                <td><label for="colors">Color (<em>can select multiple</em>):</label></td>
 
-                <div class="fillRowWithThreeColumns" id="colors">
-                    <label><input type="checkbox" id="red">red</label>
-                    <label><input type="checkbox" id="green">green</label>
-                    <label><input type="checkbox" id="blue">blue</label>
-                    <label><input type="checkbox" id="gold_yellow">gold/yellow</label>
-                    <label><input type="checkbox" id="white">white</label>
-                    <label><input type="checkbox" id="black_grey">black/grey</label>
-                    <label><input type="checkbox" id="orange_brown">orange/brown</label>
-                    <label><input type="checkbox" id="pink_purple">pink/purple</label>
-                </div>
-            </div>
+                <td>
+                    <div class="fillRowWithThreeColumns" id="colors">
+                        <label><input type="checkbox" id="red">
+                            <img src="../static/attribute_icons/red.png">red</label>
+                        <label><input type="checkbox" id="green">
+                            <img src="../static/attribute_icons/green.png">green</label>
+                        <label><input type="checkbox" id="blue">
+                            <img src="../static/attribute_icons/blue.png">blue</label>
+                        <label><input type="checkbox" id="gold_yellow">
+                            <img src="../static/attribute_icons/gold-yellow.png">gold/yellow</label>
+                        <label><input type="checkbox" id="white">
+                            <img src="../static/attribute_icons/white.png">white</label>
+                        <label><input type="checkbox" id="black_grey">
+                            <img src="../static/attribute_icons/black-grey.png">black/grey</label>
+                        <label><input type="checkbox" id="orange_brown">
+                            <img src="../static/attribute_icons/orange-brown.png">orange/brown</label>
+                        <label><input type="checkbox" id="pink_purple">
+                            <img src="../static/attribute_icons/pink-purple.png">pink/purple</label>
+                    </div>
+                </td>
+            </tr>
 
-            <div class="column middleVerticleLines">
-                <label for="symbols">Symbols (<em>can select multiple</em>):</label>
+            <tr>
+                <td><label for="symbols">Symbols (<em>can select multiple</em>):</label></td>
 
-                <div class="fillRowWithThreeColumns" id="symbols">
-                    <label><input type="checkbox" id="stripes">stripes</label>
-                    <label><input type="checkbox" id="bars">bars</label>
-                    <label><input type="checkbox" id="bends">bends</label>
-                    <label><input type="checkbox" id="circles">circles</label>
-                    <label><input type="checkbox" id="crosses">crosses</label>
-                    <label><input type="checkbox" id="saltires">saltires</label>
-                    <label><input type="checkbox" id="quarters">quarters</label>
-                    <label><input type="checkbox" id="sun_stars">sun/stars</label>
-                    <label><input type="checkbox" id="crescent_moon">crescent moon</label>
-                    <label><input type="checkbox" id="triangle">triangle</label>
-                    <label><input type="checkbox" id="inanimate_image">inanimate image</label>
-                    <label><input type="checkbox" id="animate_image">animate image</label>
-                    <label><input type="checkbox" id="text">text</label>
-                    <label><input type="checkbox" id="crest_emblem">crest/emblem</label>
-                    <label><input type="checkbox" id="border">border</label>
-                    <label><input type="checkbox" id="trapezoid">trapezoid</label>
-                </div>
-            </div>
+                <td>
+                    <div class="fillRowWithThreeColumns" id="symbols">
+                        <label><input type="checkbox" id="bars">
+                            <img src="../static/attribute_icons/bars.png">bars</label>
+                        <label><input type="checkbox" id="stripes">
+                            <img src="../static/attribute_icons/stripes.png">stripes</label>
+                        <label><input type="checkbox" id="bends">
+                            <img src="../static/attribute_icons/bends.png">bends</label>
+                        <label><input type="checkbox" id="circles">
+                            <img src="../static/attribute_icons/circles.png">circles</label>
+                        <label><input type="checkbox" id="crosses">
+                            <img src="../static/attribute_icons/crosses.png">crosses</label>
+                        <label><input type="checkbox" id="saltires">
+                            <img src="../static/attribute_icons/saltires.png">saltires</label>
+                        <label><input type="checkbox" id="quarters">
+                            <img src="../static/attribute_icons/quarters.png">quarters</label>
+                        <label><input type="checkbox" id="sun_stars">
+                            <img src="../static/attribute_icons/sun-stars.png">sun/stars</label>
+                        <label><input type="checkbox" id="crescent_moon">
+                            <img src="../static/attribute_icons/crescent-moon.png">crescent moon</label>
+                        <label><input type="checkbox" id="triangle">
+                            <img src="../static/attribute_icons/triangle.png">triangle</label>
+                        <label><input type="checkbox" id="inanimate_image">
+                            <img src="../static/attribute_icons/inanimate-image.png">inanimate image</label>
+                        <label><input type="checkbox" id="animate_image">
+                            <img src="../static/attribute_icons/animate-image.png">animate image</label>
+                        <label><input type="checkbox" id="text">
+                            <img src="../static/attribute_icons/text.png">text</label>
+                        <label><input type="checkbox" id="crest_emblem">
+                            <img src="../static/attribute_icons/crest-emblem.png">crest/emblem</label>
+                        <label><input type="checkbox" id="border">
+                            <img src="../static/attribute_icons/border.png">border</label>
+                        <label><input type="checkbox" id="trapezoid">
+                            <img src="../static/attribute_icons/trapezoid.png">trapezoid</label>
+                    </div>
+                </td>
+            </tr>
 
-            <div class="column">
-                <label for="continents">Continent (<em>can only select one</em>):</label>
+            <tr>
+                <td><label for="continents">Continent (<em>can only select one</em>):</label></td>
 
-                <div class="fillRowWithThreeColumns" id="continents">
-                    <label><input type="radio" name="continents" value="All" checked>All</label>
-                    <label><input type="radio" name="continents" value="Africa">Africa</label>
-                    <label><input type="radio" name="continents" value="Asia">Asia</label>
-                    <label><input type="radio" name="continents" value="Europe">Europe</label>
-                    <label><input type="radio" name="continents" value="North America">North America</label>
-                    <label><input type="radio" name="continents" value="Oceania">Oceania</label>
-                    <label><input type="radio" name="continents" value="South America">South America</label>
-                </div>
-            </div>
+                <td>
+                    <div class="fillRowWithThreeColumns" id="continents">
+                        <label><input type="radio" name="continents" value="All" checked>All</label>
+                        <label><input type="radio" name="continents" value="Africa">Africa</label>
+                        <label><input type="radio" name="continents" value="Asia">Asia</label>
+                        <label><input type="radio" name="continents" value="Europe">Europe</label>
+                        <label><input type="radio" name="continents" value="North America">North America</label>
+                        <label><input type="radio" name="continents" value="Oceania">Oceania</label>
+                        <label><input type="radio" name="continents" value="South America">South America</label>
+                    </div>
+                </td>
+            </tr>
+        </table>
 
-        </div>
-
-        <div class="">
+        <div class="buttonsForm">
             <button id="submit">Submit</button>
         </div>
     </div>

@@ -5,7 +5,7 @@ import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, sets up the home button, search drop down, the map, 
 // and the event listener for the submit button.
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     initalize();
     getCountryFromAPI(getNameFromUrl());
     zoomInImage();
@@ -186,10 +186,10 @@ function initializeMap(country) {
         data: countryData,
         fills: { defaultFill: "#999999" },
         geographyConfig: {
-            popupOnHover: false,
-            highlightFillColor: "#16b538", // color when you hover on a country
-            highlightBorderColor: "#156326",
+            highlightFillColor: "#2293b8", // color when you hover on a country
+            highlightBorderColor: "#06465c",
             hideAntarctica: false,
+            popupOnHover: false
         }
     });
 

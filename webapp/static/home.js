@@ -6,7 +6,7 @@ import { clickableCountries } from "./mapDoneFunc.js";
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     initalize();
     let map = drawMap({}, null);
 
@@ -150,8 +150,8 @@ function drawMap(countriesData, continent) {
         data: countriesData,
         fills: { defaultFill: "#999999" },
         geographyConfig: {
-            highlightFillColor: "#16b538", // color when you hover on a country
-            highlightBorderColor: "#156326",
+            highlightFillColor: "#2293b8", // color when you hover on a country
+            highlightBorderColor: "#06465c",
             hideAntarctica: false,
             popupTemplate: hoverPopup
         }

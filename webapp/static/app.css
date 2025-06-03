@@ -1,17 +1,82 @@
+/* General CSS for layout */
 body {
     font-size: 18px;
     margin: 8px;
     font-family: Arial, sans-serif;
 }
 
-.middleVerticleLines {
-  border-left: 6px solid black;
-  border-right: 6px solid black;
-
-}
-
 .home {
     width: 45px;
+}
+
+.header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 4px solid #134359;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 4px;
+    align-items: center;
+}
+
+.column {
+    float: left;
+    padding: 10px 20px;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    margin: auto;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.fillRowWithThreeColumns {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-flow: row;
+    column-gap: 30px;
+}
+
+.fillColumnWithThreeRows {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    background-color: #d3dee3;
+}
+
+
+/* Select and search drop-down menu */
+.stretch {
+    /* margin: 0;
+    width: auto; */
+    /* width: 100%; */
+    /* display: flexbox; */
+    /* position: relative;
+    min-width: 300px;
+    max-width: 600px; */
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
 }
 
 #searchBar {
@@ -19,7 +84,7 @@ body {
     background-position: 10px 12px;
     background-repeat: no-repeat;
     background-size: 20px;
-    width: auto;
+    /* width: auto; */
     font-size: 16px;
     padding: 12px 20px 12px 40px;
 }
@@ -39,30 +104,64 @@ body {
 #searchCountries li a {
     margin: 0;
     border: 1px solid black;
-    border-top: 0px;
+    border-top: 0;
     background-color: #605c5c;
     padding: 10px;
     display: block;
     color: white;
     text-decoration: none;
-    width: 200px;
+    /* width: 200px; */
 }
 
 #searchCountries li a:hover {
     background-color: #a6a0a0;
 }
 
+
+/* Select menu */
+#attributeBoxes {
+    border-collapse: collapse;
+}
+
 #attributeBoxes label {
-    display: block;
+    display: inline-flex;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 #attributeBoxes input {
     cursor: pointer;
 }
 
-/* stuff for maps*/
+#attributeBoxes img {
+    width: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
+#attributeBoxes tr td {
+    padding: 10px;
+    border: 3px solid #46697a;
+}
+
+#attributeBoxes tr:first-child td {
+    border-top: 0;
+}
+
+#attributeBoxes tr:last-child td {
+    border-bottom: 0;
+}
+
+#attributeBoxes tr td:first-child {
+    border-left: 0;
+}
+
+#attributeBoxes tr td:last-child {
+    border-right: 0;
+}
+
+
+/* Maps */
 #mapDiv {
     display: flex;
     flex-direction: column;
@@ -78,7 +177,8 @@ body {
     height: 0;
     width: 80%;
     padding-bottom: 35%;
-    background: lightblue;
+    background: #add8e6;
+    cursor: pointer;
 }
 
 #mapCaption {
@@ -99,57 +199,13 @@ body {
     width: 30px;
 }
 
-/* end stuff for maps */
 
-.header {
-    background-color: #F1F1F1;
-    text-align: center;
-    padding: 20px;
-    margin: 0px;
+/* Buttons submit,... */
+.buttonsForm {
+    border-top: 4px solid #134359;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
-    margin-bottom: 4px;
-}
-
-.column {
-    float: left;
-    padding: 10px 20px;
-    flex-direction: column;
-}
-
-.rightAlign {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.fillRowWithThreeColumns {
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    grid-auto-flow: row;
-    column-gap: 30px;
-}
-
-.fillColumnWithThreeRows {
-    display: inline-grid;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: column;
-    background-color: #d3dee3;
-    border-style: inset;
-    border-width: 4px;
-}
-
-button {
+.buttonsForm button {
     background-color: gray;
     border: none;
     color: white;
@@ -160,55 +216,43 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.buttonsForm button:hover {
     background-color: #04AA6D;
     color: white;
 }
 
-.textLeft {
-    text-align: left;
-}
 
-.textRight {
-    text-align: right;
-}
-
-.textCenter {
-    text-align: center;
-}
-
-table {
+/* Info table */
+.countryTable table {
     border-collapse: collapse;
     margin: 10px;
 }
 
-td,
+.countryTable td,
 th {
-    border: 1.5px solid black;
+    border: 1.5px solid #46697a;
     padding: 5px;
-    /* max-height: 40px; */
-    /* not working!! */
 }
 
-tr:nth-child(even) {
+.countryTable tr:nth-child(even) {
     background-color: #bcd6ed;
 }
 
-tr:nth-child(odd) {
+.countryTable tr:nth-child(odd) {
     background-color: #F1F1F1;
 }
 
-td.empty {
+.countryTable td.empty {
     display: none;
 }
 
-td.merged {
+.countryTable td.merged {
     grid-column: span 2;
 }
 
-/* stuff for flag image */
-/* Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js */
 
+/* Flag image */
+/* Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js */
 #countryFlag {
     width: 30%;
     height: auto;
@@ -285,5 +329,3 @@ td.merged {
     text-decoration: none;
     cursor: pointer;
 }
-
-/* end stuff for flag image */
