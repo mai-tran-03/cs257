@@ -66,17 +66,9 @@ body {
 
 /* Select and search drop-down menu */
 .stretch {
-    /* margin: 0;
-    width: auto; */
-    /* width: 100%; */
-    /* display: flexbox; */
-    /* position: relative;
-    min-width: 300px;
-    max-width: 600px; */
-    width: 70%;
+    width: 80%;
     margin: auto;
     display: flex;
-    align-items: center;
 }
 
 #searchBar {
@@ -84,7 +76,7 @@ body {
     background-position: 10px 12px;
     background-repeat: no-repeat;
     background-size: 20px;
-    /* width: auto; */
+    width: auto;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
 }
@@ -110,7 +102,7 @@ body {
     display: block;
     color: white;
     text-decoration: none;
-    /* width: 200px; */
+    width: auto;
 }
 
 #searchCountries li a:hover {
