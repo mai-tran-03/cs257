@@ -1,5 +1,10 @@
 To do!
 
+To finish before check in on Sunday June 8th
+
+BOTH:
+- send Jeff slack dm once done with project
+
 
 KEZIA:
 - combine the imported js files into one file
@@ -22,6 +27,10 @@ KEZIA:
 - add top of the file comments to all js and html files
 - add comments in html more 
 - review all comments // read over the variable names
+- make the listed header names for country as objects instead of two lists
+- webapp/readme.txt
+- read over & edit css (maybe comments.....)
+
 
 
 MAI:
