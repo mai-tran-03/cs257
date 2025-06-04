@@ -1,8 +1,8 @@
 /* General CSS for layout */
 body {
+    font-family: Arial, sans-serif;
     font-size: 18px;
     margin: 8px;
-    font-family: Arial, sans-serif;
 }
 
 .home {
@@ -11,25 +11,25 @@ body {
 
 .header {
     background-color: #F1F1F1;
-    text-align: center;
-    padding: 20px;
-    margin: 0;
     border-bottom: 4px solid #134359;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
 }
 
 .row {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px;
     margin-bottom: 4px;
-    align-items: center;
+    padding: 10px;
 }
 
 .column {
+    flex-direction: column;
     float: left;
     padding: 10px 20px;
-    flex-direction: column;
 }
 
 .center {
@@ -51,24 +51,24 @@ body {
 
 .fillRowWithThreeColumns {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-auto-flow: row;
     column-gap: 30px;
+    grid-auto-flow: row;
+    grid-template-columns: auto auto auto;
 }
 
 .fillColumnWithThreeRows {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: column;
     background-color: #d3dee3;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto auto;
 }
 
 
 /* Select and search drop-down menu */
 .stretch {
-    width: 80%;
-    margin: auto;
     display: flex;
+    margin: auto;
+    width: 80%;
 }
 
 #searchBar {
@@ -76,9 +76,9 @@ body {
     background-position: 10px 12px;
     background-repeat: no-repeat;
     background-size: 20px;
-    width: auto;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
+    width: auto;
 }
 
 #searchBar:hover {
@@ -86,27 +86,31 @@ body {
 }
 
 #searchCountries {
+    background-color: rgba(0, 50, 50, 0.9);
+    display: inline-flex;
+    flex-wrap: wrap;
     list-style-type: none;
-    visibility: hidden;
-    position: absolute;
     margin-top: 0;
+    max-height: 410px;
+    position: absolute;
+    overflow: auto;
+    width: 70%;
     z-index: 50;
 }
 
 #searchCountries li a {
-    margin: 0;
-    border: 1px solid black;
-    border-top: 0;
-    background-color: #605c5c;
-    padding: 10px;
-    display: block;
+    border: none;
     color: white;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
     text-decoration: none;
-    width: auto;
+    width: 140px;
 }
 
 #searchCountries li a:hover {
-    background-color: #a6a0a0;
+    background-color: rgba(14, 200, 200, 0.5);
 }
 
 
@@ -116,9 +120,9 @@ body {
 }
 
 #attributeBoxes label {
+    align-items: center;
     display: inline-flex;
     margin-bottom: 10px;
-    align-items: center;
 }
 
 #attributeBoxes input {
@@ -126,14 +130,14 @@ body {
 }
 
 #attributeBoxes img {
-    width: 40px;
     margin-left: 5px;
     margin-right: 5px;
+    width: 40px;
 }
 
 #attributeBoxes tr td {
-    padding: 10px;
     border: 3px solid #46697a;
+    padding: 10px;
 }
 
 #attributeBoxes tr:first-child td {
@@ -155,29 +159,29 @@ body {
 
 /* Maps */
 #mapDiv {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
     margin: auto;
     padding-top: 25px;
+    width: 100%;
 }
 
 #mapContainer {
-    position: relative;
-    float: left;
-    height: 0;
-    width: 80%;
-    padding-bottom: 35%;
     background: #add8e6;
     cursor: pointer;
+    float: left;
+    height: 0;
+    padding-bottom: 35%;
+    position: relative;
+    width: 80%;
 }
 
 #mapCaption {
-    margin-top: 8px;
-    font-size: 14px;
     color: #555;
+    font-size: 14px;
     font-style: italic;
+    margin-top: 8px;
 }
 
 .hoverpopup {
@@ -198,18 +202,18 @@ body {
 }
 
 .buttonsForm button {
-    background-color: gray;
+    background-color: rgba(0, 50, 50, 0.9);
     border: none;
     color: white;
+    cursor: pointer;
+    font-size: 16px;
     padding: 10px 20px;
     text-align: center;
-    font-size: 16px;
     width: 100%;
-    cursor: pointer;
 }
 
 .buttonsForm button:hover {
-    background-color: #04AA6D;
+    background-color: rgba(14, 200, 200, 0.5);
     color: white;
 }
 
@@ -247,12 +251,12 @@ th {
 /* Flag image */
 /* Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js */
 #countryFlag {
-    width: 30%;
+    cursor: pointer;
     height: auto;
     object-fit: contain;
     padding-top: 10px;
-    cursor: pointer;
     transition: 0.3s;
+    width: 30%;
 }
 
 #countryFlag:hover {
@@ -260,40 +264,40 @@ th {
 }
 
 .imgZoom {
+    background-color: rgba(0, 0, 0, 0.7);
     display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
     left: 0;
-    top: 0;
-    width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .zoomContent {
-    margin: auto;
     display: block;
-    width: 80%;
+    margin: auto;
     max-width: 700px;
+    width: 80%;
 }
 
 #imgCaption {
-    margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
     color: #ccc;
-    padding: 10px 0;
     height: 150px;
+    margin: auto;
+    max-width: 700px;
+    padding: 10px 0;
+    text-align: center;
+    width: 80%;
 }
 
 .zoomContent,
 #imgCaption {
-    animation-name: zoom;
     animation-duration: 0.6s;
+    animation-name: zoom;
 }
 
 @keyframes zoom {
@@ -307,18 +311,18 @@ th {
 }
 
 .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
+    position: absolute;
+    right: 35px;
     transition: 0.3s;
+    top: 15px;
 }
 
 .close:hover,
 .close:focus {
     color: #bbb;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 }

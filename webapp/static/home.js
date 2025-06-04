@@ -4,11 +4,21 @@ import { initalize, getBaseURL, projectContinent, clickableCountries } from './h
 // to search attributes of countries with checkboxes and selectors.
 window.addEventListener("load", function () {
     initalize();
-    let map = drawMap({}, null);
+    const map = drawMap({}, null);
 
     document.getElementById("submit").addEventListener("click", function () {
         searchAttributes(map);
     });
+
+    // const dropDown = document.getElementsById("dropDown");
+    // const countrySelect = document.getElementsById("countrySelect");
+    // dropDown.addEventListener("click", function () {
+    //     if (countrySelect.style.display === "block") {
+    //         countrySelect.style.display = "none";
+    //     } else {
+    //         countrySelect.style.display = "block";
+    //     }
+    // });
 })
 
 // Makes the URL with the get parameters based on the clicked checkboxes
