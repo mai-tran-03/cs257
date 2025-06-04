@@ -1,6 +1,6 @@
 // Returns the base URL of the API, and can add endpoint components.
 export function getBaseURL() {
-    let baseURL = window.location.protocol
+    const baseURL = window.location.protocol
         + "//" + window.location.hostname
         + ":" + window.location.port;
     return baseURL;
@@ -41,7 +41,7 @@ export function initalize() {
 
 // Fetches a list of all countries to fill in the country search dropdown.
 function populateDropBar() {
-    let baseURL = getBaseURL();
+    const baseURL = getBaseURL();
 
     fetch(baseURL + "/api/countries", { method: "get" })
         .then((response) => response.json())
@@ -75,13 +75,13 @@ function populateDropBar() {
 // Taken from https://www.w3schools.com/howto/howto_js_filter_dropdown.asp.
 // Cuts down the dropdown list as strings are searched.
 function filterResults() {
-    let input = document.getElementById("searchBar");
-    let searchText = input.value.toUpperCase();
-    let ul = document.getElementById("searchCountries");
-    let li = ul.getElementsByTagName("li");
+    const input = document.getElementById("searchBar");
+    const searchText = input.value.toUpperCase();
+    const ul = document.getElementById("searchCountries");
+    const li = ul.getElementsByTagName("li");
 
     for (let i = 0; i < li.length; i++) {
-        let a = li[i].getElementsByTagName("a");
+        const a = li[i].querySelector("a");
         let textValue = a.textContent || a.innerText;
         if (textValue.toUpperCase().indexOf(searchText) > -1) {
             li[i].style.display = "";
@@ -129,7 +129,7 @@ const databaseCountryNames = [
 export function clickableCountries(dataMap, baseURL) {
     dataMap.svg.selectAll(".datamaps-subunit").on("click", function (geography, data) {
         let countryName = geography.properties.name;
-        let countryNameIndex = datamapsCountryNames.indexOf(countryName);
+        const countryNameIndex = datamapsCountryNames.indexOf(countryName);
 
         if (countryNameIndex > -1) {
             countryName = databaseCountryNames[countryNameIndex];
@@ -146,72 +146,72 @@ export function clickableCountries(dataMap, baseURL) {
 // the world projection.
 export function projectContinent(element, name) {
     if (name === "Africa") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([23, 2])
             .rotate([4.4, 0])
             .scale(300)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else if (name === "Asia") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([100, 30])
             .rotate([4, 0])
             .scale(300)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else if (name === "Europe") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([23, 50])
             .rotate([5, 0])
             .scale(550)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else if (name === "North America") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([-100, 40])
             .rotate([5, 0])
             .scale(390)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else if (name === "Oceania") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([135, -20])
             .rotate([5, 0])
             .scale(400)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else if (name === "South America") {
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([-60, -20])
             .rotate([5, 0])
             .scale(295)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };
     } else { // the world
-        let projection = d3.geo.equirectangular()
+        const projection = d3.geo.equirectangular()
             .center([0, 0])
             .rotate([0, 0])
             .scale(145)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        let path = d3.geo.path()
+        const path = d3.geo.path()
             .projection(projection);
 
         return { path: path, projection: projection };

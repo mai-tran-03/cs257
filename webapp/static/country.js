@@ -11,8 +11,8 @@ window.addEventListener("load", function () {
 // Get the country name from the URL of the form:
 // http://[baseURL]/country/<name>
 function getNameFromUrl() {
-    let url = window.location.toString();
-    let lastBackSlash = url.lastIndexOf("/") + 1;
+    const url = window.location.toString();
+    const lastBackSlash = url.lastIndexOf("/") + 1;
     if (lastBackSlash == url.length) {
         return "";
     }
@@ -21,26 +21,64 @@ function getNameFromUrl() {
 
 // Fetch information about a specific country from the API
 function getCountryFromAPI(name) {
-    let url = getBaseURL() + "/api/country/" + name;
+    const url = getBaseURL() + "/api/country/" + name;
 
     fetch(url, { method: "get" })
         .then((response) => response.json())
         .then(function (result) { // result is a list of max length two
             writeCountryInfo(result[0], getSecondLanguage(result));
-            initializeMap(result[0]);
+            initializeMap(result[0].iso3, result[0].continent_name);
         })
         .catch(function (error) {
             console.log(error);
         });
 }
 
-const countryStats = ["other_names", "area", "population", "continent_name", "language", "main_hue"];
-const countryStatsHeaders = ["Other names", "Area (sq km)", "Population", "Continent", "Language(s)", "Main hue"];
-const colors = ["red", "green", "blue", "gold_yellow", "white", "black_grey", "orange_brown", "pink_purple"];
-const colorHeaders = ["Red", "Green", "Blue", "Gold/yellow", "White", "Black/grey", "Orange/brown", "Pink/purple"];
-const symbols = ["bars", "stripes", "bends", "circles", "crosses", "saltires", "quarters", "sun_stars", "crescent_moon", "triangle", "inanimate_image", "animate_image", "text", "crest_emblem", "border", "trapezoid"]
-const symbolHeadersSingular = ["Bar", "Stripe", "Bend", "Circle", "Cross", "Saltire", "Quarter", "Sun/star", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
-const symbolHeadersPlural = ["Bars", "Stripes", "Bends", "Circles", "Crosses", "Saltires", "Quarters", "Sun/stars", "Crescent moon(s)", "Triangle(s)", "Inanimate images(s)", "Animate images(s)", "Text", "Crest/emblems(s)", "Border", "Trapezoids(s)"]
+const formattedCountryInfo = {
+    other_names: "Other names",
+    area: "Area (sq km)",
+    population: "Population",
+    continent_name: "Continent",
+    language: "Language(s)",
+    main_hue: "Main hue"
+};
+const formattedColors = {
+    red: "Red",
+    green: "Green",
+    blue: "Blue",
+    gold_yellow: "Gold/yellow",
+    white: "White",
+    black_grey: "Black/grey",
+    orange_brown: "Orange/brown",
+    pink_purple: "Pink/purple"
+}
+const formattedSymbolsSingular = {
+    bars: "Bar",
+    stripes: "Stripe",
+    circles: "Circle",
+    crosses: "Cross",
+    saltires: "Saltire",
+    quarters: "Quarter",
+    sun_stars: "Sun/stars",
+    crescent_moon: "Crescent moon(s)",
+    triangle: "Triangl(s)",
+    inanimate_image: "Inanimate image(s)",
+    animate_image: "Animate image(s)",
+    text: "Text",
+    crest_emblem: "Crest/emblem(s)",
+    border: "Border",
+    trapezoid: "Trapezoid(s)"
+}
+const formattedSymbolsPlural = {
+    bars: "Bars",
+    stripes: "Stripes",
+    circles: "Circles",
+    crosses: "Crosses",
+    saltires: "Saltires",
+    quarters: "Quarters",
+    sun_stars: "Sun/stars",
+    border: "Borders",
+}
 
 // Inputs the the country information from SQL. Draws to the screen the couuntry
 // attributes and flag data.  
@@ -63,55 +101,69 @@ function writeCountryInfo(country, secondLanguage) {
     // general country info 
     let infoTable = document.getElementById("infoTable");
 
-    for (let i = 0; i < countryStats.length; i++) {
-        if (country[countryStats[i]] !== null) {
-            let tableRow = document.createElement("tr");
-            let statsName = document.createElement("td");
-
-            statsName.append(document.createTextNode(countryStatsHeaders[i]));
-            statsName.className = "textRight";
-
-            let statsCount = document.createElement("td");
-
-            // if it is a number (area, population), format it with commas in
-            // the thousands places
-            let statsCountText = country[countryStats[i]];
-
-            if (secondLanguage !== null && countryStats[i] == "language") {
-                statsCountText += ", " + secondLanguage;
-            }
-
-            if (typeof statsCountText == "number") {
-                statsCountText = new Intl.NumberFormat("en", {
-                    useGrouping: "always"
-                }).format(statsCountText);
-            }
-
-            statsCount.append(document.createTextNode(statsCountText));
-            statsCount.className = "textLeft";
-
-            tableRow.append(statsName);
-            tableRow.append(statsCount);
-            infoTable.append(tableRow);
+    for (const [key, value] of Object.entries(formattedCountryInfo)) {
+        if (country[key] == undefined) {
+            continue;
         }
+
+        let tableRow = document.createElement("tr");
+        let statsName = document.createElement("td");
+
+        const statsNameText = value;
+        statsName.append(document.createTextNode(statsNameText));
+        statsName.className = "textRight";
+
+        let statsCount = document.createElement("td");
+        let statsCountText = country[key];
+
+        if (secondLanguage !== null && key == "language") {
+            statsCountText += ", " + secondLanguage;
+        }
+
+        // if it is a number (area, population), format it with commas in
+        // the thousands places
+        if (typeof statsCountText == "number") {
+            statsCountText = new Intl.NumberFormat("en", {
+                useGrouping: "always"
+            }).format(statsCountText);
+        }
+
+        // Capitalize first letter of the color
+        if (key == "main_hue") {
+            if (formattedColors[country[key]] !== undefined) {
+                statsCountText = formattedColors[country[key]];
+            } else { // cannot guarentee always correct format: black vs. black/gray
+                let firstLetter = (statsCountText.charAt(0)).toUpperCase();
+                statsCountText = firstLetter + statsCountText.slice(1);
+            }
+        }
+
+        statsCount.append(document.createTextNode(statsCountText));
+        statsCount.className = "textLeft";
+
+        tableRow.append(statsName);
+        tableRow.append(statsCount);
+        infoTable.append(tableRow);
     }
-    // It is hidden by default and only visible once the information is put in 
+    // All tables are hidden by default and only visible once the information 
+    // is put in successfully
     infoTable.style.visibility = "visible";
 
     // colors
     let colorsTable = document.getElementById("colorsTable");
 
-    for (let i = 0; i < colors.length; i++) {
-        if (country[colors[i]]) {
-            let tableRow = document.createElement("tr");
-            let colorName = document.createElement("td");
-
-            colorName.append(document.createTextNode(colorHeaders[i]));
-            colorName.className = "textCenter";
-
-            tableRow.append(colorName);
-            colorsTable.append(tableRow);
+    for (const [key, value] of Object.entries(formattedColors)) {
+        if (country[key] == false || country[key] == undefined) {
+            continue;
         }
+        let tableRow = document.createElement("tr");
+        let colorName = document.createElement("td");
+
+        colorName.append(document.createTextNode(value));
+        colorName.className = "textCenter";
+
+        tableRow.append(colorName);
+        colorsTable.append(tableRow);
     }
 
     colorsTable.style.visibility = "visible";
@@ -120,32 +172,33 @@ function writeCountryInfo(country, secondLanguage) {
     // symbols
     let symbolTable = document.getElementById("symbolTable");
 
-    for (let i = 0; i < symbols.length; i++) {
-        if (country[symbols[i]] != 0) {
-            let tableRow = document.createElement("tr");
-            let symbolName = document.createElement("td");
-            let symbolCount = document.createElement("td");
-
-            symbolName.className = "textRight";
-            symbolCount.className = "textLeft";
-
-            if (typeof country[symbols[i]] == "boolean") {
-                symbolName.append(document.createTextNode(symbolHeadersSingular[i]));
-                symbolName.colSpan = 2;
-                symbolName.className = "textCenter";
-                symbolCount.classList.add("empty");
-            } else if (country[symbols[i]] == 1) {
-                symbolName.append(document.createTextNode(symbolHeadersSingular[i]));
-                symbolCount.append(document.createTextNode("1"));
-            } else {
-                symbolName.append(document.createTextNode(symbolHeadersPlural[i]));
-                symbolCount.append(document.createTextNode(country[symbols[i]]));
-            }
-
-            tableRow.append(symbolName);
-            tableRow.append(symbolCount);
-            symbolTable.append(tableRow);
+    for (const [key, value] of Object.entries(formattedSymbolsSingular)) {
+        if (country[key] == 0 || country[key] == undefined) {
+            continue;
         }
+        let tableRow = document.createElement("tr");
+        let symbolName = document.createElement("td");
+        let symbolCount = document.createElement("td");
+
+        symbolName.className = "textRight";
+        symbolCount.className = "textLeft";
+
+        if (typeof country[key] == "boolean") {
+            symbolName.append(document.createTextNode(value));
+            symbolName.colSpan = 2;
+            symbolName.className = "textCenter";
+            symbolCount.classList.add("empty");
+        } else if (country[key] == 1) {
+            symbolName.append(document.createTextNode(value));
+            symbolCount.append(document.createTextNode("1"));
+        } else {
+            symbolName.append(document.createTextNode(formattedSymbolsPlural[key]));
+            symbolCount.append(document.createTextNode(country[key]));
+        }
+
+        tableRow.append(symbolName);
+        tableRow.append(symbolCount);
+        symbolTable.append(tableRow);
     }
 
     symbolTable.style.visibility = "visible";
@@ -164,11 +217,10 @@ function getSecondLanguage(countries) {
  * https://github.com/markmarkoh/datamaps
  */
 
-// Draw a map with only the given country input highlighted.
-function initializeMap(country) {
-    let countryData = {};
-    let continentName = country.continent_name;
-    countryData[country.iso3] = { fillColor: "#f54242" };
+// Draw a map with only the given country input highlighted. Also inputs 
+// formatted data of all countries with their tld and name stored, to be used
+// in the hover pop ups. 
+function drawMap(continentName, countriesData) {
 
     new Datamap({
         element: document.getElementById("mapContainer"),
@@ -180,20 +232,77 @@ function initializeMap(country) {
         done: function (datamap) {
             return clickableCountries(datamap, getBaseURL());
         },
-        data: countryData,
+        data: countriesData,
         fills: { defaultFill: "#999999" },
         geographyConfig: {
             highlightFillColor: "#2293b8", // color when you hover on a country
             highlightBorderColor: "#06465c",
             hideAntarctica: false,
-            popupOnHover: false
+            popupTemplate: hoverPopup
         }
     });
 
-    // Write a caption above the map with the continent name,
+    // Write a caption below the map with the continent name,
     // this happens after the map is drawn so that if the javascript fails in
     // drawing the map, this will not happen.
-    document.getElementById("mapCaption").innerText = "Continent: " + country.continent_name;
+    document.getElementById("mapCaption").innerText = "Continent: " + continentName;
+}
+
+// Fetch requests to get list of all countries' names, tld, and ISO in order 
+// to make the hover popups. Inputs single country ISO in order to set the color
+// of the selected country.
+function initializeMap(selectedCountryISO, continentName) {
+    // Do not show the map if we cannot later draw the selected country as a color
+    if (selectedCountryISO == undefined || continentName == undefined) {
+        document.getElementById("mapContainer").style.visibility = "hidden";
+        document.getElementById("mapCaption").style.visibility = "hidden";
+        return;
+    }
+
+    const url = getBaseURL() + "/api/countries?"
+
+    fetch(url, { method: "get" })
+        .then((response) => response.json())
+        .then(function (result) { 
+
+            // format the country data so that it can be used in the hover pop
+            // ups. Store the tld and name, change the fill color of the 
+            // selected country. 
+            let countriesData = {};
+            for (const c of result) {
+                let countryData = {};
+                countryData["countryName"] = c["country_name"];
+                countryData["tld"] = c["tld"];
+
+                if (c.iso3 == selectedCountryISO) {
+                    countryData["fillColor"] = "#f54242";
+                }
+
+                countriesData[c.iso3] = countryData;
+            }
+
+            console.log(countriesData);
+            drawMap(continentName, countriesData);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+function hoverPopup(geography, data) {
+    if (data == undefined || data.tld == undefined || data.countryName == undefined) {
+        return;
+    }
+    let template = "<div class='hoverpopup'>";
+
+    template += "<img class='hoverpopupFlag' src='../static/flag_images/" + data.tld + ".png'>";
+
+    template += "<strong> " + data.countryName + "</strong><br>\n";
+
+    template += "</div>";
+
+    return template;
 }
 
 // Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js.
