@@ -7,11 +7,8 @@ BOTH:
 
 
 KEZIA:
-- combine the imported js files into one file
-- swaziland -> eswatini on datamaps
 - resize nepal flag on country view (and maybe hover popup)
 - add some Antartica data because it's so big OR have it hide it on the world maps
-- add error handling on single country page -- hide the tables and the map
 - try to swap stuff to const! 
 - mess with the projections on home html
 - when single continent make sure that the other continents don't show their colors

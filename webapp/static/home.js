@@ -1,11 +1,7 @@
-import { initalize } from "./onloadPage.js";
-import { getBaseURL } from "./getBaseUrl.js";
-import { projectContinent } from "./projectContinent.js";
-import { clickableCountries } from "./mapDoneFunc.js";
+import { initalize, getBaseURL, projectContinent, clickableCountries } from './helperFunctions.js';
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
-
 window.addEventListener("load", function () {
     initalize();
     let map = drawMap({}, null);

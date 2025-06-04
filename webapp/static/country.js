@@ -1,14 +1,11 @@
-import { initalize } from "./onloadPage.js";
-import { getBaseURL } from "./getBaseUrl.js";
-import { projectContinent } from "./projectContinent.js";
-import { clickableCountries } from "./mapDoneFunc.js";
+import { initalize, getBaseURL, projectContinent, clickableCountries } from './helperFunctions.js';
 
 // On window load, sets up the home button, search drop down, the map, 
 // and the event listener for the submit button.
 window.addEventListener("load", function () {
     initalize();
     getCountryFromAPI(getNameFromUrl());
-    zoomInImage();
+    zoomInFlagAnimation();
 })
 
 // Get the country name from the URL of the form:
@@ -51,7 +48,7 @@ function writeCountryInfo(country, secondLanguage) {
     console.log(country);
 
     // if country couldn't be returned from SQL: 
-    if (country.country_name === undefined) {
+    if (country === undefined || country.country_name === undefined) {
         document.getElementById("errorMessage").innerText = "\n\n\nNo data corresponding to that country name!";
         document.getElementById("countryFlag").style.visibility = "hidden";
         document.getElementById("mapContainer").style.visibility = "hidden";
@@ -201,7 +198,7 @@ function initializeMap(country) {
 
 // Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_modal_js.
 // Trigger a modal (dialog box) to zoom into the flag image with a close button.
-function zoomInImage() {
+function zoomInFlagAnimation() {
     let imgZoom = document.getElementById("imgZoom");
 
     let flagImg = document.getElementById("countryFlag");

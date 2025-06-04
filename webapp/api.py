@@ -71,7 +71,7 @@ def get_contries_with_attribute():
         queryFROM = ''' FROM countries_flags '''
 
         if search_continent:
-            queryFROM = '''FROM countries_flags, continents 
+            queryFROM = ''' FROM countries_flags, continents 
                             WHERE countries_flags.continent_id = continents.continent_id'''
 
         query = querySELECT + queryFROM + ';'
