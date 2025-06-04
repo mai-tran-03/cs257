@@ -34,8 +34,6 @@ KEZIA:
 
 
 MAI:
-- make country dropdown list horizontal and not vertical so then the page itself is shorter
-- search drop down wider and easier to see
 - list all the countries that were selected in home page 
 	- a beautiful tables with on column as flag, one column as name
 	- three tables using the three columns class where the tables are equally as possible
@@ -51,3 +49,5 @@ DONE:
 	text so that they can know what a saltire is etc & bar vs. stripe
 	- continent can be left alone! 
 	- in static/attribute_icons
+- make country dropdown list horizontal and not vertical so then the page itself is shorter
+	- search drop down wider and easier to see
