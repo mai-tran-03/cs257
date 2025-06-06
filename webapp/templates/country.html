@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <!-- 
+    A horizontal navigation bar containing a home-icon button with a link to the homepage
+        and a horizontal bar combining a search/filter function for country names, and
+            a scrollable drop-down of country names.
+    -->
     <div class="row">
         <a id="home"><img src="../static/home-icon.png" class="home column"></img> </a>
         <div class="column stretch">
@@ -23,6 +28,13 @@
         </div>
     </div>
 
+    <!--
+    A section with a secondary header of selected country name including
+        a country flag that can be clicked to zoom in, 
+        and a row of tables containing country information e.g., area, 
+            population, languages, and etc.,
+            and other data including the flag attributes.
+    -->
     <div class="fillColumnWithThreeRows">
         <div>
             <h1 class="header" id="countryName">{{ name }}</h1>
@@ -60,6 +72,9 @@
         </div>
     </div>
 
+    <!--
+    A Datamap of a continent that shows the selected country with clickable countries.
+    -->
     <div id="mapDiv">
         <div id="mapContainer"></div>
 

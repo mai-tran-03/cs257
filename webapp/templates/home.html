@@ -13,8 +13,13 @@
 </head>
 
 <body>
+    <!-- 
+    A horizontal navigation bar containing a home-icon button with a link to the homepage
+        and a horizontal bar combining a search/filter function for country names, and
+            a scrollable drop-down of country names.
+    -->
     <div class="row">
-        <a id="home"><img src="../static/home-icon.png" class="home column"></img> </a>
+        <a id="home"><img src="../static/home-icon.png" class="column home"></img> </a>
         <div class="column stretch">
             <input type="text" id="searchBar" placeholder="Select country...">
 
@@ -24,6 +29,12 @@
         </div>
     </div>
 
+    <!--
+    A section with a secondary header of exploring the website containing
+        a table of attribute selectors, including colors and symbols of flags, 
+            and continents on which country flag located, 
+        and a submit button that will display another table and modify the map.
+    -->
     <div class="fillColumnWithThreeRows">
         <div>
             <h2 class="header">Explore the attributes of any country's flag:</h2>
@@ -119,12 +130,20 @@
     </div>
     <br>
 
+    <!--
+    A table containing flag images and country names of countries that contain 
+        all the selected attributes (i.e., from the table above.)
+    -->
     <div class="selectedCountryContainer">
         <table id="selectedCountryTable">
         </table>
     </div>
     <br>
 
+    <!--
+    A Datamap of the world that can display some kind of country information when
+        hovering over a country, selecting a country, and zooming into a continent.
+    -->
     <div id="mapDiv">
         <div id="mapContainer"> </div>
     </div>

@@ -1,4 +1,4 @@
-import { initalize, getBaseURL, projectContinent, clickableCountries } from './helperFunctions.js';
+import { initalize, getBaseURL, projectContinent, clickableCountries } from "./helperFunctions.js";
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
 // of the flag attributes. Returns an object with the getParams as a URL
 // to be used and returns the continent (so that we don't need to find it
 // later from the get parameters). Also returns noAttribute which is a 
-// boolean that marks whether or nothing something was seleted.
+// boolean that marks whether something was selected.
 function makeGetParams() {
     // make the get parameters with the flag attributes
     const attributeBoxes = document.getElementById("attributeBoxes");
@@ -105,7 +105,7 @@ function getMapData(countries, noAttribute, continent) {
         if (continent !== null) {
             if (country["continent_name"] !== continent) {
                 correctContinent = false;
-            }  
+            }
         }
 
         // for every attribute (key) and its amount (value), add it to the
@@ -136,14 +136,16 @@ function getMapData(countries, noAttribute, continent) {
     return countriesData;
 }
 
-// Take all countries data, and display a table of only the countries with 
-// the selected attributes, one column contains the flag and another shows 
-// the country name.
+// Takes in all countries data, and displays a table of only the countries 
+// with the selected attributes, each row has one column contains the flag 
+// and another shows the country name.
 function displayCountryList(countries) {
     const countryTable = document.getElementById("selectedCountryTable");
 
     for (const iso3 in countries) {
         const country = countries[iso3];
+
+        // skip countries with no selected attributes
         if (Object.keys(country).length < 3) {
             continue;
         }
@@ -166,7 +168,7 @@ function displayCountryList(countries) {
         imgLink.href = countryInfoLink;
         img.src = "../static/flag_images/" + country.tld + ".png";
         imgLink.append(img);
-        flag.append(img);
+        flag.append(imgLink);
 
         tableRow.append(flag);
         tableRow.append(countryName);
@@ -262,7 +264,7 @@ function hoverPopup(geography, data) {
     template += "<strong> " + data.country_name + "</strong><br>\n";
 
     for (const [key, value] of Object.entries(data)) {
-        if (key === "country_name" || key === "iso3" || key === "fillColor" || 
+        if (key === "country_name" || key === "iso3" || key === "fillColor" ||
             key === "tld" || key === "continent_name") {
             continue;
         }

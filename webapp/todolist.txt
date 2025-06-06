@@ -34,3 +34,14 @@ DONE:
 	- in static/attribute_icons
 - make country dropdown list horizontal and not vertical so then the page itself is shorter
 	- search drop down wider and easier to see
+- combine the imported js files into one file
+- swaziland -> eswatini on datamaps
+- add error handling on single country page -- hide the tables and the map
+- try to swap stuff to const! 
+- when single continent make sure that the other continents don't show their colors
+- when page load on home js do a fetch request and make it so the hover popup works for all
+	the countries from the beginning 
+- make the listed header names for country as objects instead of two lists
+- add other country names and flags in hover popup in single country view
+- add table of countries with selected attributes, a column of flag image 
+	and country name, make each clickable linking to the country info page

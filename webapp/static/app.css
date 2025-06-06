@@ -125,6 +125,7 @@ body {
 #attributeBoxes label {
     align-items: center;
     display: inline-flex;
+    flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
@@ -225,7 +226,8 @@ body {
 .countryTable table {
     border-collapse: collapse;
     margin: 10px;
-    visibility: hidden; /* hidden by default, visible once the information is in */
+    visibility: hidden;
+    /* hidden by default, visible once the information is in */
 }
 
 .countryTable td,
