@@ -17,8 +17,8 @@ export function populateDropBar() {
             // dropdown list, sets the link <a> with the country name.
             for (let i = 0; i < result.length; i++) {
                 const country = result[i];
-                let li = document.createElement('li');
-                let a = document.createElement('a');
+                let li = document.createElement("li");
+                let a = document.createElement("a");
 
                 a.href = baseURL + "/country/" + country.country_name;
                 a.textContent = country.country_name;

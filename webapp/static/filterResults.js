@@ -7,8 +7,8 @@ export function filterResults() {
     let li = ul.getElementsByTagName("li");
 
     for (let i = 0; i < li.length; i++) {
-        let a = li[i].getElementsByTagName("a");
-        let textValue = a.textContent || a.innerText;
+        let a = li[i].querySelector("a");
+        let textValue = a.textContent;
         if (textValue.toUpperCase().indexOf(searchText) > -1) {
             li[i].style.display = "";
         } else {

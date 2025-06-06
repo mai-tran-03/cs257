@@ -5,7 +5,6 @@ import { clickableCountries } from "./mapDoneFunc.js";
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
-
 window.addEventListener("load", function () {
     initalize();
     const map = drawMap({}, null);
@@ -13,16 +12,6 @@ window.addEventListener("load", function () {
     document.getElementById("submit").addEventListener("click", function () {
         searchAttributes(map);
     });
-
-    // const dropDown = document.getElementsById("dropDown");
-    // const countrySelect = document.getElementsById("countrySelect");
-    // dropDown.addEventListener("click", function () {
-    //     if (countrySelect.style.display === "block") {
-    //         countrySelect.style.display = "none";
-    //     } else {
-    //         countrySelect.style.display = "block";
-    //     }
-    // });
 })
 
 // Makes the URL with the get parameters based on the clicked checkboxes
@@ -95,6 +84,7 @@ function searchAttributes(map) {
         .then((response) => response.json())
         .then(function (result) {
             let newMapData = getMapData(result, noAttribute);
+            displayCountryList(newMapData);
             drawMap(newMapData, continent);
         })
         .catch(function (error) {
@@ -138,6 +128,63 @@ function getMapData(countries, noAttribute) {
     }
     return countriesData;
 }
+
+// Take all countries data, and display a table of only the countries with 
+// the selected attributes, one column contains the flag and another shows 
+// the country name.
+function displayCountryList(countries) {
+    const countryTable = document.getElementById("selectedCountryTable");
+
+    for (const iso3 in countries) {
+        const country = countries[iso3];
+        if (Object.keys(country).length < 3) {
+            continue;
+        }
+
+        let tableRow = document.createElement("tr");
+        const countryInfoLink = getBaseURL() + "/country/" + country.country_name;
+
+        // name column with link to country info page
+        let countryName = document.createElement("td");
+        let textLink = document.createElement("a");
+        textLink.href = countryInfoLink;
+        textLink.append(document.createTextNode(country.country_name));
+        countryName.append(textLink);
+        countryName.className = "textLeft";
+
+        // flag image column with link to country info page
+        let flag = document.createElement("td");
+        let img = document.createElement("img");
+        let imgLink = document.createElement("a");
+        imgLink.href = countryInfoLink;
+        img.src = "../static/flag_images/" + country.tld + ".png";
+        imgLink.append(img);
+        flag.append(img);
+
+        tableRow.append(flag);
+        tableRow.append(countryName);
+        countryTable.append(tableRow);
+    }
+
+    // ensure the table that is divided into three column will be filled 
+    // with empty cells if the total number of rows is not evenly divisible
+    const tableNumRow = countryTable.rows.length;
+    if (tableNumRow % 3 == 2) {
+        const lastCell = document.createElement("tr");
+        countryTable.append(lastCell);
+    } else if (tableNumRow % 3 == 1) {
+        const secondToLastCell = document.createElement("tr");
+        const lastCell = document.createElement("tr");
+        countryTable.append(secondToLastCell);
+        countryTable.append(lastCell);
+    }
+
+    // reset the current table when the submit button is clicked again
+    document.getElementById("submit").addEventListener("click", function () {
+        countryTable.innerHTML = "";
+    });
+}
+
 /*
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps

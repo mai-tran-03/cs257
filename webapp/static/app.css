@@ -50,8 +50,8 @@ body {
 }
 
 .fillRowWithThreeColumns {
-    display: grid;
     column-gap: 30px;
+    display: grid;
     grid-auto-flow: row;
     grid-template-columns: auto auto auto;
 }
@@ -91,9 +91,11 @@ body {
     flex-wrap: wrap;
     list-style-type: none;
     margin-top: 0;
-    max-height: 410px;
+    max-height: 405px;
+    padding-top: 5px;
     position: absolute;
     overflow: auto;
+    visibility: hidden;
     width: 70%;
     z-index: 50;
 }
@@ -107,6 +109,7 @@ body {
     padding: 5px;
     text-decoration: none;
     width: 140px;
+    height: 30px;
 }
 
 #searchCountries li a:hover {
@@ -324,4 +327,38 @@ th {
     color: #bbb;
     cursor: pointer;
     text-decoration: none;
+}
+
+
+/* Table of countries with selected attributes */
+.selectedCountryContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#selectedCountryTable {
+    border-collapse: collapse;
+    background-color: #add8e6;
+    column-gap: 10px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto auto auto;
+}
+
+#selectedCountryTable img {
+    height: 75px;
+    width: 100px;
+}
+
+#selectedCountryTable tr {
+    align-items: center;
+    background-color: #c3e3ef;
+    display: inline-flex;
+    cursor: pointer;
+    width: 270px;
+}
+
+#selectedCountryTable tr td {
+    padding: 5px;
 }
