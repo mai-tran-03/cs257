@@ -1,13 +1,14 @@
-import { initalize } from "./onloadPage.js";
-import { getBaseURL } from "./getBaseUrl.js";
-import { projectContinent } from "./projectContinent.js";
-import { clickableCountries } from "./mapDoneFunc.js";
+import { initalize, getBaseURL, projectContinent, clickableCountries } from './helperFunctions.js';
 
 // On window load, in addition to inital page set up, draw a map and allow users
 // to search attributes of countries with checkboxes and selectors.
 window.addEventListener("load", function () {
     initalize();
     const map = drawMap({}, null);
+
+    // run once the page is loaded so that there is a hover popup of all the
+    // countries to begin with
+    searchAttributes(map);
 
     document.getElementById("submit").addEventListener("click", function () {
         searchAttributes(map);
@@ -17,15 +18,16 @@ window.addEventListener("load", function () {
 // Makes the URL with the get parameters based on the clicked checkboxes
 // of the flag attributes. Returns an object with the getParams as a URL
 // to be used and returns the continent (so that we don't need to find it
-// later from the get parameters).
+// later from the get parameters). Also returns noAttribute which is a 
+// boolean that marks whether or nothing something was seleted.
 function makeGetParams() {
     // make the get parameters with the flag attributes
-    let attributeBoxes = document.getElementById("attributeBoxes");
+    const attributeBoxes = document.getElementById("attributeBoxes");
     let getParams = getBaseURL() + "/api/countries?";
 
     let attributes = {};
 
-    let selectedContinent = document.querySelector("input[name='continents']:checked");
+    const selectedContinent = document.querySelector("input[name='continents']:checked");
     if (selectedContinent.value !== "All") {
         getParams += "continent=" + selectedContinent.value + "&";
         attributes["continent"] = selectedContinent.value;
@@ -35,9 +37,9 @@ function makeGetParams() {
 
     let noAttribute = true;
 
-    let checkBoxes = attributeBoxes.querySelectorAll("input[type='checkbox']");
+    const checkBoxes = attributeBoxes.querySelectorAll("input[type='checkbox']");
     for (let i = 0; i < checkBoxes.length; i++) {
-        let checkBox = checkBoxes[i];
+        const checkBox = checkBoxes[i];
 
         if (checkBox.checked) {
             noAttribute = false;
@@ -47,14 +49,7 @@ function makeGetParams() {
 
     attributes["noAttribute"] = noAttribute;
 
-    // To avoid substringing an empty string, if no attributes are added, 
-    // then return null.
-    if (noAttribute) {
-        attributes["getParams"] = getParams;
-        return attributes;
-    }
-
-    // remove extra '&' from the end
+    // remove extra '&' from the end or the extra '?' if no attributes
     getParams = getParams.substring(0, getParams.length - 1);
 
     attributes["getParams"] = getParams;
@@ -83,7 +78,7 @@ function searchAttributes(map) {
     fetch(getParams, { method: "get" })
         .then((response) => response.json())
         .then(function (result) {
-            let newMapData = getMapData(result, noAttribute);
+            let newMapData = getMapData(result, noAttribute, continent);
             displayCountryList(newMapData);
             drawMap(newMapData, continent);
         })
@@ -93,34 +88,46 @@ function searchAttributes(map) {
 }
 
 // Sets the data for the new map by applying each country the attributes
-// and their values and making each selected country be colored. 
-function getMapData(countries, noAttribute) {
+// and their values and making each selected country be colored. noAttribute
+// is inputted true when there was nothing selected, then no countries should
+// be colored in. Only the countries within the inputted continent will have
+// data, if continent is null then that is all the countries. 
+function getMapData(countries, noAttribute, continent) {
     // countries is a list of dictionaries with the selected attributes
     let countriesData = {};
 
     for (let i = 0; i < countries.length; i++) {
-        let country = countries[i];
+        const country = countries[i];
         let countryData = {};
         let hasAllAttributes = true;
+        let correctContinent = true;
+
+        if (continent !== null) {
+            if (country["continent_name"] !== continent) {
+                correctContinent = false;
+            }  
+        }
 
         // for every attribute (key) and its amount (value), add it to the
         // map data for that country
         for (const [key, value] of Object.entries(country)) {
-            if (key === "iso3") {
+            console.log(key);
+            if (key === "iso3") { // will not need the iso3 later, no need to store
                 continue;
             }
 
-            if (value == 0 || value == false) {
-                hasAllAttributes = false;
+            if (value == 0 || value == false || !correctContinent) {
+                // erase all the possible other values already added to the template
                 countryData = {};
                 countryData["country_name"] = country["country_name"];
                 countryData["tld"] = country["tld"];
+                hasAllAttributes = false;
                 break;
             }
 
             countryData[key] = value;
         }
-        if (hasAllAttributes && !noAttribute) {
+        if (hasAllAttributes && !noAttribute && correctContinent) {
             countryData["fillColor"] = "#f54242";
         }
 
@@ -255,7 +262,8 @@ function hoverPopup(geography, data) {
     template += "<strong> " + data.country_name + "</strong><br>\n";
 
     for (const [key, value] of Object.entries(data)) {
-        if (key === "country_name" || key === "iso3" || key === "fillColor" || key === "tld") {
+        if (key === "country_name" || key === "iso3" || key === "fillColor" || 
+            key === "tld" || key === "continent_name") {
             continue;
         }
         template += "<strong> " + formattedAttributes[key] + "</strong>" + value + "<br>\n";

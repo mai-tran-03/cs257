@@ -7,19 +7,9 @@ BOTH:
 
 
 KEZIA:
-- combine the imported js files into one file
-- swaziland -> eswatini on datamaps
 - resize nepal flag on country view (and maybe hover popup)
 - add some Antartica data because it's so big OR have it hide it on the world maps
-- add error handling on single country page -- hide the tables and the map
-- try to swap stuff to const! 
 - mess with the projections on home html
-- when single continent make sure that the other continents don't show their colors
-	- DEAL WITH CONTINENT IN HOVER POPUP!!!!! AND MAKEMAPDATA!!!! on home js
-- add other country name and flag popup in single country html view
-	- do another fecth request to get all the other countries
-- when page load on home js do a fetch request and make it so the hover popup works for all
-	the countries from the beginning 
 - fix paraguay
 - add reset button on homepage to set the checkboxes to empty and redraw the map as empty
 - update API documentation; and api/help/
@@ -27,7 +17,6 @@ KEZIA:
 - add top of the file comments to all js and html files
 - add comments in html more 
 - review all comments // read over the variable names
-- make the listed header names for country as objects instead of two lists
 - webapp/readme.txt
 - read over & edit css (maybe comments.....)
 
@@ -45,8 +34,3 @@ DONE:
 	- in static/attribute_icons
 - make country dropdown list horizontal and not vertical so then the page itself is shorter
 	- search drop down wider and easier to see
-- list all the countries that were selected in home page 
-	- a beautiful tables with on column as flag, one column as name
-	- three tables using the three columns class where the tables are equally as possible
-		filled in with the flags and countries 
-	- STRETCH: (make the flags and country names as links to the country pages)

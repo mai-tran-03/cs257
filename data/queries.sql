@@ -28,4 +28,11 @@ FROM countries_flags
 WHERE country_name = 'country-name';
 
 
+SELECT countries_flags.country_name, languages.language_name
+FROM countries_flags, languages, languages_countries
+WHERE languages.language_id = languages_countries.language_id
+AND countries_flags.tld = languages_countries.tld;
+
+
+
 
