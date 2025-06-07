@@ -13,8 +13,30 @@ body {
     background-color: #F1F1F1;
     border-bottom: 4px solid #134359;
     margin: 0;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
+}
+
+#resetButton {
+    background-color: rgba(0, 50, 50, 0.9);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#resetButton:hover {
+    background-color: rgba(14, 200, 200, 0.5);
+    color: white;
+}
+
+#resetImage {
+    width: 18px;
+/*    padding: 2px;*/
+    padding-right: 5px;
 }
 
 .row {
@@ -47,6 +69,13 @@ body {
 
 .textCenter {
     text-align: center;
+}
+
+.fillRowWithTwoColumns {
+    column-gap: 30px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 0.5% 8% 72%;
 }
 
 .fillRowWithThreeColumns {
@@ -169,6 +198,7 @@ body {
     margin: auto;
     padding-top: 25px;
     width: 100%;
+    padding-bottom: 30px;
 }
 
 #mapContainer {
@@ -176,7 +206,7 @@ body {
     cursor: pointer;
     float: left;
     height: 0;
-    padding-bottom: 35%;
+    padding-bottom: 33%;
     position: relative;
     width: 80%;
 }
@@ -197,6 +227,7 @@ body {
 
 .hoverpopupFlag {
     width: 30px;
+    height: 20px;
 }
 
 
@@ -262,6 +293,7 @@ th {
     padding-top: 10px;
     transition: 0.3s;
     width: 30%;
+    max-height: 300px; /* important to limit the height of Nepal's flag */
 }
 
 #countryFlag:hover {

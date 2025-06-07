@@ -4,16 +4,38 @@ import { initalize, getBaseURL, projectContinent, clickableCountries } from "./h
 // to search attributes of countries with checkboxes and selectors.
 window.addEventListener("load", function () {
     initalize();
-    const map = drawMap({}, null);
 
-    // run once the page is loaded so that there is a hover popup of all the
-    // countries to begin with
-    searchAttributes(map);
+    // run once the page is loaded so that a map is drawn and its hover popups
+    // filled in to begin with. 
+    searchAttributes();
 
     document.getElementById("submit").addEventListener("click", function () {
-        searchAttributes(map);
+        
+        searchAttributes();
+    });
+
+    document.getElementById("resetButton").addEventListener("click", function() {
+        resetCheckboxes();
     });
 })
+
+// Reset the attribute checkboxes, the continent selector, and redraw the map.
+// Called when the reset button is pressed.
+function resetCheckboxes() {
+    // set the continent to all
+    let continent = document.getElementById("allContinents");
+    continent.checked = true;
+
+    // set the attribute checkboxes to be not checked
+    const checkBoxes = attributeBoxes.querySelectorAll("input[type='checkbox']");
+    for (let i = 0; i < checkBoxes.length; i++) {
+        let checkBox = checkBoxes[i];
+        checkBox.checked = false;
+    }
+
+    // draw the map as blank and fill in with the hover popups 
+    searchAttributes();
+}
 
 // Makes the URL with the get parameters based on the clicked checkboxes
 // of the flag attributes. Returns an object with the getParams as a URL
@@ -58,19 +80,16 @@ function makeGetParams() {
 
 // After clicking submit, all of the attributes that are clicked are found,
 // the information is fetched, the old map is deleted, the new one is drawn.
-function searchAttributes(map) {
+function searchAttributes() {
+    // get information from the checkboxes: the URL with the get parameters
+    // for the fetch, the continent, and if it is empty
     let attributes = makeGetParams();
     let getParams = attributes["getParams"];
     let continent = attributes["continent"];
     let noAttribute = attributes["noAttribute"];
 
-    // delete the old map (hover popups are broken if this does not happen)
-    document.getElementById("mapContainer").remove();
-
-    // create a new map with the same ID as the old one
-    let newMap = document.createElement("div");
-    newMap.id = "mapContainer";
-    document.getElementById("mapDiv").append(newMap);
+    // recreate map, so that the new hover popup works
+    deleteMapDivCreateNew();
 
     // Fetch the list of countries that fall under those attributes,
     // redraw the map with them, taking into account what continent to 
@@ -87,11 +106,26 @@ function searchAttributes(map) {
         });
 }
 
+// Deletes the old map container from the DOM and creates a new one. This is
+// to fix the hover pop ups. 
+function deleteMapDivCreateNew() {
+     // delete the old map (hover popups are broken if this does not happen)
+    document.getElementById("mapContainer").remove();
+
+    // create a new map with the same ID as the old one
+    let newMap = document.createElement("div");
+    newMap.id = "mapContainer";
+    document.getElementById("mapDiv").append(newMap);
+}
+
 // Sets the data for the new map by applying each country the attributes
 // and their values and making each selected country be colored. noAttribute
 // is inputted true when there was nothing selected, then no countries should
 // be colored in. Only the countries within the inputted continent will have
-// data, if continent is null then that is all the countries. 
+// data, if continent is null then that is all the countries.
+// Inputs countries, data from the fetch request of the database, dictionaries
+// each representing a country and its values for the selected attributes. 
+// Returns the formatted country data for the map.
 function getMapData(countries, noAttribute, continent) {
     // countries is a list of dictionaries with the selected attributes
     let countriesData = {};
@@ -111,7 +145,6 @@ function getMapData(countries, noAttribute, continent) {
         // for every attribute (key) and its amount (value), add it to the
         // map data for that country
         for (const [key, value] of Object.entries(country)) {
-            console.log(key);
             if (key === "iso3") { // will not need the iso3 later, no need to store
                 continue;
             }
@@ -188,8 +221,11 @@ function displayCountryList(countries) {
         countryTable.append(lastCell);
     }
 
-    // reset the current table when the submit button is clicked again
+    // reset the current table when the submit or reset button is clicked again
     document.getElementById("submit").addEventListener("click", function () {
+        countryTable.innerHTML = "";
+    });
+    document.getElementById("resetButton").addEventListener("click", function () {
         countryTable.innerHTML = "";
     });
 }
@@ -218,7 +254,7 @@ function drawMap(countriesData, continent) {
         geographyConfig: {
             highlightFillColor: "#2293b8", // color when you hover on a country
             highlightBorderColor: "#06465c",
-            hideAntarctica: false,
+            hideAntarctica: true,
             popupTemplate: hoverPopup
         }
     });

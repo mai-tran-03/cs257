@@ -7,15 +7,10 @@ BOTH:
 
 
 KEZIA:
-- resize nepal flag on country view (and maybe hover popup)
-- add some Antartica data because it's so big OR have it hide it on the world maps
-- mess with the projections on home html
 - fix paraguay
-- add reset button on homepage to set the checkboxes to empty and redraw the map as empty
 - update API documentation; and api/help/
-- think about putting <script> at the top of html? (convention to put it at the bottom....)
 - add top of the file comments to all js and html files
-- add comments in html more 
+- add more comments in html 
 - review all comments // read over the variable names
 - webapp/readme.txt
 - read over & edit css (maybe comments.....)
@@ -45,3 +40,6 @@ DONE:
 - add other country names and flags in hover popup in single country view
 - add table of countries with selected attributes, a column of flag image 
 	and country name, make each clickable linking to the country info page
+- resize nepal flag on country view (and maybe hover popup)
+- add reset button on homepage to set the checkboxes to empty and redraw the map as empty
+- think about putting <script> at the top of html? (convention to put it at the bottom....)

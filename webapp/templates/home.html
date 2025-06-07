@@ -4,12 +4,7 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-    <script type="module" src="{{ url_for('static', filename='home.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-
-    <script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
-
+    <title> Explore Attributes </title>
 </head>
 
 <body>
@@ -36,8 +31,10 @@
         and a submit button that will display another table and modify the map.
     -->
     <div class="fillColumnWithThreeRows">
-        <div>
-            <h2 class="header">Explore the attributes of any country's flag:</h2>
+        <div class="fillRowWithTwoColumns header">
+            <div> </div>
+            <button id="resetButton" class="center"> <img src="../static/reset.png" id="resetImage"> Reset </button>
+            <h2>Explore the attributes of any country's flag:</h2>
         </div>
 
         <table id="attributeBoxes">
@@ -112,7 +109,7 @@
 
                 <td>
                     <div class="fillRowWithThreeColumns" id="continents">
-                        <label><input type="radio" name="continents" value="All" checked>All</label>
+                        <label><input type="radio" name="continents" id="allContinents" value="All" checked>All</label>
                         <label><input type="radio" name="continents" value="Africa">Africa</label>
                         <label><input type="radio" name="continents" value="Asia">Asia</label>
                         <label><input type="radio" name="continents" value="Europe">Europe</label>
@@ -149,5 +146,10 @@
     </div>
 
 </body>
+<script type="module" src="{{ url_for('static', filename='home.js') }}"></script>
 
+<!-- the following scripts are required in order to show the map -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
 </html>

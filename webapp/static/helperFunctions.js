@@ -207,9 +207,9 @@ export function projectContinent(element, name) {
         return { path: path, projection: projection };
     } else { // the world
         const projection = d3.geo.equirectangular()
-            .center([0, 0])
+            .center([0, 15])
             .rotate([0, 0])
-            .scale(145)
+            .scale(190)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
         const path = d3.geo.path()
             .projection(projection);

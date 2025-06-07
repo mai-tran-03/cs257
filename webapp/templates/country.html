@@ -3,12 +3,8 @@
 
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" id="favicon">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-    <script type="module" src="{{ url_for('static', filename='country.js') }}"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
 </head>
 
 <body>
@@ -82,5 +78,10 @@
     </div>
 
 </body>
+<script type="module" src="{{ url_for('static', filename='country.js') }}"></script>
 
+<!-- the following scripts are required in order to show the map -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
 </html>

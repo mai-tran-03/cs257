@@ -4,11 +4,16 @@ import { initalize, getBaseURL, projectContinent, clickableCountries } from './h
 // and the event listener for the submit button.
 window.addEventListener("load", function () {
     initalize();
-    getCountryFromAPI(getNameFromUrl());
+
+    let countryName = getNameFromUrl();
+    getCountryFromAPI(countryName);
+
     zoomInFlagAnimation();
+
+    document.title = countryName.replace("%20", " ");
 })
 
-// Get the country name from the URL of the form:
+// Return the country name from the URL of the form:
 // http://[baseURL]/country/<name>
 function getNameFromUrl() {
     const url = window.location.toString();
@@ -30,7 +35,9 @@ function getCountryFromAPI(name) {
             initializeMap(result[0].iso3, result[0].continent_name);
         })
         .catch(function (error) {
+            console.log("error in getCountryFromAPI()");
             console.log(error);
+
         });
 }
 
@@ -83,8 +90,6 @@ const formattedSymbolsPlural = {
 // Inputs the the country information from SQL. Draws to the screen the couuntry
 // attributes and flag data.  
 function writeCountryInfo(country, secondLanguage) {
-    console.log(country);
-
     // if country couldn't be returned from SQL: 
     if (country === undefined || country.country_name === undefined) {
         document.getElementById("errorMessage").innerText = "\n\n\nNo data corresponding to that country name!";
@@ -97,6 +102,7 @@ function writeCountryInfo(country, secondLanguage) {
     // name and flag
     document.getElementById("countryName").innerText = country.country_name;
     document.getElementById("countryFlag").src = "../static/flag_images/" + country.tld + ".png";
+    document.getElementById("favicon").href = "../static/flag_images/" + country.tld + ".png";
 
     // general country info 
     let infoTable = document.getElementById("infoTable");
@@ -237,7 +243,7 @@ function drawMap(continentName, countriesData) {
         geographyConfig: {
             highlightFillColor: "#2293b8", // color when you hover on a country
             highlightBorderColor: "#06465c",
-            hideAntarctica: false,
+            hideAntarctica: true,
             popupTemplate: hoverPopup
         }
     });
@@ -281,14 +287,13 @@ function initializeMap(selectedCountryISO, continentName) {
                 countriesData[c.iso3] = countryData;
             }
 
-            console.log(countriesData);
             drawMap(continentName, countriesData);
         })
         .catch(function (error) {
+            console.log("error in initializeMap()");
             console.log(error);
         });
 }
-
 
 function hoverPopup(geography, data) {
     if (data == undefined || data.tld == undefined || data.countryName == undefined) {
