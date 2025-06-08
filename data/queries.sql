@@ -33,6 +33,12 @@ FROM countries_flags, languages, languages_countries
 WHERE languages.language_id = languages_countries.language_id
 AND countries_flags.tld = languages_countries.tld;
 
+SELECT languages.language_name
+FROM countries_flags, languages, languages_countries
+WHERE countries_flags.country_name ILIKE 'chile'
+AND languages.language_id = languages_countries.language_id
+AND countries_flags.tld = languages_countries.tld;
+
 
 
 

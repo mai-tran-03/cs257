@@ -26,7 +26,7 @@ bt,Bhutan,Kingdom of Bhutan,38394,884546,2,dzo,0,0,0,0,0,0,1,1,1,1,0,gold,4,0,0,
 bo,Bolivia,Plurinational State of Bolivia,1098581,12311974,6,"spa, que",0,3,0,1,1,1,1,1,1,1,0,red,1,0,0,0,10,0,0,1,1,1,1,0,0
 ba,Bosnia and Herzegovina,,51197,3798671,3,"bos, srp",1,0,0,0,0,1,1,1,0,0,0,blue,0,0,0,0,8,0,1,0,0,0,0,0,0
 bw,Botswana,Republic of Botswana,581730,2450668,1,tsn,0,1,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-br,Brazil,Federative Republic of Brazil,8515770,220051512,6,"por, deu",0,0,0,0,1,1,1,1,0,0,0,green,1,0,0,0,27,0,0,0,0,1,0,0,0
+br,Brazil,Federative Republic of Brazil,8515770,220051512,6,"por, spa",0,0,0,0,1,1,1,1,0,0,0,green,1,0,0,0,27,0,0,0,0,1,0,0,0
 vg,British Virgin Islands,,151,40102,4,"eng, cpe",0,0,0,1,1,1,1,1,1,1,0,blue,0,2,2,1,0,0,0,1,1,1,1,0,0
 bn,Brunei,Brunei Darussalam,5765,491900,2,"msa, eng",0,0,2,1,0,0,1,1,1,0,0,gold,1,0,0,0,0,0,0,1,1,1,1,0,0
 bg,Bulgaria,Republic of Bulgaria,110879,6782659,3,"bul, tur",0,3,0,1,1,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -62,9 +62,9 @@ sv,El Salvador,Republic of El Salvador,21041,6628702,4,spa,0,3,0,1,1,1,1,1,1,1,0
 gq,Equatorial Guinea,Republic of Equatorial Guinea,28051,1795834,1,spa,0,3,0,1,1,1,1,1,1,1,0,green,0,0,0,0,6,0,1,1,1,1,1,0,0
 er,Eritrea,State of Eritrea,117600,6343956,1,"tir, ara",0,0,0,1,1,1,1,0,0,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,0
 ee,Estonia,Republic of Estonia,45228,1193791,3,"est, rus",0,3,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-sz,Eswatini,Kingdom of Eswatini,17364,1138089,1,"eng, ssw",0,5,0,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+sz,Eswatini,Kingdom of Eswatini,17364,1138089,1,"eng, ssw",24,5,0,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
 et,Ethiopia,Federal Democratic Republic of Ethiopia,1104300,118550298,1,"orm, amh",0,3,0,1,1,1,1,0,0,0,0,green,1,0,0,0,1,0,0,1,0,0,0,0,0
-fk,Falkland Islands,,12173,3662,6,"eng, spa",0,0,0,1,1,1,1,1,1,1,0,blue,0,2,2,1,5,0,0,1,1,1,1,0,0
+fk,Falkland Islands,,12173,3662,6,"eng, spa",0,0,0,1,1,1,1,1,1,1,0,blue,5,5,2,1,5,0,0,1,1,1,1,0,0
 fo,Faroe Islands,,1393,52933,3,"fao, dan",0,0,0,1,0,1,0,1,0,0,0,white,0,2,0,0,0,0,0,0,0,0,0,0,0
 fj,Fiji,Republic of Fiji,18274,951611,5,"eng, fij",0,0,0,1,1,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
 fi,Finland,Republic of Finland,338145,5626414,3,"fin, swe",0,0,0,0,0,1,0,1,0,0,0,white,0,1,0,0,0,0,0,0,0,0,0,0,0
@@ -155,7 +155,7 @@ pw,Palau,Republic of Palau,459,"21,864",5,"pau, eng",0,0,0,0,0,1,1,0,0,0,0,blue,
 ps,Palestine,State of Palestine,6220,5385012,2,"ara, heb",0,3,0,1,1,0,0,1,1,0,0,black,0,0,0,0,0,0,1,0,0,0,0,0,1
 pa,Panama,Republic of Panama,"75,420","4,470,241",4,"spa, sai",0,0,0,1,0,1,0,1,0,0,0,red,0,0,0,4,2,0,0,0,0,0,0,0,0
 pg,Papua New Guinea,Independent State of Papua New Guinea,"462,840","10,046,233",5,"cpe, eng",0,0,0,1,0,0,1,1,1,0,0,black,0,0,0,0,5,0,1,0,1,0,0,0,0
-py,Parguay,Republic of Paraguay,"406,752","7,522,549",6,"spa, grn",0,3,0,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
+py,Paraguay,Republic of Paraguay,"406,752","7,522,549",6,"spa, grn",0,3,0,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
 pe,Peru,Republic of Peru,"1,285,216","32,600,249",6,"spa, que",3,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
 ph,Philippines,Republic of the Philippines,"300,000","118,277,063",2,"tgl, ceb",0,2,0,1,0,1,1,1,0,0,0,blue,1,0,0,0,4,0,1,0,0,0,0,0,1
 pl,Poland,Republic of Poland,"312,685","38,746,310",3,"pol, sla",0,2,0,1,0,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0

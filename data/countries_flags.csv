@@ -61,9 +61,9 @@ sv,SLV,El Salvador,Republic of El Salvador,21041,6628702,4,0,3,0,1,1,1,1,1,1,1,0
 gq,GNQ,Equatorial Guinea,Republic of Equatorial Guinea,28051,1795834,1,0,3,0,1,1,1,1,1,1,1,0,green,0,0,0,0,6,0,1,1,1,1,1,0,0
 er,ERI,Eritrea,State of Eritrea,117600,6343956,1,0,0,0,1,1,1,1,0,0,0,0,red,1,0,0,0,0,0,1,1,0,0,0,0,0
 ee,EST,Estonia,Republic of Estonia,45228,1193791,3,0,3,0,0,0,1,0,1,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,0,0,0
-sz,SWZ,Eswatini,Kingdom of Eswatini,17364,1138089,1,0,5,0,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
+sz,SWZ,Eswatini,Kingdom of Eswatini,17364,1138089,1,24,5,0,1,0,1,1,1,1,0,0,red,0,0,0,0,0,0,0,1,0,0,0,0,0
 et,ETH,Ethiopia,Federal Democratic Republic of Ethiopia,1104300,118550298,1,0,3,0,1,1,1,1,0,0,0,0,green,1,0,0,0,1,0,0,1,0,0,0,0,0
-fk,FLK,Falkland Islands,NULL,12173,3662,6,0,0,0,1,1,1,1,1,1,1,0,blue,0,2,2,1,5,0,0,1,1,1,1,0,0
+fk,FLK,Falkland Islands,NULL,12173,3662,6,0,0,0,1,1,1,1,1,1,1,0,blue,5,5,2,1,5,0,0,1,1,1,1,0,0
 fo,FRO,Faroe Islands,NULL,1393,52933,3,0,0,0,1,0,1,0,1,0,0,0,white,0,2,0,0,0,0,0,0,0,0,0,0,0
 fj,FJI,Fiji,Republic of Fiji,18274,951611,5,0,0,0,1,1,1,1,1,0,1,0,blue,0,3,2,1,0,0,0,1,1,0,1,0,0
 fi,FIN,Finland,Republic of Finland,338145,5626414,3,0,0,0,0,0,1,0,1,0,0,0,white,0,1,0,0,0,0,0,0,0,0,0,0,0
@@ -154,7 +154,7 @@ pw,PLW,Palau,Republic of Palau,459,21864,5,0,0,0,0,0,1,1,0,0,0,0,blue,1,0,0,0,0,
 ps,PSE,Palestine,State of Palestine,6220,5385012,2,0,3,0,1,1,0,0,1,1,0,0,black,0,0,0,0,0,0,1,0,0,0,0,0,1
 pa,PAN,Panama,Republic of Panama,75420,4470241,4,0,0,0,1,0,1,0,1,0,0,0,red,0,0,0,4,2,0,0,0,0,0,0,0,0
 pg,PNG,Papua New Guinea,Independent State of Papua New Guinea,462840,10046233,5,0,0,0,1,0,0,1,1,1,0,0,black,0,0,0,0,5,0,1,0,1,0,0,0,0
-py,PRY,Parguay,Republic of Paraguay,406752,7522549,6,0,3,0,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
+py,PRY,Paraguay,Republic of Paraguay,406752,7522549,6,0,3,0,1,1,1,1,1,1,0,0,red,1,0,0,0,1,0,0,1,0,1,1,0,0
 pe,PER,Peru,Republic of Peru,1285216,32600249,6,3,0,0,1,0,0,0,1,0,0,0,red,0,0,0,0,0,0,0,0,0,0,0,0,0
 ph,PHL,Philippines,Republic of the Philippines,300000,118277063,2,0,2,0,1,0,1,1,1,0,0,0,blue,1,0,0,0,4,0,1,0,0,0,0,0,1
 pl,POL,Poland,Republic of Poland,312685,38746310,3,0,2,0,1,0,0,0,1,0,0,0,white,0,0,0,0,0,0,0,0,0,0,0,0,0

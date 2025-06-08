@@ -1,4 +1,5 @@
 -- This file has all the copy databases so that we don't have to write each time
+-- Useful for updating the data! 
 
 \copy countries_flags FROM 'countries_flags.csv' DELIMITER ',' CSV NULL as 'NULL'
 \copy languages FROM 'languages.csv' DELIMITER ','

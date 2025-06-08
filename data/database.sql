@@ -177,9 +177,9 @@ sv	SLV	El Salvador	Republic of El Salvador	21041	6628702	4	0	3	0	t	t	t	t	t	t	t	f
 gq	GNQ	Equatorial Guinea	Republic of Equatorial Guinea	28051	1795834	1	0	3	0	t	t	t	t	t	t	t	f	green	0	0	0	0	6	f	t	t	t	t	t	f	f
 er	ERI	Eritrea	State of Eritrea	117600	6343956	1	0	0	0	t	t	t	t	f	f	f	f	red	1	0	0	0	0	f	t	t	f	f	f	f	f
 ee	EST	Estonia	Republic of Estonia	45228	1193791	3	0	3	0	f	f	t	f	t	t	f	f	blue	0	0	0	0	0	f	f	f	f	f	f	f	f
-sz	SWZ	Eswatini	Kingdom of Eswatini	17364	1138089	1	0	5	0	t	f	t	t	t	t	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
+sz	SWZ	Eswatini	Kingdom of Eswatini	17364	1138089	1	24	5	0	t	f	t	t	t	t	f	f	red	0	0	0	0	0	f	f	t	f	f	f	f	f
 et	ETH	Ethiopia	Federal Democratic Republic of Ethiopia	1104300	118550298	1	0	3	0	t	t	t	t	f	f	f	f	green	1	0	0	0	1	f	f	t	f	f	f	f	f
-fk	FLK	Falkland Islands	\N	12173	3662	6	0	0	0	t	t	t	t	t	t	t	f	blue	0	2	2	1	5	f	f	t	t	t	t	f	f
+fk	FLK	Falkland Islands	\N	12173	3662	6	0	0	0	t	t	t	t	t	t	t	f	blue	5	5	2	1	5	f	f	t	t	t	t	f	f
 fo	FRO	Faroe Islands	\N	1393	52933	3	0	0	0	t	f	t	f	t	f	f	f	white	0	2	0	0	0	f	f	f	f	f	f	f	f
 fj	FJI	Fiji	Republic of Fiji	18274	951611	5	0	0	0	t	t	t	t	t	f	t	f	blue	0	3	2	1	0	f	f	t	t	f	t	f	f
 fi	FIN	Finland	Republic of Finland	338145	5626414	3	0	0	0	f	f	t	f	t	f	f	f	white	0	1	0	0	0	f	f	f	f	f	f	f	f
@@ -270,7 +270,7 @@ pw	PLW	Palau	Republic of Palau	459	21864	5	0	0	0	f	f	t	t	f	f	f	f	blue	1	0	0	0	0	
 ps	PSE	Palestine	State of Palestine	6220	5385012	2	0	3	0	t	t	f	f	t	t	f	f	black	0	0	0	0	0	f	t	f	f	f	f	f	t
 pa	PAN	Panama	Republic of Panama	75420	4470241	4	0	0	0	t	f	t	f	t	f	f	f	red	0	0	0	4	2	f	f	f	f	f	f	f	f
 pg	PNG	Papua New Guinea	Independent State of Papua New Guinea	462840	10046233	5	0	0	0	t	f	f	t	t	t	f	f	black	0	0	0	0	5	f	t	f	t	f	f	f	f
-py	PRY	Parguay	Republic of Paraguay	406752	7522549	6	0	3	0	t	t	t	t	t	t	f	f	red	1	0	0	0	1	f	f	t	f	t	t	f	f
+py	PRY	Paraguay	Republic of Paraguay	406752	7522549	6	0	3	0	t	t	t	t	t	t	f	f	red	1	0	0	0	1	f	f	t	f	t	t	f	f
 pe	PER	Peru	Republic of Peru	1285216	32600249	6	3	0	0	t	f	f	f	t	f	f	f	red	0	0	0	0	0	f	f	f	f	f	f	f	f
 ph	PHL	Philippines	Republic of the Philippines	300000	118277063	2	0	2	0	t	f	t	t	t	f	f	f	blue	1	0	0	0	4	f	t	f	f	f	f	f	t
 pl	POL	Poland	Republic of Poland	312685	38746310	3	0	2	0	t	f	f	f	t	f	f	f	white	0	0	0	0	0	f	f	f	f	f	f	f	f
@@ -869,7 +869,7 @@ bos	ba
 srp	ba
 tsn	bw
 por	br
-deu	br
+spa	br
 eng	vg
 cpe	vg
 msa	bn
