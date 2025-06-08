@@ -1,3 +1,14 @@
+/* 
+    Mai Tran and Kezia Sharnoff
+    May 2025
+
+    Javascript for the single country display page of the countries' flags
+    webapp. This draws the map (zoomed into the continent, selected country
+    colored, other countries have hover popups with names) and fills in the
+    table with information. 
+*/
+
+
 import { initalize, getBaseURL, projectContinent, clickableCountries } from './helperFunctions.js';
 
 // On window load, sets up the home button, search drop down, the map, 
@@ -9,8 +20,6 @@ window.addEventListener("load", function () {
     getCountryFromAPI(countryName);
 
     zoomInFlagAnimation();
-
-    document.title = countryName.replace("%20", " ");
 })
 
 // Return the country name from the URL of the form:
@@ -31,8 +40,9 @@ function getCountryFromAPI(name) {
     fetch(url, { method: "get" })
         .then((response) => response.json())
         .then(function (result) { // result is a list of max length two
-            writeCountryInfo(result[0], getSecondLanguage(result));
-            initializeMap(result[0].iso3, result[0].continent_name);
+            console.log(result);
+            writeCountryInfo(result);
+            initializeMap(result.iso3, result.continent_name);
         })
         .catch(function (error) {
             console.log("error in getCountryFromAPI()");
@@ -41,13 +51,15 @@ function getCountryFromAPI(name) {
         });
 }
 
+// Objects to format the country attributes from how they are stored in the
+// database to how we want to display them in the tables.
 const formattedCountryInfo = {
     other_names: "Other names",
     area: "Area (sq km)",
     population: "Population",
     continent_name: "Continent",
-    language: "Language(s)",
-    main_hue: "Main hue"
+    main_hue: "Main hue", 
+    languages: "Language(s)"
 };
 const formattedColors = {
     red: "Red",
@@ -89,7 +101,7 @@ const formattedSymbolsPlural = {
 
 // Inputs the the country information from SQL. Draws to the screen the couuntry
 // attributes and flag data.  
-function writeCountryInfo(country, secondLanguage) {
+function writeCountryInfo(country) {
     // if country couldn't be returned from SQL: 
     if (country === undefined || country.country_name === undefined) {
         document.getElementById("errorMessage").innerText = "\n\n\nNo data corresponding to that country name!";
@@ -99,10 +111,14 @@ function writeCountryInfo(country, secondLanguage) {
         return;
     }
 
-    // name and flag
+    // name and flag in the country table
     document.getElementById("countryName").innerText = country.country_name;
     document.getElementById("countryFlag").src = "../static/flag_images/" + country.tld + ".png";
+
+    // name and flag in the tab title and icon
     document.getElementById("favicon").href = "../static/flag_images/" + country.tld + ".png";
+    document.title = country.country_name;
+
 
     // general country info 
     let infoTable = document.getElementById("infoTable");
@@ -122,9 +138,11 @@ function writeCountryInfo(country, secondLanguage) {
         let statsCount = document.createElement("td");
         let statsCountText = country[key];
 
-        if (secondLanguage !== null && key == "language") {
-            statsCountText += ", " + secondLanguage;
-        }
+        if (key == "languages") {
+            statsCountText = statsCountText.toString();
+            // add spaces between the elements in the array
+            statsCountText = statsCountText.replace(",", ", "); 
+        } 
 
         // if it is a number (area, population), format it with commas in
         // the thousands places
@@ -138,7 +156,7 @@ function writeCountryInfo(country, secondLanguage) {
         if (key == "main_hue") {
             if (formattedColors[country[key]] !== undefined) {
                 statsCountText = formattedColors[country[key]];
-            } else { // cannot guarentee always correct format: black vs. black/gray
+            } else { // cannot guarentee known format, eg: black vs. black_gray
                 let firstLetter = (statsCountText.charAt(0)).toUpperCase();
                 statsCountText = firstLetter + statsCountText.slice(1);
             }
@@ -189,15 +207,16 @@ function writeCountryInfo(country, secondLanguage) {
         symbolName.className = "textRight";
         symbolCount.className = "textLeft";
 
+        // if boolean, use single word
         if (typeof country[key] == "boolean") {
             symbolName.append(document.createTextNode(value));
             symbolName.colSpan = 2;
             symbolName.className = "textCenter";
             symbolCount.classList.add("empty");
-        } else if (country[key] == 1) {
+        } else if (country[key] == 1) { // if count = one, use single word
             symbolName.append(document.createTextNode(value));
             symbolCount.append(document.createTextNode("1"));
-        } else {
+        } else { // use plural word
             symbolName.append(document.createTextNode(formattedSymbolsPlural[key]));
             symbolCount.append(document.createTextNode(country[key]));
         }
@@ -210,14 +229,6 @@ function writeCountryInfo(country, secondLanguage) {
     symbolTable.style.visibility = "visible";
 }
 
-function getSecondLanguage(countries) {
-    if (countries.length < 2) {
-        return null;
-    }
-
-    return (countries[1]).language;
-}
-
 /*
  * Datamaps is Copyright (c) 2012 Mark DiMarco
  * https://github.com/markmarkoh/datamaps
@@ -227,7 +238,6 @@ function getSecondLanguage(countries) {
 // formatted data of all countries with their tld and name stored, to be used
 // in the hover pop ups. 
 function drawMap(continentName, countriesData) {
-
     new Datamap({
         element: document.getElementById("mapContainer"),
         scope: "world",
@@ -249,7 +259,7 @@ function drawMap(continentName, countriesData) {
     });
 
     // Write a caption below the map with the continent name,
-    // this happens after the map is drawn so that if the javascript fails in
+    // this happens after the map is drawn so that if the Javascript fails in
     // drawing the map, this will not happen.
     document.getElementById("mapCaption").innerText = "Continent: " + continentName;
 }
@@ -295,6 +305,7 @@ function initializeMap(selectedCountryISO, continentName) {
         });
 }
 
+// Returns the div for the hover popup, formatting the inputted country data. 
 function hoverPopup(geography, data) {
     if (data == undefined || data.tld == undefined || data.countryName == undefined) {
         return;

@@ -1,3 +1,11 @@
+<!-- 
+    Mai Tran and Kezia Sharnoff
+    May 2025
+
+    Help page for the API, a reference for what the requests and responses of
+    the endpoints. 
+ -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,114 +26,102 @@ RESPONSE: Current message.
 
 
 
-REQUEST: /api/countries/name_contains/{search_text}
 
-RESPONSE: A JSON list of dictionaries, each representing a country sorted 
-by closeness to the search_text. The search text must be at least 2 
-characters and is case-insensitive. 
-Each country dictionary will have the following fields:
-    name            -- Name of the country concerned
-    other_names     -- Other names of the country concerned, e.g., official or local
-    main_hue        -- Predominant color on the flag (tie-breaks from the 
-                        topmost, to most central, and then to leftmost hue)
-
-EXAMPLE:
-    /api/countries/name_contains/pan
-
-    [
-      {
-        "country_name": "Japan",
-        "main_hue": "white",
-        "other_names": "NULL"
-      },
-      {
-        "country_name": "Panama",
-        "main_hue": "red",
-        "other_names": "Republic of Panama"
-      }
-    ]
-
-
-
-REQUEST: /api/countries
+REQUEST: api/countries
     GET parameters:
-        attribute (Optional, default: '') -- return all countries with the 
-        specified attribute(s), the user can query as many attributes as 
-        needed. 
+        &lt;attributes&gt; (Optional, default: '') -- return all countries' data about
+            the specified attributes. The user can query as many flag 
+            attributes as wanted.
 
-RESPONSE: A JSON list of dictionaries, each representing a country.
-    Each dictionary will have the following fields:
-        name -- name of the country
-        all attributes inputted with their counts (if integer)
+        continent (Optional, default: '') -- 
+
+RESPONSE: A JSON list of dictionaries, each representing a country. They are 
+        ordered alphabetically by country name. Each dictionary will have the
+        following fields:
+        name           -- (TEXT) name of the country
+        iso3           -- (TEXT) ISO 3166-1 alpha-3, three letter standardized code to represent countries 
+        tld            -- (TEXT) ISO 3166-1 alpha-2, two letter standardized international code to represent countries 
+        all attributes inputted with their counts/values (INTEGER or BOOLEAN)
+        continent name -- (TEXT) only if any search continent was specified
+
 
 EXAMPLE:
-    /api/countries?saltires=1&blue=1&circles=1
+    api/countries?saltires=1&blue=1&circles=1
 
     [
       {
-        "blue": true,
+        "blue": false,
         "circles": 1,
-        "country_name": "Cook Islands",
-        "saltires": 2
+        "country_name": "Afghanistan",
+        "iso3": "AFG",
+        "saltires": 0,
+        "tld": "af"
       },
       {
-        "blue": true,
-        "circles": 1,
-        "country_name": "Anguilla",
-        "saltires": 2
-      }
-    ]
-EXAMPLE:
-    /api/countries?continent=south_america&pink_purple=1
+        "blue": false,
+        "circles": 0,
+        "country_name": "Albania",
+        "iso3": "ALB",
+        "saltires": 0,
+        "tld": "al"
+      },
 
-    [
+    ...
+
       {
-        "country_name": "Nicaragua",
-        "pink_purple": true
+        "blue": false,
+        "circles": 0,
+        "country_name": "Zimbabwe",
+        "iso3": "ZWE",
+        "saltires": 0,
+        "tld": "zw"
       }
     ]
 
 
 
-REQUEST: /api/country/{name}
+REQUEST: api/country/{name}
 
 RESPONSE: A JSON dictionary with all the attributes of the country. The name is
 case insensitve. The following attributes returned are: 
-    country_code    -- ISO 3166, standardized international code to represent countries
-    name            -- Name of the country concerned
-    other_names     -- Other names of the country concerned, e.g., official or local
-    area            -- Total area of the country, including land and water, in sq km
-    population      -- Total population of the country established in 2024
-    continent_id    -- 1=Africa, 2=Asia, 3=Europe, 4=North America, 5=Oceania, 6=South America
-    bars            -- Number of vertical bars on the flag
-    stripes         -- Number of horizontal stripes on the flag
-    bends           -- Number of diagonal stripes on the flag, 
-    red             -- 1 if red present on the flag, 0 otherwise
-    green           -- ''''green''''
-    blue            -- ''''blue''''
-    gold_yellow     -- ''''gold/yellow''''
-    white           -- ''''white''''
-    black_grey      -- ''''black/grey''''
-    orange_brown    -- ''''orange/brown''''
-    pink_purple     -- ''''pink/purple''''
-    main_hue        -- Predominant color on the flag (tie-breaks from the 
+    tld             -- (TEXT)  ISO 3166-1 alpha-2, two letter standardized international code to represent countries
+    iso3            -- (TEXT) ISO 3166-1 alpha-3, three letter standardized code to represent countries
+    name            -- (TEXT) Name of the selected country
+    other_names     -- (TEXT) Other names of the selected country, e.g., official or 
+                        local. Returns NULL if none stored
+    area            -- (INTEGER) Total area of the country, including land and water, in sq km
+    population      -- (INTEGER) Total population of the country established in 2024
+    continent_name  -- (TEXT) Africa, Asia, Europe, North America, Oceania, or South America
+    bars            -- (INTEGER) Number of vertical bars on the flag
+    stripes         -- (INTEGER) Number of horizontal stripes on the flag
+    bends           -- (INTEGER) Number of diagonal stripes on the flag, 
+    red             -- (BOOLEAN) true if red is present on the flag, false otherwise
+    green           -- (BOOLEAN) true if green is present on the flag, false otherwise
+    blue            -- (BOOLEAN) true if blue is present on the flag, false otherwise
+    gold_yellow     -- (BOOLEAN) true if gold or yellow is present on the flag, false otherwise
+    white           -- (BOOLEAN) true if white is present on the flag, false otherwise
+    black_grey      -- (BOOLEAN) true if black or grey is present on the flag, false otherwise
+    orange_brown    -- (BOOLEAN) true if orange or brown is present on the flag, false otherwise
+    pink_purple     -- (BOOLEAN) true if pink or purple is present on the flag, false otherwise
+    main_hue        -- (TEXT) Predominant color on the flag (tie-breaks from the 
                         topmost, to most central, and then to leftmost hue)
-    circles         -- Number of circles on the flag
-    crosses         -- Number of (upright) crosses
-    saltires        -- Number of diagonal crosses
-    quarters        -- Number of quartered sections
-    sun_stars       -- Number of sun/star symbols
-    crescent_moon   -- 1 if any crescent moon symbol present, 0 otherwise
-    triangle        -- 1 if any triangle present, 0 otherwise
-    inanimate_image -- 1 if any inanimate image present, 0 otherwise
-    animate_image   -- 1 if any animate image present, 0 otherwise
-    text            -- 1 if any letter or writing present, 0 otherwise
-    crest_emblem    -- 1 if any emblem or crest present, 0 otherwise
-    border          -- 1 if any rectangular border present, 0 otherwise
-    trapezoid       -- 1 if any trapezoid present, 0 otherwise
+    circles         -- (INTEGER) Number of circles on the flag
+    crosses         -- (INTEGER) Number of (upright) crosses
+    saltires        -- (INTEGER) Number of diagonal crosses
+    quarters        -- (INTEGER) Number of quartered sections
+    sun_stars       -- (INTEGER) Number of sun/star symbols
+    crescent_moon   -- (BOOLEAN) true if any crescent moon symbol present, false otherwise
+    triangle        -- (BOOLEAN) true if any triangle present, false otherwise
+    inanimate_image -- (BOOLEAN) true if any inanimate image present, false otherwise
+    animate_image   -- (BOOLEAN) true if any animate image present, false otherwise
+    text            -- (BOOLEAN) true if any letter or writing present, false otherwise
+    crest_emblem    -- (BOOLEAN) true if any emblem or crest present, false otherwise
+    border          -- (BOOLEAN) true if any rectangular border present, false otherwise
+    trapezoid       -- (BOOLEAN) true if any trapezoid present, false otherwise
+    languages       -- (BOOLEAN) list of strings of most popular languages spoken
 
 EXAMPLE:
-    /api/country/chile
+    api/country/chile
 
     {
       "animate_image": false,
@@ -136,7 +132,7 @@ EXAMPLE:
       "blue": true,
       "border": false,
       "circles": 0,
-      "continent_id": 6,
+      "continent_name": "South America",
       "country_name": "Chile",
       "crescent_moon": false,
       "crest_emblem": false,
@@ -144,6 +140,11 @@ EXAMPLE:
       "gold_yellow": false,
       "green": false,
       "inanimate_image": false,
+      "iso3": "CHL",
+      "languages": [
+        "English",
+        "Spanish; Castilian"
+      ],
       "main_hue": "red",
       "orange_brown": false,
       "other_names": "Republic of Chile",

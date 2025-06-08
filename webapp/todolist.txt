@@ -7,12 +7,7 @@ BOTH:
 
 
 KEZIA:
-- fix paraguay
-- update API documentation; and api/help/
-- add top of the file comments to all js and html files
-- add more comments in html 
 - review all comments // read over the variable names
-- webapp/readme.txt
 - read over & edit css (maybe comments.....)
 
 
@@ -43,3 +38,10 @@ DONE:
 - resize nepal flag on country view (and maybe hover popup)
 - add reset button on homepage to set the checkboxes to empty and redraw the map as empty
 - think about putting <script> at the top of html? (convention to put it at the bottom....)
+- update API documentation; and api/help/
+- add comments in html (thanks Mai!) 
+- add top of the file comments to all js and html files
+- webapp/readme.txt
+- fix paraguay
+
+

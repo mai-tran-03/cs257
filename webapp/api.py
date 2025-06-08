@@ -21,11 +21,11 @@ import re
 api = flask.Blueprint('api', __name__)
 
 
-attribute_names = ['tld', 'iso3', 'country_name', 'other_names', 'area', 'population', 'continent_id', 
+attribute_names = ['tld', 'iso3', 'country_name', 'other_names', 'area', 'population', 'continent_name', 
         'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
         'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
         'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
-        'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid', 'language']
+        'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid']
 
 def get_connection():
     ''' Returns a database connection object with which you can create cursors,
@@ -54,14 +54,15 @@ def get_contries_with_attribute():
         if flask.request.args.get(attribute) == '1':
             search_attributes.append(attribute)
 
-    search_continent = ''
+    search_continent = False
     if flask.request.args.get('continent') != None:
-        search_continent = re.sub("_", " ", flask.request.args.get('continent'))
+        search_continent = True
 
     countries = []
 
     try:
-        querySELECT = '''SELECT DISTINCT countries_flags.country_name, countries_flags.iso3, countries_flags.tld'''
+        querySELECT = '''SELECT DISTINCT countries_flags.country_name, 
+                         countries_flags.iso3, countries_flags.tld'''
         if search_continent:
             querySELECT += ''', continents.continent_name'''
         
@@ -72,9 +73,9 @@ def get_contries_with_attribute():
 
         if search_continent:
             queryFROM = ''' FROM countries_flags, continents 
-                            WHERE countries_flags.continent_id = continents.continent_id'''
+                            WHERE countries_flags.continent_id = continents.continent_id '''
 
-        query = querySELECT + queryFROM + ';'
+        query = querySELECT + queryFROM + ' ORDER BY countries_flags.country_name;'
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query)
@@ -85,6 +86,7 @@ def get_contries_with_attribute():
                 'iso3': row[1], 
                 'tld': row[2]
                 }
+
             offset = 3
             if search_continent:
                 offset = 4
@@ -104,12 +106,12 @@ def get_contries_with_attribute():
 
 @api.route('/country/<name>')
 def get_country(name):
-    ''' Returns a list of two countries at most in the database whose names exactly matches
-        (case-insensitively) the specified search string. Each country is
-        represented by a dictionary with all its attributes. The two countries only differ
-        by what languages they store as some countries store up to two different languages '''
+    ''' Returns a country in the database whose name exactly matches
+        (case-insensitively) the specified search string. The country is
+        represented by a dictionary with all possible attributes and their
+        values. The language(s) are in a list.'''
 
-    countries = []
+    country = {}
     
     try:
         query = '''SELECT countries_flags.tld, countries_flags.iso3, countries_flags.country_name, 
@@ -124,10 +126,33 @@ def get_country(name):
                     countries_flags.crescent_moon, countries_flags.triangle, 
                     countries_flags.inanimate_image, countries_flags.animate_image, 
                     countries_flags.text, countries_flags.crest_emblem, countries_flags.border, 
-                    countries_flags.trapezoid, languages.language_name
-                FROM countries_flags, continents, languages, languages_countries
+                    countries_flags.trapezoid
+                FROM countries_flags, continents
                 WHERE country_name ILIKE %s
-                AND countries_flags.continent_id = continents.continent_id
+                AND countries_flags.continent_id = continents.continent_id;
+                '''
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (name,))
+        for row in cursor:
+            for index, attribute in enumerate(attribute_names):
+                country[attribute] = row[index]
+        
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    connection.close()
+
+
+    # Second query in order to just get the several languages. This is to avoid
+    # returning all the same information twice (or more) times per each language
+    # that the country has. 
+    languages = []
+    
+    try:
+        query = '''SELECT languages.language_name
+                FROM countries_flags, languages, languages_countries
+                WHERE country_name ILIKE %s
                 AND languages.language_id = languages_countries.language_id
                 AND countries_flags.tld = languages_countries.tld;
                 '''
@@ -135,22 +160,22 @@ def get_country(name):
         cursor = connection.cursor()
         cursor.execute(query, (name,))
         for row in cursor:
-            country = {}
-            for index, attribute in enumerate(attribute_names):
-                if attribute == 'continent_id':
-                    country['continent_name'] = row[index]
-                    continue
-                country[attribute] = row[index]
-
-            countries.append(country)
+            # row[0] will be the string of the language because cursor is a 
+            # list of length one lists
+            languages.append(row[0])
         
     except Exception as e:
         print(e, file=sys.stderr)
 
-    connection.close()
-    return countries
+    connection.close()    
+
+    country['languages'] = languages
+
+    return country
+
 
 
 @api.route('/help')
 def get_help():
+    ''' Render the help page with API information '''
     return flask.render_template('help.html')

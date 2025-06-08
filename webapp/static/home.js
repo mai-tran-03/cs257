@@ -1,3 +1,14 @@
+/* 
+    Mai Tran and Kezia Sharnoff
+    May 2025
+
+    Javascript for the home page of the webapp. On this page, you can navigate
+    to a single country display by searching or clicking the map. You can also
+    see as lists or by map colors what countries' flags fit in the selected 
+    attributes. The code makes the map, the search dropdown, the reset
+    button, and the attributes search upon clicking submit. 
+*/
+
 import { initalize, getBaseURL, projectContinent, clickableCountries } from "./helperFunctions.js";
 
 // On window load, in addition to inital page set up, draw a map and allow users
@@ -10,7 +21,6 @@ window.addEventListener("load", function () {
     searchAttributes();
 
     document.getElementById("submit").addEventListener("click", function () {
-        
         searchAttributes();
     });
 
