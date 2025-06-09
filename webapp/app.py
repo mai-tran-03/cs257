@@ -5,7 +5,7 @@
 
     NAME: app.py Flask pages to host the webapp 
     SYNOPSIS: python3 app.py localhost [port]
-    DESCRIPTION: Hosts a webpage where data about countries and their flags can be
+    DESCRIPTION: Hosts a webapp where data about countries and their flags can be
     queried and shown. Countries' flags that have attributes can be displayed. 
     Country names can be searched for. Specific countries can have all their data
     displayed. 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='app.py',
         usage='python3 app.py host port',
-        description='''Hosts a webpage where data about countries and their flags can be
+        description='''Hosts a webpapp where data about countries and their flags can be
                     queried and shown. Countries' flags that have attributes can be 
                     displayed. Country names can be searched for. Specific countries can 
                     have all their data displayed.'''

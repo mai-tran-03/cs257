@@ -2,9 +2,9 @@
     Mai Tran and Kezia Sharnoff
     May 2025
 
-    Help page for the API, a reference for what the requests and responses of
+    Help page for the API, a reference for the requests and responses of
     the endpoints. 
- -->
+-->
 
 <!DOCTYPE html>
 <html>
@@ -29,20 +29,22 @@ RESPONSE: Current message.
 
 REQUEST: api/countries
     GET parameters:
-        &lt;attributes&gt; (Optional, default: '') -- return all countries' data about
-            the specified attributes. The user can query as many flag 
-            attributes as wanted.
+        &lt;attributes&gt; (Optional, default: '') 
+          Return all countries' data with the specified attributes. 
+          The user can query as many flag attributes as needed.
 
         continent (Optional, default: '') -- 
 
-RESPONSE: A JSON list of dictionaries, each representing a country. They are 
-        ordered alphabetically by country name. Each dictionary will have the
+RESPONSE: A JSON list of dictionaries, each representing a country,  
+        ordered alphabetically by name. Each dictionary will have the
         following fields:
         name           -- (TEXT) name of the country
-        iso3           -- (TEXT) ISO 3166-1 alpha-3, three letter standardized code to represent countries 
-        tld            -- (TEXT) ISO 3166-1 alpha-2, two letter standardized international code to represent countries 
+        iso3           -- (TEXT) ISO 3166-1 alpha-3, 
+                          three-letter standardized code to represent countries 
+        tld            -- (TEXT) ISO 3166-1 alpha-2, 
+                          two-letter standardized code to represent countries 
         all attributes inputted with their counts/values (INTEGER or BOOLEAN)
-        continent name -- (TEXT) only if any search continent was specified
+        continent name -- (TEXT) only shown if any continent is specified
 
 
 EXAMPLE:
@@ -84,11 +86,13 @@ REQUEST: api/country/{name}
 
 RESPONSE: A JSON dictionary with all the attributes of the country. The name is
 case insensitve. The following attributes returned are: 
-    tld             -- (TEXT)  ISO 3166-1 alpha-2, two letter standardized international code to represent countries
-    iso3            -- (TEXT) ISO 3166-1 alpha-3, three letter standardized code to represent countries
+    tld             -- (TEXT)  ISO 3166-1 alpha-2, 
+                        two-letter standardized code to represent countries
+    iso3            -- (TEXT) ISO 3166-1 alpha-3, 
+                        three-letter standardized code to represent countries
     name            -- (TEXT) Name of the selected country
     other_names     -- (TEXT) Other names of the selected country, e.g., official or 
-                        local. Returns NULL if none stored
+                        local. Returns NULL if none is stored
     area            -- (INTEGER) Total area of the country, including land and water, in sq km
     population      -- (INTEGER) Total population of the country established in 2024
     continent_name  -- (TEXT) Africa, Asia, Europe, North America, Oceania, or South America
@@ -161,7 +165,6 @@ EXAMPLE:
       "triangle": false,
       "white": true
     }
-
     </pre>
 </body>
 </html>

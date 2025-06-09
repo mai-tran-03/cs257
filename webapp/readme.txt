@@ -17,7 +17,7 @@ The World Factbook 2024. Washington, DC: Central Intelligence Agency, 2024.
 	https://www.cia.gov/
 
 We got our updated flag information from Flagpedia.net. We added four new
-flag attributes that were not in the original data: bends, borders, trapazoids 
+flag attributes that were not in the original data: bends, borders, trapezoids 
 and crest/emblems. The flags at Flagpedia are public domain. Here is the link
 where we downloaded the flags from: 
 	https://flagpedia.net/download/images
@@ -29,8 +29,8 @@ allows for educational uses of their code references. The link to the langauge
 ISO codes is: 
 	https://www.loc.gov/standards/iso639-2/php/code_list.php
 
-We added the TLD (two letter country codes) to our dataset (in order to 
-display the flag images that are titled with two letter country codes.) We 
+We added the TLD (two-letter country codes) to our dataset (in order to 
+display the flag images that are titled with two-letter country codes.) We 
 sourced these from the Library of Congress' MARC Standards Country Code list,
 which is in the public domain. The link is: 
 	https://www.loc.gov/marc/countries/countries_code.html 
@@ -39,7 +39,7 @@ which is in the public domain. The link is:
 STATUS: On the homepage, you can select checkboxes of flag attributes and/or
 chose a continent, returning back the countries which contain all of those 
 attributes in list and map form. You can use the select bar at the top to 
-chose a single country to view. You can also chose a single country by clicking
+choose a single country to view. You can also choose a single country by clicking
 on its location on the map. In the single country view, you can see the flag, a 
 table detailing the flag attributes and country statistics, and the location of
 the country on a map. 

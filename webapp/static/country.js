@@ -3,8 +3,8 @@
     May 2025
 
     Javascript for the single country display page of the countries' flags
-    webapp. This draws the map (zoomed into the continent, selected country
-    colored, other countries have hover popups with names) and fills in the
+    webapp. This draws the map, incldudes zoom into the continent, select country
+    colored, show other countries have hover popups with names, and fills in the
     table with information. 
 */
 
@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
 })
 
 // Return the country name from the URL of the form:
-// http://[baseURL]/country/<name>
+// http://[baseURL]/country/<name>.
 function getNameFromUrl() {
     const url = window.location.toString();
     const lastBackSlash = url.lastIndexOf("/") + 1;
@@ -33,7 +33,7 @@ function getNameFromUrl() {
     return url.substring(lastBackSlash);
 }
 
-// Fetch information about a specific country from the API
+// Fetch information about a specific country from the API.
 function getCountryFromAPI(name) {
     const url = getBaseURL() + "/api/country/" + name;
 
@@ -152,7 +152,7 @@ function writeCountryInfo(country) {
             }).format(statsCountText);
         }
 
-        // Capitalize first letter of the color
+        // capitalize first letter of the color
         if (key == "main_hue") {
             if (formattedColors[country[key]] !== undefined) {
                 statsCountText = formattedColors[country[key]];
@@ -268,7 +268,7 @@ function drawMap(continentName, countriesData) {
 // to make the hover popups. Inputs single country ISO in order to set the color
 // of the selected country.
 function initializeMap(selectedCountryISO, continentName) {
-    // Do not show the map if we cannot later draw the selected country as a color
+    // Do not show the map if we cannot later draw the selected country as a color.
     if (selectedCountryISO == undefined || continentName == undefined) {
         document.getElementById("mapContainer").style.visibility = "hidden";
         document.getElementById("mapCaption").style.visibility = "hidden";
@@ -281,9 +281,8 @@ function initializeMap(selectedCountryISO, continentName) {
         .then((response) => response.json())
         .then(function (result) { 
 
-            // format the country data so that it can be used in the hover pop
-            // ups. Store the tld and name, change the fill color of the 
-            // selected country. 
+            // Format the country data so that it can be used in the hover pop ups. 
+            // Store the tld and name, change the fill color of the selected country. 
             let countriesData = {};
             for (const c of result) {
                 let countryData = {};

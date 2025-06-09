@@ -2,10 +2,10 @@
     Mai Tran and Kezia Sharnoff
     May 2025
 
-    Home page for viewing what countries' flags have what attributes in the
-    country flag webapp. From this page, you can navigate to a single country
+    Home page of a webapp for viewing what countries' flags have what attributes 
+    in the country flag. From this page, you can navigate to a single country
     display or view lists and maps of countries with the selected attributes. 
- -->
+-->
 <!DOCTYPE html>
 <html>
 
@@ -36,12 +36,14 @@
     A section with a secondary header of exploring the website containing
         a table of attribute selectors, including colors and symbols of flags, 
             and continents on which country flag located, 
+        a reset button that will clear any selected attribute(s), 
         and a submit button that will display another table and modify the map.
     -->
     <div class="fillColumnWithThreeRows">
         <div class="fillRowWithTwoColumns header">
-            <div> </div>
-            <button id="resetButton" class="center"> <img src="../static/reset.png" id="resetImage"> Reset </button>
+            <div class="buttonsForm center">
+                <button id="resetButton"> <img src="../static/reset.png" id="resetImage">Reset</button>
+            </div>
             <h2>Explore the attributes of any country's flag:</h2>
         </div>
 
@@ -137,7 +139,7 @@
 
     <!--
     A table containing flag images and country names of countries that contain 
-        all the selected attributes (i.e., from the table above.)
+        all the selected attributes from the table above.
     -->
     <div class="selectedCountryContainer">
         <table id="selectedCountryTable">
@@ -156,8 +158,9 @@
 </body>
 <script type="module" src="{{ url_for('static', filename='home.js') }}"></script>
 
-<!-- the following scripts are required in order to show the map -->
+<!-- The following scripts are required in order to show the map. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 <script src="{{ url_for('static', filename='datamaps.world.min.js') }}"></script>
+
 </html>

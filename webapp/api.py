@@ -5,7 +5,7 @@
 
     NAME: api.py - API to fetch information from the postgres databases 
     SYNOPSIS: python3 api.py localhost [port]
-    DESCRIPTION: Hosts a webpage where data about countries and their flags can be
+    DESCRIPTION: Hosts a webapp where data about countries and their flags can be
     queried and shown. Countries' flags that have attributes can be displayed. 
     Country names can be searched for. Specific countries can have all their data
     displayed. 
@@ -16,21 +16,20 @@ import config
 import flask
 import psycopg2
 import sys
-import re
 
 api = flask.Blueprint('api', __name__)
 
 
-attribute_names = ['tld', 'iso3', 'country_name', 'other_names', 'area', 'population', 'continent_name', 
-        'bars', 'stripes', 'bends', 'red', 'green', 'blue', 'gold_yellow', 'white', 
-        'black_grey', 'orange_brown', 'pink_purple', 'main_hue', 'circles', 'crosses', 
-        'saltires', 'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
-        'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid']
+attribute_names = ['tld', 'iso3', 'country_name', 'other_names', 'area', 'population', 
+                    'continent_name', 'bars', 'stripes', 'bends', 'red', 'green', 
+                    'blue', 'gold_yellow', 'white', 'black_grey', 'orange_brown', 
+                    'pink_purple', 'main_hue', 'circles', 'crosses', 'saltires', 
+                    'quarters', 'sun_stars', 'crescent_moon', 'triangle', 'inanimate_image', 
+                    'animate_image', 'text', 'crest_emblem', 'border', 'trapezoid']
 
 def get_connection():
-    ''' Returns a database connection object with which you can create cursors,
-        issue SQL queries, etc. If it fails, it prints an error message and kills
-        the whole program. '''
+    ''' Returns a database connection object with to create cursors, issue SQL queries, etc. 
+        If connection fails, prints an error message and kills the whole program. '''
     try:
         return psycopg2.connect(database=config.database,
                                 user=config.user,
@@ -46,8 +45,8 @@ def get_contries_with_attribute():
         attributes inputted (case-insensitively). Each country is represented 
         by a dictionary with all the inputted attributes. '''
 
-    # search attributes will be a list of strings of all the flag attributes
-    # marked to be searched for. this is useful so then we know it is SQL
+    # Search attributes will be a list of strings of all the flag attributes
+    # marked to be searched for. This is useful so then we know it is SQL
     # injection safe! 
     search_attributes = []
     for attribute in attribute_names:
@@ -62,7 +61,7 @@ def get_contries_with_attribute():
 
     try:
         querySELECT = '''SELECT DISTINCT countries_flags.country_name, 
-                         countries_flags.iso3, countries_flags.tld'''
+                        countries_flags.iso3, countries_flags.tld'''
         if search_continent:
             querySELECT += ''', continents.continent_name'''
         
@@ -75,7 +74,7 @@ def get_contries_with_attribute():
             queryFROM = ''' FROM countries_flags, continents 
                             WHERE countries_flags.continent_id = continents.continent_id '''
 
-        query = querySELECT + queryFROM + ' ORDER BY countries_flags.country_name;'
+        query = querySELECT + queryFROM + ''' ORDER BY countries_flags.country_name;'''
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query)

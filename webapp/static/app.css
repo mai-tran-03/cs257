@@ -17,28 +17,6 @@ body {
     text-align: center;
 }
 
-#resetButton {
-    background-color: rgba(0, 50, 50, 0.9);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px 20px;
-    text-align: center;
-    width: 100%;
-}
-
-#resetButton:hover {
-    background-color: rgba(14, 200, 200, 0.5);
-    color: white;
-}
-
-#resetImage {
-    width: 18px;
-/*    padding: 2px;*/
-    padding-right: 5px;
-}
-
 .row {
     align-items: center;
     display: flex;
@@ -72,10 +50,10 @@ body {
 }
 
 .fillRowWithTwoColumns {
-    column-gap: 30px;
+    column-gap: 0;
     display: grid;
     grid-auto-flow: row;
-    grid-template-columns: 0.5% 8% 72%;
+    grid-template-columns: 10% 80%;
 }
 
 .fillRowWithThreeColumns {
@@ -153,6 +131,7 @@ body {
 
 #attributeBoxes label {
     align-items: center;
+    cursor: pointer;
     display: inline-flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
@@ -231,7 +210,7 @@ body {
 }
 
 
-/* Buttons submit,... */
+/* Buttons submit, reset, etc. */
 .buttonsForm {
     border-top: 4px solid #134359;
 }
@@ -250,6 +229,16 @@ body {
 .buttonsForm button:hover {
     background-color: rgba(14, 200, 200, 0.5);
     color: white;
+}
+
+#resetButton {
+    display: inline-flex;
+    padding: 10px;
+}
+
+#resetImage {
+    width: 18px;
+    padding-right: 5px;
 }
 
 
@@ -293,7 +282,8 @@ th {
     padding-top: 10px;
     transition: 0.3s;
     width: 30%;
-    max-height: 300px; /* important to limit the height of Nepal's flag */
+    max-height: 300px;
+    /* important to limit the height of Nepal's flag */
 }
 
 #countryFlag:hover {

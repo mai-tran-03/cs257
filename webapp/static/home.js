@@ -16,7 +16,7 @@ import { initalize, getBaseURL, projectContinent, clickableCountries } from "./h
 window.addEventListener("load", function () {
     initalize();
 
-    // run once the page is loaded so that a map is drawn and its hover popups
+    // Run once the page is loaded so that a map is drawn and its hover popups
     // filled in to begin with. 
     searchAttributes();
 
