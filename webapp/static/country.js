@@ -286,7 +286,7 @@ function initializeMap(selectedCountryISO, continentName) {
             let countriesData = {};
             for (const c of result) {
                 let countryData = {};
-                countryData["countryName"] = c["country_name"];
+                countryData["countryName"] = c["country_name"]; // snake case in the SQL
                 countryData["tld"] = c["tld"];
 
                 if (c.iso3 == selectedCountryISO) {
